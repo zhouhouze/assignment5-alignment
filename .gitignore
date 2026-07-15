@@ -127,6 +127,8 @@ celerybeat.pid
 
 # Environments
 .env
+.env.*
+!.env.example
 .venv
 env/
 venv/
@@ -166,3 +168,14 @@ cython_debug/
 #.idea/
 
 *.DS_Store
+
+# Generated experiment artifacts
+wandb/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+
+# External caches
+.huggingface/
