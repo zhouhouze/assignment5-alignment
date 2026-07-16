@@ -3,6 +3,7 @@ import json
 import time
 from pathlib import Path
 from statistics import mean
+from typing import Any
 
 from vllm import LLM, SamplingParams
 
@@ -125,6 +126,119 @@ def write_json(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
+def read_jsonl(path: Path) -> list[dict]:
+    records = []
+    with path.open() as f:
+        for line in f:
+            records.append(json.loads(line))
+    return records
+
+
+def append_jsonl(path: Path, records: list[dict]) -> None:
+    with path.open("a") as f:
+        for record in records:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        f.flush()
+
+
+def write_progress(
+    prompt_dir: Path,
+    *,
+    prompt_name: str,
+    examples: list[dict],
+    model_id: str,
+    seed: int,
+    status: str,
+    completed_count: int,
+    failure_type: str | None = None,
+    failure_message: str | None = None,
+) -> None:
+    payload = {
+        "prompt_name": prompt_name,
+        "completed_count": completed_count,
+        "last_completed_example_id": completed_count - 1 if completed_count else None,
+        "selected_example_ids": list(range(len(examples))),
+        "git_commit": git_commit(),
+        "model_id": model_id,
+        "generation_parameters": generation_parameters(prompt_name, seed),
+        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "status": status,
+    }
+    if failure_type is not None:
+        payload["failure_type"] = failure_type
+    if failure_message is not None:
+        payload["failure_message"] = failure_message
+    write_json(prompt_dir / "progress.json", payload)
+
+
+def completion_from_output(output: Any, *, prompt_name: str, example_id: int) -> Any:
+    completions = getattr(output, "outputs", None)
+    if not completions:
+        raise RuntimeError(f"Missing completion for prompt {prompt_name}, example {example_id}")
+    return completions[0]
+
+
+def build_record(
+    *,
+    example: dict,
+    formatted_prompt: str,
+    prompt_name: str,
+    model_id: str,
+    seed: int,
+    example_id: int,
+    completion: Any | None,
+    latency: float,
+    dry_run: bool,
+) -> dict:
+    cfg = prompt_config(prompt_name)
+    ground_truth = ground_truth_from_answer(example["answer"])
+    if dry_run:
+        response = ""
+        finish_reason = "dry_run"
+        token_ids = []
+        generation_status = "dry_run"
+        error_type = None
+    else:
+        response = completion.text
+        finish_reason = completion.finish_reason
+        token_ids = completion.token_ids or []
+        if response == "":
+            generation_status = "completed_empty"
+            error_type = "empty_response"
+        else:
+            generation_status = "completed"
+            error_type = None
+
+    rewards = cfg["reward_fn"](response, ground_truth)
+    return {
+        "example_id": example_id,
+        "question": example["question"],
+        "ground_truth": ground_truth,
+        "prompt_name": prompt_name,
+        "formatted_prompt": formatted_prompt,
+        "response": response,
+        "empty_response": response == "",
+        "generation_status": generation_status,
+        "error_type": error_type,
+        "finish_reason": finish_reason,
+        "reward": rewards["reward"],
+        "format_reward": rewards["format_reward"],
+        "answer_reward": rewards["answer_reward"],
+        "category": category_from_rewards(rewards["format_reward"], rewards["answer_reward"]),
+        "response_token_count": len(token_ids),
+        "latency_seconds": latency,
+        "generation_parameters": generation_parameters(prompt_name, seed),
+        "git_commit": git_commit(),
+    }
+
+
+def validate_records(records: list[dict], *, expected_count: int) -> None:
+    ids = [record["example_id"] for record in records]
+    expected_ids = list(range(expected_count))
+    if ids != expected_ids:
+        raise RuntimeError(f"Expected example IDs {expected_ids}, got {ids}")
+
+
 def run_prompt(
     *,
     model: LLM | None,
@@ -137,68 +251,103 @@ def run_prompt(
     dry_run: bool,
 ) -> list[dict]:
     prompt_template = load_prompt(prompt_name)
-    cfg = prompt_config(prompt_name)
     records = []
     prompts = [prompt_template.format(question=example["question"]) for example in examples]
+    prompt_dir = output_dir / prompt_name
+    prompt_dir.mkdir(parents=True, exist_ok=True)
+    partial_path = prompt_dir / "predictions.partial.jsonl"
+    predictions_path = prompt_dir / "predictions.jsonl"
+    summary_path = prompt_dir / "summary.json"
+    if partial_path.exists() or predictions_path.exists() or summary_path.exists():
+        raise RuntimeError(f"Refusing to overwrite existing outputs in {prompt_dir}")
 
     start = time.monotonic()
-    if dry_run:
-        generated = [None for _ in prompts]
-    else:
-        sampling_params = build_sampling_params(prompt_name, seed)
+    write_progress(
+        prompt_dir,
+        prompt_name=prompt_name,
+        examples=examples,
+        model_id=model_id,
+        seed=seed,
+        status="running",
+        completed_count=0,
+    )
+    try:
+        sampling_params = None if dry_run else build_sampling_params(prompt_name, seed)
         generated = []
         for offset in range(0, len(prompts), batch_size):
             batch = prompts[offset : offset + batch_size]
             batch_start = time.monotonic()
-            outputs = model.generate(batch, sampling_params)
+            outputs = [None for _ in batch] if dry_run else model.generate(batch, sampling_params)
+            if len(outputs) != len(batch):
+                raise RuntimeError(
+                    f"Expected {len(batch)} outputs for prompt {prompt_name} batch starting at {offset}, "
+                    f"got {len(outputs)}"
+                )
+            batch_latency = time.monotonic() - batch_start
+            batch_records = []
             for output in outputs:
-                generated.append((output, time.monotonic() - batch_start))
-
-    for index, (example, formatted_prompt) in enumerate(zip(examples, prompts)):
-        ground_truth = ground_truth_from_answer(example["answer"])
-        if dry_run:
-            response = ""
-            finish_reason = "dry_run"
-            token_ids = []
-            latency = 0.0
-        else:
-            output, latency = generated[index]
-            completion = output.outputs[0]
-            response = completion.text
-            if response == "":
-                raise RuntimeError(f"Empty response for prompt {prompt_name}, example {index}")
-            finish_reason = completion.finish_reason
-            token_ids = completion.token_ids or []
-
-        rewards = cfg["reward_fn"](response, ground_truth)
-        record = {
-            "example_id": index,
-            "question": example["question"],
-            "ground_truth": ground_truth,
-            "prompt_name": prompt_name,
-            "formatted_prompt": formatted_prompt,
-            "response": response,
-            "finish_reason": finish_reason,
-            "reward": rewards["reward"],
-            "format_reward": rewards["format_reward"],
-            "answer_reward": rewards["answer_reward"],
-            "category": category_from_rewards(rewards["format_reward"], rewards["answer_reward"]),
-            "response_token_count": len(token_ids),
-            "latency_seconds": latency,
-            "generation_parameters": generation_parameters(prompt_name, seed),
-            "git_commit": git_commit(),
-        }
-        records.append(record)
+                generated.append((output, batch_latency))
+            for index in range(offset, offset + len(batch)):
+                output, latency = generated[index]
+                completion = None if dry_run else completion_from_output(
+                    output, prompt_name=prompt_name, example_id=index
+                )
+                batch_records.append(
+                    build_record(
+                        example=examples[index],
+                        formatted_prompt=prompts[index],
+                        prompt_name=prompt_name,
+                        model_id=model_id,
+                        seed=seed,
+                        example_id=index,
+                        completion=completion,
+                        latency=latency,
+                        dry_run=dry_run,
+                    )
+                )
+            append_jsonl(partial_path, batch_records)
+            validate_jsonl(partial_path)
+            records.extend(batch_records)
+            write_progress(
+                prompt_dir,
+                prompt_name=prompt_name,
+                examples=examples,
+                model_id=model_id,
+                seed=seed,
+                status="running",
+                completed_count=len(records),
+            )
+    except Exception as exc:
+        write_progress(
+            prompt_dir,
+            prompt_name=prompt_name,
+            examples=examples,
+            model_id=model_id,
+            seed=seed,
+            status="failed",
+            completed_count=len(records),
+            failure_type=type(exc).__name__,
+            failure_message=str(exc),
+        )
+        raise
 
     runtime_seconds = time.monotonic() - start
-    prompt_dir = output_dir / prompt_name
-    prompt_dir.mkdir(parents=True, exist_ok=True)
-    with (prompt_dir / "predictions.jsonl").open("w") as f:
-        for record in records:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    disk_records = read_jsonl(partial_path)
+    validate_records(disk_records, expected_count=len(examples))
+    partial_path.replace(predictions_path)
+    records = read_jsonl(predictions_path)
     write_json(
-        prompt_dir / "summary.json",
+        summary_path,
         summarize(records, model_id=model_id, prompt_name=prompt_name, seed=seed, runtime_seconds=runtime_seconds),
+    )
+    write_progress(
+        prompt_dir,
+        prompt_name=prompt_name,
+        examples=examples,
+        model_id=model_id,
+        seed=seed,
+        status="completed",
+        completed_count=len(records),
     )
     return records
 

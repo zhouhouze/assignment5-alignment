@@ -92,6 +92,51 @@ Learner explanation status:
 
 - Pending.
 
+
+## 2026-07-16 - O1 Full Reliability Patch
+
+Component: `prompting_baselines` Full evaluation reliability.
+
+Concept learned:
+
+- A model can legally return an empty completion; that should be scored by the official grader rather than treated as an infrastructure failure.
+- Evaluation scripts should persist results incrementally so a later failure does not erase already completed batches.
+- True hard failures are missing completions, output-count mismatches, generation exceptions, CUDA OOM, and JSONL write/read failures.
+
+Files changed:
+
+- Updated `scripts/prompting_baselines.py` to append `predictions.partial.jsonl` after each batch, update `progress.json`, and atomically rename to `predictions.jsonl` only after prompt completion.
+- Added `tests/test_prompting_baselines_reliability.py`.
+- Updated Full Attempt 1 notes to preserve the failure evidence.
+
+Tests run:
+
+```sh
+uv run python -m py_compile scripts/prompting_baselines.py tests/test_prompting_baselines_reliability.py
+uv run pytest -q tests/test_prompting_baselines_reliability.py
+git diff --check
+```
+
+Result:
+
+- Reliability mock tests passed.
+- Empty completions are persisted and graded.
+- Short output batches and missing completions hard-fail while preserving partial progress.
+
+Bugs encountered:
+
+- Attempt 1 failed on `question_only` example 55 because the old script raised on `completion.text == ""`.
+
+Final implementation decision:
+
+- Do not retry or skip empty completions.
+- Keep model, prompt, grader, and generation parameters unchanged.
+- Rerun Full from a fresh output directory only after committing and syncing the reliability patch.
+
+Learner explanation status:
+
+- Pending.
+
 ## 2026-07-16 - O1 Prompting Baselines Smoke
 
 Component: `prompting_baselines` smoke test on AutoDL RTX 5090.
