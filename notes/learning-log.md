@@ -241,3 +241,73 @@ Remaining questions:
 Learner explanation status:
 
 - Pending.
+
+<!-- full-v2-review-gate-learning-log -->
+
+## 2026-07-16 - O1 Prompting Baselines Full Attempt 2 Review Gate
+
+Component: `prompting_baselines` Full GSM8K evaluation on AutoDL RTX 5090.
+
+Concept learned:
+
+- Reliability patches should preserve model outputs incrementally and allow valid empty completions to be scored instead of stopping a long evaluation.
+- Full metrics must be separated from human semantic review: official grader accuracy is not the same as human-adjusted accuracy.
+- Stop/length/empty-output behavior is part of the baseline result, not just an implementation detail.
+
+Files changed:
+
+- Generated Full review artifacts under `/root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-153611/full-v2`.
+- Updated O1 notes with observed Full metrics and pending review questions.
+
+Tests/checks run:
+
+- Verified `full.exit == 0`.
+- Verified `3 x 1319 = 3957` predictions.
+- Recomputed rewards with the official grader and matched stored records.
+- Matched per-prompt summaries against prediction files.
+- Checked prompt/data/grader/dependency hashes in `full_integrity_report.json`.
+
+Result:
+
+- Integrity validation passed with `0` failures and `1` warning.
+- Official metrics are recorded in `/root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-153611/full-v2/full_metrics.json`.
+
+Remaining questions:
+
+- How many Category 2/3 outputs are human-correct but unscorable?
+- Are there any strict parser bugs?
+- Can O1 be closed, or is another approved baseline run needed?
+
+Learner explanation status:
+
+- Pending.
+
+<!-- full-human-review-learning-log -->
+
+## 2026-07-16 - O1 Full Human Review Integration
+
+Component: O1 Prompting Baselines sampled human review and closeout.
+
+Concept learned:
+
+- Human review should separate parser bugs, format-invalid but human-correct outputs, correct intermediate reasoning, and genuinely wrong final answers.
+- A response can show correct reasoning but still be unscorable if the final answer field is empty or unclosed.
+- Official accuracy should remain unchanged unless a full, predefined adjustment protocol is applied.
+
+Files changed:
+
+- Added `notes/experiments/O1-prompting-baselines/full-human-review.md`.
+- Added `notes/experiments/O1-prompting-baselines/full-human-review.jsonl`.
+- Updated Full results, error analysis, writeup draft, learning log, and mistake log.
+
+Result:
+
+- Category 2 sampled review: `0/12` actual-correct-but-unscored.
+- Category 3 sampled review: `1/12` actual-correct-but-unscored.
+- Strict parser bug count: `0/24`.
+- `category_3-09` is a format failure, not a parser bug.
+- `category_3-10` is a final arithmetic error after correct intermediate quantities.
+
+Learner explanation status:
+
+- Pending final user review of the O1 writeup.

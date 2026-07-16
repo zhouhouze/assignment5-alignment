@@ -24,3 +24,21 @@ Purpose: record learner predictions, actual results, mistake causes, and correct
 - Actual results: Full Attempt 1 stopped at `question_only` example 55 with `RuntimeError: Empty response for prompt question_only, example 55`; no official Full predictions were produced.
 - Mistake cause: the evaluator treated `completion.text == ""` as a hard failure instead of recording it as a legitimate model output and passing it to the grader.
 - Corrected judgment principle: empty model outputs should be scored, while missing completions, output-count mismatches, and generation exceptions should remain hard failures.
+
+<!-- full-v2-review-gate-mistake-log -->
+
+## 2026-07-16 - O1 Full Attempt 2 Review Gate
+
+- Initial learner predictions: pending.
+- Actual results: Full Attempt 2 completed with exit code `0`; official grader metrics were `1/1319` Category 1 for `question_only`, `1/1319` Category 1 for `r1_zero`, and `235/1319` Category 1 for `r1_zero_three_shot_gsm8k`.
+- Mistake cause: pending learner reflection. Do not treat official grader accuracy as human-adjusted accuracy before reviewing Category 2/3 packets.
+- Corrected judgment principle: distinguish measured grader outcomes, deterministic format/termination behavior, and human semantic interpretation; only the first two are complete at this gate.
+
+<!-- full-human-review-mistake-log -->
+
+## 2026-07-16 - O1 Human Review Closeout
+
+- Initial learner predictions: pending.
+- Actual results: sampled human review found no strict parser bugs in `24` reviewed Category 2/3 examples. Category 2 had `0/12` actual-correct-but-unscored cases. Category 3 had `1/12` actual-correct-but-unscored case and `2/12` correct-intermediate-missing-or-wrong-final cases.
+- Mistake cause: pending learner reflection. Do not treat correct intermediate reasoning as final-answer correctness, and do not treat format-invalid human-correct outputs as parser bugs.
+- Corrected judgment principle: official metrics, sampled human review, and speculative human-adjusted accuracy are three different levels of evidence; only the first two are available here.
