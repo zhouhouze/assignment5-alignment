@@ -197,6 +197,7 @@ def generate_completions(
             "model": model_id,
             "prompt": prompt_batch,
             "temperature": sampling_params["temperature"],
+            "top_p": sampling_params["top_p"],
             "max_tokens": sampling_params["max_tokens"],
             "n": sampling_params["n"],
             "seed": sampling_params["seed"],

@@ -1,6 +1,6 @@
 # O1 Prompting Baselines - Experiment Card
 
-Status: Preparation, awaiting learner predictions.
+Status: Smoke complete. Awaiting approval before Pilot.
 
 ## Official Problem
 
@@ -47,10 +47,38 @@ Status: Preparation, awaiting learner predictions.
 
 ## Run Levels
 
-- Smoke: one shared example per prompt.
+- Smoke: one shared example per prompt. Completed on 2026-07-16.
 - Pilot: 20-50 shared examples per prompt.
 - Full: complete official evaluation only after pilot approval.
 
-## Current Blocker
+## Smoke Run
 
-Local machine is macOS arm64 with no CUDA and no vLLM binary. Full generation should use a Linux CUDA GPU environment or Modal after setup.
+- Output directory: `/root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-114549/smoke`
+- Log: `/root/autodl-tmp/cs336/results/O1-prompting-baselines/logs/o1-prompting-smoke-20260716-114549-disable-xet.log`
+- Model: `allenai/OLMo-2-0425-1B`
+- Dataset: `data/gsm8k/test.jsonl`
+- Shared example: first GSM8K test example.
+- Ground truth: `18`
+- Seed: `0`
+- Batch size: `1`
+- GPU memory utilization: `0.75`
+- Generation settings: `temperature=1.0`, `top_p=1.0`, `max_tokens=512`
+
+## Smoke Results
+
+| Prompt | Finish reason | Tokens | Format reward | Answer reward | Category |
+| --- | --- | ---: | ---: | ---: | --- |
+| `question_only` | `length` | 512 | 1.0 | 0.0 | Category 2 |
+| `r1_zero` | `stop` | 83 | 1.0 | 0.0 | Category 2 |
+| `r1_zero_three_shot_gsm8k` | `stop` | 72 | 1.0 | 0.0 | Category 2 |
+
+## Smoke Validation
+
+- The model loaded through vLLM on RTX 5090.
+- `question_only` used no `</answer>` stop string.
+- `r1_zero` and `r1_zero_three_shot_gsm8k` used `stop=["</answer>"]` with `include_stop_str_in_output=True`.
+- `top_p=1.0` is now passed into the vLLM completion payload.
+- JSONL outputs were re-read successfully.
+- All three responses were non-empty.
+- All three responses were formatted according to their reward function but answer-incorrect for this one example.
+- This is only a smoke result and is not evidence for prompt-level accuracy.

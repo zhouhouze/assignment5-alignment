@@ -91,3 +91,57 @@ Remaining questions:
 Learner explanation status:
 
 - Pending.
+
+## 2026-07-16 - O1 Prompting Baselines Smoke
+
+Component: `prompting_baselines` smoke test on AutoDL RTX 5090.
+
+Concept learned:
+
+- A smoke test should validate the experiment pipeline before making claims about model quality.
+- `uv sync --no-install-package flash-attn` and later O1 setup can still require network access to direct wheel/model metadata.
+- vLLM can load `allenai/OLMo-2-0425-1B` on one RTX 5090 with conservative `gpu_memory_utilization=0.75`.
+- Hugging Face Xet downloads can stall; setting `HF_HUB_DISABLE_XET=1` avoided the stalled OLMo weight download path without changing model or generation settings.
+- `top_p` must be explicitly passed into vLLM request construction; it was missing from `cs336_alignment/vllm_utils.py`.
+
+Files changed:
+
+- Updated `cs336_alignment/vllm_utils.py` to pass `top_p`.
+- Added `scripts/prompting_baselines.py` for O1 smoke/pilot/full scaffolding.
+- Updated O1 experiment notes with smoke-only results.
+
+Tests run:
+
+```sh
+uv run python -m py_compile scripts/prompting_baselines.py cs336_alignment/vllm_utils.py
+```
+
+```sh
+uv run python scripts/prompting_baselines.py --mode smoke --prompt-name all --model-id allenai/OLMo-2-0425-1B --dataset-path data/gsm8k/test.jsonl --seed 0 --batch-size 1 --output-dir /root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-114549/smoke --gpu-memory-utilization 0.75
+```
+
+Result:
+
+- Smoke completed with exit code 0.
+- Three JSONL outputs were re-read successfully.
+- All three prompts produced non-empty responses.
+- All three smoke responses were Category 2 on the first GSM8K test example.
+
+Bugs encountered:
+
+- `top_p` was not forwarded by `cs336_alignment/vllm_utils.py`.
+- First OLMo load stalled through Hugging Face Xet; restarted with `HF_HUB_DISABLE_XET=1`.
+
+Final implementation decision:
+
+- Keep changes minimal and limited to O1 prompting smoke support.
+- Do not run Pilot, Full, or GRPO without approval.
+
+Remaining questions:
+
+- Whether to commit the O1 smoke script and `top_p` fix before Pilot.
+- What Pilot limit to use: 20, 30, or 50 examples.
+
+Learner explanation status:
+
+- Pending; discuss smoke observations before Pilot.

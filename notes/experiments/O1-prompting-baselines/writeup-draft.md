@@ -1,6 +1,6 @@
 # O1 Prompting Baselines - Writeup Draft
 
-Status: Preparation only.
+Status: Smoke complete; Pilot and Full not run.
 
 ## Problem
 
@@ -28,8 +28,22 @@ Pending. Record the learner's original predictions before smoke/pilot/full gener
 
 ## Results
 
-Pending.
+Smoke-only result on the first GSM8K test example:
+
+| Prompt | Category | Answer reward | Format reward | Notes |
+| --- | --- | ---: | ---: | --- |
+| `question_only` | Category 2 | 0.0 | 1.0 | Hit `max_tokens=512`; no `</answer>` stop was used. |
+| `r1_zero` | Category 2 | 0.0 | 1.0 | Stopped on `</answer>` and retained the stop string. |
+| `r1_zero_three_shot_gsm8k` | Category 2 | 0.0 | 1.0 | Stopped on `</answer>` and retained the stop string. |
+
+Smoke output path:
+
+```text
+/root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-114549/smoke
+```
 
 ## Commentary
 
-Pending. Do not write conclusions before observing outputs.
+The smoke run verifies plumbing: model load, prompt rendering, stop configuration, `top_p`, ground-truth extraction, grader routing, JSONL readback, and GPU memory behavior. It does not support any conclusion about full GSM8K accuracy or prompt ranking.
+
+Next step, after approval, is a small Pilot run over 20-50 shared GSM8K examples.
