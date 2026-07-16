@@ -145,3 +145,54 @@ Remaining questions:
 Learner explanation status:
 
 - Pending; discuss smoke observations before Pilot.
+
+
+## 2026-07-16 - O1 Prompting Baselines Pilot
+
+Component: `prompting_baselines` 20-example Pilot on AutoDL RTX 5090.
+
+Concept learned:
+
+- A Pilot can pass pipeline validation while still failing the experiment-readiness gate.
+- `question_only` can generate long, drifting continuations and hit `max_tokens=512` frequently.
+- R1-style prompts improved format adherence in this Pilot, especially the three-shot prompt, but did not improve answer accuracy on the first 20 GSM8K test examples.
+- `uv run --no-sync` avoided an unnecessary metadata re-resolution path during experiment launch after the environment was already synchronized.
+
+Files changed:
+
+- Added `notes/experiments/O1-prompting-baselines/pilot-plan.md`.
+- Added `notes/experiments/O1-prompting-baselines/pilot-results.md`.
+- Added `notes/experiments/O1-prompting-baselines/pilot-audit.md`.
+- Updated O1 error-analysis and writeup notes with Pilot observations.
+
+Tests run:
+
+```sh
+uv run --no-sync python scripts/prompting_baselines.py --mode pilot --prompt-name all --model-id allenai/OLMo-2-0425-1B --dataset-path data/gsm8k/test.jsonl --limit 20 --seed 0 --batch-size 4 --output-dir /root/autodl-tmp/cs336/results/O1-prompting-baselines/20260716-142558/pilot --gpu-memory-utilization 0.75
+```
+
+Result:
+
+- Pilot completed with exit code 0.
+- 60 rows were generated and validated.
+- No residual vLLM process remained after completion.
+- `pyproject.toml` and `uv.lock` were unchanged.
+
+Bugs encountered:
+
+- Not a code bug, but a validation finding: several R1 outputs did not retain `</answer>` despite the recorded stop config requesting it.
+
+Final implementation decision:
+
+- Stop at the Pilot gate until explicit Full approval.
+- Do not run GRPO without a separate review and approval.
+
+Remaining questions:
+
+- After Pilot audit, should the approved Full run keep the same fixed configuration?
+- Should the baseline remain at `temperature=1.0`, or should deterministic decoding be considered as a separate controlled experiment?
+- Are these prompts intended for a base model without instruction tuning, or should prompt wording be revisited before Full?
+
+Learner explanation status:
+
+- Pending.
