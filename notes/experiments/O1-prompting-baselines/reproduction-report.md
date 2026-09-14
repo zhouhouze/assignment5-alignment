@@ -28,7 +28,7 @@ Full 从 19:11:55 开始，约 19:23:58 完成。三组各产生 1,319 条记录
 ## 复现判断
 
 - Configuration reproduction：**PASS**。历史生成 commit、模型名称、数据、prompt、grader 和采样参数均已固定并核对。
-- Aggregate-result reproduction：**PASS with expected stochastic variation**。前两组类别分布完全一致，three-shot 汇总指标接近但不相同。
+- Aggregate-result reproduction：**BROADLY CONSISTENT, NOT IDENTICAL**。前两组类别分布完全一致，three-shot 汇总指标接近但不相同；实验前没有预设 pass/fail 阈值，因此这里只报告差值，不追加事后通过标准。
 - Sample-level reproduction：**NOT VERIFIABLE**。旧 AutoDL 的逐题 raw JSONL 不存在，不能进行逐题比较，也不声称响应逐 token 一致。
 
 相同 seed 不保证跨机器、驱动和 GPU kernel 的逐 token 确定性。本次 three-shot 差异不覆盖 2026-07-16 的历史正式结果。
