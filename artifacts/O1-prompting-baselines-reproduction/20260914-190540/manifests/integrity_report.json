@@ -1,0 +1,10 @@
+{
+  "checked_records": 3957,
+  "completed_at": "2026-09-14T19:28:57+0800",
+  "expected_records": 3957,
+  "failures": [],
+  "status": "passed",
+  "token_ids_note": "The historical generation script persisted response_token_count but not token IDs; token IDs are null rather than reconstructed.",
+  "token_ids_persisted": false,
+  "warnings": []
+}

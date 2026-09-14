@@ -1,0 +1,33 @@
+{
+  "aggregate_result_reproduction": {
+    "question_only": {
+      "accuracy_percentage_point_delta": -0.004184988627748298,
+      "format_percentage_point_delta": -0.0032524639878683814,
+      "historical_accuracy": 0.0008,
+      "historical_format_rate": 0.1691,
+      "reproduced_accuracy": 0.000758150113722517,
+      "reproduced_format_rate": 0.16906747536012132
+    },
+    "r1_zero": {
+      "accuracy_percentage_point_delta": -0.004184988627748298,
+      "format_percentage_point_delta": 0.004609552691425822,
+      "historical_accuracy": 0.0008,
+      "historical_format_rate": 0.6368,
+      "reproduced_accuracy": 0.000758150113722517,
+      "reproduced_format_rate": 0.6368460955269143
+    },
+    "r1_zero_three_shot_gsm8k": {
+      "accuracy_percentage_point_delta": 0.7546777862016685,
+      "format_percentage_point_delta": -1.0635708870356364,
+      "historical_accuracy": 0.1782,
+      "historical_format_rate": 0.9515,
+      "reproduced_accuracy": 0.18574677786201668,
+      "reproduced_format_rate": 0.9408642911296436
+    }
+  },
+  "configuration_reproduction": "passed",
+  "sample_level_reproduction": {
+    "reason": "Historical per-example raw JSONL is unavailable.",
+    "status": "not_verifiable"
+  }
+}

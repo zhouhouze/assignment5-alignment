@@ -241,3 +241,13 @@ Remaining questions:
 Learner explanation status:
 
 - Pending.
+# 2026-09-14 — O1 Prompt Baselines 历史数据归档复现
+
+- Component：O1 historical artifact reproduction
+- Concept learned：相同配置和 seed 可以复现汇总行为，但跨机器生成不保证逐 token 一致；配置复现、汇总复现和逐题复现必须分开报告。
+- Files changed：新增 reproduction plan/report；归档规范化 raw JSONL、metrics、manifests、logs、review packets 和 checksums。
+- Tests run：`tests/test_prompting_baselines_reliability.py`，5 passed；1-example smoke；20-example pilot；3 × 1319 full；3,957 条 grader 重算；48 个归档 checksum 复验。
+- Bugs encountered：新 worktree 初始未继承 `uv` 和 Hugging Face cache 的 PATH；显式恢复路径后解决，没有重新下载模型。
+- Final implementation decision：历史生成脚本保持不变；新增信息在只读后处理层生成。旧 token IDs 未保存，因此使用 null，不重构伪造。
+- Remaining questions：Category 2/3 新 review packet 的人工判断尚未填写。
+- Learner explanation status：待学习者解释为什么相同 seed 不等于逐样本确定性，以及为什么格式率变化不等于能力变化。

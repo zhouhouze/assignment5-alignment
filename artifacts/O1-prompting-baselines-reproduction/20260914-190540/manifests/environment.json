@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-09-14T19:29:54+0800",
+  "cuda_runtime": "12.9",
+  "flash_attn": "2.8.3",
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.71.05",
+  "hf_home": "/root/cs336/cache/huggingface",
+  "hostname": "ubuntu22",
+  "model_revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+  "python": "3.12.7",
+  "torch": "2.10.0+cu129",
+  "transformers": "5.7.0",
+  "uv_cache_dir": "/root/cs336/cache/uv",
+  "vllm": "0.19.1"
+}

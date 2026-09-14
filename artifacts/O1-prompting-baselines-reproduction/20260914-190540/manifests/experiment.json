@@ -1,0 +1,43 @@
+{
+  "code_commit": "a75ef3db48e3bbf293def0441f0229f6d1371254",
+  "completed_at": "2026-09-14T19:28:57+0800",
+  "dataset": "GSM8K test",
+  "dataset_examples": 1319,
+  "dataset_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "experiment_id": "20260914-190540",
+  "full_record_count": 3957,
+  "grader_sha256": "f88b29b0e76b3c28f969cb8b2f945e01b70aed2753306445d30822a192c54ec7",
+  "human_review_status": "packet_generated_pending_human_review",
+  "model_id": "allenai/OLMo-2-0425-1B",
+  "model_revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+  "original_experiment_date": "2026-07-16",
+  "policy": {
+    "infra_failures_hard_stop": true,
+    "legal_outputs_are_retained": true,
+    "retry_legal_outputs": false
+  },
+  "prompt_sha256": {
+    "question_only": "bff41d4d354078f7c7adde76fabf70c086aa54a29fd4fb0e15a8f32b3ed27501",
+    "r1_zero": "56213732da87e12ace60a2b88a16df0af18280fb0563a957cbecc938a6a2ac0e",
+    "r1_zero_three_shot_gsm8k": "91788d4fb0e8d81ec17066dc122572f02a6d2ec3ed762174c7b70fcf5fdf6193"
+  },
+  "reproduction_date": "2026-09-14T19:08:02+0800",
+  "sampling": {
+    "batch_size": 4,
+    "gpu_memory_utilization": 0.75,
+    "max_tokens": 512,
+    "seed": 0,
+    "temperature": 1.0,
+    "top_p": 1.0
+  },
+  "status": "automatic_archive_complete",
+  "stop_rules": {
+    "question_only": null,
+    "r1_zero": [
+      "</answer>"
+    ],
+    "r1_zero_three_shot_gsm8k": [
+      "</answer>"
+    ]
+  }
+}

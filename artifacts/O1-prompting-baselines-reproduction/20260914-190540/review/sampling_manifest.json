@@ -1,0 +1,33 @@
+{
+  "review_seed": 20260914,
+  "selection": {
+    "category_2": [
+      "category_2-question_only-83",
+      "category_2-question_only-367",
+      "category_2-question_only-869",
+      "category_2-question_only-915",
+      "category_2-r1_zero-39",
+      "category_2-r1_zero-465",
+      "category_2-r1_zero-753",
+      "category_2-r1_zero-1125",
+      "category_2-r1_zero_three_shot_gsm8k-277",
+      "category_2-r1_zero_three_shot_gsm8k-282",
+      "category_2-r1_zero_three_shot_gsm8k-871",
+      "category_2-r1_zero_three_shot_gsm8k-1283"
+    ],
+    "category_3": [
+      "category_3-question_only-181",
+      "category_3-question_only-227",
+      "category_3-question_only-749",
+      "category_3-question_only-836",
+      "category_3-r1_zero-209",
+      "category_3-r1_zero-421",
+      "category_3-r1_zero-551",
+      "category_3-r1_zero-707",
+      "category_3-r1_zero_three_shot_gsm8k-243",
+      "category_3-r1_zero_three_shot_gsm8k-561",
+      "category_3-r1_zero_three_shot_gsm8k-1029",
+      "category_3-r1_zero_three_shot_gsm8k-1147"
+    ]
+  }
+}
