@@ -1,0 +1,22 @@
+{
+  "mode": "rollout-side-only",
+  "model_id": "allenai/OLMo-2-0425-1B",
+  "seed": 0,
+  "request_count": 1,
+  "response_count": 2,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_tokens": 64,
+    "n": 2,
+    "stop": [
+      "</answer>"
+    ],
+    "include_stop_str_in_output": true
+  },
+  "all_rewards_finite": true,
+  "nvidia_smi_peak_used_mib": 24979,
+  "elapsed_seconds": 192.4061176776886,
+  "raw_jsonl": "/root/cs336/results/O2-standard-grpo/single-gpu/rollout-side-raw.jsonl",
+  "boundary": "No Hugging Face training model, backward, optimizer, NCCL, or weight sync was used."
+}

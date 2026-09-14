@@ -78,3 +78,14 @@ Result:
 - 19 failed.
 - Failure cause: each GRPO adapter raises `NotImplementedError`.
 - First run also created `.venv` and installed 66 packages, including PyTorch and Transformers.
+
+
+## 2026-09-14 — Standard GRPO 最新状态
+
+- cs336_alignment/grpo.py：七个标准 on-policy 正式实现；variants/off-policy 保持未实现。
+- tests/adapters.py：保留官方测试 hook 与 docstring，薄 wrapper 转发到正式模块。
+- notes/experiments/O2-standard-grpo/：正式 checkout、环境验证、组件测试、手算和可重跑 CPU sanity 脚本。
+- 云端正式目录：/root/cs336/assignment5-alignment-checkout，branch learning/grpo-foundations，HEAD 2267287 + 未提交 adapter 补丁。
+- 原 /root/cs336/assignment5-alignment 文件副本保留。
+- 本地和云端完整 tests/test_grpo.py 目前各为 7 passed / 12 expected unimplemented failures；不是旧的 19 failures 状态。
+- HF training-side 与 vLLM rollout-side 已分别通过单卡 smoke；下一阶段仍需双 GPU，尚无 NCCL 或 GPU end-to-end 闭环验证。

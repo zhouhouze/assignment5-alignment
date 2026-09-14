@@ -1,0 +1,132 @@
+
+tests/test_grpo.py::test_tokenize_prompt_and_output PASSED               [  5%]
+tests/test_grpo.py::test_get_response_log_probs PASSED                   [ 10%]
+tests/test_grpo.py::test_compute_rollout_rewards PASSED                  [ 15%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_grpo PASSED    [ 21%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_drgrpo FAILED  [ 26%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_maxrl FAILED   [ 31%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_on_policy PASSED   [ 36%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy FAILED  [ 42%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy_gspo FAILED [ 47%]
+tests/test_grpo.py::test_aggregate_loss_across_microbatch_sequence PASSED [ 52%]
+tests/test_grpo.py::test_aggregate_loss_across_microbatch_constant FAILED [ 57%]
+tests/test_grpo.py::test_grpo_train_step_standard_on_policy PASSED       [ 63%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[grpo_constant] FAILED [ 68%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[dr_grpo] FAILED [ 73%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[rft] FAILED  [ 78%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[maxrl] FAILED [ 84%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[noclip] FAILED       [ 89%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[grpo] FAILED         [ 94%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[gspo] FAILED         [100%]
+
+=================================== FAILURES ===================================
+_________________ test_compute_group_normalized_rewards_drgrpo _________________
+tests/test_grpo.py:80: in test_compute_group_normalized_rewards_drgrpo
+    advantages, _ = compute_group_normalized_rewards(
+tests/adapters.py:157: in run_compute_group_normalized_rewards
+    return grpo.compute_group_normalized_rewards(
+cs336_alignment/grpo.py:83: in compute_group_normalized_rewards
+    raise NotImplementedError("Only standard GRPO mean/std normalization is implemented.")
+E   NotImplementedError: Only standard GRPO mean/std normalization is implemented.
+_________________ test_compute_group_normalized_rewards_maxrl __________________
+tests/test_grpo.py:102: in test_compute_group_normalized_rewards_maxrl
+    advantages, _ = compute_group_normalized_rewards(
+tests/adapters.py:157: in run_compute_group_normalized_rewards
+    return grpo.compute_group_normalized_rewards(
+cs336_alignment/grpo.py:83: in compute_group_normalized_rewards
+    raise NotImplementedError("Only standard GRPO mean/std normalization is implemented.")
+E   NotImplementedError: Only standard GRPO mean/std normalization is implemented.
+_________________ test_compute_policy_gradient_loss_off_policy _________________
+tests/test_grpo.py:128: in test_compute_policy_gradient_loss_off_policy
+    noclip_loss, _ = compute_policy_gradient_loss(
+tests/adapters.py:206: in run_compute_policy_gradient_loss
+    return grpo.compute_policy_gradient_loss(
+cs336_alignment/grpo.py:115: in compute_policy_gradient_loss
+    raise NotImplementedError("Only on-policy loss without importance reweighting is implemented.")
+E   NotImplementedError: Only on-policy loss without importance reweighting is implemented.
+______________ test_compute_policy_gradient_loss_off_policy_gspo _______________
+tests/test_grpo.py:158: in test_compute_policy_gradient_loss_off_policy_gspo
+    loss, _ = compute_policy_gradient_loss(
+tests/adapters.py:206: in run_compute_policy_gradient_loss
+    return grpo.compute_policy_gradient_loss(
+cs336_alignment/grpo.py:115: in compute_policy_gradient_loss
+    raise NotImplementedError("Only on-policy loss without importance reweighting is implemented.")
+E   NotImplementedError: Only on-policy loss without importance reweighting is implemented.
+________________ test_aggregate_loss_across_microbatch_constant ________________
+tests/test_grpo.py:181: in test_aggregate_loss_across_microbatch_constant
+    loss = aggregate_loss_across_microbatch(
+tests/adapters.py:245: in run_aggregate_loss_across_microbatch
+    return grpo.aggregate_loss_across_microbatch(
+cs336_alignment/grpo.py:129: in aggregate_loss_across_microbatch
+    raise NotImplementedError("Only sequence loss normalization is implemented.")
+E   NotImplementedError: Only sequence loss normalization is implemented.
+____________ test_grpo_train_step_variants_on_policy[grpo_constant] ____________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+_______________ test_grpo_train_step_variants_on_policy[dr_grpo] _______________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+_________________ test_grpo_train_step_variants_on_policy[rft] _________________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+________________ test_grpo_train_step_variants_on_policy[maxrl] ________________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+___________________ test_grpo_train_step_off_policy[noclip] ____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+____________________ test_grpo_train_step_off_policy[grpo] _____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+____________________ test_grpo_train_step_off_policy[gspo] _____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:339: in run_grpo_train_step
+    return grpo.grpo_train_step(
+cs336_alignment/grpo.py:164: in grpo_train_step
+    raise NotImplementedError("Only the standard on-policy GRPO train step is implemented.")
+E   NotImplementedError: Only the standard on-policy GRPO train step is implemented.
+=========================== short test summary info ============================
+FAILED tests/test_grpo.py::test_compute_group_normalized_rewards_drgrpo - Not...
+FAILED tests/test_grpo.py::test_compute_group_normalized_rewards_maxrl - NotI...
+FAILED tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy - Not...
+FAILED tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy_gspo
+FAILED tests/test_grpo.py::test_aggregate_loss_across_microbatch_constant - N...
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[grpo_constant]
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[dr_grpo]
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[rft] - Not...
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[maxrl] - N...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[noclip] - NotImple...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[grpo] - NotImpleme...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[gspo] - NotImpleme...
+========================= 12 failed, 7 passed in 0.20s =========================

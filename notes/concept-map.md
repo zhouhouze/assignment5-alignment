@@ -120,3 +120,12 @@ Concepts to master before implementation:
 - No-baseline rewards for RFT.
 - Mean-reward normalization for MaxRL.
 - Why reward normalization changes optimization difficulty weighting.
+
+
+## 2026-09-14 — Standard GRPO CPU 链路已实现
+
+reward [B] → 同题 [B/G,G] mean/std advantage → token IDs/labels/mask [B,L] → log_probs [B,L] → -A log p → response 内平均再 batch 平均 → microbatch 加权 backward → 单次裁剪/更新。
+
+全同奖励组无相对信号；空响应不丢弃，损失贡献零；format 仅监控。七个标准测试和额外梯度检查通过，学习者解释仍待确认。
+
+单卡已分开验证两半：HF policy 可做真实 forward/backward/step；vLLM 可生成并评分。两者未同时驻留，箭头 `optimizer step → sync → updated rollout` 仍未验证，不能称为端到端 GRPO。
