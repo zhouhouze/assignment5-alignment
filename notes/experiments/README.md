@@ -24,9 +24,9 @@
 | Phase | Status | Evidence |
 | --- | --- | --- |
 | SUP-QWEN-00 | Config/tokenizer CPU验收完成；未加载权重 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
-| SUP-QWEN-01 | CPU dry-run PASS；42 tests passed；SMOKE/PILOT已获批准、待运行 | [CPU报告](SUP-QWEN-01-baseline/cpu-dry-run-report.md)、[baseline计划](SUP-QWEN-01-baseline/baseline-plan.md) |
+| SUP-QWEN-01 | CPU dry-run PASS；43 tests passed；7B下载期间SSH失联，GPU未启动 | [CPU报告](SUP-QWEN-01-baseline/cpu-dry-run-report.md)、[中断与恢复](SUP-QWEN-01-baseline/interruption-20261003.md)、[baseline计划](SUP-QWEN-01-baseline/baseline-plan.md) |
 | SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
 | SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
 | SUP-QWEN-final | 无模型结果 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
 
-Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。本轮授权到preflight归档/push，之后停止等待baseline smoke/pilot批准；不自行generation/SFT/DPO/judge。
+Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已获准CPU→4条SMOKE→80条PILOT→review/archive；尚未启动GPU generation，恢复SSH并完成权重校验后继续。FULL/SFT/DPO/Judge仍需后续独立Gate。

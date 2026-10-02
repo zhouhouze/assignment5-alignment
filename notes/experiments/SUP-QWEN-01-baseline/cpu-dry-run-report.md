@@ -35,3 +35,5 @@ CPU evidence：artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01；
 ## 2026-10-03 运行前复查
 
 发现批间恢复时batch ID若按剩余列表offset编号可能与已有batch重名，已改用原始request_index起点；42项回归再次通过，重新生成20261003-cpu-02作为当前源码dry-run证据。没有发生模型重采样。全量benchmark仅CPU长度审计：MMLU/GSM8K/Alpaca/Safety最长prompt分别1186/330/624/164，均满足4096上下文预留512输出的条件。
+
+最终增加返回数量不符的故障注入测试：模拟返回0条时必须保留failed/pending、不得写raw、不得自动再次generation。最终本地与云端均为43 passed（原有30项全部保留）。该测试只使用临时fixture和mock，不加载GPU模型。本地完整日志在preparation-20261003/tests-final.txt；云端完整日志在/root/pa5-supplement-setup/20261003-baseline/tests-final-cloud.txt，已读取43 passed尾行，但因随后SSH失联尚未同步该完整日志。
