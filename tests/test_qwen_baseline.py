@@ -91,3 +91,28 @@ def test_id_mismatch_even_with_new_file_checksum_stops(prepared):
     path.write_text(json.dumps(row)+'\n')
     path.with_suffix('.jsonl.sha256').write_text(b.sha(path)+'\n')
     with pytest.raises(ValueError,match='identity'):b.validate(prepared)
+
+
+def test_generation_count_mismatch_hard_stops_before_raw(tmp_path,monkeypatch):
+    import sys
+    from types import SimpleNamespace
+    directory=tmp_path/'smoke'
+    b.prepare(directory,'SMOKE')
+    model_path=tmp_path/'mock-weights'
+    model_path.mkdir()
+    config=json.loads(b.CONFIG.read_text())
+    b.write_new(model_path/'weights-manifest.json',dict(model=config['model'],revision=config['model_revision'],files={}))
+    class FakeMonitor:
+        samples=[]
+        def start(self):pass
+        def finish(self):return {'method':'unit-test mock, no GPU','peak_mib':None}
+    class WrongCountEngine:
+        def __init__(self,**kwargs):self.llm_engine=SimpleNamespace(vllm_config='unit-test mock')
+        def generate(self,*args,**kwargs):return []
+    monkeypatch.setattr(b,'VramMonitor',FakeMonitor)
+    monkeypatch.setitem(sys.modules,'vllm',SimpleNamespace(LLM=WrongCountEngine,SamplingParams=lambda **kw:kw))
+    with pytest.raises(ValueError,match='count mismatch'):b.run(directory,model_path)
+    assert (directory/'failed.json').exists()
+    assert (directory/'pending.json').exists()
+    assert not list((directory/'raw').glob('*.jsonl'))
+    with pytest.raises(ValueError,match='Prior infra failure'):b.run(directory,model_path)
