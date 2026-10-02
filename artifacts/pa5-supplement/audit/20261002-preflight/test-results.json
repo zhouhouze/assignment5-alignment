@@ -1,0 +1,31 @@
+[
+  {
+    "name": "supplement-tests",
+    "command": [
+      "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_data.py",
+      "tests/test_dpo.py",
+      "tests/test_metrics.py",
+      "tests/test_supplement_metrics_edges.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 1,
+    "tail": "========================= 3 failed, 20 passed in 0.66s ========================="
+  },
+  {
+    "name": "official-grpo-scope-check",
+    "command": [
+      "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_grpo.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 1,
+    "tail": "============================== 19 failed in 0.10s =============================="
+  }
+]

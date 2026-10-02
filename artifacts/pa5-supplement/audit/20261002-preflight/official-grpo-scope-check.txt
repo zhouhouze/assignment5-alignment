@@ -1,0 +1,161 @@
+
+tests/test_grpo.py::test_tokenize_prompt_and_output FAILED               [  5%]
+tests/test_grpo.py::test_get_response_log_probs FAILED                   [ 10%]
+tests/test_grpo.py::test_compute_rollout_rewards FAILED                  [ 15%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_grpo FAILED    [ 21%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_drgrpo FAILED  [ 26%]
+tests/test_grpo.py::test_compute_group_normalized_rewards_maxrl FAILED   [ 31%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_on_policy FAILED   [ 36%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy FAILED  [ 42%]
+tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy_gspo FAILED [ 47%]
+tests/test_grpo.py::test_aggregate_loss_across_microbatch_sequence FAILED [ 52%]
+tests/test_grpo.py::test_aggregate_loss_across_microbatch_constant FAILED [ 57%]
+tests/test_grpo.py::test_grpo_train_step_standard_on_policy FAILED       [ 63%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[grpo_constant] FAILED [ 68%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[dr_grpo] FAILED [ 73%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[rft] FAILED  [ 78%]
+tests/test_grpo.py::test_grpo_train_step_variants_on_policy[maxrl] FAILED [ 84%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[noclip] FAILED       [ 89%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[grpo] FAILED         [ 94%]
+tests/test_grpo.py::test_grpo_train_step_off_policy[gspo] FAILED         [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_tokenize_prompt_and_output ________________________
+tests/test_grpo.py:34: in test_tokenize_prompt_and_output
+    output = tokenize_prompt_and_output(
+tests/adapters.py:51: in run_tokenize_prompt_and_output
+    raise NotImplementedError
+E   NotImplementedError
+_________________________ test_get_response_log_probs __________________________
+tests/test_grpo.py:43: in test_get_response_log_probs
+    output = get_response_log_probs(
+tests/adapters.py:87: in run_get_response_log_probs
+    raise NotImplementedError
+E   NotImplementedError
+---------------------------- Captured stderr setup -----------------------------
+
+Loading weights:   0%|          | 0/28 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 28/28 [00:00<00:00, 46055.10it/s]
+_________________________ test_compute_rollout_rewards _________________________
+tests/test_grpo.py:53: in test_compute_rollout_rewards
+    raw_rewards, _ = compute_rollout_rewards(
+tests/adapters.py:119: in run_compute_rollout_rewards
+    raise NotImplementedError
+E   NotImplementedError
+__________________ test_compute_group_normalized_rewards_grpo __________________
+tests/test_grpo.py:64: in test_compute_group_normalized_rewards_grpo
+    advantages, _ = compute_group_normalized_rewards(
+tests/adapters.py:158: in run_compute_group_normalized_rewards
+    raise NotImplementedError
+E   NotImplementedError
+_________________ test_compute_group_normalized_rewards_drgrpo _________________
+tests/test_grpo.py:80: in test_compute_group_normalized_rewards_drgrpo
+    advantages, _ = compute_group_normalized_rewards(
+tests/adapters.py:158: in run_compute_group_normalized_rewards
+    raise NotImplementedError
+E   NotImplementedError
+_________________ test_compute_group_normalized_rewards_maxrl __________________
+tests/test_grpo.py:102: in test_compute_group_normalized_rewards_maxrl
+    advantages, _ = compute_group_normalized_rewards(
+tests/adapters.py:158: in run_compute_group_normalized_rewards
+    raise NotImplementedError
+E   NotImplementedError
+_________________ test_compute_policy_gradient_loss_on_policy __________________
+tests/test_grpo.py:113: in test_compute_policy_gradient_loss_on_policy
+    loss, _ = compute_policy_gradient_loss(
+tests/adapters.py:205: in run_compute_policy_gradient_loss
+    raise NotImplementedError
+E   NotImplementedError
+_________________ test_compute_policy_gradient_loss_off_policy _________________
+tests/test_grpo.py:128: in test_compute_policy_gradient_loss_off_policy
+    noclip_loss, _ = compute_policy_gradient_loss(
+tests/adapters.py:205: in run_compute_policy_gradient_loss
+    raise NotImplementedError
+E   NotImplementedError
+______________ test_compute_policy_gradient_loss_off_policy_gspo _______________
+tests/test_grpo.py:158: in test_compute_policy_gradient_loss_off_policy_gspo
+    loss, _ = compute_policy_gradient_loss(
+tests/adapters.py:205: in run_compute_policy_gradient_loss
+    raise NotImplementedError
+E   NotImplementedError
+________________ test_aggregate_loss_across_microbatch_sequence ________________
+tests/test_grpo.py:171: in test_aggregate_loss_across_microbatch_sequence
+    loss = aggregate_loss_across_microbatch(
+tests/adapters.py:237: in run_aggregate_loss_across_microbatch
+    raise NotImplementedError
+E   NotImplementedError
+________________ test_aggregate_loss_across_microbatch_constant ________________
+tests/test_grpo.py:181: in test_aggregate_loss_across_microbatch_constant
+    loss = aggregate_loss_across_microbatch(
+tests/adapters.py:237: in run_aggregate_loss_across_microbatch
+    raise NotImplementedError
+E   NotImplementedError
+___________________ test_grpo_train_step_standard_on_policy ____________________
+tests/test_grpo.py:223: in test_grpo_train_step_standard_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+____________ test_grpo_train_step_variants_on_policy[grpo_constant] ____________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+_______________ test_grpo_train_step_variants_on_policy[dr_grpo] _______________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+_________________ test_grpo_train_step_variants_on_policy[rft] _________________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+________________ test_grpo_train_step_variants_on_policy[maxrl] ________________
+tests/test_grpo.py:291: in test_grpo_train_step_variants_on_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+___________________ test_grpo_train_step_off_policy[noclip] ____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+____________________ test_grpo_train_step_off_policy[grpo] _____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+____________________ test_grpo_train_step_off_policy[gspo] _____________________
+tests/test_grpo.py:328: in test_grpo_train_step_off_policy
+    loss, metadata = grpo_train_step(
+tests/adapters.py:326: in run_grpo_train_step
+    raise NotImplementedError
+E   NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_grpo.py::test_tokenize_prompt_and_output - NotImplementedError
+FAILED tests/test_grpo.py::test_get_response_log_probs - NotImplementedError
+FAILED tests/test_grpo.py::test_compute_rollout_rewards - NotImplementedError
+FAILED tests/test_grpo.py::test_compute_group_normalized_rewards_grpo - NotIm...
+FAILED tests/test_grpo.py::test_compute_group_normalized_rewards_drgrpo - Not...
+FAILED tests/test_grpo.py::test_compute_group_normalized_rewards_maxrl - NotI...
+FAILED tests/test_grpo.py::test_compute_policy_gradient_loss_on_policy - NotI...
+FAILED tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy - Not...
+FAILED tests/test_grpo.py::test_compute_policy_gradient_loss_off_policy_gspo
+FAILED tests/test_grpo.py::test_aggregate_loss_across_microbatch_sequence - N...
+FAILED tests/test_grpo.py::test_aggregate_loss_across_microbatch_constant - N...
+FAILED tests/test_grpo.py::test_grpo_train_step_standard_on_policy - NotImple...
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[grpo_constant]
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[dr_grpo]
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[rft] - Not...
+FAILED tests/test_grpo.py::test_grpo_train_step_variants_on_policy[maxrl] - N...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[noclip] - NotImple...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[grpo] - NotImpleme...
+FAILED tests/test_grpo.py::test_grpo_train_step_off_policy[gspo] - NotImpleme...
+============================== 19 failed in 0.10s ==============================
