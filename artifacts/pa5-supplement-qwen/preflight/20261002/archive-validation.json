@@ -1,0 +1,14 @@
+{
+  "secret_patterns_scanned": [
+    "private_key",
+    "hf_token",
+    "github_token",
+    "assigned_secret"
+  ],
+  "secret_findings": [],
+  "json_jsonl_valid": true,
+  "human_review_pending": true,
+  "candidate_count_before_this_file_and_checksums": 82,
+  "candidate_bytes_before_this_file_and_checksums": 457215,
+  "directly_comparable_to_official": false
+}

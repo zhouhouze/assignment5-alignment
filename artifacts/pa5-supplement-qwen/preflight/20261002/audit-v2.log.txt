@@ -1,0 +1,283 @@
+{
+  "dataset": {
+    "sample_train": {
+      "bytes": 2492043,
+      "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df",
+      "line_count": 1000,
+      "counts": {
+        "duplicate_record_count": 0,
+        "valid_examples": 1000,
+        "exact_duplicate_prompt_response_count": 0,
+        "duplicate_prompt_count": 0,
+        "malformed_json": 0,
+        "not_object": 0,
+        "missing_prompt": 0,
+        "missing_response": 0,
+        "non_string_prompt": 0,
+        "non_string_response": 0,
+        "empty_prompt": 0,
+        "empty_response": 0
+      },
+      "invalid_rows": [],
+      "length_unit": "Unicode characters; all string-typed rows including empties",
+      "lengths": {
+        "prompt": {
+          "min": 14,
+          "p50": 490,
+          "p90": 2425,
+          "p99": 5479,
+          "max": 11586,
+          "mean": 872.32
+        },
+        "response": {
+          "min": 6,
+          "p50": 1271,
+          "p90": 3332,
+          "p99": 5628,
+          "max": 6214,
+          "mean": 1557.403
+        }
+      }
+    },
+    "train": {
+      "bytes": 532421064,
+      "sha256": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913",
+      "line_count": 210348,
+      "counts": {
+        "duplicate_record_count": 0,
+        "valid_examples": 210326,
+        "exact_duplicate_prompt_response_count": 0,
+        "duplicate_prompt_count": 4,
+        "empty_response": 21,
+        "empty_prompt": 1,
+        "malformed_json": 0,
+        "not_object": 0,
+        "missing_prompt": 0,
+        "missing_response": 0,
+        "non_string_prompt": 0,
+        "non_string_response": 0
+      },
+      "invalid_rows": [
+        {
+          "line_number": 3242,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 12094,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 17481,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 19267,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 28758,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 36316,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 55847,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 58135,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 70676,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 76330,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 100349,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 106522,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 112669,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 119243,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 124545,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 124862,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 125394,
+          "errors": [
+            "empty_prompt"
+          ]
+        },
+        {
+          "line_number": 138329,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 143026,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 144998,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 182925,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 205247,
+          "errors": [
+            "empty_response"
+          ]
+        }
+      ],
+      "length_unit": "Unicode characters; all string-typed rows including empties",
+      "lengths": {
+        "prompt": {
+          "min": 0,
+          "p50": 478,
+          "p90": 2351,
+          "p99": 5430,
+          "max": 14884,
+          "mean": 848.2553007397265
+        },
+        "response": {
+          "min": 0,
+          "p50": 1309,
+          "p90": 3484,
+          "p99": 5526,
+          "max": 11013,
+          "mean": 1618.9716564930495
+        }
+      }
+    },
+    "test": {
+      "bytes": 58872258,
+      "sha256": "ce84dd834a7bbfc622cb3b50dc6c233e7dd91e002fd84f7cf86f70762a2c9ed9",
+      "line_count": 23110,
+      "counts": {
+        "duplicate_record_count": 0,
+        "valid_examples": 23108,
+        "exact_duplicate_prompt_response_count": 0,
+        "duplicate_prompt_count": 0,
+        "empty_response": 2,
+        "malformed_json": 0,
+        "not_object": 0,
+        "missing_prompt": 0,
+        "missing_response": 0,
+        "non_string_prompt": 0,
+        "non_string_response": 0,
+        "empty_prompt": 0
+      },
+      "invalid_rows": [
+        {
+          "line_number": 2405,
+          "errors": [
+            "empty_response"
+          ]
+        },
+        {
+          "line_number": 8542,
+          "errors": [
+            "empty_response"
+          ]
+        }
+      ],
+      "length_unit": "Unicode characters; all string-typed rows including empties",
+      "lengths": {
+        "prompt": {
+          "min": 6,
+          "p50": 483,
+          "p90": 2415,
+          "p99": 5420,
+          "max": 14888,
+          "mean": 864.4683686715707
+        },
+        "response": {
+          "min": 0,
+          "p50": 1310,
+          "p90": 3484,
+          "p99": 5537,
+          "max": 6713,
+          "mean": 1618.5951968844656
+        }
+      }
+    },
+    "overlap": {
+      "train__test": {
+        "unique_exact_pairs": 0,
+        "unique_prompts": 0
+      },
+      "sample_train__train": {
+        "unique_exact_pairs": 1000,
+        "unique_prompts": 1000
+      },
+      "sample_train__test": {
+        "unique_exact_pairs": 0,
+        "unique_prompts": 0
+      }
+    },
+    "directly_comparable_to_official": false
+  },
+  "output": "artifacts/pa5-supplement-qwen/preflight/20261002/acceptance-v2"
+}

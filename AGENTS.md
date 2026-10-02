@@ -98,3 +98,7 @@ Remember: The goal is for students to learn by doing, not by watching an AI gene
 For CS336 specifically, AI tools may be used for low-level programming help and high-level conceptual questions, but not for directly solving assignment problems. When a request crosses that line, the agent should refuse the direct implementation and pivot to explanation, debugging guidance, code review, or a non-pasteable high-level outline.
 
 When in doubt, refer the student to the course staff or office hours. 
+
+## Qwen adapted track (user authorization 2026-10-02)
+
+The newer Qwen request supersedes the older preflight-only list as follows: allow Qwen configuration/tokenizer checks, exact three SFT mirror file downloads/audits, Qwen judge compatibility design, CPU sanity/tests, documentation, commit/push on learning/pa5-supplement. Keep official Llama records unchanged. All Qwen reports/manifests use directly_comparable_to_official=false. No full weights, generation, training or judge inference in this Gate. After archival stop for the next Gate approval. Human review remains pending until a person reviews it.

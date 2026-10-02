@@ -49,3 +49,7 @@ SFT保存数据来源/revision/SHA/数量/split/preprocessing/模板/packing/seq
 ## 现有历史证据边界
 
 O1历史2026-07-16 raw丢失；2026-09-14复现单独登记，不替换历史。O1复现human review仍pending。O2仅单卡两侧独立smoke；训练侧完整启动日志曾未保存，保留实际summary而不补造日志。新规范不追溯伪造旧缺项；索引必须披露缺失。
+
+## Qwen adapted namespace (2026-10-02)
+
+Qwen uses notes/experiments/SUP-QWEN-* and artifacts/pa5-supplement-qwen/{preflight,baseline,sft,dpo}; create only populated directories. Official Llama history remains intact. Qwen manifests additionally require official/adapted model mapping, immutable model/tokenizer/judge/dataset commits, adaptation_reason and directly_comparable_to_official=false. Current preparation has no baseline/sft/dpo raw generation directories because there have been no such runs. Downloadable upstream raw may stay outside Git with fixed URL+SHA+size and a checked restore script; trained checkpoints cannot be reconstructed by downloading Base and need actual persistent storage.

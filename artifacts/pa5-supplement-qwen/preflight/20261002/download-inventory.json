@@ -1,0 +1,191 @@
+[
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/config.json",
+    "bytes": 686,
+    "sha256": "267ce68584c5f24c3b267d934db2de68dd21d1ca677fb78ed809eb60067f7642"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "generation_config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/generation_config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/generation_config.json",
+    "bytes": 138,
+    "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "tokenizer.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/tokenizer.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/tokenizer.json",
+    "bytes": 7031645,
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "tokenizer_config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/tokenizer_config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/tokenizer_config.json",
+    "bytes": 7228,
+    "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "merges.txt",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/merges.txt",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/merges.txt",
+    "bytes": 1671839,
+    "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "vocab.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/vocab.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/vocab.json",
+    "bytes": 2776833,
+    "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "README.md",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/README.md",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/README.md",
+    "bytes": 3819,
+    "sha256": "8a23291de92bddc940674a5b7088b8443bde94a1df7f1911703d2cd6554c7328"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "file": "LICENSE",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B/resolve/d149729398750b98c0af14eb82c78cfe92750796/LICENSE",
+    "local_path": "models/qwen-preflight/Qwen2.5-7B/LICENSE",
+    "bytes": 11343,
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/config.json",
+    "bytes": 663,
+    "sha256": "14ca217334fe0fd10148413592d68c99eeb33431ed89c1afa130fee560be2a29"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "generation_config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/generation_config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/generation_config.json",
+    "bytes": 242,
+    "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "tokenizer.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/tokenizer.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "tokenizer_config.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/tokenizer_config.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "merges.txt",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/merges.txt",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "vocab.json",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/vocab.json",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "README.md",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/README.md",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/README.md",
+    "bytes": 6259,
+    "sha256": "62d6f2176c0925b7c7e5ec6c5ee06cad83868bb21a8e25d58283e3d7707d3f79"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-72B-Instruct",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "file": "LICENSE",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/LICENSE",
+    "local_path": "models/qwen-preflight/Qwen2.5-72B-Instruct/LICENSE",
+    "bytes": 6962,
+    "sha256": "8aff84e2629edb092f195c1d91bc368d8bb40eeb5fcedce2df19e405ee2cc876"
+  },
+  {
+    "repo": "garg-aayush/sft-cs336-assign5-datasets",
+    "revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "file": "sft-instruct/sample_train.jsonl",
+    "url": "https://huggingface.co/datasets/garg-aayush/sft-cs336-assign5-datasets/resolve/ac710ef808346bf458d7b093bfe4586cb15699d9/sft-instruct/sample_train.jsonl",
+    "local_path": "data/qwen-sft-mirror/sft-instruct/sample_train.jsonl",
+    "bytes": 2492043,
+    "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df"
+  },
+  {
+    "repo": "garg-aayush/sft-cs336-assign5-datasets",
+    "revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "file": "sft-instruct/train.jsonl",
+    "url": "https://huggingface.co/datasets/garg-aayush/sft-cs336-assign5-datasets/resolve/ac710ef808346bf458d7b093bfe4586cb15699d9/sft-instruct/train.jsonl",
+    "local_path": "data/qwen-sft-mirror/sft-instruct/train.jsonl",
+    "bytes": 532421064,
+    "sha256": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913"
+  },
+  {
+    "repo": "garg-aayush/sft-cs336-assign5-datasets",
+    "revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "file": "sft-instruct/test.jsonl",
+    "url": "https://huggingface.co/datasets/garg-aayush/sft-cs336-assign5-datasets/resolve/ac710ef808346bf458d7b093bfe4586cb15699d9/sft-instruct/test.jsonl",
+    "local_path": "data/qwen-sft-mirror/sft-instruct/test.jsonl",
+    "bytes": 58872258,
+    "sha256": "ce84dd834a7bbfc622cb3b50dc6c233e7dd91e002fd84f7cf86f70762a2c9ed9"
+  },
+  {
+    "repo": "garg-aayush/sft-cs336-assign5-datasets",
+    "revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "file": "README.md",
+    "url": "https://huggingface.co/datasets/garg-aayush/sft-cs336-assign5-datasets/resolve/ac710ef808346bf458d7b093bfe4586cb15699d9/README.md",
+    "local_path": "data/qwen-sft-mirror/README.md",
+    "bytes": 2647,
+    "sha256": "34abdb59c1bd50cf135b7b2aa240427dec9ae2d9c17dc53922ce1fc6a2151b3c"
+  },
+  {
+    "repo": "garg-aayush/sft-cs336-assign5-datasets",
+    "revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "file": "sft-instruct/README.md",
+    "url": "https://huggingface.co/datasets/garg-aayush/sft-cs336-assign5-datasets/resolve/ac710ef808346bf458d7b093bfe4586cb15699d9/sft-instruct/README.md",
+    "local_path": "data/qwen-sft-mirror/sft-instruct/README.md",
+    "bytes": 1488,
+    "sha256": "b94a88ee437e773a3229b606b4ad8bfcd6165586aadabb99e788b228fc8956c3"
+  }
+]

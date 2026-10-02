@@ -1,0 +1,16 @@
+{
+  "compared_files": {
+    "dataset-acceptance.json": true,
+    "sample-tokenization.json": true,
+    "policy-tokenizer.json": true,
+    "judge-tokenizer.json": true,
+    "review-packet.jsonl": true,
+    "judge-semantic-messages.json": true,
+    "alpaca_eval-qwen-chat-template.txt": true,
+    "safety-qwen-chat-template.txt": true
+  },
+  "all_equal": true,
+  "source_assets_verified": 21,
+  "method": "byte-for-byte comparisons of independent CPU audit results; each source asset SHA verified from pinned inventory",
+  "directly_comparable_to_official": false
+}

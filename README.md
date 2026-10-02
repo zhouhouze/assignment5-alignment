@@ -31,3 +31,9 @@ uv run pytest tests/test_grpo.py
 Initially, all tests should fail with `NotImplementedError`s.
 To connect your implementation to the tests, complete the
 functions in [./tests/adapters.py](./tests/adapters.py).
+
+## PA5 Supplement: Official / Adapted tracks
+
+Official configuration keeps Llama 3.1 8B and Llama 3.3 70B Instruct. The separate **Qwen Adapted Reproduction** uses Qwen2.5-7B Base and Qwen2.5-72B-Instruct Judge, with a pinned third-party SFT mirror. `directly_comparable_to_official=false`; compare Base→SFT→DPO within the Qwen track, with prompt confounders disclosed.
+
+See the [Qwen preflight report](notes/experiments/SUP-QWEN-00-config/preflight-report.md), [configuration](configs/pa5_supplement_qwen.json), and [experiment index](notes/experiments/README.md). No Qwen model generation or training has started.

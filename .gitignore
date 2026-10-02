@@ -166,3 +166,5 @@ cython_debug/
 #.idea/
 
 *.DS_Store
+# Pinned upstream SFT mirror; restore via Qwen preflight inventory.
+/data/qwen-sft-mirror/

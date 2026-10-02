@@ -16,3 +16,17 @@
 准确的提交哈希与分支可由GitHub每个文件的History查询；不在commit内写自身SHA。代码执行来源和产物hash见各manifest。全部大小/位置/SHA登记见[artifact-registry.json](artifact-registry.json)。旧记录不因新索引而被补标为完全合规。
 
 当前授权只覆盖环境修复、HF检查、parser、测试分类、SFT来源调查与归档/push；不开放baseline full、SFT、DPO或70B judge。
+
+## Qwen Adapted Reproduction（独立路线）
+
+`directly_comparable_to_official=false`。官方Llama3.1-8B + Llama3.3-70B记录保留；新路线Qwen2.5-7B Base + Qwen2.5-72B-Instruct Judge，SFT使用第三方固定mirror。
+
+| Phase | Status | Evidence |
+| --- | --- | --- |
+| SUP-QWEN-00 | Config/tokenizer CPU验收完成；未加载权重 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
+| SUP-QWEN-01 | prompt/parser可用；runner/生成待下一Gate | [baseline计划](SUP-QWEN-01-baseline/baseline-plan.md) |
+| SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
+| SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
+| SUP-QWEN-final | 无模型结果 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
+
+Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。本轮授权到preflight归档/push，之后停止等待baseline smoke/pilot批准；不自行generation/SFT/DPO/judge。

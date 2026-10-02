@@ -32,3 +32,7 @@
 - Decision：环境按uv.lock恢复，模型不下载；Main28个产物仅固定提交引用，raw不覆盖；稳定Gate必须commit/push。
 - Remaining：HF账号登录和license、processed SFT数据、下一Gate授权。
 - Learner explanation status：Pending；未启动generation/training/judge。Next task：解决HF访问后讨论baseline runner。
+
+## 2026-10-02 Qwen adapted preflight
+
+概念：同一训练结构不等于相同模型/数据/judge标尺。Qwen EOS与Judge EOS不同；schema合法仍不等于训练数据合格。修改独立配置、CPU审计、Judge模板、sanity与归档。30项sanity/parser与持久judge配置检查通过；官方4通过3NotImplemented；GRPO19NotImplemented属于独立Supplement脚手架。问题：24空字段、样本真实性/约束遵循/安全偏差。决定：raw保留、SFT准入阻塞，不提前实现训练。Learner explanation status: pending；下一学习检查：为何PAD==EOS时不能按ID遮罩全部EOS？

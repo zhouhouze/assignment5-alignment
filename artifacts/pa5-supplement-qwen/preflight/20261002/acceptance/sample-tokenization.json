@@ -1,0 +1,25 @@
+{
+  "scope": "sample_train only; arithmetic next-token packing audit, not implemented Dataset",
+  "num_documents": 1000,
+  "total_tokens": 519206,
+  "tokens_per_document": {
+    "min": 46,
+    "p50": 460,
+    "p90": 960,
+    "p99": 1274,
+    "max": 2442,
+    "mean": 519.206
+  },
+  "seq_length": 512,
+  "packed_sequences": 1014,
+  "input_target_pairs": 519168,
+  "unconsumed_suffix_tokens": 37,
+  "drop_remainder_tokens": 37,
+  "packing_utilization": 0.9999287372039946,
+  "delimiter": "<|endoftext|>",
+  "delimiter_id": 151643,
+  "add_special_tokens": false,
+  "formula": "N=floor((T-1)/512); inputs S[i:i+512], labels S[i+1:i+513]. One lookahead token; no tensors/training.",
+  "full_train_token_statistics": null,
+  "directly_comparable_to_official": false
+}

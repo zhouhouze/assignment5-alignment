@@ -1,0 +1,94 @@
+{
+  "experiment_type": "PA5 Supplement Adapted Reproduction",
+  "directly_comparable_to_official": false,
+  "official_policy_model": "meta-llama/Meta-Llama-3.1-8B",
+  "adapted_policy_model": "Qwen/Qwen2.5-7B",
+  "official_judge_model": "meta-llama/Llama-3.3-70B-Instruct",
+  "adapted_judge_model": "Qwen/Qwen2.5-72B-Instruct",
+  "adaptation_reason": "Replace gated Llama models while preserving PA5 Supplement post-training structure.",
+  "model_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "tokenizer_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "judge_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+  "judge_tokenizer_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+  "dataset_repo": "garg-aayush/sft-cs336-assign5-datasets",
+  "dataset_revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+  "dataset_files": [
+    "sft-instruct/sample_train.jsonl",
+    "sft-instruct/train.jsonl",
+    "sft-instruct/test.jsonl"
+  ],
+  "seed": 0,
+  "status": "preflight_only",
+  "generation_authorized": false,
+  "baseline": {
+    "prompt_directory": "cs336_alignment/prompts_safety",
+    "system_prompt": "zero_shot_system_prompt.prompt",
+    "apply_chat_template": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "n": 1,
+    "stop": [
+      "# Query:"
+    ],
+    "include_stop_str_in_output": false,
+    "max_tokens": 512,
+    "max_model_len": 4096,
+    "batch_size": 4,
+    "gpu_memory_utilization": 0.75,
+    "implementation_choices": [
+      "max_tokens",
+      "max_model_len",
+      "batch_size",
+      "gpu_memory_utilization"
+    ],
+    "generation_config": "vllm"
+  },
+  "sft": {
+    "template": "cs336_alignment/prompts_safety/alpaca_sft.prompt",
+    "delimiter": "tokenizer.eos_token_id",
+    "add_special_tokens": false,
+    "context_length": 512,
+    "effective_batch_size": 32,
+    "epochs": 1,
+    "learning_rate": 2e-05,
+    "optimizer": "AdamW",
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "dtype": "bfloat16",
+    "flash_attention": "flash_attention_2 after model smoke",
+    "trainer": "self-implemented; not yet implemented",
+    "quantization": null,
+    "cpu_offload": false
+  },
+  "dpo": {
+    "policy_checkpoint": null,
+    "reference_checkpoint": null,
+    "checkpoint_rule": "same accepted Qwen SFT checkpoint; reference frozen; never Base as reference",
+    "dataset": "existing Anthropic HH",
+    "effective_batch_size": 64,
+    "beta": 0.1,
+    "learning_rate": 1e-06,
+    "optimizer": "RMSprop",
+    "validation_examples": 200,
+    "epochs": 1,
+    "gradient_accumulation": true
+  },
+  "judge": {
+    "apply_chat_template": true,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "tensor_parallel_size": 2,
+    "alpaca_eval": {
+      "reference": "existing GPT-4 Turbo reference",
+      "max_tokens": 100,
+      "max_model_len": 7000
+    },
+    "safety": {
+      "max_tokens": 16,
+      "max_model_len": 6144,
+      "invalid_output": "explicit invalid; never silently safe"
+    }
+  }
+}

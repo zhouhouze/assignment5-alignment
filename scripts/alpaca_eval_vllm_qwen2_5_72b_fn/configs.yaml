@@ -1,0 +1,24 @@
+# PA5 Supplement Adapted Reproduction; directly_comparable_to_official=false
+# Configuration only. No judge inference performed. Preserve official semantic rubric.
+alpaca_eval_vllm_qwen2_5_72b_fn:
+  prompt_template: "alpaca_eval_vllm_qwen2_5_72b_fn/alpaca_eval_fn.txt"
+  fn_completions: "vllm_local_completions"
+  completions_kwargs:
+    model_name: "Qwen/Qwen2.5-72B-Instruct"
+    model_kwargs:
+      revision: "495f39366efef23836d0cfae4fbe635880d2be31"
+      tokenizer_revision: "495f39366efef23836d0cfae4fbe635880d2be31"
+      tokenizer_mode: "auto"
+      trust_remote_code: false
+      generation_config: "vllm"
+      dtype: "bfloat16"
+      max_model_len: 7000
+      tensor_parallel_size: 2
+      seed: 0
+    is_chatml_prompt: false
+    stop_token_ids: [151645, 151643]
+    max_new_tokens: 100
+    temperature: 0.0
+    top_p: 1.0
+    batch_size: 900
+  fn_completion_parser: "ranking_parser"

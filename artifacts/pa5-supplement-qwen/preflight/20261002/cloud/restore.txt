@@ -1,0 +1,5 @@
+VERIFIED models/qwen-preflight/Qwen2.5-7B/config.json 267ce68584c5f24c3b267d934db2de68dd21d1ca677fb78ed809eb60067f7642
+VERIFIED models/qwen-preflight/Qwen2.5-7B/generation_config.json 8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8
+VERIFIED models/qwen-preflight/Qwen2.5-7B/tokenizer.json c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+VERIFIED models/qwen-preflight/Qwen2.5-7B/tokenizer_config.json c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9
+VERIFIED models/qwen-preflight/Qwen2.5-7B/merges.txt 599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3

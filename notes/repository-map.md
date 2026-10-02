@@ -14,3 +14,7 @@
 - `cs336_alignment/modal_utils_safety.py`：课程共享卷路径参考；当前智星云未挂载。
 
 本分支没有继承个人O1/O2代码、结果或笔记。Main官方脚手架随官方仓库存在，但不属于Supplement实验产物。
+
+## 2026-10-02 Qwen adapted preflight
+
+新增configs/pa5_supplement_qwen.json、scripts/qwen_preflight.py、restore_qwen_preflight_assets.py、Qwen annotator目录、tests/test_qwen_preflight.py；记录SUP-QWEN-*与artifacts/pa5-supplement-qwen。大数据在ignored data/qwen-sft-mirror，tokenizer在ignored models/qwen-preflight，按inventory可重取。
