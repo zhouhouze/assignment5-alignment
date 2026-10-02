@@ -1,0 +1,84 @@
+{
+  "captured_date": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "phase": "Gate A audit only",
+  "base_commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+  "remote": {
+    "hostname": "ubuntu24",
+    "os": "Ubuntu 24.04.3 LTS",
+    "gpu": "RTX 5090",
+    "gpu_count": 1,
+    "vram_mib": 32607,
+    "used_vram_mib": 15,
+    "gpu_utilization_percent": 0,
+    "driver": "595.84",
+    "driver_cuda_capability": "13.2",
+    "torch_cuda_runtime": null,
+    "python": "3.14.7",
+    "git_on_path": false,
+    "uv_on_path": false,
+    "disk_df_h": {
+      "size": "196G",
+      "used": "28G",
+      "available": "159G"
+    },
+    "packages_in_default_python": {
+      "torch": null,
+      "transformers": null,
+      "vllm": null,
+      "flash-attn": null,
+      "huggingface-hub": null,
+      "uv": null
+    },
+    "course_shared_volume_exists": false,
+    "project_root_cs336_exists": false
+  },
+  "local_tests": {
+    "python": "3.12.13",
+    "torch": "2.10.0",
+    "transformers": "5.7.0",
+    "pytest": "8.3.5",
+    "tokenizers": "0.22.2",
+    "offline": true,
+    "failed": 7,
+    "passed": 0,
+    "failure_type": "NotImplementedError",
+    "duration_seconds": 0.76,
+    "log": "supplement-tests.txt",
+    "interpreter": "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python"
+  },
+  "access": {
+    "local_standard_hf_credential_found": false,
+    "remote_standard_hf_credential_found": false,
+    "user_license_acceptance": "unknown",
+    "models": [
+      {
+        "model_id": "meta-llama/Meta-Llama-3.1-8B",
+        "metadata_http": 200,
+        "gated": "manual",
+        "model_revision_candidate": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+        "tokenizer_revision_candidate": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+        "config_main_http": 401,
+        "tokenizer_access_verified": false,
+        "weights_downloaded": false
+      },
+      {
+        "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+        "metadata_http": 200,
+        "gated": "manual",
+        "model_revision_candidate": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+        "tokenizer_revision_candidate": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+        "config_main_http": 401,
+        "tokenizer_access_verified": false,
+        "weights_downloaded": false
+      }
+    ]
+  },
+  "actions": {
+    "downloaded_model_weights": false,
+    "ran_generation": false,
+    "ran_training": false,
+    "ran_judge": false,
+    "modified_implementation": false
+  }
+}

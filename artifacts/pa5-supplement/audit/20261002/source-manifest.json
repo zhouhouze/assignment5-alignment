@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-02",
+  "base_commit": "c2734a26308710949fe13226960a1e8cece94b7e",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "e536d0f02c6654bbf8e218e33e5efaf2d41133a5ee36811756d53cebee8b456b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a3c61c9a6adc99e0910190a7abfe1daaefd70943bf331711c04e4eea1afe639e"
+    },
+    {
+      "path": "cs336_alignment/modal_utils_safety.py",
+      "sha256": "369116fcbfd751655380007dfe22d62ba7ca304a2574d1d1f9bbcaf0c3b2312a"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/alpaca_eval_zero_shot.prompt",
+      "sha256": "3a8e39af710d54c596f4f641d4ec4fab42fd9dfec0ab4a1e75e852921ee7a81f"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/alpaca_sft.prompt",
+      "sha256": "fbd4a4672e92a2ecb3a849a6417ce7be683dc02382edc11a9ce0d58a9ac9449e"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/gsm8k_zero_shot.prompt",
+      "sha256": "6f5e780066498f89f85cae74968e543ccf78e9d21a57210734deb4e1cc565eda"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/mmlu_zero_shot.prompt",
+      "sha256": "88263244d25b38343091903527ebd2748947743a386f58562996a54020d8c5b8"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/simple_safety_tests_zero_shot.prompt",
+      "sha256": "3a8e39af710d54c596f4f641d4ec4fab42fd9dfec0ab4a1e75e852921ee7a81f"
+    },
+    {
+      "path": "cs336_alignment/prompts_safety/zero_shot_system_prompt.prompt",
+      "sha256": "1b4854e31925e2823f701de2d7ac895297dbae563d03077a68713ef420075180"
+    },
+    {
+      "path": "cs336_spring2026_assignment5_supplement_safety_rlhf.pdf",
+      "sha256": "30a2de73c2b95b9302bf31640f5f6016ef884d611cba94c9a0fdb1e505ad07e3"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "c724414eef01a9e74df29426de7a9411e1716acb97f9fab5b1019b173ac9a94d"
+    },
+    {
+      "path": "scripts/alpaca_eval_vllm_llama3_3_70b_fn/alpaca_eval_fn.txt",
+      "sha256": "82ac0970dd89617471289d34f2dc478fd5bfa3d8f4052fc9b37df03b96f3a555"
+    },
+    {
+      "path": "scripts/alpaca_eval_vllm_llama3_3_70b_fn/configs.yaml",
+      "sha256": "e11e7b83d3923fceffeaab7b9253c22a148cce33d4e04d14cd557590834ada31"
+    },
+    {
+      "path": "scripts/evaluate_safety.py",
+      "sha256": "af6d75a680057c76f2faf1600fb6c5a361e9bb43c801ac03811e6c055bbb87c3"
+    },
+    {
+      "path": "tests/adapters.py",
+      "sha256": "836f3022a7df974b35428cf619c2cc97fe928563ce842eb1e8099b49e03a8b59"
+    },
+    {
+      "path": "tests/test_data.py",
+      "sha256": "8c74c2ce265c6f05e40a80ff0cfcdae1f445f240497a59452de816dcee68ca1f"
+    },
+    {
+      "path": "tests/test_dpo.py",
+      "sha256": "69e0ea7ffee86ed15f4262ac682c265886a26bacafb920c50c7647ab98a144e5"
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "sha256": "dcc67e3fb747443b57e3679b9fddf31c9d7743d0ca86b65a89e1307a192c28b9"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "0c58eabd82d0f9f3ecce25489a169f668f4458450b8d72999365ee7c63fa5629"
+    }
+  ]
+}

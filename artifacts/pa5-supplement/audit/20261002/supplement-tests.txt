@@ -1,0 +1,64 @@
+
+tests/test_data.py::test_packed_sft_dataset FAILED                       [ 14%]
+tests/test_data.py::test_iterate_batches FAILED                          [ 28%]
+tests/test_dpo.py::test_per_instance_dpo_loss FAILED                     [ 42%]
+tests/test_metrics.py::test_parse_mmlu_response FAILED                   [ 57%]
+tests/test_metrics.py::test_parse_mmlu_response_unknown FAILED           [ 71%]
+tests/test_metrics.py::test_parse_gsm8k_response FAILED                  [ 85%]
+tests/test_metrics.py::test_parse_gsm8k_response_unknown FAILED          [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_packed_sft_dataset ____________________________
+tests/test_data.py:18: in test_packed_sft_dataset
+    packed_sft_dataset = get_packed_sft_dataset(
+tests/adapters.py:360: in get_packed_sft_dataset
+    raise NotImplementedError
+E   NotImplementedError
+_____________________________ test_iterate_batches _____________________________
+tests/test_data.py:60: in test_iterate_batches
+    packed_sft_dataset = get_packed_sft_dataset(
+tests/adapters.py:360: in get_packed_sft_dataset
+    raise NotImplementedError
+E   NotImplementedError
+__________________________ test_per_instance_dpo_loss __________________________
+tests/test_dpo.py:53: in test_per_instance_dpo_loss
+    loss = compute_per_instance_dpo_loss(
+tests/adapters.py:461: in run_compute_per_instance_dpo_loss
+    raise NotImplementedError
+E   NotImplementedError
+----------------------------- Captured stderr call -----------------------------
+Loading weights:   0%|          | 0/28 [00:00<?, ?it/s]Loading weights: 100%|██████████| 28/28 [00:00<00:00, 12489.69it/s]
+Loading weights:   0%|          | 0/28 [00:00<?, ?it/s]Loading weights: 100%|██████████| 28/28 [00:00<00:00, 12083.60it/s]
+___________________________ test_parse_mmlu_response ___________________________
+tests/test_metrics.py:19: in test_parse_mmlu_response
+    parsed_response = run_parse_mmlu_response(
+tests/adapters.py:409: in run_parse_mmlu_response
+    raise NotImplementedError
+E   NotImplementedError
+_______________________ test_parse_mmlu_response_unknown _______________________
+tests/test_metrics.py:33: in test_parse_mmlu_response_unknown
+    parsed_response = run_parse_mmlu_response(
+tests/adapters.py:409: in run_parse_mmlu_response
+    raise NotImplementedError
+E   NotImplementedError
+__________________________ test_parse_gsm8k_response ___________________________
+tests/test_metrics.py:44: in test_parse_gsm8k_response
+    parsed_response = run_parse_gsm8k_response(model_output=model_output)
+tests/adapters.py:426: in run_parse_gsm8k_response
+    raise NotImplementedError
+E   NotImplementedError
+______________________ test_parse_gsm8k_response_unknown _______________________
+tests/test_metrics.py:53: in test_parse_gsm8k_response_unknown
+    parsed_response = run_parse_gsm8k_response(model_output=model_output)
+tests/adapters.py:426: in run_parse_gsm8k_response
+    raise NotImplementedError
+E   NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_data.py::test_packed_sft_dataset - NotImplementedError
+FAILED tests/test_data.py::test_iterate_batches - NotImplementedError
+FAILED tests/test_dpo.py::test_per_instance_dpo_loss - NotImplementedError
+FAILED tests/test_metrics.py::test_parse_mmlu_response - NotImplementedError
+FAILED tests/test_metrics.py::test_parse_mmlu_response_unknown - NotImplement...
+FAILED tests/test_metrics.py::test_parse_gsm8k_response - NotImplementedError
+FAILED tests/test_metrics.py::test_parse_gsm8k_response_unknown - NotImplemen...
+============================== 7 failed in 0.76s ===============================
