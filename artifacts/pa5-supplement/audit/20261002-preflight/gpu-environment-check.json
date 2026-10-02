@@ -1,0 +1,20 @@
+{
+  "kind": "environment_check",
+  "model_loaded": false,
+  "torch": "2.10.0+cu129",
+  "cuda_runtime": "12.9",
+  "transformers": "5.7.0",
+  "vllm": "0.19.1",
+  "flash_attn": "2.8.3",
+  "cuda_available": true,
+  "gpu_count": 1,
+  "bf16_matmul_finite": true,
+  "flash_attention_shape": [
+    1,
+    16,
+    2,
+    64
+  ],
+  "flash_attention_finite": true,
+  "passed": true
+}

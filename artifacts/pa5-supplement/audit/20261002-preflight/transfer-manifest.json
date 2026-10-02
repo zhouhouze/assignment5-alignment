@@ -1,0 +1,47 @@
+[
+  {
+    "name": "environment.json",
+    "bytes": 1733,
+    "sha256": "10a5f61e917880952da94f676a46c233ae88e57f3ef06f70aedf608f8d728b70"
+  },
+  {
+    "name": "gpu-environment-check.json",
+    "bytes": 373,
+    "sha256": "74be5ac22146d09d479ec692bcefb6c8806e8037923f95aa88d92e7e355b7784"
+  },
+  {
+    "name": "gpu-environment-check.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "cloud-supplement-tests.txt",
+    "bytes": 4077,
+    "sha256": "b45ca10bf497ddfaadc732030244db9c308f1cec7ad25cd944a2fa163067e1aa"
+  },
+  {
+    "name": "cloud-supplement-tests.exit",
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  {
+    "name": "dataset-verification.json",
+    "bytes": 65,
+    "sha256": "a88dc535df52cd576553186dcd42543e62f28ef3a0bdf80adeeb67db970b4624"
+  },
+  {
+    "name": "environment-install.log.gz",
+    "bytes": 3077,
+    "sha256": "72666b35212c3419da5bc1da3d47ab768e34d2ac239918a13ed31df032c0c142"
+  },
+  {
+    "name": "python-bootstrap.log.gz",
+    "bytes": 369,
+    "sha256": "a6a620581ccb50a50ead5318770b208132d0271c764ef010c2f9b352581ccd00"
+  },
+  {
+    "name": "environment-install.exit",
+    "bytes": 2,
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  }
+]

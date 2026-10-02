@@ -1,0 +1,41 @@
+{
+  "captured_at": "2026-10-02T13:27:08.692617+00:00",
+  "python": "3.12.13 (main, May 10 2026, 19:20:41) [Clang 22.1.3 ]",
+  "executable": "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+  "packages": {
+    "torch": "2.10.0",
+    "transformers": "5.7.0",
+    "vllm": null,
+    "flash-attn": null,
+    "huggingface-hub": "1.13.0",
+    "alpaca-eval": null
+  },
+  "uv": {
+    "exit_code": 0,
+    "stdout": "uv 0.11.13 (4512a3931 2026-05-10 aarch64-apple-darwin)"
+  },
+  "git_version": {
+    "exit_code": 0,
+    "stdout": "git version 2.50.1 (Apple Git-155)"
+  },
+  "git_branch": {
+    "exit_code": 0,
+    "stdout": "learning/pa5-supplement"
+  },
+  "git_commit": {
+    "exit_code": 0,
+    "stdout": "4b6014e5aab04eac304b98122653a5fdf43a785b"
+  },
+  "git_status": {
+    "exit_code": 0,
+    "stdout": "## learning/pa5-supplement...origin/learning/pa5-supplement\n M AGENTS.md\n M README.md\n M notes/concept-map.md\n M notes/experiments/SUP-00-environment/environment.md\n M notes/experiments/SUP-01-baseline/baseline-plan.md\n M notes/repository-map.md\n?? artifacts/pa5-supplement/audit/20261002-preflight/hf-access-preflight.json\n?? artifacts/pa5-supplement/audit/20261002-preflight/sft-sources.json\n?? notes/experiments/README.md\n?? notes/experiments/SUP-00-environment/preflight-report.md\n?? notes/experiments/SUP-02-sft/\n?? notes/experiments/SUP-final/\n?? notes/experiments/archive-policy.md\n?? notes/experiments/artifact-registry.json\n?? notes/experiments/manifest.template.json\n?? scripts/audit_supplement_environment.py\n?? scripts/setup_supplement_environment.sh"
+  },
+  "gpu": {
+    "error_type": "FileNotFoundError"
+  },
+  "disk": {
+    "exit_code": 0,
+    "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   188Gi   246Gi    44%    2.9M  2.6G    0%   /System/Volumes/Data"
+  },
+  "model_access": []
+}

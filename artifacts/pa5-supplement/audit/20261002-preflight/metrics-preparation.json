@@ -1,0 +1,24 @@
+{
+  "kind": "preparation_verification_not_model_evaluation",
+  "local_tests": {
+    "official_supplement_passed": 4,
+    "official_supplement_unimplemented_failed": 3,
+    "edge_tests_passed": 16,
+    "isolated_official_grpo_unimplemented_failed": 19
+  },
+  "cloud_tests": {
+    "passed": 20,
+    "unimplemented_failed": 3
+  },
+  "dataset_sha256_checks": {
+    "passed": 179,
+    "failed": 0
+  },
+  "gpu_environment_check_passed": true,
+  "model_access_authorized": false,
+  "baseline_generation_started": false,
+  "sft_started": false,
+  "dpo_started": false,
+  "judge_started": false,
+  "model_metrics": null
+}

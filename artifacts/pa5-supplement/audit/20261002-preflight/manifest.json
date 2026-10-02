@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "template_only": false,
+  "experiment_id": "SUP-00-01-preflight",
+  "run_id": "20261002-supplement-preflight",
+  "experiment_stage": "PREPARATION",
+  "date": "2026-10-02",
+  "git_branch": "learning/pa5-supplement",
+  "git_commit": "4b6014e5aab04eac304b98122653a5fdf43a785b",
+  "git_dirty_at_local_tests": true,
+  "execution_source_note": "Parser tests ran before the matching parser checkpoint; source bytes were preserved in 4b6014e. Environment helper scripts are archived in this later archive commit and identified below by hash. No generation or training occurred.",
+  "source_hashes": {
+    "cs336_alignment/supplement_metrics.py": "debd4564921960f1e5d21fadeb4ef4f8d937bf4f376aa96b64fac277587a18c6",
+    "tests/adapters.py": "00a2130004071e57d646559258f2f11eeb57b07fa0e297345053fe6a8c87939b",
+    "tests/test_metrics.py": "dcc67e3fb747443b57e3679b9fddf31c9d7743d0ca86b65a89e1307a192c28b9",
+    "tests/test_supplement_metrics_edges.py": "0553fab1aa4fb9684fceb5a4a7f3c894e81af1c88bf4e9937baa4b9b96704785",
+    "scripts/audit_supplement_environment.py": "61018169b0967f23375f8317f4126ef02df6bc2bab4248f35c32dd03f3771e8a",
+    "scripts/setup_supplement_environment.sh": "8f71eaff9bab33dbcd636fce611097bc48e44bf77d3476ef6b5fea225e3137d9",
+    "pyproject.toml": "c724414eef01a9e74df29426de7a9411e1716acb97f9fab5b1019b173ac9a94d",
+    "uv.lock": "0c58eabd82d0f9f3ecce25489a169f668f4458450b8d72999365ee7c63fa5629",
+    "artifacts/pa5-supplement/audit/20261002-preflight/audit-helper-hf-initial.py": "e62cfd8ea2667cac2de8610632dc97aa3153370687e81d850d8a8ff8d4a3e0fa",
+    "artifacts/pa5-supplement/audit/20261002-preflight/gpu-environment-check.py": "bbf172176aeb9c2345b74a7fdb59c7e1a8161db04f5e98af5aea0e71a82e53f5"
+  },
+  "model_name": "meta-llama/Meta-Llama-3.1-8B",
+  "model_revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+  "tokenizer_revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+  "model_loaded": false,
+  "dataset_name": "official tests fixtures and data inventory only",
+  "dataset_split": null,
+  "dataset_hash": null,
+  "dataset_inventory_ref": "../20261002/dataset-inventory.json",
+  "dataset_inventory_sha256": "25c0cd45967df5a151b9e16548a843d339e2c2bfcd8427a6a687a1e07e31ddeb",
+  "prompt_name": null,
+  "prompt_hash": null,
+  "evaluator_name": "supplement_metrics answer parsers; pytest",
+  "evaluator_version": "4b6014e",
+  "evaluator_hash": "debd4564921960f1e5d21fadeb4ef4f8d937bf4f376aa96b64fac277587a18c6",
+  "seed": null,
+  "generation_params": null,
+  "training_params": null,
+  "status": "completed",
+  "hardware_ref": "environment.json",
+  "software_ref": "environment.json",
+  "human_review_status": "not_applicable_no_model_outputs",
+  "not_applicable": {
+    "generation_params": "No generation",
+    "training_params": "No training",
+    "prompt_name": "No model prompting",
+    "prompt_hash": "No model prompting",
+    "dataset_split": "No benchmark evaluated",
+    "dataset_hash": "File-level inventory linked instead of inventing an aggregate dataset hash",
+    "seed": "Deterministic parser tests; no model sampling"
+  },
+  "unverified": [
+    "HF gated access/license",
+    "course processed SFT dataset",
+    "8B generation",
+    "70B judge",
+    "SFT and DPO"
+  ],
+  "artifacts": [
+    {
+      "name": "audit-helper-hf-initial.py",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/audit-helper-hf-initial.py",
+      "bytes": 3451,
+      "sha256": "e62cfd8ea2667cac2de8610632dc97aa3153370687e81d850d8a8ff8d4a3e0fa",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "cloud-supplement-tests.exit",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/cloud-supplement-tests.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "cloud-supplement-tests.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/cloud-supplement-tests.txt",
+      "bytes": 4077,
+      "sha256": "b45ca10bf497ddfaadc732030244db9c308f1cec7ad25cd944a2fa163067e1aa",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "dataset-verification.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/dataset-verification.json",
+      "bytes": 65,
+      "sha256": "a88dc535df52cd576553186dcd42543e62f28ef3a0bdf80adeeb67db970b4624",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "environment-install.exit",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/environment-install.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "environment-install.log.gz",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/environment-install.log.gz",
+      "bytes": 3077,
+      "sha256": "72666b35212c3419da5bc1da3d47ab768e34d2ac239918a13ed31df032c0c142",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "environment.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/environment.json",
+      "bytes": 1733,
+      "sha256": "10a5f61e917880952da94f676a46c233ae88e57f3ef06f70aedf608f8d728b70",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "github-refs.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/github-refs.json",
+      "bytes": 379,
+      "sha256": "a89340882b8e9c2b00a75f9f067d777692cb1ba58df0b4b964a35a9b469b2f92",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "gpu-environment-check.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/gpu-environment-check.json",
+      "bytes": 373,
+      "sha256": "74be5ac22146d09d479ec692bcefb6c8806e8037923f95aa88d92e7e355b7784",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "gpu-environment-check.py",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/gpu-environment-check.py",
+      "bytes": 1638,
+      "sha256": "bbf172176aeb9c2345b74a7fdb59c7e1a8161db04f5e98af5aea0e71a82e53f5",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "gpu-environment-check.stderr.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/gpu-environment-check.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "gsm8k-tests.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/gsm8k-tests.txt",
+      "bytes": 243,
+      "sha256": "9cb0d5753055fde55440fa24b5f5ba7a62b03a8e982997c9b4b5603aa648e643",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "hf-access-preflight.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/hf-access-preflight.json",
+      "bytes": 1485,
+      "sha256": "9e9f9efb334a3aede7fcc863b289063041d0d41d434699d364dcd0c52b29fc41",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "local-environment.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/local-environment.json",
+      "bytes": 1899,
+      "sha256": "be57cf6ba28f62958330f5780acb8a014dcf93307af54c482caacfa2f15ce02a",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "metrics-preparation.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/metrics-preparation.json",
+      "bytes": 613,
+      "sha256": "0b97979befa87370cf974d10694b5443d339bbdc96ff4fb76c4fc4f0613f9a74",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "mmlu-tests.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/mmlu-tests.txt",
+      "bytes": 243,
+      "sha256": "2ee6cdc1d9be166045370845f43f21988cc1697e42b47f2d7ce01c7035f0fece",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "official-grpo-scope-check.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/official-grpo-scope-check.txt",
+      "bytes": 9198,
+      "sha256": "2396ac4f934f2e95c6bd55e89dbee60efe020e10964c5c48fb76792c8edc9d87",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "python-bootstrap.log.gz",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/python-bootstrap.log.gz",
+      "bytes": 369,
+      "sha256": "a6a620581ccb50a50ead5318770b208132d0271c764ef010c2f9b352581ccd00",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "sft-sources.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/sft-sources.json",
+      "bytes": 3642,
+      "sha256": "69dd0c72883b9e2e13f36543b9c98d59c92151fea365cd9dc90c9d328d150b55",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "supplement-tests.txt",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/supplement-tests.txt",
+      "bytes": 4079,
+      "sha256": "4afdb90e8e5e437563a2ba3989a01a185a1c40f5811f29ae3f178c31d93aad25",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "test-results.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/test-results.json",
+      "bytes": 802,
+      "sha256": "3b28a8d00ac54312bcde4da81c2733854d68145b928d783cfd5e48bd3c78eb3c",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    },
+    {
+      "name": "transfer-manifest.json",
+      "storage_location": "git:learning/pa5-supplement:artifacts/pa5-supplement/audit/20261002-preflight/transfer-manifest.json",
+      "bytes": 1340,
+      "sha256": "5867352e08be60d737b923fac3bd9d24ea273657ba3f8df911a6a50dbdab5244",
+      "created_date": "2026-10-02",
+      "run_id": "20261002-supplement-preflight"
+    }
+  ],
+  "readiness": "blocked_for_model_evaluation",
+  "blockers": [
+    "HF gated model/tokenizer access returns 401 without credentials",
+    "course processed SFT dataset unavailable",
+    "baseline runner not implemented; full/training/judge not authorized"
+  ],
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_count": 1,
+    "vram_mib": 32607,
+    "driver": "595.84"
+  },
+  "software": {
+    "python": "3.12.13",
+    "pytorch": "2.10.0+cu129",
+    "cuda": "12.9",
+    "transformers": "5.7.0",
+    "vllm": "0.19.1",
+    "flash_attn": "2.8.3",
+    "uv": "0.12.13",
+    "git": "2.43.0"
+  },
+  "transfer_bundle_sha256": "ced3834f312dd73de8816bfc78ba83505596b5973d329068fa87529f0d252c1d"
+}

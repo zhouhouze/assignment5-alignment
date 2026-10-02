@@ -1,0 +1,52 @@
+
+tests/test_data.py::test_packed_sft_dataset FAILED                       [  4%]
+tests/test_data.py::test_iterate_batches FAILED                          [  8%]
+tests/test_dpo.py::test_per_instance_dpo_loss FAILED                     [ 13%]
+tests/test_metrics.py::test_parse_mmlu_response PASSED                   [ 17%]
+tests/test_metrics.py::test_parse_mmlu_response_unknown PASSED           [ 21%]
+tests/test_metrics.py::test_parse_gsm8k_response PASSED                  [ 26%]
+tests/test_metrics.py::test_parse_gsm8k_response_unknown PASSED          [ 30%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[-None] PASSED [ 34%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[ B.\n-B] PASSED [ 39%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[The correct answer is c.-C] PASSED [ 43%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[The correct answer is Bacteria.-None] PASSED [ 47%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[A is tempting, but the correct answer is D.-D] PASSED [ 52%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[The correct answer is A. The correct answer is B.-None] PASSED [ 56%]
+tests/test_supplement_metrics_edges.py::test_mmlu_extraction_boundaries[The correct answer is B. The correct answer is B.-B] PASSED [ 60%]
+tests/test_supplement_metrics_edges.py::test_mmlu_does_not_use_gold_answer PASSED [ 65%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[-None] PASSED [ 69%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[seventy-two-None] PASSED [ 73%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[48 / 2 = 24; 48 + 24 = 72.-72] PASSED [ 78%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[The amount is $1,234.50.-1234.50] PASSED [ 82%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[The temperature is -12.5 degrees.--12.5] PASSED [ 86%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[The balance is \u22123.--3] PASSED [ 91%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[Probability: .5-.5] PASSED [ 95%]
+tests/test_supplement_metrics_edges.py::test_gsm8k_extraction_boundaries[First 72, correction 73.-73] PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_packed_sft_dataset ____________________________
+tests/test_data.py:18: in test_packed_sft_dataset
+    packed_sft_dataset = get_packed_sft_dataset(
+tests/adapters.py:362: in get_packed_sft_dataset
+    raise NotImplementedError
+E   NotImplementedError
+_____________________________ test_iterate_batches _____________________________
+tests/test_data.py:60: in test_iterate_batches
+    packed_sft_dataset = get_packed_sft_dataset(
+tests/adapters.py:362: in get_packed_sft_dataset
+    raise NotImplementedError
+E   NotImplementedError
+__________________________ test_per_instance_dpo_loss __________________________
+tests/test_dpo.py:53: in test_per_instance_dpo_loss
+    loss = compute_per_instance_dpo_loss(
+tests/adapters.py:463: in run_compute_per_instance_dpo_loss
+    raise NotImplementedError
+E   NotImplementedError
+----------------------------- Captured stderr call -----------------------------
+Loading weights:   0%|          | 0/28 [00:00<?, ?it/s]Loading weights: 100%|██████████| 28/28 [00:00<00:00, 7269.16it/s]
+Loading weights:   0%|          | 0/28 [00:00<?, ?it/s]Loading weights: 100%|██████████| 28/28 [00:00<00:00, 6338.54it/s]
+=========================== short test summary info ============================
+FAILED tests/test_data.py::test_packed_sft_dataset - NotImplementedError
+FAILED tests/test_data.py::test_iterate_batches - NotImplementedError
+FAILED tests/test_dpo.py::test_per_instance_dpo_loss - NotImplementedError
+========================= 3 failed, 20 passed in 2.16s =========================

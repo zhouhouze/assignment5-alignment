@@ -1,0 +1,84 @@
+{
+  "ultrachat": {
+    "url": "https://huggingface.co/api/datasets/HuggingFaceH4/ultrachat_200k",
+    "revision": "8049631c405ae6576f93f445c6b8166f76f5505a",
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "data/test_gen-00000-of-00001-3d4cd8309148a71f.parquet",
+      "data/test_sft-00000-of-00001-f7dfac4afe5b93f4.parquet",
+      "data/train_gen-00000-of-00003-a6c9fb894be3e50b.parquet",
+      "data/train_gen-00001-of-00003-d6a0402e417f35ca.parquet",
+      "data/train_gen-00002-of-00003-c0db75b92a2f48fd.parquet",
+      "data/train_sft-00000-of-00003-a3ecf92756993583.parquet",
+      "data/train_sft-00001-of-00003-0a1804bcb6ae68c6.parquet",
+      "data/train_sft-00002-of-00003-ee46ed25cfae92c6.parquet"
+    ]
+  },
+  "safety_repo": {
+    "url": "https://api.github.com/repos/vinid/safety-tuned-llamas/commits/main",
+    "revision": "36a4b8d5c2177ed165bf61f59b590161394f7f12"
+  },
+  "safety_training_files": {
+    "url": "https://api.github.com/repos/vinid/safety-tuned-llamas/contents/data/training",
+    "files": [
+      {
+        "name": "README.md",
+        "bytes": 423,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/README.md"
+      },
+      {
+        "name": "alpaca_small.json",
+        "bytes": 8037373,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/alpaca_small.json"
+      },
+      {
+        "name": "saferpaca_Instructions_100.json",
+        "bytes": 8764916,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_100.json"
+      },
+      {
+        "name": "saferpaca_Instructions_1000.json",
+        "bytes": 9213097,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_1000.json"
+      },
+      {
+        "name": "saferpaca_Instructions_1500.json",
+        "bytes": 9461933,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_1500.json"
+      },
+      {
+        "name": "saferpaca_Instructions_2000.json",
+        "bytes": 9712352,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_2000.json"
+      },
+      {
+        "name": "saferpaca_Instructions_300.json",
+        "bytes": 8867086,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_300.json"
+      },
+      {
+        "name": "saferpaca_Instructions_500.json",
+        "bytes": 8966125,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/saferpaca_Instructions_500.json"
+      },
+      {
+        "name": "safety_only_data_Instructions.json",
+        "bytes": 1238429,
+        "download_url": "https://raw.githubusercontent.com/vinid/safety-tuned-llamas/main/data/training/safety_only_data_Instructions.json"
+      }
+    ]
+  },
+  "official_repo_tree": {
+    "url": "https://api.github.com/repos/stanford-cs336/assignment5-alignment/git/trees/main?recursive=1",
+    "tree_sha": "c2734a26308710949fe13226960a1e8cece94b7e",
+    "candidate_paths": [
+      "cs336_alignment/prompts_safety/alpaca_sft.prompt",
+      "tests/_snapshots/test_sft_microbatch_train_step.npz",
+      "tests/_snapshots/test_sft_microbatch_train_step_10_steps.npz",
+      "tests/_snapshots/test_sft_microbatch_train_step_normalize.npz",
+      "tests/fixtures/sft_sample.jsonl",
+      "tests/fixtures/tokenized_sft_sample.json"
+    ]
+  }
+}

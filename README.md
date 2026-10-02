@@ -1,5 +1,9 @@
 # CS336 Spring 2026 Assignment 5: Alignment
 
+Personal experiment records: [PA5 experiment index](notes/experiments/README.md)
+and [archival policy](notes/experiments/archive-policy.md). This branch tracks the
+independent Supplement; Main experiment evidence is linked by its original commits.
+
 For a full description of the assignment, see the assignment handout at
 [cs336_spring2026_assignment5_alignment.pdf](./cs336_spring2026_assignment5_alignment.pdf)
 
@@ -27,4 +31,3 @@ uv run pytest tests/test_grpo.py
 Initially, all tests should fail with `NotImplementedError`s.
 To connect your implementation to the tests, complete the
 functions in [./tests/adapters.py](./tests/adapters.py).
-

@@ -4,7 +4,7 @@
 
 ## 准入
 
-Gate A blocker解决；模型与tokenizer固定为SUP-00记录revision；数据与prompt hash核对；先实现两个parser并通过4项test_metrics。8B加载使用Transformers或vLLM，无Trainer。模型访问、小文件检查先于大权重下载；70B此阶段不下载、不启动。
+Gate A blocker解决；模型与tokenizer固定为SUP-00记录revision；数据与prompt hash核对。2026-10-02两个parser已实现，4项官方test_metrics通过，详见parser-report.md；完整baseline runner尚未实现。8B加载使用Transformers或vLLM，无Trainer。模型访问、小文件检查先于大权重下载；70B此阶段不下载、不启动。
 
 ## 分阶段执行
 
@@ -39,7 +39,7 @@ parse failure计入整体错误，不从accuracy分母删除。通用指标：�
 
 ## 原始产物
 
-每次run：`artifacts/pa5-supplement/baseline/<benchmark>/<run_id>/` 下保存manifest.json、environment.json、raw.jsonl、metrics.json、run.log、SHA256SUMS。未来SFT/DPO分别使用`sft/{train,checkpoints,eval}`、`dpo/{train,checkpoints,eval}`，不写Main产物路径。
+每次run：`artifacts/pa5-supplement/baseline/<benchmark>/<run_id>/` 下保存manifest.json、environment.json、raw.jsonl（不可覆盖）、scored-<evaluator-version>.jsonl、metrics.json、run.log、SHA256SUMS。未来SFT/DPO分别使用`sft/{train,checkpoints,eval}`、`dpo/{train,checkpoints,eval}`，不写Main产物路径。
 
 raw公共字段：run_id、example_id、benchmark、split、question/instruction、formatted_prompt、response（完整原文）、response_token_count、finish_reason、stop_reason、batch_id、latency、generation_status、模型与采样参数。MMLU增加subject/options/gold_answer/parsed_answer/correct/parse_failure；GSM8K增加gold原文与提取值；judge单独存原始输入/输出、解析标签、invalid标志、版本/hash和response关联ID。
 

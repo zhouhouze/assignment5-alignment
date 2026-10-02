@@ -1,0 +1,9 @@
+{
+  "checked_date": "2026-10-02",
+  "repository": "https://github.com/zhouhouze/assignment5-alignment",
+  "refs_before_final_archive": {
+    "learning/grpo-foundations": "f6cdac67b2039f1f26255b1514c3be7cc740edf4",
+    "learning/o1-reproduction-20260914": "96b14809b08927516cfd049cfc6ddb33cd3f115c",
+    "learning/pa5-supplement": "4b6014e5aab04eac304b98122653a5fdf43a785b"
+  }
+}

@@ -1,6 +1,6 @@
 # SUP-00：环境与仓库审计
 
-日期：2026-10-02（Asia/Shanghai）。Gate A 审计完成，执行环境 **BLOCKED / 尚未就绪**。本轮仅审计、离线CPU测试和计划，不执行baseline generation、SFT、DPO或70B judge。
+日期：2026-10-02（Asia/Shanghai）。本文件保留初审快照；后续修复状态见[preflight-report.md](preflight-report.md)。Gate A 审计完成，执行环境 **BLOCKED / 尚未就绪**。本轮仅审计、离线CPU测试和计划，不执行baseline generation、SFT、DPO或70B judge。
 
 ## 官方来源与隔离
 
