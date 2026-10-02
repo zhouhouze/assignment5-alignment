@@ -1,0 +1,51 @@
+{
+  "model": "Qwen/Qwen2.5-7B",
+  "model_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "tokenizer_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "tokenizer_path": "models/qwen-preflight/Qwen2.5-7B",
+  "seed": 0,
+  "batch_size": 4,
+  "directly_comparable_to_official": false,
+  "authorized_stages": [
+    "CPU_DRY_RUN",
+    "SMOKE",
+    "PILOT"
+  ],
+  "sampling": {
+    "n": 1,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "min_p": 0.0,
+    "seed": 0,
+    "max_tokens": 512,
+    "min_tokens": 0,
+    "stop": [
+      "# Query:"
+    ],
+    "stop_token_ids": [
+      151643
+    ],
+    "include_stop_str_in_output": false,
+    "ignore_eos": false,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "detokenize": true,
+    "skip_special_tokens": true,
+    "spaces_between_special_tokens": true
+  },
+  "engine": {
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "seed": 0,
+    "max_model_len": 4096,
+    "gpu_memory_utilization": 0.75,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 4096,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "generation_config": "vllm",
+    "trust_remote_code": false
+  }
+}

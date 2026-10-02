@@ -13,3 +13,7 @@ DPO：固定SFT reference + chosen/rejected pair → 提升相对偏好概率 �
 ## 2026-10-02 Qwen adapted preflight
 
 Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验收 → baseline → Alpaca+EOS SFT → 同SFT checkpoint policy/reference DPO；模型/评估标尺与prompt confounder必须披露。数据schema / 内容质量 / 人工复核为不同Gate。
+
+## 2026-10-02 Qwen Baseline CPU Gate
+
+新增qwen_baseline runner、独立Gate配置与7B限定下载脚本；四任务CPU准备通过，42项测试通过。raw逐请求独立封存，scored按版本派生；合法空答保留，pending/infra失败阻断自动恢复。无训练核心变更，学习解释pending。下一步按已授权范围进行SMOKE→PILOT。

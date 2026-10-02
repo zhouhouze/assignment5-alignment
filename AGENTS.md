@@ -102,3 +102,7 @@ When in doubt, refer the student to the course staff or office hours.
 ## Qwen adapted track (user authorization 2026-10-02)
 
 The newer Qwen request supersedes the older preflight-only list as follows: allow Qwen configuration/tokenizer checks, exact three SFT mirror file downloads/audits, Qwen judge compatibility design, CPU sanity/tests, documentation, commit/push on learning/pa5-supplement. Keep official Llama records unchanged. All Qwen reports/manifests use directly_comparable_to_official=false. No full weights, generation, training or judge inference in this Gate. After archival stop for the next Gate approval. Human review remains pending until a person reviews it.
+
+## Authorized Qwen Baseline Gate (supersedes prior preflight limit)
+
+User approved CPU dry-run, pinned Qwen2.5-7B weight download, four 1-example inference smokes, four fixed 20-example pilots, review artifacts and GitHub archival. Preserve greedy official textual prompts and existing parsers. Hard stop on infrastructure failure; never resample valid bad outputs. Stop after pilot review/archive. No FULL, SFT/backward/optimizer, DPO, 72B weight download/judging or changes to 24 invalid SFT rows.

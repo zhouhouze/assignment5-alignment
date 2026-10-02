@@ -18,3 +18,7 @@
 ## 2026-10-02 Qwen adapted preflight
 
 新增configs/pa5_supplement_qwen.json、scripts/qwen_preflight.py、restore_qwen_preflight_assets.py、Qwen annotator目录、tests/test_qwen_preflight.py；记录SUP-QWEN-*与artifacts/pa5-supplement-qwen。大数据在ignored data/qwen-sft-mirror，tokenizer在ignored models/qwen-preflight，按inventory可重取。
+
+## 2026-10-02 Qwen Baseline CPU Gate
+
+新增qwen_baseline runner、独立Gate配置与7B限定下载脚本；四任务CPU准备通过，42项测试通过。raw逐请求独立封存，scored按版本派生；合法空答保留，pending/infra失败阻断自动恢复。无训练核心变更，学习解释pending。下一步按已授权范围进行SMOKE→PILOT。

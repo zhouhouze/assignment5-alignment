@@ -1,0 +1,4 @@
+0b104aaffeffe53ba690e40fbb77e207333f315de6675542b0377f95a3b21280  artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01/dry-run.json
+57f84abd6b1aeabf8d0f385412f66a071e8d0dac750b7c6ea0395b9f1bbbeaa8  artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01/manifest.json
+84040c5255d53e4f4b2030b21079f1ac1117aa1deca7e7287d1efafa7aa251d9  artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01/manifest.sha256
+380604286c983e7b284dddb3ab4c56d065d7e5f941d468b3da46dbfb519d8ce7  artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01/selected_examples.json

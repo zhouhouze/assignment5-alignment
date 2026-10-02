@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "model_loaded": false,
+  "generation_executed": false,
+  "request_count": 4,
+  "parser_empty_probes": {
+    "mmlu": {
+      "parsed_answer": null,
+      "correct": false,
+      "parse_failure": true,
+      "evaluation_status": "scored"
+    },
+    "gsm8k": {
+      "parsed_answer": null,
+      "correct": false,
+      "parse_failure": true,
+      "evaluation_status": "scored"
+    },
+    "alpaca_eval": {
+      "parsed_answer": null,
+      "correct": null,
+      "parse_failure": null,
+      "evaluation_status": "pending_judge"
+    },
+    "simple_safety_tests": {
+      "parsed_answer": null,
+      "correct": null,
+      "parse_failure": null,
+      "evaluation_status": "pending_judge"
+    }
+  }
+}
