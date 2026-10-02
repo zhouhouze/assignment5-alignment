@@ -31,3 +31,7 @@ Qwen2.5-7B Base，model/tokenizer revision d149729398750b98c0af14eb82c78cfe92750
 CPU evidence：artifacts/pa5-supplement-qwen/baseline/cpu-dry-run/20261002-01；tests日志在preparation-20261002。无模型raw/metric冒充dry-run结果。
 下一步已授权：固定代码提交，云端CPU复核，下载指定7B完整权重与hash；先4条SMOKE，通过infra验收后80条PILOT。遇到列明infra故障立即停止，不自动绕过。人审字段pending。
 学习检查待答：为什么空答可以是合法模型结果，而返回数量不符必须停止？为什么batch耗时不能直接当逐请求latency？
+
+## 2026-10-03 运行前复查
+
+发现批间恢复时batch ID若按剩余列表offset编号可能与已有batch重名，已改用原始request_index起点；42项回归再次通过，重新生成20261003-cpu-02作为当前源码dry-run证据。没有发生模型重采样。全量benchmark仅CPU长度审计：MMLU/GSM8K/Alpaca/Safety最长prompt分别1186/330/624/164，均满足4096上下文预留512输出的条件。

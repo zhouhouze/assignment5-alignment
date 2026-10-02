@@ -1,0 +1,26 @@
+{
+  "record_type": "CPU-only readiness audit; no full generation",
+  "directly_comparable_to_official": false,
+  "results": {
+    "mmlu": {
+      "n": 14042,
+      "max_prompt_tokens": 1186,
+      "over_3584_context_budget": []
+    },
+    "gsm8k": {
+      "n": 1319,
+      "max_prompt_tokens": 330,
+      "over_3584_context_budget": []
+    },
+    "alpaca_eval": {
+      "n": 805,
+      "max_prompt_tokens": 624,
+      "over_3584_context_budget": []
+    },
+    "simple_safety_tests": {
+      "n": 100,
+      "max_prompt_tokens": 164,
+      "over_3584_context_budget": []
+    }
+  }
+}
