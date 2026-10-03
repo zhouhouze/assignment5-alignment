@@ -17,3 +17,7 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 ## 2026-10-02 Qwen Baseline CPU Gate
 
 新增qwen_baseline runner、独立Gate配置与7B限定下载脚本；四任务CPU准备通过，42项测试通过。raw逐请求独立封存，scored按版本派生；合法空答保留，pending/infra失败阻断自动恢复。无训练核心变更，学习解释pending。下一步按已授权范围进行SMOKE→PILOT。
+
+## Qwen Baseline GPU Gate（2026-10-03）
+
+配置/来源冻结 → 权重验收 → SMOKE链路验收 → PILOT行为诊断 → immutable raw → versioned scoring → 独立复算 → AI分析与human review分离 → Git证据。GSM906：分项正确≠给出要求总数；Alpaca111：流畅文本≠完成指令。stop标记被剥离≠模型未尝试续写下一题。小样本pilot≠正式benchmark。理解状态pending。

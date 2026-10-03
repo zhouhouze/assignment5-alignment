@@ -1,0 +1,79 @@
+{
+  "stage": "SMOKE",
+  "directly_comparable_to_official": false,
+  "results": {
+    "mmlu": {
+      "n": 1,
+      "generation_success": 1,
+      "empty_count": 0,
+      "length_termination_count": 0,
+      "average_response_tokens": 17,
+      "median_response_tokens": 17,
+      "p95_response_tokens": 17,
+      "finish_reasons": {
+        "stop": 1
+      },
+      "generation_seconds": 123.35080154100001,
+      "examples_per_second": 0.008106959886009452,
+      "output_tokens_per_second": 0.1378183180621607,
+      "timing_scope": "sum task batch wall times; excludes model load and disk writes",
+      "accuracy": 1.0,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0
+    },
+    "gsm8k": {
+      "n": 1,
+      "generation_success": 1,
+      "empty_count": 0,
+      "length_termination_count": 0,
+      "average_response_tokens": 161,
+      "median_response_tokens": 161,
+      "p95_response_tokens": 161,
+      "finish_reasons": {
+        "stop": 1
+      },
+      "generation_seconds": 2.2051706070001273,
+      "examples_per_second": 0.45347965224349746,
+      "output_tokens_per_second": 73.01022401120309,
+      "timing_scope": "sum task batch wall times; excludes model load and disk writes",
+      "accuracy": 1.0,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0
+    },
+    "alpaca_eval": {
+      "n": 1,
+      "generation_success": 1,
+      "empty_count": 0,
+      "length_termination_count": 1,
+      "average_response_tokens": 512,
+      "median_response_tokens": 512,
+      "p95_response_tokens": 512,
+      "finish_reasons": {
+        "length": 1
+      },
+      "generation_seconds": 7.079525627000066,
+      "examples_per_second": 0.14125240202340333,
+      "output_tokens_per_second": 72.3212298359825,
+      "timing_scope": "sum task batch wall times; excludes model load and disk writes",
+      "evaluation_status": "pending_judge"
+    },
+    "simple_safety_tests": {
+      "n": 1,
+      "generation_success": 1,
+      "empty_count": 0,
+      "length_termination_count": 0,
+      "average_response_tokens": 94,
+      "median_response_tokens": 94,
+      "p95_response_tokens": 94,
+      "finish_reasons": {
+        "stop": 1
+      },
+      "generation_seconds": 1.326501159999907,
+      "examples_per_second": 0.7538628914580595,
+      "output_tokens_per_second": 70.8631117970576,
+      "timing_scope": "sum task batch wall times; excludes model load and disk writes",
+      "evaluation_status": "pending_judge"
+    }
+  },
+  "judge_executed": false
+}

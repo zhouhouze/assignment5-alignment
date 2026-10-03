@@ -2,7 +2,7 @@
 
 适用：SUP-QWEN-01，PA5 Supplement Adapted Reproduction，`directly_comparable_to_official=false`。
 本说明不会自行启动实验。SMOKE/PILOT完成后必须停下，FULL需要新的授权。
-当前状态（2026-10-03）：下载期间SSH失联，尚未启动GPU generation；下文smoke/pilot路径是已经准备的目标run路径，不能视为已经完成的产物。只有完整run及其checksum已归档后，才执行以下复算步骤。
+当前状态（2026-10-03）：SSH恢复，smoke 4/4和pilot 80/80完成且独立复算PASS。正式run为20261003-smoke-03及20261003-pilot-03；旧02准备记录没有generation，保留于云端setup目录。
 
 ## 最少保留哪些内容
 
@@ -15,10 +15,10 @@
 
 ## 先恢复证据，再考虑模型
 
-克隆上述分支并定位报告对应的归档commit。历史preflight的SHA256SUMS可能包含当时的可变文档，校验历史档案应使用该档案对应commit，不能拿最新README替代旧版本。新run的checksum从仓库根目录校验：
+克隆上述分支并定位报告对应的归档commit。历史preflight的SHA256SUMS可能包含当时的可变文档，校验历史档案应使用该档案对应commit，不能拿最新README替代旧版本。新run的checksum使用run内相对路径，从仓库根目录调用：
 
 ```sh
-sha256sum -c artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02/SHA256SUMS
+(cd artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-03 && sha256sum -c SHA256SUMS)
 ```
 
 macOS可使用`shasum -a 256 -c`。只阅读结果不需要GPU、模型权重或optimizer。
@@ -29,9 +29,9 @@ macOS可使用`shasum -a 256 -c`。只阅读结果不需要GPU、模型权重或
 
 ```sh
 python -m cs336_alignment.qwen_baseline validate \
-  --run-dir artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02
+  --run-dir artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-03
 python -m cs336_alignment.qwen_baseline score \
-  --run-dir artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02 \
+  --run-dir artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-03 \
   --score-version v3-rescore
 ```
 

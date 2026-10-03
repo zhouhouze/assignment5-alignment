@@ -22,3 +22,7 @@
 ## 2026-10-02 Qwen Baseline CPU Gate
 
 新增qwen_baseline runner、独立Gate配置与7B限定下载脚本；四任务CPU准备通过，42项测试通过。raw逐请求独立封存，scored按版本派生；合法空答保留，pending/infra失败阻断自动恢复。无训练核心变更，学习解释pending。下一步按已授权范围进行SMOKE→PILOT。
+
+## SUP-QWEN-01 GPU证据（2026-10-03）
+
+notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-report}.md为报告；artifacts/pa5-supplement-qwen/baseline/{smoke/20261003-smoke-03,pilot/20261003-pilot-03}为真实run。gate-audit/20261003保存辅助验收/离线复算/AI标注脚本和日志，非新训练实现；weight-acceptance.json登记可重新下载权重。manifest-final追加生命周期，不改原始manifest/raw。

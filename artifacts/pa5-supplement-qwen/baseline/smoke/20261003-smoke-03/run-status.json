@@ -1,0 +1,22 @@
+{
+  "stage": "SMOKE",
+  "run_id": "20261003-smoke-03",
+  "start_time": "2026-10-03T00:49:30.691610+00:00",
+  "end_time": "2026-10-03T00:53:48.954095+00:00",
+  "status": "completed",
+  "exit_code": 0,
+  "actual_git_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
+  "manifest_sha256": "02ba74378c837c153eb0f2a9ee730e0dfaba650d96340ca9dafcacd0b87757dd",
+  "command": [
+    "/root/cs336/pa5-supplement/.venv/bin/python",
+    "-u",
+    "-m",
+    "cs336_alignment.qwen_baseline",
+    "run",
+    "--run-dir",
+    "/root/pa5-supplement-setup/20261003-gpu-gate/runs/20261003-smoke-03",
+    "--model-path",
+    "/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796"
+  ],
+  "directly_comparable_to_official": false
+}

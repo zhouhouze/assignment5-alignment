@@ -1,0 +1,22 @@
+{
+  "stage": "PILOT",
+  "run_id": "20261003-pilot-03",
+  "start_time": "2026-10-03T00:55:08.536203+00:00",
+  "end_time": "2026-10-03T00:57:14.553034+00:00",
+  "status": "completed",
+  "exit_code": 0,
+  "actual_git_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
+  "manifest_sha256": "4b2596319b5f04d7b61225e030e888391ba2225f19d0c702abca7b035c2f63a6",
+  "command": [
+    "/root/cs336/pa5-supplement/.venv/bin/python",
+    "-u",
+    "-m",
+    "cs336_alignment.qwen_baseline",
+    "run",
+    "--run-dir",
+    "/root/pa5-supplement-setup/20261003-gpu-gate/runs/20261003-pilot-03",
+    "--model-path",
+    "/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796"
+  ],
+  "directly_comparable_to_official": false
+}

@@ -1,0 +1,2 @@
+{"task": "alpaca_eval", "example_id": "111", "author": "AI initial analysis", "category": "repetition_and_truncation", "observation": "食材列表反复循环同一组配料，在512 tokens中途结束，未给完整步骤。", "human_review_status": "pending"}
+{"task": "alpaca_eval", "example_id": "560", "author": "AI initial analysis", "category": "truncation", "observation": "旅行目的地列表在第10项中途触及512-token上限；推荐准确性未外部核验。", "human_review_status": "pending"}

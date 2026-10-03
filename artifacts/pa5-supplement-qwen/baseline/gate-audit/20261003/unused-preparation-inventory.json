@@ -1,0 +1,32 @@
+[
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/smoke/20261003-smoke-02/selected_examples.json",
+    "bytes": 18984,
+    "sha256": "380604286c983e7b284dddb3ab4c56d065d7e5f941d468b3da46dbfb519d8ce7"
+  },
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/smoke/20261003-smoke-02/manifest.json",
+    "bytes": 11887,
+    "sha256": "2f2a1c1cc50391e1698f433dc9010377774ae536a33bc1bbb5c5aa689d4da01f"
+  },
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/smoke/20261003-smoke-02/manifest.sha256",
+    "bytes": 65,
+    "sha256": "c411d432524625a2667ad5bf906a00fa650fc1ce95c60da56760ad47a311689b"
+  },
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02/selected_examples.json",
+    "bytes": 387730,
+    "sha256": "7debacadb368d95529bf06959f7e41126b3cb41f481d2cf4508e3211d41eca8f"
+  },
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02/manifest.json",
+    "bytes": 11887,
+    "sha256": "4cce81870e963d43e5f51e2b88ab5fbd6688d1dbba1fdb16adff9bcb4dcbb15f"
+  },
+  {
+    "path": "artifacts/pa5-supplement-qwen/baseline/pilot/20261003-pilot-02/manifest.sha256",
+    "bytes": 65,
+    "sha256": "6eee83eefbeb73e7f40f5725c08cb4ac85d49e3e473a08658458cac3a5543c84"
+  }
+]

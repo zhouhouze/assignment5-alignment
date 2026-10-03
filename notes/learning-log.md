@@ -40,3 +40,7 @@
 ## 2026-10-02 Qwen Baseline CPU Gate
 
 新增qwen_baseline runner、独立Gate配置与7B限定下载脚本；四任务CPU准备通过，42项测试通过。raw逐请求独立封存，scored按版本派生；合法空答保留，pending/infra失败阻断自动恢复。无训练核心变更，学习解释pending。下一步按已授权范围进行SMOKE→PILOT。
+
+## 2026-10-03 — SUP-QWEN-01 GPU Gate
+
+权重验收、SMOKE4/4、PILOT80/80完成，43项相关CPU测试通过，离线复算PASS。运行代码固定f5f4050，无runner/parser修改；新增权重/smoke/pilot报告与逐题证据。GSM906说明分项正确但缺少总数会与final-number提取规则相互作用；Alpaca4/20触及长度上限。没有GPU infra failure；SCP reset通过既有SSH分段传输并校验解决。冻结512上限，坏输出保留，不因观察结果改prompt/parser。待理解：为什么解析成功不等于任务完成？首调用额外开销如何影响吞吐？learner explanation pending；27条human review pending。下一Gate未批准，已停止。

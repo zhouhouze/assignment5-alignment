@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "created_at": "2026-10-03T02:13:46.085855+00:00",
+  "transport_archive_bytes": 310712,
+  "transport_archive_sha256": "1bd86883eb5c51d3974bae98b55f0cd7f8ee33f3b5233fb5a8db854258669ac2",
+  "transfer_method": "SCP reset; existing authenticated SSH base64 chunks, whole archive SHA verified",
+  "runs": {
+    "20261003-smoke-03": {
+      "raw_count": 4,
+      "local_validate": "PASS",
+      "local_rescore_matches": "PASS",
+      "raw_sha_unchanged": true,
+      "git_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
+      "git_dirty_at_execution": false
+    },
+    "20261003-pilot-03": {
+      "raw_count": 80,
+      "local_validate": "PASS",
+      "local_rescore_matches": "PASS",
+      "raw_sha_unchanged": true,
+      "git_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
+      "git_dirty_at_execution": false
+    }
+  },
+  "runner_changed": false,
+  "human_review_status": "pending"
+}

@@ -15,7 +15,7 @@
 
 准确的提交哈希与分支可由GitHub每个文件的History查询；不在commit内写自身SHA。代码执行来源和产物hash见各manifest。全部大小/位置/SHA登记见[artifact-registry.json](artifact-registry.json)。旧记录不因新索引而被补标为完全合规。
 
-当前授权只覆盖环境修复、HF检查、parser、测试分类、SFT来源调查与归档/push；不开放baseline full、SFT、DPO或70B judge。
+上述官方Llama路线停留在准备阶段；后续Qwen路线授权和状态见下节。baseline full、SFT、DPO与Judge不在本轮范围。
 
 ## Qwen Adapted Reproduction（独立路线）
 
@@ -23,10 +23,10 @@
 
 | Phase | Status | Evidence |
 | --- | --- | --- |
-| SUP-QWEN-00 | Config/tokenizer CPU验收完成；未加载权重 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
-| SUP-QWEN-01 | CPU dry-run PASS；43 tests passed；7B下载期间SSH失联，GPU未启动 | [CPU报告](SUP-QWEN-01-baseline/cpu-dry-run-report.md)、[中断与恢复](SUP-QWEN-01-baseline/interruption-20261003.md)、[baseline计划](SUP-QWEN-01-baseline/baseline-plan.md) |
+| SUP-QWEN-00 | Config/tokenizer CPU验收完成；实际GPU结果见SUP-QWEN-01 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
+| SUP-QWEN-01 | 权重PASS；SMOKE 4/4；PILOT 80/80；offline PASS；27条人审pending | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
 | SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
 | SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
 | SUP-QWEN-final | 无模型结果 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
 
-Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已获准CPU→4条SMOKE→80条PILOT→review/archive；尚未启动GPU generation，恢复SSH并完成权重校验后继续。FULL/SFT/DPO/Judge仍需后续独立Gate。
+Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已完成CPU→4条SMOKE→80条PILOT→复算/review packet/archive。27条human review仍pending；已停止，FULL/SFT/DPO/Judge需后续独立Gate。Qwen四任务结果均为PILOT，不是FULL benchmark成绩。

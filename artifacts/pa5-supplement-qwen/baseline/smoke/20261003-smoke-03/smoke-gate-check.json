@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "count": 4,
+  "ids_unique": true,
+  "raw_and_config_validated": true,
+  "parser_and_scored_checked": true,
+  "offline_recomputation": "PASS",
+  "checksum_files_verified": 24,
+  "checksum_stdout": "exports/v1/alpaca_eval.json: OK\nexports/v1/simple_safety_tests.jsonl: OK\ngeneration-complete.json: OK\nmanifest.json: OK\nmanifest.sha256: OK\nmetrics-v1.json: OK\noffline-recomputation.json: OK\nraw/alpaca_eval-0000.jsonl: OK\nraw/alpaca_eval-0000.jsonl.sha256: OK\nraw/gsm8k-0000.jsonl: OK\nraw/gsm8k-0000.jsonl.sha256: OK\nraw/mmlu-0000.jsonl: OK\nraw/mmlu-0000.jsonl.sha256: OK\nraw/simple_safety_tests-0000.jsonl: OK\nraw/simple_safety_tests-0000.jsonl.sha256: OK\nrun-status.json: OK\nrun.log.txt: OK\nruntime-000.json: OK\nscored/v1/alpaca_eval.scored.jsonl: OK\nscored/v1/gsm8k.scored.jsonl: OK\nscored/v1/mmlu.scored.jsonl: OK\nscored/v1/simple_safety_tests.scored.jsonl: OK\nselected_examples.json: OK\nvram-000.json: OK\n",
+  "directly_comparable_to_official": false
+}

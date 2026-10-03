@@ -1,0 +1,8 @@
+WEIGHT_VERIFIED config.json
+WEIGHT_VERIFIED generation_config.json
+WEIGHT_VERIFIED model-00001-of-00004.safetensors
+WEIGHT_VERIFIED model-00002-of-00004.safetensors
+WEIGHT_VERIFIED model-00003-of-00004.safetensors
+WEIGHT_VERIFIED model-00004-of-00004.safetensors
+WEIGHT_VERIFIED model.safetensors.index.json
+ACCEPTANCE_PASS 15231300464 disk_free 140062781440

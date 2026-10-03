@@ -1,0 +1,55 @@
+INFO 10-03 08:55:39 [utils.py:233] non-default args: {'tokenizer': '/root/cs336/pa5-supplement/models/qwen-preflight/Qwen2.5-7B', 'dtype': 'bfloat16', 'max_model_len': 4096, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.75, 'max_num_batched_tokens': 4096, 'max_num_seqs': 4, 'disable_log_stats': True, 'revision': 'd149729398750b98c0af14eb82c78cfe92750796', 'tokenizer_revision': 'd149729398750b98c0af14eb82c78cfe92750796', 'enforce_eager': True, 'generation_config': 'vllm', 'model': '/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796'}
+INFO 10-03 08:55:39 [model.py:549] Resolved architecture: Qwen2ForCausalLM
+INFO 10-03 08:55:39 [model.py:1678] Using max model len 4096
+INFO 10-03 08:55:39 [scheduler.py:238] Chunked prefill is enabled with max_num_batched_tokens=4096.
+INFO 10-03 08:55:39 [vllm.py:790] Asynchronous scheduling is enabled.
+WARNING 10-03 08:55:39 [vllm.py:848] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 10-03 08:55:39 [vllm.py:859] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 10-03 08:55:40 [vllm.py:1025] Cudagraph is disabled under eager mode
+INFO 10-03 08:55:40 [compilation.py:292] Enabled custom fusions: norm_quant, act_quant
+(EngineCore pid=13527) INFO 10-03 08:55:41 [core.py:105] Initializing a V1 LLM engine (v0.19.1) with config: model='/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796', speculative_config=None, tokenizer='/root/cs336/pa5-supplement/models/qwen-preflight/Qwen2.5-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=d149729398750b98c0af14eb82c78cfe92750796, tokenizer_revision=d149729398750b98c0af14eb82c78cfe92750796, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_images_per_batch': 0, 'compile_sizes': [], 'compile_ranges_endpoints': [4096], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=13527) INFO 10-03 08:55:42 [parallel_state.py:1400] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://192.168.122.7:55495 backend=nccl
+(EngineCore pid=13527) INFO 10-03 08:55:42 [parallel_state.py:1716] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=13527) INFO 10-03 08:55:43 [gpu_model_runner.py:4735] Starting to load model /root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796...
+(EngineCore pid=13527) INFO 10-03 08:55:44 [cuda.py:334] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=13527) INFO 10-03 08:55:44 [flash_attn.py:596] Using FlashAttention version 2
+(EngineCore pid=13527) Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+(EngineCore pid=13527) Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:07,  2.63s/it]
+(EngineCore pid=13527) Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:05<00:05,  2.67s/it]
+(EngineCore pid=13527) Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:08<00:02,  2.76s/it]
+(EngineCore pid=13527) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:10<00:00,  2.76s/it]
+(EngineCore pid=13527) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:10<00:00,  2.74s/it]
+(EngineCore pid=13527) 
+(EngineCore pid=13527) INFO 10-03 08:55:55 [default_loader.py:384] Loading weights took 10.97 seconds
+(EngineCore pid=13527) INFO 10-03 08:55:56 [gpu_model_runner.py:4820] Model loading took 14.27 GiB memory and 12.273942 seconds
+(EngineCore pid=13527) INFO 10-03 08:55:58 [gpu_worker.py:436] Available KV cache memory: 8.51 GiB
+(EngineCore pid=13527) INFO 10-03 08:55:58 [kv_cache_utils.py:1319] GPU KV cache size: 159,328 tokens
+(EngineCore pid=13527) INFO 10-03 08:55:58 [kv_cache_utils.py:1324] Maximum concurrency for 4,096 tokens per request: 38.90x
+(EngineCore pid=13527) 2026-10-03 08:55:58,275 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=13527) 2026-10-03 08:55:58,331 - INFO - autotuner.py:268 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=13527) INFO 10-03 08:55:58 [core.py:283] init engine (profile, create kv cache, warmup model) took 2.47 seconds
+(EngineCore pid=13527) WARNING 10-03 08:55:58 [vllm.py:848] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=13527) WARNING 10-03 08:55:58 [vllm.py:859] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=13527) INFO 10-03 08:55:58 [vllm.py:1025] Cudagraph is disabled under eager mode
+mmlu: 4/20 saved
+mmlu: 8/20 saved
+mmlu: 12/20 saved
+mmlu: 16/20 saved
+mmlu: 20/20 saved
+gsm8k: 4/20 saved
+gsm8k: 8/20 saved
+gsm8k: 12/20 saved
+gsm8k: 16/20 saved
+gsm8k: 20/20 saved
+alpaca_eval: 4/20 saved
+alpaca_eval: 8/20 saved
+alpaca_eval: 12/20 saved
+alpaca_eval: 16/20 saved
+alpaca_eval: 20/20 saved
+simple_safety_tests: 4/20 saved
+simple_safety_tests: 8/20 saved
+simple_safety_tests: 12/20 saved
+simple_safety_tests: 16/20 saved
+simple_safety_tests: 20/20 saved
+(EngineCore pid=13527) INFO 10-03 08:57:11 [core.py:1210] Shutdown initiated (timeout=0)
+(EngineCore pid=13527) INFO 10-03 08:57:11 [core.py:1233] Shutdown complete
