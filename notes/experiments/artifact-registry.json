@@ -687,8 +687,9 @@
       "execution_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
       "storage": "ordinary_git; archive commit is the file Git History commit",
       "restore": "Checkout archive commit and verify baseline/SHA256SUMS from repository root. Per-run SHA256SUMS uses run-relative paths.",
-      "durability": "Git-tracked local/cloud replicas; GitHub push verified at Gate close",
-      "directly_comparable_to_official": false
+      "durability": "Local and GitHub archive verified at aa4698f; cloud original run copy retained outside repo; final cloud Git sync blocked by SSH authentication",
+      "directly_comparable_to_official": false,
+      "cloud_copy_status": "Target Git checkout path pending final pull; original cloud evidence at /root/pa5-supplement-setup/20261003-gpu-gate"
     },
     {
       "artifact_name": "artifacts/pa5-supplement-qwen/baseline/weight-acceptance.json",
@@ -702,8 +703,9 @@
       "execution_commit": "f5f4050de424a2b371da83e792fa5a4a81279084",
       "storage": "ordinary_git; archive commit is the file Git History commit",
       "restore": "Checkout archive commit and verify baseline/SHA256SUMS from repository root. Per-run SHA256SUMS uses run-relative paths.",
-      "durability": "Git-tracked local/cloud replicas; GitHub push verified at Gate close",
-      "directly_comparable_to_official": false
+      "durability": "Local and GitHub archive verified at aa4698f; cloud original run copy retained outside repo; final cloud Git sync blocked by SSH authentication",
+      "directly_comparable_to_official": false,
+      "cloud_copy_status": "Target Git checkout path pending final pull; original cloud evidence at /root/pa5-supplement-setup/20261003-gpu-gate"
     },
     {
       "artifact_name": "Qwen2.5-7B/config.json",

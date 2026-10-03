@@ -24,9 +24,11 @@
 | Phase | Status | Evidence |
 | --- | --- | --- |
 | SUP-QWEN-00 | Config/tokenizer CPU验收完成；实际GPU结果见SUP-QWEN-01 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
-| SUP-QWEN-01 | 权重PASS；SMOKE 4/4；PILOT 80/80；offline PASS；27条人审pending | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
+| SUP-QWEN-01 | 权重PASS；SMOKE 4/4；PILOT 80/80；offline PASS；27条人审pending；云端Git同步待恢复认证 | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
 | SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
 | SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
 | SUP-QWEN-final | 无模型结果 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
 
 Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已完成CPU→4条SMOKE→80条PILOT→复算/review packet/archive。27条human review仍pending；已停止，FULL/SFT/DPO/Judge需后续独立Gate。Qwen四任务结果均为PILOT，不是FULL benchmark成绩。
+
+本轮GPU Gate的本地/GitHub归档完成；云端最后同步因SSH认证失败尚未完成，三端对齐状态见[归档同步记录](SUP-QWEN-01-baseline/archive-sync-status.md)。
