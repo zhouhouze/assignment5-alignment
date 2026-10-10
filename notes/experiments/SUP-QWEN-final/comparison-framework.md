@@ -15,3 +15,8 @@
 
 数据飞轮观察链：SFT质量/拒答/虚构体验 → 模型风格与能力 → 错误/安全审计 → HH偏好标准 → DPO helpfulness/safety及alignment tax → 下一轮数据修订（另建版本，不改raw）。
 本表Base只有固定20条/任务的PILOT，不是最终benchmark成绩。见[分析报告](../SUP-QWEN-01-baseline/pilot-report.md)。Next task：待批准后FULL Baseline；SFT/DPO与Judge仍未执行。
+
+
+## 2026-10-10 评估协议提案
+
+后续统一使用[评估/数据飞轮计划入口](../SUP-QWEN-evaluation/README.md)与[Full scorecard模板](model-evaluation-scorecard.md)。状态为proposal-v1、P0审批PENDING，不修改以上历史事实；现有PILOT不填入Full结果。

@@ -26,3 +26,7 @@
 ## SUP-QWEN-01 GPU证据（2026-10-03）
 
 notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-report}.md为报告；artifacts/pa5-supplement-qwen/baseline/{smoke/20261003-smoke-03,pilot/20261003-pilot-03}为真实run。gate-audit/20261003保存辅助验收/离线复算/AI标注脚本和日志，非新训练实现；weight-acceptance.json登记可重新下载权重。manifest-final追加生命周期，不改原始manifest/raw。
+
+## 2026-10-10 Evaluation / Data Flywheel 规划入口
+
+[SUP-QWEN-evaluation](experiments/SUP-QWEN-evaluation/README.md)保存指标、协议、Prompt/逐题对照、错误分类、Judge验证、状态核验和Gate；[SUP-QWEN-data-flywheel](experiments/SUP-QWEN-data-flywheel/data-flywheel-design.md)保存SFT/HH质量审计、准入与路由。SFT/DPO目录新增training设计，SUP-QWEN-final新增计分板/比较/产品行为/下一轮模板。全部规划状态，未产生新实验raw、数据清洗或checkpoint。

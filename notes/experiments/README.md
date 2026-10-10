@@ -32,3 +32,15 @@
 Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已完成CPU→4条SMOKE→80条PILOT→复算/review packet/archive。27条human review仍pending；已停止，FULL/SFT/DPO/Judge需后续独立Gate。Qwen四任务结果均为PILOT，不是FULL benchmark成绩。
 
 本轮GPU Gate的本地/GitHub/云端归档同步已恢复，2026-10-10云端239项checksum和84条原始输出一致性验收通过；见[归档同步记录](SUP-QWEN-01-baseline/archive-sync-status.md)。
+
+## 2026-10-10：Qwen Evaluation / Data Flywheel 规划
+
+状态：**PLAN ARCHIVED；P0 design approval PENDING**。本轮只做文档/模板与只读核验；未运行Full、过滤SFT、训练或72B Judge。正式结果仍为NOT RUN/PENDING。
+
+- [总入口与当前证据](SUP-QWEN-evaluation/README.md)、[状态核验](SUP-QWEN-evaluation/current-state-verification.md)。
+- [指标](SUP-QWEN-evaluation/evaluation-metrics-spec.md)、[协议](SUP-QWEN-evaluation/evaluation-protocol.md)、[Prompt对照](SUP-QWEN-evaluation/prompt-control-experiment.md)、[逐题比较](SUP-QWEN-evaluation/paired-comparison-spec.md)。
+- [SFT质量/准入](SUP-QWEN-data-flywheel/sft-data-quality-plan.md)、[SFT训练设计](SUP-QWEN-02-sft/sft-training-experiment.md)、[HH审计](SUP-QWEN-data-flywheel/dpo-preference-data-audit-plan.md)、[DPO训练设计](SUP-QWEN-03-dpo/dpo-training-and-evaluation-plan.md)。
+- [Judge可靠性](SUP-QWEN-evaluation/judge-reliability-plan.md)、[错误分类](SUP-QWEN-evaluation/error-taxonomy.md)、[飞轮](SUP-QWEN-data-flywheel/data-flywheel-design.md)、[路由](SUP-QWEN-data-flywheel/data-routing-policy.md)。
+- [P0–P10 Gate/资源](SUP-QWEN-evaluation/execution-gates.md)、[待决事项](SUP-QWEN-evaluation/open-decisions.md)、[Full计分板模板](SUP-QWEN-final/model-evaluation-scorecard.md)。
+
+独立归档提交由上述文件Git历史定位；本计划不替换任何历史运行结果。下一步建议用户确认P0，再单独授权P1。

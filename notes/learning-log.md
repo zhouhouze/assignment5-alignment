@@ -44,3 +44,14 @@
 ## 2026-10-03 — SUP-QWEN-01 GPU Gate
 
 权重验收、SMOKE4/4、PILOT80/80完成，43项相关CPU测试通过，离线复算PASS。运行代码固定f5f4050，无runner/parser修改；新增权重/smoke/pilot报告与逐题证据。GSM906说明分项正确但缺少总数会与final-number提取规则相互作用；Alpaca4/20触及长度上限。没有GPU infra failure；SCP reset通过既有SSH分段传输并校验解决。冻结512上限，坏输出保留，不因观察结果改prompt/parser。待理解：为什么解析成功不等于任务完成？首调用额外开销如何影响吞吐？learner explanation pending；27条human review pending。下一Gate未批准，已停止。
+
+## 2026-10-10 — Evaluation / Data Flywheel design only
+
+- Component：Qwen评估、Prompt因果对照、数据准入/Judge/飞轮与P0–P10规划；未实现训练组件。
+- Concept learned：训练变化和Prompt变化需要对照；Judge invalid与错误输出不同；holdout错误只能指导独立数据构建。
+- Files changed：SUP-QWEN-evaluation、SUP-QWEN-data-flywheel、SFT/DPO训练设计、final模板与统一索引。
+- Checks：baseline239项SHA通过；4+80条raw JSON可解析；SFT三文件SHA/行数/24空字段重核；HH四文件存在/首行/SHA；阅读历史43 passed及3个NotImplemented，未重跑GPU/训练测试。
+- Bugs encountered：无本轮代码修复；记录既有Safety非true默认safe风险；训练接口仍NotImplemented。
+- Final decision：只提交规划/模板；数据过滤、Full、训练/Judge均NOT RUN，P0 approval PENDING。
+- Remaining questions：指标阈值、Prompt stop、空白规则、人审预算、optimizer dtype、训练/Judge硬件与LC可靠性。
+- Learner explanation status：pending；未代用户宣称理解。建议解释为何Base-zero→SFT-Alpaca不能单独归因训练。

@@ -21,3 +21,7 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 ## Qwen Baseline GPU Gate（2026-10-03）
 
 配置/来源冻结 → 权重验收 → SMOKE链路验收 → PILOT行为诊断 → immutable raw → versioned scoring → 独立复算 → AI分析与human review分离 → Git证据。GSM906：分项正确≠给出要求总数；Alpaca111：流畅文本≠完成指令。stop标记被剥离≠模型未尝试续写下一题。小样本pilot≠正式benchmark。理解状态pending。
+
+## 2026-10-10 Evaluation / Data Flywheel
+
+固定模型/数据/Prompt/Judge协议 → immutable raw → 同题配对与Prompt 2×2 → 能力/偏好/解析/安全错误分离 → 人工复核 → 独立SFT示范或DPO偏好候选 / regression / evaluator fix → 来源、隐私、去重、holdout隔离与准入 → 下一轮单变量实验。训练loss、Judge偏好、用户满意度不是同一指标。当前仅规划，理解状态pending。
