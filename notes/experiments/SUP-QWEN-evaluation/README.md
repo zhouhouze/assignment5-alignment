@@ -1,6 +1,8 @@
 # Qwen 模型评估与数据飞轮计划
 
-日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P0设计冻结已批准并完成文档与CPU核验。P1 generation readiness=BLOCKED，尚未授权执行。**
+日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P1A CPU 工程验收通过，P1B 资源/预算/执行授权待确认，真实 Full NOT RUN。**
+
+最新入口：[P1A readiness](p1a-readiness-report.md) → [实现](p1a-runner-implementation.md) → [可靠性测试](p1a-reliability-tests.md) → [P1B 命令](p1b-execution-commands.md)。下方 P0 记录为当时的历史状态。
 
 唯一入口：[evaluation-protocol-v1.md](evaluation-protocol-v1.md) → [decision log](evaluation-decision-log.md) → [P1 readiness](p1-full-baseline-readiness.md)。产品质量数值阈值可保持未决，不阻塞P0技术完成。
 `directly_comparable_to_official=false`。本计划基于 Spring 2026 Supplement，不将 Qwen 改编结果称为官方 Llama 结果。
@@ -34,7 +36,7 @@
 
 新增22份规划/模板，更新5份索引/进度文档；仅Markdown。新文档本地相对链接全部存在；P0–P10各有完整10项Gate字段；baseline239项SHA再次通过；Git diff whitespace和常见credential模式扫描通过。没有代码变更，因此本轮没有新训练单元测试结果。历史43 passed仅按原日志引用。Git归档仍需以实际push成功及远端commit核对为准。
 
-## 本轮P0冻结验收
+## P0冻结验收（历史状态）
 
 没有复制/重建22份规划。本轮新增唯一协议、决策日志、P1 readiness三份必需文档，更新已有规则/索引。60个benchmark文件与历史manifest一致，全部16266条Base prompt在CPU渲染/分词，零超长；7B tokenizer/config 8项SHA通过；Baseline239项SHA通过；原27条review仍pending。
 

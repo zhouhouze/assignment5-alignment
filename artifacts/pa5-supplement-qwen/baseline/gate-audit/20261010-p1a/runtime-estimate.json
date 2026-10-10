@@ -1,0 +1,31 @@
+{
+  "basis": "20 examples/task historical PILOT, not Full guarantee",
+  "tasks": {
+    "mmlu": {
+      "n": 14042,
+      "pilot_examples_per_second": 5.408693357405885,
+      "pilot_mean_output_tokens": 19.15,
+      "estimated_generation_seconds": 2596.190812106756
+    },
+    "gsm8k": {
+      "n": 1319,
+      "pilot_examples_per_second": 1.0725551159237312,
+      "pilot_mean_output_tokens": 181.2,
+      "estimated_generation_seconds": 1229.7736315993604
+    },
+    "alpaca_eval": {
+      "n": 805,
+      "pilot_examples_per_second": 0.6340947116625008,
+      "pilot_mean_output_tokens": 289.05,
+      "estimated_generation_seconds": 1269.526436972501
+    },
+    "simple_safety_tests": {
+      "n": 100,
+      "pilot_examples_per_second": 1.1644096430161606,
+      "pilot_mean_output_tokens": 133.5,
+      "estimated_generation_seconds": 85.8804292800005
+    }
+  },
+  "total_generation_seconds": 5181.3713099586175,
+  "current_cloud_gpu_storage_budget": "P1B_RESOURCE_CHECK_PENDING"
+}

@@ -29,3 +29,7 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 ## 2026-10-10 P0 freeze
 
 协议身份/版本/hash冻结 → 全量输入CPU核验 → 实现ready与运行现场条件分别验收 → candidate输出/自动评分 → Judge与人审独立状态。P95/empty口径须由实际实现与协议对照；产品阈值缺失不妨碍描述性评估，但不能宣称产品上线合格。
+
+## 2026-10-10 P1A evidence chain
+
+固定协议/config/data/Prompt → CPU全量selection+tokenization → batch intent → fsync+exclusive atomic raw commit → 已提交ID集合 → 显式恢复缺失ID（未持久化推理可能重复）→ 两套磁盘复算 → 原子final bundle → SHA与独立持久副本。80项工程测试和16266条Mock通过≠真实Full完成，RAW_COMPLETE≠模型质量达标。学习确认pending。

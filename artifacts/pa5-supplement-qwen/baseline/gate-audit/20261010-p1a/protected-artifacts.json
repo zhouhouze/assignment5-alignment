@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "historical_baseline_checksums_verified": 239,
+  "protected_files_identical_to_P0": {
+    "notes/experiments/SUP-QWEN-evaluation/evaluation-protocol-v1.md": "879764bf6f0286439cdf9527a7c9bdda93d064d4a157676851d79cf69145bcd3",
+    "notes/experiments/SUP-QWEN-evaluation/evaluation-decision-log.md": "446d0829166d5d1e5e5946046ff6a762040ce545af450ec04a55494c3a95572b",
+    "notes/experiments/SUP-QWEN-evaluation/evaluation-metrics-spec.md": "51668c1d12a7300f6b87f36cba7a3ebd15f60c949471732514bd7b79c0ce36cb",
+    "cs336_alignment/supplement_metrics.py": "debd4564921960f1e5d21fadeb4ef4f8d937bf4f376aa96b64fac277587a18c6",
+    "configs/qwen_baseline_gate.json": "85ffd008606c61c368ac488083385cf86571b047675c7750c4a415bb4839ec1a",
+    "cs336_alignment/prompts_safety/zero_shot_system_prompt.prompt": "1b4854e31925e2823f701de2d7ac895297dbae563d03077a68713ef420075180",
+    "cs336_alignment/prompts_safety/alpaca_sft.prompt": "fbd4a4672e92a2ecb3a849a6417ce7be683dc02382edc11a9ce0d58a9ac9449e",
+    "cs336_alignment/prompts_safety/alpaca_eval_zero_shot.prompt": "3a8e39af710d54c596f4f641d4ec4fab42fd9dfec0ab4a1e75e852921ee7a81f",
+    "cs336_alignment/prompts_safety/simple_safety_tests_zero_shot.prompt": "3a8e39af710d54c596f4f641d4ec4fab42fd9dfec0ab4a1e75e852921ee7a81f",
+    "cs336_alignment/prompts_safety/mmlu_zero_shot.prompt": "88263244d25b38343091903527ebd2748947743a386f58562996a54020d8c5b8",
+    "cs336_alignment/prompts_safety/gsm8k_zero_shot.prompt": "6f5e780066498f89f85cae74968e543ccf78e9d21a57210734deb4e1cc565eda"
+  },
+  "sft_raw_unchanged": {
+    "train": {
+      "sha256": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913",
+      "bytes": 532421064
+    },
+    "test": {
+      "sha256": "ce84dd834a7bbfc622cb3b50dc6c233e7dd91e002fd84f7cf86f70762a2c9ed9",
+      "bytes": 58872258
+    },
+    "sample_train": {
+      "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df",
+      "bytes": 2492043
+    }
+  },
+  "main_head": "f6cdac67b2039f1f26255b1514c3be7cc740edf4",
+  "main_status_observed": " M notes/learning-log.md\n?? artifacts/O1-prompting-baselines/\n?? notes/experiment-checklist.md\n?? notes/experiments/O1-prompting-baselines/artifact-inventory.md\n?? \"notes/experiments/O1-prompting-baselines/\\344\\270\\255\\346\\226\\207\\345\\256\\236\\351\\252\\214\\346\\200\\273\\350\\247\\210.md\"\n?? \"notes/experiments/O1-prompting-baselines/\\345\\256\\214\\346\\210\\220\\346\\203\\205\\345\\206\\265\\346\\240\\270\\351\\252\\214.md\"\n?? \"notes/experiments/O1-prompting-baselines/\\345\\256\\236\\351\\252\\214\\344\\270\\200-\\351\\233\\266\\347\\244\\272\\344\\276\\213\\347\\233\\264\\346\\216\\245\\344\\275\\234\\347\\255\\224.md\"\n?? \"notes/experiments/O1-prompting-baselines/\\345\\256\\236\\351\\252\\214\\344\\270\\211-\\344\\270\\211\\347\\244\\272\\344\\276\\213\\346\\216\\250\\347\\220\\206\\346\\240\\274\\345\\274\\217.md\"\n?? \"notes/experiments/O1-prompting-baselines/\\345\\256\\236\\351\\252\\214\\344\\272\\214-\\351\\233\\266\\347\\244\\272\\344\\276\\213\\346\\216\\250\\347\\220\\206\\346\\240\\274\\345\\274\\217.md\"\n?? notes/experiments/O2-grpo-foundations/\n?? tmp/\n",
+  "full_real_generation": "NOT_RUN"
+}

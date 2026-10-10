@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "mode": "MOCK_TEST_ONLY",
+  "real_model_loaded": false,
+  "commands": [
+    {
+      "argv": [
+        "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+        "-m",
+        "cs336_alignment.qwen_baseline",
+        "prepare",
+        "--stage",
+        "full",
+        "--task",
+        "simple_safety_tests",
+        "--mock",
+        "--run-dir",
+        "/var/folders/4x/vkj1y0l92m11wszy5bllw4bm0000gn/T/pa5-p1a-cli-MOCK_TEST_ONLY-4zaq1jnr/run"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+        "-m",
+        "cs336_alignment.qwen_baseline",
+        "run",
+        "--run-dir",
+        "/var/folders/4x/vkj1y0l92m11wszy5bllw4bm0000gn/T/pa5-p1a-cli-MOCK_TEST_ONLY-4zaq1jnr/run",
+        "--mock"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+        "-m",
+        "cs336_alignment.qwen_baseline",
+        "score",
+        "--run-dir",
+        "/var/folders/4x/vkj1y0l92m11wszy5bllw4bm0000gn/T/pa5-p1a-cli-MOCK_TEST_ONLY-4zaq1jnr/run",
+        "--score-version",
+        "v1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+        "-m",
+        "cs336_alignment.qwen_baseline",
+        "validate",
+        "--run-dir",
+        "/var/folders/4x/vkj1y0l92m11wszy5bllw4bm0000gn/T/pa5-p1a-cli-MOCK_TEST_ONLY-4zaq1jnr/run"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+        "-m",
+        "cs336_alignment.qwen_baseline",
+        "run",
+        "--run-dir",
+        "/var/folders/4x/vkj1y0l92m11wszy5bllw4bm0000gn/T/pa5-p1a-cli-MOCK_TEST_ONLY-4zaq1jnr/run",
+        "--mock",
+        "--resume"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

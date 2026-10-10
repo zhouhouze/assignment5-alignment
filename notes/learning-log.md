@@ -59,3 +59,15 @@
 ## 2026-10-10 — P0 Evaluation Design Freeze
 
 Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概念：技术有效性与产品质量门槛分开；协议FROZEN不等于Full runner已ready。Files：3份核心协议/decision/readiness，更新已有metrics/Prompt/Judge/人审/数据策略/taxonomy/索引。Checks：20个parser CPU测试通过；60数据文件、16266 prompt/ID、8个tokenizer/config、239历史SHA核验通过；27条人审pending。发现：旧提案P95/empty口径与runner不一致，已纠正文档；Full CLI/selection与恢复规模IO尚未验收。Decision：仅P0归档，实际过滤/Full/训练/Judge均NOT RUN；产品阈值不虚构。Remaining：P1 CPU readiness与现场资源/预算/执行批准。Learner explanation status：pending；为何技术协议完成而P1仍BLOCKED，需用户后续解释，不代签理解。
+
+## 2026-10-10 — P1A Full Runner Engineering Gate
+
+- Component：可靠Full输入/增量保存/resume/独立复算/原子发布，CPU限定。
+- Concept learned：结果持久化恰好一次不等于推理恰好一次；完整集合与不可变证据是比较模型的前提；RAW_COMPLETE不同于最终COMPLETED。
+- Files changed：qwen_baseline、storage/audit helpers、CPU验收脚本/测试、4份P1A/P1B文档、统一索引/registry/工程证据。
+- Tests run：80项相关CPU测试通过；全部16266输入及Mock保存/复算通过；原有SFT2+DPO1+GRPO19为NotImplemented，未扩展实现。
+- Bugs encountered：prepare指标文档路径误写，模型调用前失败并修正；额外覆盖最后一条已提交但流程异常、发布目录fsync失败等边界。
+- Final decision：raw单条sealed JSONL原子提交，显式resume保留事故/已保存字节，只处理缺失ID；schema2与历史schema1分开；固定parser/Prompt/config不动。
+- Remaining questions：P1B真实GPU/权重/存储、预算/执行批准；云盘POSIX持久性须现场验收；不承诺位级复现。
+- Learner explanation status：pending；请后续解释第7条保存后崩溃为何第8条可能再次推理，却不应有两条有效raw。
+- Next task：本轮停止；P1B获批并验收资源后才真实生成。

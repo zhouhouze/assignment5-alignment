@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "SUP-QWEN-01-P1A",
+  "run_id": "20261010-p1a",
+  "experiment_stage": null,
+  "record_type": "CPU_ENGINEERING_GATE",
+  "mode": "MOCK_TEST_ONLY",
+  "status": "PASS",
+  "created_at": "2026-10-10T14:48:36.906439+00:00",
+  "evaluation_protocol_id": "SUP-QWEN-EVAL-v1",
+  "protocol_git_commit": "09c18e7d4e966264f994f8ce2fc5deb1b385a937",
+  "directly_comparable_to_official": false,
+  "execution_base_commit": "09c18e7d4e966264f994f8ce2fc5deb1b385a937",
+  "execution_git_dirty": true,
+  "source_sha256": {
+    "cs336_alignment/qwen_baseline.py": "56f87d403260fd581efec8365742ef3068b2a9fd8e45f8994e16e378850d9b81",
+    "cs336_alignment/qwen_baseline_storage.py": "0124144ca8bb13432900c8f03d14d9ee9c30517ed06b2f3cd24ef798be07f003",
+    "cs336_alignment/qwen_baseline_audit.py": "74fc68515f2048c5b767857bfb7c0ad650efe6093746624928221dd0aa0d5ffa",
+    "scripts/verify_qwen_full_cpu.py": "33ac07d0cfe07a7c23cf369c827613ab9a57938fd1f437a7426156e5835612e8",
+    "tests/test_qwen_full.py": "b46f825ce892b8d717e5444728c8dfe8a96b047eb932fcc04bf5c9f88197fd4f"
+  },
+  "archive_commit_resolution": "Git history: Implement reliable Qwen full baseline runner (this artifact's archive commit is not the test execution HEAD)",
+  "tests": {
+    "relevant_passed": 80,
+    "new_full_tests": 37,
+    "existing_unimplemented_failures": {
+      "sft_data": 2,
+      "dpo": 1,
+      "grpo": 19
+    },
+    "full_cpu_input_verified": 16266,
+    "mock_persistence_verified": 16266,
+    "actual_cli_commands_passed": 5
+  },
+  "full_real_generation": "NOT_RUN",
+  "gpu_model_loaded": false,
+  "sft_training": "NOT_RUN",
+  "dpo_training": "NOT_RUN",
+  "judge": "NOT_RUN",
+  "human_review": "PENDING_UNCHANGED",
+  "p1b_status": "RESOURCE_CHECK_PENDING; separate execution approval required",
+  "artifacts": {
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/cli-acceptance.json": {
+      "bytes": 1941,
+      "sha256": "36248ef875e645b7484721c81a5926227c93ed036e8dbc05923094675ee172f3"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/full-cpu-report.json": {
+      "bytes": 3447,
+      "sha256": "260e19388618b86dc0709c082eaacfeacf862c2723a2fb17894d9be58452a9d3"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/full-cpu.log": {
+      "bytes": 3610,
+      "sha256": "40eb54f81d0a299ce63cf654bf9987a0ab950970d0118e4d3636b0aa01780820"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/protected-artifacts.json": {
+      "bytes": 3216,
+      "sha256": "82a949eeba737547d6f21d202a45347524b2ad1ea2c36b754c7856a61d7230b2"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/runtime-estimate.json": {
+      "bytes": 988,
+      "sha256": "a9c43821c323e93d2af3068d6250e9260d3785f7d929d6b93f6e31551c3f1307"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/tests-regression.txt": {
+      "bytes": 7793,
+      "sha256": "43a91b04741e08e7bd32cbb2b2433848dda8bb3d75c15007179126d12fe4e78b"
+    },
+    "artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/tests-unimplemented.txt": {
+      "bytes": 10877,
+      "sha256": "853054c056e5fa910202622bd0e6a7d3e45f89f14a6ca1b30c4806dabbc9b2bf"
+    }
+  },
+  "restore": "Checkout the archive commit; run SHA256SUMS from repository root. Recreate transient mock raw with scripts/verify_qwen_full_cpu.py; never treat mocks as benchmark results."
+}

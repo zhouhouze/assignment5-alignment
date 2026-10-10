@@ -43,7 +43,7 @@ Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-s
 - [Judge可靠性](SUP-QWEN-evaluation/judge-reliability-plan.md)、[错误分类](SUP-QWEN-evaluation/error-taxonomy.md)、[飞轮](SUP-QWEN-data-flywheel/data-flywheel-design.md)、[路由](SUP-QWEN-data-flywheel/data-routing-policy.md)。
 - [P0–P10 Gate/资源](SUP-QWEN-evaluation/execution-gates.md)、[待决事项](SUP-QWEN-evaluation/open-decisions.md)、[Full计分板模板](SUP-QWEN-final/model-evaluation-scorecard.md)。
 
-独立归档提交由上述文件Git历史定位；本计划不替换任何历史运行结果。下一步建议用户确认P0，再单独授权P1。
+独立归档提交由上述文件Git历史定位；本计划不替换任何历史运行结果。当时建议确认P0；后续状态见下方P0/P1A记录。
 
 ## 2026-10-10：P0 Evaluation Design Freeze
 
@@ -53,4 +53,14 @@ Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-s
 
 本轮只读核验60个benchmark文件、16266条Base prompt、8项tokenizer/config、239项历史SHA；20项CPU parser测试通过。SFT空串/纯空白排除策略已批准，实际过滤NOT RUN；Base原27条人审pending。Full/SFT/DPO/Judge均NOT RUN，LC NOT VALIDATED。
 
-P1阻塞为Full CLI/selection/manifest尚未实现、恢复/规模IO未验收、现场GPU/weights/磁盘/持久化/预算与执行授权待落实。产品阈值未决不阻塞P1观察性学习。建议下一轮先批准P1 CPU readiness准备，不直接启动GPU。
+P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中工程项现已由下方P1A解决。产品阈值未决不阻塞P1观察性学习，P1B仍需现场资源/预算/执行授权。
+
+## 2026-10-10：P1A Full Baseline Runner Engineering Gate
+
+**P1A_ENGINEERING_READY=YES；P1B_EXECUTION_READY=NO / P1B_RESOURCE_CHECK_PENDING。** Full CLI、原子增量raw、显式resume、配置漂移/损坏/duplicate保护、独立离线复算与原子finalization完成。80项相关CPU tests通过；SFT/DPO/GRPO原有22项NotImplemented单独分类。全部16266条CPU输入覆盖与独立Mock链路通过；无真实GPU generation、训练或Judge，正式Full scorecard未填。
+
+- [P1A readiness与资源估算](SUP-QWEN-evaluation/p1a-readiness-report.md)、[实现与恢复语义](SUP-QWEN-evaluation/p1a-runner-implementation.md)、[故障测试](SUP-QWEN-evaluation/p1a-reliability-tests.md)、[P1B实际命令](SUP-QWEN-evaluation/p1b-execution-commands.md)。
+- [工程证据/manifest/checksum](../../artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/)。本轮恢复决定采用用户明确允许的“未持久化可重算”，协议、Prompt/parser和239项历史产物保持原样。
+- 归档提交subject=`Implement reliable Qwen full baseline runner`；准确implementation/archive SHA由该文件Git History及最终远端核对定位。CPU测试实际HEAD为09c18e7+dirty源码，完整源码hash已保存。
+
+下一Gate仅建议P1B 16266条Qwen2.5-7B Full Base，尚未批准；人审仍pending，Judge NOT RUN。
