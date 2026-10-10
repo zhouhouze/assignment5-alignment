@@ -38,3 +38,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-10 P1A Full runner
 
 原`cs336_alignment/qwen_baseline.py`扩展FULL；`qwen_baseline_storage.py`为原子IO/锁/记录校验，`qwen_baseline_audit.py`为独立磁盘复算（均无第二套推理runner）。`tests/test_qwen_full.py`提供37项CPU可靠性测试；`scripts/verify_qwen_full_cpu.py`验证全部16266输入与Mock IO。`notes/experiments/SUP-QWEN-evaluation/p1a-*.md`及`p1b-execution-commands.md`为实现/验收/后续命令；`artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1a/`仅保存工程摘要/日志，不含正式Full raw。Next task：P1B资源与批准。
+
+## P1B-0预检记录
+
+`notes/experiments/SUP-QWEN-evaluation/p1b-resource-preflight.md`记录云端资源核验、CPU/备份恢复及持久化/预算待决项；`artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/`保存预检事实、权重SHA、云端CPU日志、恢复验证/SHA，无正式模型run。

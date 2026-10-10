@@ -2,7 +2,9 @@
 
 日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P1A CPU 工程验收通过，P1B 资源/预算/执行授权待确认，真实 Full NOT RUN。**
 
-最新入口：[P1A readiness](p1a-readiness-report.md) → [实现](p1a-runner-implementation.md) → [可靠性测试](p1a-reliability-tests.md) → [P1B 命令](p1b-execution-commands.md)。下方 P0 记录为当时的历史状态。
+P1B-0最新状态：[现场预检](p1b-resource-preflight.md)——SSH恢复；源码/GPU/权重/容量及历史备份恢复通过，持久化保留规则/预算/执行批准待确认，真实Full未启动。
+
+工程入口：[P1A readiness](p1a-readiness-report.md) → [实现](p1a-runner-implementation.md) → [可靠性测试](p1a-reliability-tests.md) → [P1B 命令](p1b-execution-commands.md)。下方 P0 记录为当时的历史状态。
 
 唯一入口：[evaluation-protocol-v1.md](evaluation-protocol-v1.md) → [decision log](evaluation-decision-log.md) → [P1 readiness](p1-full-baseline-readiness.md)。产品质量数值阈值可保持未决，不阻塞P0技术完成。
 `directly_comparable_to_official=false`。本计划基于 Spring 2026 Supplement，不将 Qwen 改编结果称为官方 Llama 结果。

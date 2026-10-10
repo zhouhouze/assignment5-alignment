@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "record_type": "RESOURCE_BUDGET_PREFLIGHT",
+  "experiment_type": "PA5 Supplement Adapted Reproduction",
+  "directly_comparable_to_official": false,
+  "record_id": "20261010-p1b0-preflight",
+  "first_checked_at": "2026-10-10T15:04:57.270134+00:00",
+  "checked_at": "2026-10-10T15:21:05.257106+00:00",
+  "status": "TECHNICAL_CHECKS_PASS_PERSISTENCE_AND_APPROVAL_PENDING",
+  "local_source_commit": "724a34014c2842807f5260abe68f6bbbe103d9a0",
+  "remote_source_commit": "724a34014c2842807f5260abe68f6bbbe103d9a0",
+  "cloud_source_clean_during_tests": true,
+  "archive_commit_resolution": "Git history of this preflight documentation; not a Full inference commit.",
+  "full_run_code_commit": null,
+  "ssh_attempts": [
+    {
+      "route": "telecom",
+      "port": 28532,
+      "exit_code": 255,
+      "result": "Connection closed before authentication"
+    },
+    {
+      "route": "mobile",
+      "port": 28532,
+      "exit_code": 255,
+      "result": "Connection closed before authentication"
+    },
+    {
+      "route": "telecom",
+      "port": 28532,
+      "result": "Authenticated successfully after user reconfirmed credentials; independent SSH options; exact initial failure cause unknown"
+    }
+  ],
+  "remote_repository": "/root/cs336/pa5-supplement",
+  "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.84",
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.10.0+cu129",
+      "transformers": "5.7.0",
+      "vllm": "0.19.1",
+      "flash-attn": "2.8.3",
+      "tokenizers": "0.22.2"
+    },
+    "cuda_runtime": "12.9",
+    "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.84"
+  },
+  "gpu_compute_processes_at_close": "pid, process_name, used_gpu_memory [MiB]",
+  "weight_verification": {
+    "status": "PASS",
+    "files": 7,
+    "shards": 4,
+    "total_bytes": 15231300464,
+    "downloaded": false
+  },
+  "benchmark_files_verified": 60,
+  "policy_tokenizer_config_files_verified": 8,
+  "historical_baseline_checksums_verified": 239,
+  "protocol_id": "SUP-QWEN-EVAL-v1",
+  "protocol_sha256": "879764bf6f0286439cdf9527a7c9bdda93d064d4a157676851d79cf69145bcd3",
+  "disk_available_bytes": 139181142016,
+  "inodes_available": 12708128,
+  "local_backup_candidate_free_bytes": 246915952640,
+  "cpu_verification": {
+    "tests_passed": 80,
+    "pytest_seconds": 50.73,
+    "full_mock_examples_verified": 16266,
+    "independent_recomputation": "PASS",
+    "timings": {
+      "dry_prepare_seconds": 21.4193223580005,
+      "mock_prepare_seconds": 17.049222323999857,
+      "mock_capture_seconds": 252.39000220300113,
+      "score_audit_finalize_seconds": 21.731005231999006
+    }
+  },
+  "persistent_storage": {
+    "status": "PARTIALLY_CONFIRMED_BY_USER_NOT_RELEASE_VERIFIED",
+    "separate_cloud_disk": false,
+    "evidence_source": "User reply 2026-10-10",
+    "user_statement": "当前没有独立云盘，gpu 3.16 元 /小时，关机后保留示例。预计10月11号 00:13关闭",
+    "interpretation": "User reports instance retained after shutdown; root-files/reboot/release recovery not independently demonstrated.",
+    "release_retention": "UNKNOWN",
+    "continuous_full_backup_installed": false
+  },
+  "external_backup_roundtrip": {
+    "status": "PASS",
+    "scope": "Historical Smoke probe only; not a Full backup",
+    "files_verified": 28,
+    "bytes": 32755,
+    "sha256": "a0045cf1985c47e26f89eebe54a4b173a448e41b23de2f04677a59adbf9cfeb3",
+    "local_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/preflight/20261010-p1b0/historical-smoke-restore-probe.tar.gz"
+  },
+  "hourly_price": {
+    "amount": 3.16,
+    "currency": "CNY",
+    "unit": "GPU hour",
+    "source": "user reported; not independently billed"
+  },
+  "incurred_cost": "UNKNOWN",
+  "runtime_estimate": {
+    "basis": "Historical 20-example-per-task Pilot",
+    "generation_seconds": 5181.3713099586175,
+    "total_window_hours": [
+      2,
+      3
+    ],
+    "estimated_gpu_window_cost_cny": [
+      6.32,
+      9.48
+    ],
+    "excluded_costs": [
+      "setup",
+      "idle rental",
+      "storage"
+    ],
+    "guaranteed": false
+  },
+  "shutdown_window": {
+    "expected_at": "2026-10-11T00:13:00+08:00",
+    "source": "user reported plan; scheduler not inspected or modified",
+    "compared_at": "2026-10-10T23:18:35+08:00",
+    "seconds_remaining_at_comparison": 3265,
+    "sufficient_for_estimated_full_generation": false
+  },
+  "budget_approval": "PENDING",
+  "runtime_approval": "PENDING",
+  "full_execution_approval": false,
+  "p1b_execution_ready": false,
+  "full_generation_started": false,
+  "formal_full_completed_examples": 0,
+  "formal_full_expected_examples": 16266,
+  "gpu_model_loaded": false,
+  "credentials_recorded": false,
+  "remaining_blockers": [
+    "Confirm release/reboot persistence and final storage with external backup",
+    "Approve cost ceiling and cumulative runtime",
+    "Provide sufficiently long uptime window",
+    "Separate P1B-1 execution approval after preflight report"
+  ]
+}

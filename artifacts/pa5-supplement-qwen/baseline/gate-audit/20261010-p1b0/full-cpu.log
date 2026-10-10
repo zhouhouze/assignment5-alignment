@@ -1,0 +1,91 @@
+dry: CPU input coverage 16266/16266; P0 IDs/render hashes MATCH
+mock: CPU input coverage 16266/16266; P0 IDs/render hashes MATCH
+MOCK_TEST_ONLY: saved 16266/16266
+{
+  "status": "PASS",
+  "mode": "MOCK_TEST_ONLY",
+  "created_at": "2026-10-10T15:19:19.542399+00:00",
+  "source": {
+    "run_code_commit": "724a34014c2842807f5260abe68f6bbbe103d9a0",
+    "git_dirty": false
+  },
+  "code_sources_sha256": {
+    "cs336_alignment/qwen_baseline.py": "56f87d403260fd581efec8365742ef3068b2a9fd8e45f8994e16e378850d9b81",
+    "cs336_alignment/qwen_baseline_storage.py": "0124144ca8bb13432900c8f03d14d9ee9c30517ed06b2f3cd24ef798be07f003",
+    "cs336_alignment/qwen_baseline_audit.py": "74fc68515f2048c5b767857bfb7c0ad650efe6093746624928221dd0aa0d5ffa"
+  },
+  "test_driver_sha256": "33ac07d0cfe07a7c23cf369c827613ab9a57938fd1f437a7426156e5835612e8",
+  "protocol_id": "SUP-QWEN-EVAL-v1",
+  "protocol_sha256": "879764bf6f0286439cdf9527a7c9bdda93d064d4a157676851d79cf69145bcd3",
+  "generation_executed": false,
+  "gpu_model_loaded": false,
+  "vllm_imported": false,
+  "mock_generation_executed": true,
+  "full_real_generation_status": "NOT_RUN",
+  "input_inventory": {
+    "mmlu": {
+      "expected_count": 14042,
+      "ordered_ids_sha256": "80a50c01f339362887feb3c853f6f7558e187bf1ae6b75005a918ac39ec0926e",
+      "rendered_inventory_sha256": "983d4e908fc07803a332f42cee9ed22be2517840268b3dfc1324985fda3503ac",
+      "max_prompt_tokens": 1186
+    },
+    "gsm8k": {
+      "expected_count": 1319,
+      "ordered_ids_sha256": "57695ad86447a1794056b2e3e90739995477110e7c648781821347f712ad990e",
+      "rendered_inventory_sha256": "df4dd6af87967bd1a3918efd3ac5b9c275e701b7d82d8b94214d03399e13cca1",
+      "max_prompt_tokens": 330
+    },
+    "alpaca_eval": {
+      "expected_count": 805,
+      "ordered_ids_sha256": "cbd581cdd91f69501a8b04a2d2286217da7f6d97ebfbdf4d01dcecb762368f06",
+      "rendered_inventory_sha256": "f7c1364dfffc4fe32b3ab59b5ec5eb329a66f080653722f896cda4ac9c9d435d",
+      "max_prompt_tokens": 624
+    },
+    "simple_safety_tests": {
+      "expected_count": 100,
+      "ordered_ids_sha256": "5664de77bf3e075247ef46ae191c6a53d95e8df882659c747744b5662880fe49",
+      "rendered_inventory_sha256": "20c6f6c77a7a2265c9c079ff3c0d477b1eadfa0baa791819bbaa40ad8b93e60b",
+      "max_prompt_tokens": 164
+    }
+  },
+  "dataset_sha256": "8ae5c03b4f261bd7c10dd31056efde8c87b34cf580ee90f4c6aaf856ab684e55",
+  "dataset_file_count": 60,
+  "coverage": {
+    "mmlu": {
+      "expected": 14042,
+      "verified": 14042
+    },
+    "gsm8k": {
+      "expected": 1319,
+      "verified": 1319
+    },
+    "alpaca_eval": {
+      "expected": 805,
+      "verified": 805
+    },
+    "simple_safety_tests": {
+      "expected": 100,
+      "verified": 100
+    }
+  },
+  "total_verified": 16266,
+  "independent_recomputation": "PASS",
+  "candidate_schemas": "PASS",
+  "timings": {
+    "dry_prepare_seconds": 21.4193223580005,
+    "mock_prepare_seconds": 17.049222323999857,
+    "mock_capture_seconds": 252.39000220300113,
+    "score_audit_finalize_seconds": 21.731005231999006
+  },
+  "sizes_bytes": {
+    "raw": 59236572,
+    "attempts": 3216690,
+    "finalized": 65756721
+  },
+  "total_bytes": 220778661,
+  "file_count": 24422,
+  "temporary_artifacts": "/root/pa5-supplement-setup/20261010-p1b0/cpu-tmp/pa5-P1A-MOCK_TEST_ONLY-64s5707w",
+  "temporary_artifacts_durability": "NON_DURABLE; reproducible CPU MOCK; not experimental raw",
+  "final_bundle_checksums_sha256": "9875c3e0426424b392f72d12aa9d7a5255744c53a5390bfb1d6c14f1d0c7fce8",
+  "note": "No capability/safety scores archived from mocks. Re-run this driver to recreate plumbing evidence."
+}

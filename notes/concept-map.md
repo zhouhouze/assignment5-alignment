@@ -33,3 +33,5 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 ## 2026-10-10 P1A evidence chain
 
 固定协议/config/data/Prompt → CPU全量selection+tokenization → batch intent → fsync+exclusive atomic raw commit → 已提交ID集合 → 显式恢复缺失ID（未持久化推理可能重复）→ 两套磁盘复算 → 原子final bundle → SHA与独立持久副本。80项工程测试和16266条Mock通过≠真实Full完成，RAW_COMPLETE≠模型质量达标。学习确认pending。
+
+P1B-0：代码/协议一致 ≠ 当前GPU/权重可用 ≠ 数据可持久恢复 ≠ 预算与执行获批。SSH断开前已提交raw的可靠性和云实例释放后数据保留是不同的保证；两者均需明确证据。

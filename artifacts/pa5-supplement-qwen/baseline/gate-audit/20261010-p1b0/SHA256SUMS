@@ -1,0 +1,8 @@
+7cdb93c7ef26d5f74007c92533a5ca55801203c50a55c041a42adc0967b0e9dc  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/backup-restore-check.json
+726d7d21f1530f9909a225f3eac9b839019a623293ab91f8a58abd83a864345c  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/full-cpu-report.json
+c2f540a3aa189303e6a90510fd75f654d6e31bacefa9a46684c628f8ca142298  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/full-cpu.log
+dcc0a083ddff8eb580d5828d133947b22fcdb6e8911fa94df4cfd974611b3f73  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/preflight.json
+514aa6c300af05e336d93dfaa7cb7fd32fb69216a107b3c502d83d017652850f  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/remote-close-check.json
+ae81d52d7a537deb7c83b92fb96ebba5b1e350832a1359968b68ed2c68d9c172  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/remote-resource-check.json
+6c32f18845cd3a957a2cc5e83e274477a668d23fe27b713a4f199f848346b764  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/tests-regression.txt
+308fc6e66f38e92e74fe5b2925ab8da434e43383be7e51fc48ed46ced608ef49  artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/weight-verification.json

@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-10T15:20:16.477278+00:00",
+  "remote_artifacts": {
+    "full-cpu-report.json": {
+      "bytes": 3449,
+      "sha256": "726d7d21f1530f9909a225f3eac9b839019a623293ab91f8a58abd83a864345c"
+    },
+    "full-cpu.log": {
+      "bytes": 3612,
+      "sha256": "c2f540a3aa189303e6a90510fd75f654d6e31bacefa9a46684c628f8ca142298"
+    },
+    "tests-regression.txt": {
+      "bytes": 7793,
+      "sha256": "6c32f18845cd3a957a2cc5e83e274477a668d23fe27b713a4f199f848346b764"
+    }
+  },
+  "source_commit": "724a34014c2842807f5260abe68f6bbbe103d9a0",
+  "git_status": "",
+  "compute_apps": "pid, process_name, used_gpu_memory [MiB]",
+  "disk_available_bytes": 139181142016,
+  "inodes_available": 12708128,
+  "formal_full_started": false
+}

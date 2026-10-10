@@ -71,3 +71,15 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining questions：P1B真实GPU/权重/存储、预算/执行批准；云盘POSIX持久性须现场验收；不承诺位级复现。
 - Learner explanation status：pending；请后续解释第7条保存后崩溃为何第8条可能再次推理，却不应有两条有效raw。
 - Next task：本轮停止；P1B获批并验收资源后才真实生成。
+
+## 2026-10-10 — P1B-0 Resource/Budget Preflight
+
+- Component：本地/云端配置与资源核验、CPU IO验收、独立备份恢复，不改核心代码。
+- Concept：源码一致、资源可用、持久可恢复、预算与执行批准是独立条件；fsync与云实例释放后保留也不是同一保证。
+- Files changed：p1b-resource-preflight、预检JSON/SHA/CPU日志、索引/registry/进度。
+- Tests run：云端80 passed in 50.73s；16266/16266 Full CPU输入/Mock保存/复算/schema通过（阶段合计312.59秒）；4个权重分片+3配置/index SHA通过；239历史SHA通过；历史Smoke本地往返28文件恢复通过。
+- Bugs encountered：最初两条SSH入口在认证前关闭；用户确认信息后独立SSH参数重试成功，确切原因未确定。云端缺少rg，后续文件/进程查询用Python；未安装新依赖。
+- Final decision：预检技术证据归档，P1B_EXECUTION_READY=NO；不运行真实Full，不改协议/Prompt/parser/参数。
+- Remaining questions：根系统盘重启/释放后的保留规则、最终持久挂载、Full持续备份、用户已提供时价3.16元/小时；批准金额/时间与独立P1B-1授权仍待定。00:13预定关机窗口不足本次Full，建议下次预留2–3小时。
+- Learner explanation status：pending，不代签理解。
+- Next task：补齐持久化和预算，汇报后等待P1B-1批准；真实Full仍0/16266。

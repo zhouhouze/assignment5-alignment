@@ -64,3 +64,9 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 - 归档提交subject=`Implement reliable Qwen full baseline runner`；准确implementation/archive SHA由该文件Git History及最终远端核对定位。CPU测试实际HEAD为09c18e7+dirty源码，完整源码hash已保存。
 
 下一Gate仅建议P1B 16266条Qwen2.5-7B Full Base，尚未批准；人审仍pending，Judge NOT RUN。
+
+## 2026-10-10：P1B-0 Resource & Budget Preflight
+
+**现场源码/GPU/权重/容量核验通过；P1B_EXECUTION_READY=NO。** SSH已恢复，云端从干净185364d安全同步724a340；4个权重分片及3个配置/index文件SHA通过，60个benchmark、8个tokenizer/config及239项历史证据校验通过。RTX5090空闲，系统盘约130GiB/1273万inodes可用。云端80项CPU测试通过；16266/16266 CPU Mock保存/复算/导出通过，证据见预检目录，不能计入模型成绩。历史Smoke本地备份及28文件恢复SHA通过。
+
+[现场预检与下一步](SUP-QWEN-evaluation/p1b-resource-preflight.md)、[机器可读证据](../../artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/)。无独立云盘，用户说明关机后保留实例，释放后恢复规则未确认；时价3.16元/小时，费用/时间上限和P1B-1授权待定。用户预计10月11日00:13关机，23:18时仅余约55分钟，不足Full外推86分钟；建议下一开机窗口预留2–3小时。真实Full仍0/16266，未加载/下载模型。用户要求预检后停止，不能将技术检查通过视为正式生成获批。
