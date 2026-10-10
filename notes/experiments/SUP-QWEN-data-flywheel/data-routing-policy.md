@@ -1,6 +1,6 @@
 # 数据路由与训练准入政策
 
-状态：proposal-v1；所有候选默认quarantine，training_admission=PENDING。error标签可多选；primary_route恰好一个，secondary_route可选；任一失败须记录决定与理由，不能因难判断而悄悄丢失。
+状态：**Data Flywheel Routing v1 FROZEN（候选建议规则）**；所有候选默认quarantine，training_admission=PENDING。error标签可多选；primary_route恰好一个，secondary_route可选；任一失败须记录决定与理由，不能因难判断而悄悄丢失。
 
 | 失败类型 | 推荐主去向 | 原因/必要条件 |
 | --- | --- | --- |
@@ -29,7 +29,7 @@
 4. 隔离：benchmark/test firewall、train/validation/test分组清单及SHA；已冻结test不可借评估回流。污染未决即暂停。
 5. 质量：SFT示范事实/推理/代码/安全/完整性验证；DPO同prompt两答可比较、chosen依据明确、长度不是唯一理由。高风险必须人审。
 6. 版本化：候选集与accepted集分开；manifest列来源/排除/去重/审阅/分布/sha/bytes/生成代码；不能覆盖上一轮数据。
-7. 审批：用户确认目标假设、准入样本、guardrail和成本，记录approval_ref/date/scope；没有批准不进入训练。新数据实验从smoke/pilot开始，不自动再训Full。
+7. 审批：Codex不得自动把失败样本加进训练集；用户确认目标假设、准入样本、guardrail和成本，记录approval_ref/date/scope；没有批准不进入训练。新数据实验从smoke/pilot开始，不自动再训Full。
 
 记录字段：candidate_id、parent_issue_id、source_is_holdout、source_rights_status、privacy_status、dedup_group、split、labels、severity、primary_route、secondary_route、routing_reason、quality_evidence、ai_initial_analysis、human_review_status、human_notes、admission_status、approval_ref、dataset_version。
 

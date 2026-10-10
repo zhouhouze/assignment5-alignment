@@ -55,3 +55,7 @@
 - Final decision：只提交规划/模板；数据过滤、Full、训练/Judge均NOT RUN，P0 approval PENDING。
 - Remaining questions：指标阈值、Prompt stop、空白规则、人审预算、optimizer dtype、训练/Judge硬件与LC可靠性。
 - Learner explanation status：pending；未代用户宣称理解。建议解释为何Base-zero→SFT-Alpaca不能单独归因训练。
+
+## 2026-10-10 — P0 Evaluation Design Freeze
+
+Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概念：技术有效性与产品质量门槛分开；协议FROZEN不等于Full runner已ready。Files：3份核心协议/decision/readiness，更新已有metrics/Prompt/Judge/人审/数据策略/taxonomy/索引。Checks：20个parser CPU测试通过；60数据文件、16266 prompt/ID、8个tokenizer/config、239历史SHA核验通过；27条人审pending。发现：旧提案P95/empty口径与runner不一致，已纠正文档；Full CLI/selection与恢复规模IO尚未验收。Decision：仅P0归档，实际过滤/Full/训练/Judge均NOT RUN；产品阈值不虚构。Remaining：P1 CPU readiness与现场资源/预算/执行批准。Learner explanation status：pending；为何技术协议完成而P1仍BLOCKED，需用户后续解释，不代签理解。

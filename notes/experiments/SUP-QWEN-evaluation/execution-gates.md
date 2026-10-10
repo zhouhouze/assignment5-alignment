@@ -1,6 +1,6 @@
 # P0–P10 执行 Gate 与资源安排
 
-日期2026-10-10；全部未来执行Gate为NOT RUN，P0文档已准备但approval=PENDING。本轮只归档本计划。任何Gate“通过”不自动授权下一Gate；如同一批明确授权多个CPU阶段，仍分别验收与记录。
+日期2026-10-10；P0设计冻结获批，技术协议[SUP-QWEN-EVAL-v1](evaluation-protocol-v1.md)已冻结；P1–P10执行NOT RUN。P1当前BLOCKED，见[readiness](p1-full-baseline-readiness.md)。任何Gate“通过”不自动授权下一Gate；如同一批明确授权多个CPU阶段，仍分别验收与记录。
 
 建议依赖顺序：P0 → P1 → P2 → P3 → P4 → P5 → P6 → P7 → P8 → P9 → P10。P2/P3可经授权在P1后处理/等待Judge时用CPU推进，不占第二个GPU实验；P7文档调查可前移但DPO初始化必须等SFT checkpoint。
 
@@ -10,25 +10,25 @@ P1/P6在Judge尚未验收时只关闭raw/自动评分子阶段，Alpaca/Safety�
 
 ## P0 — Evaluation Design Freeze
 
-**Objective**：确认要回答的问题、统计口径、可归因范围和可承受成本。当前文档已准备，design freeze approval=PENDING。
+**Objective**：冻结技术评估口径和执行边界，形成SUP-QWEN-EVAL-v1；不杜撰产品数值阈值。
 
-**Inputs**：本计划、当前状态核验、2026 handout、历史PILOT及归档规范。
+**Inputs**：用户本轮P0批准、2026 handout、既有22份规划与smoke/pilot/归档证据。
 
-**Execution Tasks**：用户审阅open-decisions；确定主/诊断指标、Prompt/stop、数据ID、Judge invalid/tie/LC、guardrail非劣界、review预算；记录审批版本，不通过口头“继续”推断无限实验范围。
+**Execution Tasks**：审计实际HEAD/runner/parser/配置→CPU核验data/IDs/prompt/tokenizer→冻结metrics/Prompt/SFT策略/Judge/人审/路由/配对→决策日志与readiness→Git归档。本轮无GPU。
 
-**Metrics**：未决项数量、协议字段完整率、现有证据覆盖；本阶段无模型分数。
+**Metrics**：协议16节齐备；60个data文件与16266输入CPU核验；20项parser测试；239项历史SHA；27人审pending不改。
 
-**Acceptance Criteria**：全部执行阻断项有明确决定/延期范围，固定proposal版本和批准的下一Gate；延期Judge不等于批准缺项结论。
+**Acceptance Criteria**：技术规范FROZEN、差异显式处置、产品未决项按阻塞Gate分类、3份核心交付可追溯且push核对；无需为完成P0杜撰阈值。
 
-**Failure / Stop Conditions**：指标/样本/模型版本不一致；关键分母或预算尚无共识时不启动GPU。
+**Failure / Stop Conditions**：发现身份/数据/Prompt漂移时暂停冻结对应项；P1工程/现场blocker记录，不越界实现/运行。
 
-**Deliverables**：已批准protocol/scorecard/gates及decision log。当前仅proposal文档。
+**Deliverables**：evaluation-protocol-v1、evaluation-decision-log、p1-full-baseline-readiness，更新既有规范与索引。
 
-**GPU Requirements**：无GPU；本地阅读与CPU验证。
+**GPU Requirements**：0；本轮仅本地CPU只读核验、文档编辑与Git。
 
-**Expected Cost and Time**：估算用户审阅30–60分钟，复杂口径另计；GPU费用0。计划编写已在本轮完成，不计为模型实验时间。
+**Expected Cost and Time**：GPU费用0；P0实际文档/CPU处理不算模型实验时长；人审未执行。
 
-**Next Gate Approval**：明确批准P1的Full Base raw+自动评分范围；P2/P3 CPU工作如要并行需明确列入。不能自动跨Gate。
+**Next Gate Approval**：本轮完成后停止。建议下一轮批准P1 CPU Full runner/readiness准备；技术与现场验收通过后再批准GPU Full，不自动跨Gate。
 
 ## P1 — Full Base Baseline
 
@@ -36,9 +36,9 @@ P1/P6在Judge尚未验收时只关闭raw/自动评分子阶段，Alpaca/Safety�
 
 **Inputs**：P0冻结协议、已通过Base smoke/pilot、固定模型权重/数据SHA、可用GPU和批准预算。
 
-**Execution Tasks**：CPU全量ID/长度预检→启动前显存/磁盘核查→四任务16266条generation→MMLU/GSM复算→原文review/归档；Prompt B诊断若获单独授权可同次加载串行做。
+**Execution Tasks**：先解决Full runner/恢复/规模IO并通过CPU验收→CPU全量ID/长度预检→启动前显存/磁盘核查→四任务16266条generation→MMLU/GSM复算→原文review/归档；P1不包括B/C诊断和72B Judge。
 
-**Metrics**：各任务N/N、accuracy、parse/empty/length、tokens与batch throughput；Alpaca/Safety Judge分数PENDING。
+**Metrics**：各任务N/N、accuracy、parse/empty/length、tokens与batch throughput；Alpaca/Safety Judge分数NOT RUN。
 
 **Acceptance Criteria**：四任务完整raw和checksum、自动指标独立复算、坏输出未丢弃；称generation阶段完成，Judge质量待P9。
 
@@ -48,15 +48,15 @@ P1/P6在Judge尚未验收时只关闭raw/自动评分子阶段，Alpaca/Safety�
 
 **GPU Requirements**：已实测可推理的1×RTX5090 32GB或等效验收硬件；本计划不表示当前云GPU已检查。
 
-**Expected Cost and Time**：粗估纯生成约1.44小时，来自各任务20条PILOT速率外推（见下）；建议预留2–4 GPU小时含加载/长尾/归档，不含Judge和人工，排队/网络另计；工程准备1–3小时估算。
+**Expected Cost and Time**：粗估纯生成约1.44小时，来自各任务20条PILOT速率外推（见下）；在Full规模IO验收前仅作参考的2–4 GPU小时含加载/长尾/归档，不含Judge和人工，排队/网络另计；工程准备1–3小时估算。
 
-**Next Gate Approval**：归档后单独批准P2；P1 Judge部分明确PENDING，不自动启动72B。
+**Next Gate Approval**：归档后单独批准P2；P1 Judge部分明确NOT RUN，不自动启动72B。
 
 ## P2 — SFT Data Acceptance
 
 **Objective**：得到可追溯且明确获批的SFT派生数据视图和质量风险记录。
 
-**Inputs**：原始三文件固定SHA、24异常清单、空白定义和过滤批准、审计预算。
+**Inputs**：原始三文件固定SHA、24异常清单、已冻结SFT Data Acceptance Policy v1；实际过滤执行授权/审计预算待批准。
 
 **Execution Tasks**：按data-quality-plan重新验证schema→只排除获批空字段→保留行号→split隔离/污染审计→随机与分层复核。
 
@@ -146,7 +146,7 @@ P1/P6在Judge尚未验收时只关闭raw/自动评分子阶段，Alpaca/Safety�
 
 **Inputs**：P5 checkpoint、P1 raw、冻结协议、2×2诊断清单、已批准范围。
 
-**Execution Tasks**：四任务SFT Full generation/复算；获批后生成B/C诊断缺项→paired迁移/CI→人审；Judge尚未通过则相关分数PENDING。
+**Execution Tasks**：四任务SFT Full generation/复算；获批后生成B/C诊断缺项→paired迁移/CI→人审；Judge未运行则分数NOT RUN，已运行但未验收则PENDING。
 
 **Metrics**：Base→SFT修复/退化、主指标、guardrail、长度与2×2效应/交互。
 
@@ -216,7 +216,7 @@ P1/P6在Judge尚未验收时只关闭raw/自动评分子阶段，Alpaca/Safety�
 
 **Metrics**：四任务主分数、invalid/order/length/repeat/human agreement、strict安全、LC、能力退化、false refusal/效率。
 
-**Acceptance Criteria**：三模型完整raw、Judge可靠性阻断项解决、分母和版本一致；无法计算LC明确PENDING原因；不能将有缺项表称全部完成。
+**Acceptance Criteria**：三模型完整raw、Judge可靠性阻断项解决、分母和版本一致；LC未验证则NOT VALIDATED、未运行NOT RUN，实际计算失败则明确PENDING原因；不能将有缺项表称全部完成。
 
 **Failure / Stop Conditions**：Judge invalid/重大漏判未解决、数据/版本不一致、缺人工裁决、硬件失败。
 

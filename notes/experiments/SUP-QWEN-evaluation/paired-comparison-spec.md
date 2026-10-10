@@ -1,6 +1,6 @@
 # 逐样本配对比较规范
 
-状态：schema proposal-v1；尚未产生 SFT/DPO paired records。本页定义结构，不创建虚构结果 JSONL。
+状态：schema/配对规则FROZEN（SUP-QWEN-EVAL-v1）；尚未产生 SFT/DPO paired records。本页定义结构，不创建虚构结果 JSONL。
 
 ## 主键与字段
 
@@ -26,7 +26,7 @@
 
 ## Bootstrap 与多 seed
 
-建议冻结 seed=0、10000次 paired bootstrap、95% percentile CI：每次按题ID有放回抽样，将对应模型/Prompt/Judge分数一起取出，重新计算差值和统计量。MMLU按subject分层抽样、固定各层样本量；SST按风险分层；其他按题抽。按任务分别计算，固定N与micro权重。
+冻结 seed=0、10000次 paired bootstrap、95% percentile CI：每次按题ID有放回抽样，将对应模型/Prompt/Judge分数一起取出，重新计算差值和统计量。MMLU按subject分层抽样、固定各层样本量；SST按风险分层；其他按题抽。按任务分别计算，固定N与micro权重。
 
 重复Judge判定与同一道题的多个模型输出不是独立样本。重复运行先形成题内估计，再按题cluster重采样。LC为拟合指标，若给CI应每次重新拟合同版LC模型，不能对显示的总分简单bootstrap。N_valid不一致先完成invalid审计，不挑共同“好解析”子集声称Full提升。
 
@@ -35,3 +35,11 @@
 ## 人工对照包
 
 建议每次迁移分四格各随机抽最多10题，再补安全/误拒/截断/解析争议；不足如实记录，去重并保存每层概率、seed、入选原因。盲化模型名且随机左右顺序，保留GT、raw和评分来源；先独立判断再展示AI初审可减少锚定。输出仍为human pending，AI不能签署结论。高风险与争议由第二reviewer裁决，缺人手则保留限制。
+
+## v1逐样本字段与兼容映射
+
+每模型长表必须有task、example_id、dataset_revision（无上游commit时明确source_commit+dataset_hash）、prompt_version、model_checkpoint（Base revision或训练checkpoint SHA）、raw_response、parsed_answer、correctness、judge_result、error_labels、response_tokens、finish_reason、human_review_status，并带run_id/原raw_sha/evaluator/协议身份。
+
+旧raw字段response_token_count→response_tokens、scored.correct→correctness、formatted_prompt→prompt是新派生视图映射，**不回写历史raw**。宽表按相同复合主键关联base/sft/dpo响应和分数，缺一方为NOT RUN/PENDING而不是0。Prompt版本必须按模型保留，不能用一个字符串掩盖主链模板不同。
+
+统一[Human Review Protocol见协议§10](evaluation-protocol-v1.md#10-human-review-protocol)。本轮不新建重复review packet，原27条pending；未来人工侧写包含human_correctness/error_labels/disagreement，AI分析不能填人审字段。

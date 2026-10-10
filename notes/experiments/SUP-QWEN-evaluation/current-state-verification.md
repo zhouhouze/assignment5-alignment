@@ -18,7 +18,7 @@
 ## 复查结果
 
 - 重新计算 baseline/SHA256SUMS 全部 **239/239** 项 SHA256：通过；逐个 JSON 解析确认 4 条 SMOKE、80 条 PILOT。历史产物未重写。
-- 读取 PILOT metrics：MMLU **15/20 = 75%**，GSM8K **17/20 = 85%**；两者 parse failure 均 0。AlpacaEval **4/20** length termination，Judge 分数 PENDING；Safety Judge 分数 PENDING。这些都不能填进 Full scorecard。
+- 读取 PILOT metrics：MMLU **15/20 = 75%**，GSM8K **17/20 = 85%**；两者 parse failure 均 0。AlpacaEval **4/20** length termination，Judge 分数 NOT RUN；Safety Judge 分数 NOT RUN。这些都不能填进 Full scorecard。
 - 平均输出 tokens：MMLU 19.15、GSM8K 181.2、AlpacaEval 289.05、Safety 133.5。该批 80 条空回答为 0。
 - 三份 SFT 文件重新逐行计数、检查空字段并计算 SHA：train 210348（1 空 prompt、21 空 response）；test 23110（2 空 response）；sample_train 1000（0 空字段）。哈希与[验收记录](../SUP-QWEN-02-sft/data-acceptance.md)一致。只读核验，没有写过滤结果。
 - 全量扫描三份 SFT JSON 的键仅为 prompt、response；逐条来源不可识别。现有 train/test 精确重合为 0 是历史审计结论，不代表语义去重或污染检查已通过。
@@ -37,3 +37,9 @@
 - [2026-10-10 云端同步记录](../SUP-QWEN-01-baseline/archive-sync-status.md)属于前一 Gate 的核验，不代替未来租用硬件的实时 preflight。
 
 PILOT 运行代码 commit 为 `f5f4050de424a2b371da83e792fa5a4a81279084`；实验归档提交与运行代码提交分开追溯。后续计划文件不会改变以上历史状态。
+
+## P0冻结复核追加（2026-10-10，起点439f17b）
+
+本轮local与origin HEAD均439f17b2f152676175b2ad2e38f2c93302a75b7e，工作树起点clean。再次校验Baseline239项SHA、原27条review全部pending；未改旧raw/metrics。固定tokenizer/config八文件SHA通过，读取全部四任务16266条输入计算ID与prompt inventory，零超长（各任务最大prompt tokens 1186/330/624/164）。这些是CPU输入检查，不是新generation。
+
+实际运行tests/test_metrics.py和tests/test_supplement_metrics_edges.py：20 passed in 0.01s。Full runner源码仍明确只支持SMOKE/PILOT且select非PILOT只取1题；不能把历史“可申请下一Gate”理解成Full代码已ready。协议与blocker详见[evaluation-protocol-v1.md](evaluation-protocol-v1.md)、[readiness](p1-full-baseline-readiness.md)。无新SFT/DPO/Judge/人审结果。

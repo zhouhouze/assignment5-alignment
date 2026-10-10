@@ -1,6 +1,6 @@
 # 离线实验与产品数据飞轮
 
-状态：DESIGN ONLY；新数据构建/回流/再训练 NOT RUN。核心是把“发现问题”转为经过准入的训练资产，同时保持可信评估。
+状态：闭环与隔离规则纳入SUP-QWEN-EVAL-v1，FROZEN；新数据构建/回流/再训练 NOT RUN。核心是把“发现问题”转为经过准入的训练资产，同时保持可信评估。
 
 ```text
 Immutable model outputs + run manifests

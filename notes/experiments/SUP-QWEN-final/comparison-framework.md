@@ -19,4 +19,9 @@
 
 ## 2026-10-10 评估协议提案
 
-后续统一使用[评估/数据飞轮计划入口](../SUP-QWEN-evaluation/README.md)与[Full scorecard模板](model-evaluation-scorecard.md)。状态为proposal-v1、P0审批PENDING，不修改以上历史事实；现有PILOT不填入Full结果。
+后续统一使用[评估/数据飞轮计划入口](../SUP-QWEN-evaluation/README.md)与[Full scorecard模板](model-evaluation-scorecard.md)。上轮439f17b时状态为proposal-v1、P0审批PENDING；当前状态见下方P0冻结记录，不修改以上历史实验事实；现有PILOT不填入Full结果。
+
+
+## P0技术协议已冻结
+
+当前统一规范为[SUP-QWEN-EVAL-v1](../SUP-QWEN-evaluation/evaluation-protocol-v1.md)，替代上方proposal状态；P1工程readiness仍BLOCKED。Judge无实测NOT RUN，LC NOT VALIDATED；主表不得填PILOT数值。

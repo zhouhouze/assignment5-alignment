@@ -1,14 +1,14 @@
-# SFT 数据准入与质量审计计划
+# SFT Data Acceptance Policy v1 / 数据质量审计计划
 
-状态：P2 NOT RUN，过滤审批 PENDING。本轮只读核查原始三文件，不写入任何派生训练数据。固定 mirror revision 见[协议](../SUP-QWEN-evaluation/evaluation-protocol.md)；镜像与2026 Modal字节等价性未证明，不能改称官方原件。
+状态：**SFT Data Acceptance Policy v1 = FROZEN / 用户已批准处理策略；实际过滤 execution_status=NOT RUN，P2执行仍待单独批准。** 本轮不写派生训练数据。固定 mirror revision 见[协议](../SUP-QWEN-evaluation/evaluation-protocol.md)；镜像与2026 Modal字节等价性未证明，不能改称官方原件。
 
 ## 版本化准入
 
 Raw immutable → schema validation → invalid row exclusion → derived view → manifest → 人工准入。
 
 1. 对原始文件计算 bytes/SHA、逐行检查JSON对象和prompt/response字符串。损坏JSON、缺键、非字符串等超出当前已知空字段范围时hard stop，不随意扩展剔除规则。
-2. 推荐只剔除 prompt 或 response 为空的记录。P2审批需明确空的定义：建议与既有审计一致采用 strip()==空串，strip仅用于检测，**不trim保存内容**；严格空串与纯空白数量分别复算并报告。
-3. 以原始文件SHA+split+1-based物理行号为source_row_id。保存excluded row_id/reason，双字段异常只剔除一条，按ID集合去重计数。
+2. 已批准只剔除 prompt 或 response 的空字符串、纯空白字符串：采用Python字符串strip()==空串检测，**不trim保存非空原文**。严格空串与非空但strip后空分别计数；reason区分empty_prompt/whitespace_only_prompt/empty_response/whitespace_only_response。非字符串/缺键属schema异常hard stop，不伪装空字段。
+3. 以原始文件SHA+split+1-based物理行号为source_row_id。保存excluded_rows manifest的row_id/reason，双字段异常只剔除一条，按ID集合去重计数。
 4. 预计train210348→210326、validation23110→23108，sample1000保持1000；实际计数必须重新计算。数量或哈希不同先调查，不能硬编码为预期。
 5. 派生文件另命名derived-v1；manifest记录规则文本/hash、执行commit、源SHA、逐行mapping、排除清单SHA、派生SHA/bytes/count、生成时间、审批记录。原始test在此充当SFT validation，不是下游benchmark test。
 6. 复算train/validation精确prompt/pair overlap；sample_train是train子集，不能当validation。近重复/benchmark污染另作审计，不自动删除已知四个重复prompt或其他低质量/风格异常记录。若泄漏，暂停准入，提出新的版本化变更审批。
@@ -37,6 +37,6 @@ Raw immutable → schema validation → invalid row exclusion → derived view �
 
 AI给出的task_type/quality_labels/severity均为provisional，解释只能放ai_initial_analysis；human_review_status=pending、human_notes=null，直到真实人工提交。建议10%双人盲审+所有S3/争议；agreement按共同已审样本分母，未审不能当一致。
 
-高风险/质量问题只做标记及后续数据建议，不在本轮或P2未经授权自动全量清洗。准入判据：源和派生可复算、split隔离可证明、24条处理已批准、抽样覆盖/人审覆盖已披露、重大风险有处置结论。未完成部分保留PENDING。
+高风险/质量问题只做标记及后续数据建议，不在本轮或P2未经授权自动全量清洗。准入判据：源和派生可复算、split隔离可证明、空字段规则获批且实际重新扫描/派生验收完成、抽样覆盖/人审覆盖已披露、重大风险有处置结论。未完成部分保留PENDING。
 
 输出：[报告模板](sft-data-quality-report.md)、exclusions、derived manifest、review packet、审计统计/限制。完整数据不入Git，仅在已批准阶段写派生视图。

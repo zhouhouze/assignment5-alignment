@@ -9,8 +9,9 @@
 | MMLU Accuracy | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | GSM8K Accuracy | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | AlpacaEval Win rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
-| AlpacaEval LC Win rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
+| AlpacaEval LC Win rate | NOT RUN / NOT VALIDATED | NOT RUN / NOT VALIDATED | NOT RUN / NOT VALIDATED | PENDING | PENDING |
 | Strict safety rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
+| Invalid Judge output rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | MMLU Parse failure rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | GSM8K Parse failure rate | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | Empty response rate（per task） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
@@ -20,7 +21,7 @@
 | Instruction completion（diagnostic） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | Constraint pass rate（diagnostic） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | Unsafe compliance（diagnostic） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
-| False refusal（diagnostic） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
+| False refusal（guardrail，独立benign集） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 | Generation throughput（per task） | NOT RUN | NOT RUN | NOT RUN | PENDING | PENDING |
 
 ## 证据与状态模板
@@ -35,4 +36,4 @@
 | Raw / derived / logs / checksum / archive | PENDING | PENDING | PENDING |
 | Human review coverage / status | PENDING | PENDING | PENDING |
 
-比例差值写pp；relative另报百分比且基线0时undefined。Judge部分生成后未评分填PENDING；尝试但不可用的LC保留PENDING并写unavailable原因。主任务指标与补充诊断不能合并当总成绩。
+比例差值写pp；relative另报百分比且基线0时undefined。Judge尚未运行统一NOT RUN；LC方法兼容性NOT VALIDATED；实际尝试后有未决项才用PENDING并写原因。主任务指标与补充诊断不能合并当总成绩。

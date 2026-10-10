@@ -1,6 +1,8 @@
 # Qwen 模型评估与数据飞轮计划
 
-日期：2026-10-10。版本：proposal-v1。**P0 approval = PENDING；只完成计划归档，不授权后续执行。**
+日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P0设计冻结已批准并完成文档与CPU核验。P1 generation readiness=BLOCKED，尚未授权执行。**
+
+唯一入口：[evaluation-protocol-v1.md](evaluation-protocol-v1.md) → [decision log](evaluation-decision-log.md) → [P1 readiness](p1-full-baseline-readiness.md)。产品质量数值阈值可保持未决，不阻塞P0技术完成。
 `directly_comparable_to_official=false`。本计划基于 Spring 2026 Supplement，不将 Qwen 改编结果称为官方 Llama 结果。
 
 ## 当前证据与目标
@@ -26,8 +28,14 @@
 
 所有后续运行遵守[归档规范](../archive-policy.md)：执行代码 commit、manifest、immutable raw、版本化评分、metrics、review、checksum、持久存储登记。规划文件的实际归档提交由 Git 历史定位，不在文件内伪造自己的 commit。
 
-本轮没有生成新模型输出，没有清洗正式数据、训练、Judge 下载/运行，也没有改变官方测试、评分代码或历史 raw。当前只提出协议，下一轮先批准 P0，再单独批准 P1。
+本轮没有生成新模型输出，没有清洗正式数据、训练、Judge 下载/运行，也没有改变官方测试、评分代码或历史 raw。本轮冻结协议但不修改runner/parser/数据。下一轮建议先批准P1 CPU Full runner与恢复/IO验收，之后才启动获批的GPU Full。
 
-## 本轮文档验收
+## 上轮规划归档（439f17b）
 
 新增22份规划/模板，更新5份索引/进度文档；仅Markdown。新文档本地相对链接全部存在；P0–P10各有完整10项Gate字段；baseline239项SHA再次通过；Git diff whitespace和常见credential模式扫描通过。没有代码变更，因此本轮没有新训练单元测试结果。历史43 passed仅按原日志引用。Git归档仍需以实际push成功及远端commit核对为准。
+
+## 本轮P0冻结验收
+
+没有复制/重建22份规划。本轮新增唯一协议、决策日志、P1 readiness三份必需文档，更新已有规则/索引。60个benchmark文件与历史manifest一致，全部16266条Base prompt在CPU渲染/分词，零超长；7B tokenizer/config 8项SHA通过；Baseline239项SHA通过；原27条review仍pending。
+
+实际CPU parser测试20 passed，未运行模型generation、训练或Judge。纠正文档P95和empty定义与既有runner的差异，不改历史指标。P1阻塞：Full路径未实现，恢复与大规模IO未验收，现场设备/存储/预算/执行授权待落实。当前协议、code hash、ID/prompt inventory与decision log可由本轮归档commit追溯。

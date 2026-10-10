@@ -35,7 +35,7 @@ Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-s
 
 ## 2026-10-10：Qwen Evaluation / Data Flywheel 规划
 
-状态：**PLAN ARCHIVED；P0 design approval PENDING**。本轮只做文档/模板与只读核验；未运行Full、过滤SFT、训练或72B Judge。正式结果仍为NOT RUN/PENDING。
+上轮状态（439f17b）：**PLAN ARCHIVED；当时P0 approval PENDING**。当前已进入下方P0冻结归档。本轮只做文档/模板与只读核验；未运行Full、过滤SFT、训练或72B Judge。正式结果仍为NOT RUN/PENDING。
 
 - [总入口与当前证据](SUP-QWEN-evaluation/README.md)、[状态核验](SUP-QWEN-evaluation/current-state-verification.md)。
 - [指标](SUP-QWEN-evaluation/evaluation-metrics-spec.md)、[协议](SUP-QWEN-evaluation/evaluation-protocol.md)、[Prompt对照](SUP-QWEN-evaluation/prompt-control-experiment.md)、[逐题比较](SUP-QWEN-evaluation/paired-comparison-spec.md)。
@@ -44,3 +44,13 @@ Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-s
 - [P0–P10 Gate/资源](SUP-QWEN-evaluation/execution-gates.md)、[待决事项](SUP-QWEN-evaluation/open-decisions.md)、[Full计分板模板](SUP-QWEN-final/model-evaluation-scorecard.md)。
 
 独立归档提交由上述文件Git历史定位；本计划不替换任何历史运行结果。下一步建议用户确认P0，再单独授权P1。
+
+## 2026-10-10：P0 Evaluation Design Freeze
+
+**SUP-QWEN-EVAL-v1技术协议FROZEN；P0设计已批准。P1 GPU generation readiness=BLOCKED，尚未运行。**
+
+[唯一协议](SUP-QWEN-evaluation/evaluation-protocol-v1.md) → [逐项决策](SUP-QWEN-evaluation/evaluation-decision-log.md) → [P1 readiness / blocker](SUP-QWEN-evaluation/p1-full-baseline-readiness.md)。归档commit由Git History定位；下一run记录该协议commit/SHA及自身实际执行commit。
+
+本轮只读核验60个benchmark文件、16266条Base prompt、8项tokenizer/config、239项历史SHA；20项CPU parser测试通过。SFT空串/纯空白排除策略已批准，实际过滤NOT RUN；Base原27条人审pending。Full/SFT/DPO/Judge均NOT RUN，LC NOT VALIDATED。
+
+P1阻塞为Full CLI/selection/manifest尚未实现、恢复/规模IO未验收、现场GPU/weights/磁盘/持久化/预算与执行授权待落实。产品阈值未决不阻塞P1观察性学习。建议下一轮先批准P1 CPU readiness准备，不直接启动GPU。

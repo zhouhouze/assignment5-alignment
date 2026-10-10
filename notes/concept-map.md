@@ -25,3 +25,7 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 ## 2026-10-10 Evaluation / Data Flywheel
 
 固定模型/数据/Prompt/Judge协议 → immutable raw → 同题配对与Prompt 2×2 → 能力/偏好/解析/安全错误分离 → 人工复核 → 独立SFT示范或DPO偏好候选 / regression / evaluator fix → 来源、隐私、去重、holdout隔离与准入 → 下一轮单变量实验。训练loss、Judge偏好、用户满意度不是同一指标。当前仅规划，理解状态pending。
+
+## 2026-10-10 P0 freeze
+
+协议身份/版本/hash冻结 → 全量输入CPU核验 → 实现ready与运行现场条件分别验收 → candidate输出/自动评分 → Judge与人审独立状态。P95/empty口径须由实际实现与协议对照；产品阈值缺失不妨碍描述性评估，但不能宣称产品上线合格。

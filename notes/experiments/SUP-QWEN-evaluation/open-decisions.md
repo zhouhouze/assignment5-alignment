@@ -1,24 +1,41 @@
-# 待用户决定的关键事项
+# SUP-QWEN-EVAL-v1 — Open Decisions与阻塞范围
 
-状态：PENDING，以下是建议而非代用户批准。可以分Gate作决定；P0不要求提前选定尚无pilot证据的具体GPU，但必须同意后续实测再报价的边界。
+P0技术口径已冻结，决策状态见[evaluation-decision-log.md](evaluation-decision-log.md)。本页仅列剩余事项；不能把已批准SFT空白策略或已冻结accuracy再写成待讨论。
 
-| 决策 | 推荐提案 | 最晚时点 / 未决影响 |
+## Blocks P1
+
+| 类型 | 待完成事项 | 状态 / 解决建议 |
 | --- | --- | --- |
-| 主指标及胜负定义 | 四任务分开；不做任意加权总分；Guardrail包含安全/解析/空/length | P0；定义未冻不跑Full |
-| 可接受退化与收益 | 用户给MMLU/GSM非劣界、安全/误拒容忍度、最小有用收益；同时报告CI，不只p值 | P0至少确认“观察性学习、暂不作上线决策”或具体阈值；无阈值不宣称产品验收通过 |
-| Judge invalid和tie | strict安全分母N、invalid不算safe；Alpaca tie=.5，invalid>0主结论PENDING且报界限 | P0 |
-| Prompt/stop和长度 | 主评估保持既有512/4096及# Query: stop，SFT/DPO同参数；超长先暂停，不裁题 | P0；2×2可比性依赖 |
-| 2×2样本规模 | 每任务100题固定seed0，A/D精确匹配可引用Full | P0；额外B/C generation须明确授权 |
-| bootstrap与seed | 10000次95% paired bootstrap；主训练seed0；多seed作为另批扩展 | P0；单seed限制必须披露 |
-| benign/harmful诊断 | 独立50+50，来源许可、rubric与样本冻结；不混课程分数 | P0先定是否纳入首轮；未做则false refusal PENDING |
-| SFT空白规则 | strip()==空串仅作检测，不改非空原文；只排空字段 | P2之前需明确审批，原始数据保持不可变 |
-| 人审规模/预算/人选 | SFT100随机+50分层+20val；HH100对上限；Judge40案例，争议二审 | 对应Gate开始前；可缩规模但披露不确定性，不由AI签字 |
-| optimizer精度与训练设备 | 先统计实际dtype/memory，首步实测，不默认80GB足够；分片方案另批 | P3/P4；决定数值/成本，不自动替换LoRA |
-| checkpoint选择 | SFT固定1epoch最终；DPO按handout policy val classification，同分低val loss再早step | P3/P7冻结，不用benchmark挑选 |
-| DPO长度和RMSprop细节 | 按HH真实长度预检再定max length；不默认512；固定alpha/eps等 | P7；超长策略影响偏好含义 |
-| Judge运行预算及顺序 | 先82calls以内smoke/reliability；Full单顺序2715calls或双顺序5130calls | Judge开始前明确；双顺序聚合/冲突处理需事前冻结 |
-| LC可靠性/同家族审计 | 先验自定义Qwen LC；异家族样本/额外Judge需明确资源和使用许可 | Judge Gate；不可用项目保持PENDING，不替用别的标尺 |
-| 存储/租费上限 | 选择持久云盘或已授权LFS、容量与保留checkpoint数；声明GPU小时/金额上限 | 各GPU Gate；未知费用不执行Full |
-| 训练回流授权 | holdout只用于回归；独立来源新数据逐版本审批；线上数据另有许可/隐私要求 | P10/下一周期；本计划不授权自动数据回流 |
+| 技术实现 | Full CLI/selection/manifest/保护及CPU测试 | BLOCKED；下一轮批准CPU readiness准备 |
+| 恢复/规模验收 | pending/failed事故核对、immutable continuation、复合ID/计时唯一、Full规模IO | BLOCKED；先CPU无模型故障注入与规模验证，不在GPU上试错 |
+| 现场检查 | 执行机HEAD、7B weights SHA、软件、GPU空闲/显存、磁盘/inodes、持久化恢复 | PENDING；启动前实查，旧云端记录不能替代 |
+| 用户执行/预算 | P1生成授权、GPU租费/小时上限、最终raw持久存储位置 | PENDING USER APPROVAL；本轮仅P0，未启动Full |
 
-推荐下一次仅处理P0设计冻结与P1范围/预算。批准记录应包含decision_id、日期、审批人、选项、理由、protocol commit、授权Gate和额度；无批准则保持PENDING。
+准确率分母、原Prompt/512/stop、数据ID/hash、parser等已FROZEN，不需下一轮重议。详见[readiness](p1-full-baseline-readiness.md)。
+
+## Blocks SFT
+
+- 空串/纯空白过滤策略已FROZEN；实际P2过滤/准入执行仍待批准。
+- SFT质量人审人员/规模/预算、实际派生数据SHA与隔离验收。
+- Dataset/batching/training实现、optimizer状态精度、硬件/并行预算、checkpoint选择细节。
+
+以上不阻塞P1 Base自动评分；不得凭本轮批准策略自动清洗数据。
+
+## Blocks DPO/Judge
+
+- DPO：SFT checkpoint、HH单轮数据准入/隔离、人审预算、RMSprop/长度/硬件细节与训练授权。
+- Judge：自定义annotator运行/解析mock和统计兼容；LC Win Rate=NOT VALIDATED；真实Judge=NOT RUN。
+- Judge可靠性样本规模、人审/争议裁决人员、单/双顺序Full及聚合、异家族审计资料、GPU/存储预算均PENDING USER APPROVAL。
+- 旧提案位置翻转10%/人工agreement80%没有批准，不作为成功阈值。
+
+这些不阻塞P1候选输出；P1不生成赢率、安全分或LC数值。
+
+## Product quality decision only
+
+可接受数学/知识退化、安全与帮助性取舍、误拒容忍、用户满意度目标、最小有用胜率提升均PENDING USER APPROVAL。缺产品场景就保持未决；**不阻塞P1观察性学习，也不阻塞P0技术完成**。不能据本实验宣称上线验收通过。
+
+## 其他后续诊断与人工资源
+
+2×2设计与效应公式已冻结；每任务100题样本规模、benign/harmful 50+50、自动重复探测器阈值仍PROPOSED，诊断执行须单独批准。bootstrap计算规则已冻结，不意味着批准多seed训练。
+
+现有27条review继续pending；优先使用已有包。P1可生成并归档自动评分/待审包，人审人选/规模/预算阻塞“人工复核完成”声明而不阻塞候选生成。新争议记录只追加sidecar。
