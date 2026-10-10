@@ -1,0 +1,22 @@
+{
+  "verification_date_client_timezone": "2026-10-10 Asia/Shanghai",
+  "status": "PASS",
+  "archive_content_commit": "03e5e59da1231c5943b564b6033f95da7e6b6248",
+  "branch": "learning/pa5-supplement",
+  "worktree_clean": true,
+  "checksum_files_verified": 239,
+  "runs": {
+    "smoke": {
+      "raw_count": 4,
+      "original_matches_archive": true
+    },
+    "pilot": {
+      "raw_count": 80,
+      "original_matches_archive": true
+    }
+  },
+  "gpu_status": "NVIDIA GeForce RTX 5090, 32607 MiB, 15 MiB, 0 %",
+  "new_generation_started": false,
+  "credentials_recorded": false,
+  "note": "This verifies the existing archive before the documentation-only closure commit; final three-way HEAD checked after its push and fast-forward."
+}

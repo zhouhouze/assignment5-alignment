@@ -70,7 +70,7 @@ MMLU使用既有选项parser；GSM8K使用Supplement final-number parser再Decim
 
 **READY to request the next Gate**：4/4 smoke、80/80 pilot、offline PASS和证据齐全；归档提交由Git History定位。本轮完成归档后停止。下一Gate建议Qwen2.5-7B Full Zero-shot Baseline，仅在另获批准后将当前只支持SMOKE/PILOT的CLI扩展为FULL并做CPU验收。是否保留512上限需在新Gate明确；不静默改配置。没有启动FULL/SFT/DPO/72B Judge/O2训练，SFT24条异常保持原样。
 
-归档后的同步状态更新：本地/GitHub完整产物已在aa4698f归档；云端最后同步遇SSH认证阻塞，三端对齐尚未完成。实验技术条件通过，但完整Gate交接标为BLOCKED_REMOTE_AUTH，详见[archive-sync-status.md](archive-sync-status.md)。先完成云端同步，再确认下一Gate交接。
+2026-10-10同步状态更新：此前SSH认证阻塞已解除，云端安全同步并通过239项Baseline checksum及84条原始输出一致性检查。本地/GitHub完整实验产物仍来自aa4698f；本次只更新归档状态，未重跑实验。GPU Gate交接条件已满足，详见[archive-sync-status.md](archive-sync-status.md)。下一Gate仍需用户单独批准。
 
 ## Learning Check
 

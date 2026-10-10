@@ -1,5 +1,13 @@
 # GPU Gate 归档与云端同步状态
 
+## 2026-10-10：同步恢复并验收
+
+新SSH入口连接成功。云端从干净的f5f4050安全fast-forward到03e5e59；239项Baseline文件SHA256全部通过，4条smoke和80条pilot与仓库外原始输出逐字节一致。本地与GitHub原有档案完整，认证阻塞已解除。验证证据见`artifacts/pa5-supplement-qwen/archive-sync/20261010/verification.json`。随后将本次状态更新提交推送，并将云端fast-forward到同一状态归档提交；最终提交号从本文件Git History定位，三端HEAD在完成回复中确认。
+
+本轮只补齐归档同步，没有加载模型或产生新generation。GPU检查为RTX5090 32607MiB、15MiB占用、0%利用率。当前Baseline GPU Gate已完成；27条human review仍pending，FULL/SFT/DPO/Judge仍未获本轮执行授权。
+
+## 2026-10-03 历史阻塞记录（已解除）
+
 2026-10-03。模型执行和产物验收已完成；最终云端Git同步仍待完成。
 
 - 实际GPU执行commit：`f5f4050de424a2b371da83e792fa5a4a81279084`，启动时云端工作区clean。
