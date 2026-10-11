@@ -70,3 +70,13 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 **现场源码/GPU/权重/容量核验通过；P1B_EXECUTION_READY=NO。** SSH已恢复，云端从干净185364d安全同步724a340；4个权重分片及3个配置/index文件SHA通过，60个benchmark、8个tokenizer/config及239项历史证据校验通过。RTX5090空闲，系统盘约130GiB/1273万inodes可用。云端80项CPU测试通过；16266/16266 CPU Mock保存/复算/导出通过，证据见预检目录，不能计入模型成绩。历史Smoke本地备份及28文件恢复SHA通过。
 
 [现场预检与下一步](SUP-QWEN-evaluation/p1b-resource-preflight.md)、[机器可读证据](../../artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/)。无独立云盘，用户说明关机后保留实例，释放后恢复规则未确认；时价3.16元/小时，费用/时间上限和P1B-1授权待定。用户预计10月11日00:13关机，23:18时仅余约55分钟，不足Full外推86分钟；建议下一开机窗口预留2–3小时。真实Full仍0/16266，未加载/下载模型。用户要求预检后停止，不能将技术检查通过视为正式生成获批。
+
+## 2026-10-11：P1B-0.5 Full 增量备份与恢复验收
+
+**P1B_0_5_BACKUP_ACCEPTANCE=PASS；P1B_EXECUTION_READY=NO；真实Full 0/16266。** 新增stdlib备份/guard/验收脚本，不改协议或Runner；Mac/Linux各24项测试通过。实际SSH周期写入备份、失败日志/保留旧快照/文件级恢复、自有CPU进程过期停止通过；既有16266条CPU Mock备份到Mac并回传独立云端目录，原Runner validate及finalized完整性PASS。没有重新生成Smoke/Pilot，没有GPU Full或训练/Judge。原有GRPO19项NotImplemented失败保持分类。
+
+- [备份验收/保留机制边界](SUP-QWEN-evaluation/p1b-incremental-backup-acceptance.md)、[实际启动命令第6节](SUP-QWEN-evaluation/p1b-execution-commands.md)、[资源/费用检查单](SUP-QWEN-evaluation/p1b-resource-cost-checklist.md)。
+- [源码hash/真实SSH/测试/恢复证据](../../artifacts/pa5-supplement-qwen/baseline/gate-audit/20261011-p1b05/)。旧Mock、失败验收和事故文件不冒充正式模型结果。备份对象/压缩包在Mac既有备份根，registry登记；模型/环境不提交。
+- 公共文档区分保留磁盘与释放；账户级保留设置/费用UNKNOWN，用户关机保留说明与本轮文件仍在不构成释放后恢复承诺。最近费率3.16元/小时，2–3小时约6.32–9.48元另计准备/空闲等；最长运行时间、费用上限及P1B-1批准待定。
+
+本轮测试watcher已停止。归档commit通过Git history定位；源码执行起点14e2db9+dirty新增工具，精确hash见验收manifest。Next task：取得独立P1B-1与预算/时长批准后，才绑定正式run启动60秒周期worker及guard。

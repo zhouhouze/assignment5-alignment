@@ -1,6 +1,6 @@
 # P1B — 可执行命令与资源 Gate（尚未执行）
 
-当前 `P1B_RESOURCE_CHECK_PENDING`、`P1B_EXECUTION_READY=NO`，真实 Full **NOT RUN**。以下命令对应本轮已实现的 CLI，**只在用户另行批准 P1B、确认金额/时长上限和现场资源后执行**。本文件本身不是批准。
+当前P1B-0.5备份验收通过；`P1B_EXECUTION_READY=NO`，真实Full **NOT RUN**。最新周期备份/保护命令见第6节。以下命令对应本轮已实现的 CLI，**只在用户另行批准 P1B、确认金额/时长上限和现场资源后执行**。本文件本身不是批准。
 
 ## 1. 环境与存储验收
 
@@ -114,3 +114,117 @@ score 日志放在 run **之外**，避免 finalize 建立 source-inventory 后 
 将完整 run（包括 raw、selected、attempt/recovery/log、finalized 与失败证据）复制到独立持久位置，传输后在相同代码/配置/数据下运行 validate；默认仓库相对路径支持 checkout 迁移，外部绝对路径按 manifest 恢复挂载。报告、metrics、manifest、review、hash、恢复命令提交 Git；完整 raw 根据实际体积压缩或用已授权持久存储，registry 登记 bytes/SHA/run_id/date/location/restore/durability。不自动启用 LFS 或付费服务，不删除唯一 raw。模型权重只登记固定 revision 与文件 inventory，可重新下载；未来训练 checkpoint 另需真实保存。
 
 P1B 结束后记录实际耗时/租费、错误与截断、人审 pending 和 Judge NOT RUN。此 runbook 没有启动 Full、没有下载模型。Next task：现场验收与取得 P1B 范围/预算批准。
+
+## 6. P1B-0.5 新增：周期备份与备份过期保护（正式启动命令，尚未执行）
+
+2026-10-11：备份验收见[p1b-incremental-backup-acceptance.md](p1b-incremental-backup-acceptance.md)，资源/费用见[检查单](p1b-resource-cost-checklist.md)。本轮只验收CPU备份；**以下真实Full命令必须在用户单独批准P1B-1、金额/累计时间和存储机制后执行**。原协议不变。不要把本文件里的命令复制进当前验收任务执行。
+
+### A. SSH master（Mac独立终端）
+
+重新确认当日端口；当前提供的为32124。交互输入密码，不写入命令、环境文件或Git。启用keepalive，后续备份用BatchMode；若连接失效则备份失败，guard会过期停止实验，需重新认证恢复。
+
+```bash
+ssh -4 -F /dev/null -o StrictHostKeyChecking=accept-new \
+  -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=2 \
+  -o ControlMaster=auto -o ControlPersist=600 -o ControlPath=/tmp/pa5-ssh-backup-live \
+  -p 32124 root@180.127.11.177
+```
+
+### B. 云端准备（仅P1B-1获批后）
+
+在`/root/cs336/pa5-supplement`、正确归档HEAD且clean时执行。以下使用已验收系统盘作为工作区、Mac作为独立持久副本；**系统盘不因此获得释放后的保留保证**。若更换挂载，重验IO。批准额度由用户给出，不从建议值自动赋值；费用包括哪些部分也需明确。
+
+```bash
+cd /root/cs336/pa5-supplement
+: "${P1B_MAX_SECONDS:?Set explicitly approved total attempt seconds}"
+: "${P1B_APPROVED_BUDGET_CNY:?Set explicitly approved expense ceiling}"
+export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
+export PY=/root/cs336/pa5-supplement/.venv/bin/python
+export P1B_STORE=/root/pa5-supplement-setup
+export RUN_ID="qwen-full-$(date -u +%Y%m%dT%H%M%SZ)"
+export RUN_DIR="$P1B_STORE/full/$RUN_ID"
+export ACK_PATH="$P1B_STORE/backup-health/$RUN_ID.json"
+export MODEL_PATH="$PWD/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796"
+export P1B_MAX_SECONDS P1B_APPROVED_BUDGET_CNY
+
+git status --short
+git rev-parse HEAD
+nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv
+df -h "$P1B_STORE"
+df -i "$P1B_STORE"
+"$PY" -m cs336_alignment.qwen_baseline prepare --stage full \
+  --task mmlu gsm8k alpaca_eval simple_safety_tests \
+  --run-id "$RUN_ID" --output-dir "$P1B_STORE/full" \
+  --dataset-root "$PWD" --config configs/qwen_baseline_gate.json
+"$PY" -m cs336_alignment.qwen_baseline validate --run-dir "$RUN_DIR"
+printf '%s\n' "$RUN_ID"
+```
+
+检查输出后再进入下一步；GPU被占用、dirty、预算未定、空间不足或协议漂移均停止。本轮只用一个包含四task的run，共享累计max-seconds；不要同时启动多个实验。货币上限由操作者按真实费率/已耗时间监控，Runner参数不自动退租或货币封顶。
+
+### C. Mac初始备份和周期worker（独立终端）
+
+将B输出的**同一个RUN_ID**填入；不要另生成时间戳。Mac保持开机/网络，合盖睡眠仍会失联。下面前台worker在终端中持续运行，Ctrl-C停止；无需Codex会话保持活跃。已有工作worker时不要重复启动，同一store有flock保护。
+
+```bash
+cd /Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement
+: "${RUN_ID:?Paste exact cloud RUN_ID}"
+export LOCAL_STORE="/Users/hr/Documents/Lesson/pa5-experiment-backups/full/$RUN_ID"
+export REMOTE_RUN="/root/pa5-supplement-setup/full/$RUN_ID"
+export REMOTE_ACK="/root/pa5-supplement-setup/backup-health/$RUN_ID.json"
+BACKUP_ARGS=(
+  --host root@180.127.11.177 --port 32124
+  --control-path /tmp/pa5-ssh-backup-live
+  --remote-python /root/cs336/pa5-supplement/.venv/bin/python
+  --remote-script /root/cs336/pa5-supplement/scripts/qwen_artifact_backup.py
+  --run-dir "$REMOTE_RUN" --store "$LOCAL_STORE" --ack-path "$REMOTE_ACK"
+)
+python3 scripts/qwen_artifact_backup.py pull "${BACKUP_ARGS[@]}"
+python3 scripts/qwen_artifact_backup.py status --store "$LOCAL_STORE" --max-age 180
+caffeinate -i python3 scripts/qwen_artifact_backup.py pull "${BACKUP_ARGS[@]}" \
+  --cycles 0 --interval 60 --timeout 180
+```
+
+首轮须SUCCESS且ack已回传；worker运行后再启动D。所有逐轮日志在`$LOCAL_STORE/backup-events.jsonl`，传输错误stderr/incoming被保留。首轮/周期失败非零退出，先修复网络/磁盘/认证，重新运行相同store续传。不要删除旧快照/对象去“清空重试”。worker一次导出超时180秒可能先触发guard过期，安全停止优先于持续生成。
+
+### D. 云端通过guard启动真实Full（仅获批后）
+
+复用B的shell环境，确认C持续健康。下面Python launcher打开独立日志，实际guard PID明确；不使用可能再次fork而混淆PID的后台shell链。guard第一次检查ack通过后才spawn Runner。
+
+```bash
+"$PY" - <<'PY'
+import json, os, subprocess, sys
+from pathlib import Path
+run = Path(os.environ['RUN_DIR'])
+(run/'logs').mkdir(exist_ok=True)
+command = [sys.executable, 'scripts/qwen_backup_guard.py',
+    '--ack-file', os.environ['ACK_PATH'], '--run-dir', str(run),
+    '--max-age', '180', '--poll', '5', '--',
+    sys.executable, '-m', 'cs336_alignment.qwen_baseline', 'run',
+    '--run-dir', str(run), '--model-path', os.environ['MODEL_PATH'],
+    '--approve-full', '--max-seconds', os.environ['P1B_MAX_SECONDS']]
+with (run/'logs/generation.log').open('xb') as log:
+    proc = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=log,
+        stderr=subprocess.STDOUT, start_new_session=True, close_fds=True)
+print(json.dumps({'guard_pid': proc.pid, 'run_dir': str(run)}))
+PY
+```
+
+`open('xb')`拒绝覆盖旧日志。进程/PID、completed/expected、elapsed/费用、GPU、空间和本地last SUCCESS需观察。ack失联超过180秒，guard在下一次poll后TERM自有进程组，30秒不退出则KILL；保留PARTIAL/事故。还需确认GPU计算进程实际退出，不能根据guard退出直接推断所有vLLM子进程都退出。不要自动终止其他实验。
+
+恢复前检查没有活跃Runner，核验旧raw与剩余累计预算；重新启动Mac worker，确认新ack；使用同一run并在Runner参数里显式加入`--resume`，日志另用唯一新文件名。禁止直接重复初始启动命令覆盖/并行运行。
+
+### E. 关闭、最终备份与恢复验收
+
+确认guard/Runner退出且日志关闭；按上方第5节先validate、score（stdout日志在run外）、再validate。期间继续Mac worker，评分结束后Ctrl-C结束worker，确保同一store锁已释放，再在Mac执行：
+
+```bash
+python3 scripts/qwen_artifact_backup.py pull "${BACKUP_ARGS[@]}" --quiescent
+python3 scripts/qwen_artifact_backup.py status --store "$LOCAL_STORE"
+python3 scripts/qwen_artifact_backup.py restore --store "$LOCAL_STORE" \
+  --destination "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/$RUN_ID"
+```
+
+最终snapshot必须quiescent=true、deferred为空、raw_count=16266；quiescent还保留pending/失败finalizing证据，但不计入raw_count。在相同代码/依赖/固定数据的独立恢复目录运行原`qwen_baseline validate`；本Gate实际验证了Mac恢复后回传云端，validate 16266/16266与finalized/source inventory通过。正式run必须再对自身执行一次，不能拿Mock证明替代。确认外部恢复成功、指标/manifest/checksum/registry已归档，才讨论关机/释放；释放保留磁盘的操作不包含在实验授权内。
+
+Next task：取得P1B-1与预算/时长批准后才执行A–E；本轮CPU测试worker已停止。

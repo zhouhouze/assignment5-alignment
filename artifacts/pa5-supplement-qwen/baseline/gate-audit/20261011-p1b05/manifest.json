@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "record_id": "20261011-p1b05",
+  "record_type": "CPU_BACKUP_RESTORE_GATE",
+  "experiment_type": "PA5 Supplement Adapted Reproduction",
+  "evaluation_protocol": "SUP-QWEN-EVAL-v1",
+  "directly_comparable_to_official": false,
+  "created_at": "2026-10-11T03:28:24.468052+00:00",
+  "source_commit": "14e2db96a34d8a60f69f17dce5c09563bfa81bf0",
+  "source_git_dirty": true,
+  "source_sha256": {
+    "scripts/qwen_artifact_backup.py": "3e318d3dcc214fb39e6c0510ff9bedbdf2ecf06377b71730c9410b0a1f7f8189",
+    "scripts/qwen_backup_guard.py": "675c2481b387ee00d5c56e6bfe9eb11bf595c0a00071cb527c8c02ba3a25d0b5",
+    "scripts/verify_qwen_backup.py": "d5c8f17a326eda05d4de282c39743c8cc7f1116940d347105248d342be43c00c",
+    "tests/test_qwen_backup.py": "ea7bffcc7653cfb865bf8a73da80d0b939ada69af963c2883eaba3b31a9ab3aa"
+  },
+  "runner_source_unchanged": true,
+  "status": "PASS",
+  "tests": {
+    "mac_passed": 24,
+    "linux_passed": 24,
+    "real_60_second_cycles": 2,
+    "existing_grpo_not_implemented_failures": 19,
+    "live_ssh": "PASS",
+    "existing_mock_restore_raw": 16266,
+    "existing_mock_restore_files": 24421,
+    "restored_original_runner_validation": "PASS"
+  },
+  "provider_release_recovery": "UNKNOWN",
+  "model_loaded": false,
+  "gpu_generation": false,
+  "smoke_pilot_rerun": false,
+  "formal_full_completed": 0,
+  "formal_full_expected": 16266,
+  "p1b1_execution_approved": false,
+  "p1b1_execution_ready": false,
+  "approved_budget": null,
+  "approved_runtime": null,
+  "watcher_left_running": false,
+  "human_review": "PENDING_UNCHANGED",
+  "incident_reports": [
+    "live-acceptance-initial.json",
+    "live-acceptance-pending-evidence-failure.json"
+  ],
+  "archive_commit_resolution": "Git history: backup gate archival commit is distinct from source execution commit",
+  "next_task": "Wait for P1B-1 execution, budget/runtime, uptime window and storage approvals; do not auto-start generation",
+  "final_acceptance_report": "live-acceptance.json",
+  "retained_intermediate_reports": [
+    "live-acceptance-before-directory-fsync.json",
+    "live-acceptance-before-log-fsync.json",
+    "live-acceptance-initial.json",
+    "live-acceptance-pending-evidence-failure.json"
+  ],
+  "source_versions_note": "Intermediate reports retain exact then-current helper hashes. Final PASS and final cadence use the archived helper hashes; directory/event fsync hardened before final rerun."
+}

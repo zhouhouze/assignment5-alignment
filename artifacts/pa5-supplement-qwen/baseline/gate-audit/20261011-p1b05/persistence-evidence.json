@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-11T03:18:06.715111+00:00",
+  "public_platform_documents": [
+    {
+      "url": "https://s.apifox.cn/b0fc397f-c455-4c9a-9d82-875fc48ae106/doc-6898147",
+      "finding": "Status0 ended/released; selecting kept disk gives Status8 after expiry; can create new instance from kept disk"
+    },
+    {
+      "url": "https://s.apifox.cn/b0fc397f-c455-4c9a-9d82-875fc48ae106/api-242528020",
+      "finding": "Releasing kept disk transitions to Status0 and records DiskReleaseTime"
+    },
+    {
+      "url": "https://gpu.ai-galaxy.cn/docs_v2/常见问题.html",
+      "finding": "Local instance disks lack redundant backup; recommends keeping all disks after use"
+    }
+  ],
+  "account_setting": "UNKNOWN; no authenticated account API/control-panel evidence",
+  "user_statement": "2026-10-10: no separate cloud disk; instance retained after shutdown",
+  "observed": "Project and artifacts present on new SSH connection; no controlled shutdown/release test",
+  "release_recovery_guarantee": "UNKNOWN; never assume recoverable",
+  "destructive_provider_api_called": false
+}

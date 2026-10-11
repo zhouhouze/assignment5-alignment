@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-11T03:26:55.166061+00:00",
+  "source_commit": "14e2db96a34d8a60f69f17dce5c09563bfa81bf0",
+  "git_status": "",
+  "compute_apps": "pid, process_name, used_gpu_memory [MiB]",
+  "active_acceptance_workers": [],
+  "backup_scripts_sha256": {
+    "qwen_artifact_backup.py": "3e318d3dcc214fb39e6c0510ff9bedbdf2ecf06377b71730c9410b0a1f7f8189",
+    "qwen_backup_guard.py": "675c2481b387ee00d5c56e6bfe9eb11bf595c0a00071cb527c8c02ba3a25d0b5"
+  },
+  "runner_sources_unchanged": true,
+  "disk_available_bytes": 137348755456,
+  "inodes_available": 12572591,
+  "formal_output_directory_exists": false,
+  "formal_generation_started_by_this_gate": false
+}

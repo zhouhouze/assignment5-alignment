@@ -42,3 +42,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## P1B-0预检记录
 
 `notes/experiments/SUP-QWEN-evaluation/p1b-resource-preflight.md`记录云端资源核验、CPU/备份恢复及持久化/预算待决项；`artifacts/pa5-supplement-qwen/baseline/gate-audit/20261010-p1b0/`保存预检事实、权重SHA、云端CPU日志、恢复验证/SHA，无正式模型run。
+
+## 2026-10-11 P1B-0.5 backup / restore
+
+`scripts/qwen_artifact_backup.py`只做SSH导出、Mac增量对象/快照、校验/恢复/ack；`scripts/qwen_backup_guard.py`只保护显式命令的自有进程组；`scripts/verify_qwen_backup.py`用CPU fixture与既有Mock验证真实SSH，不调用模型。`tests/test_qwen_backup.py`为24项stdlib故障测试。备份报告与资源清单在`notes/experiments/SUP-QWEN-evaluation/p1b-*`；小型证据在`gate-audit/20261011-p1b05`，外部对象位置由registry/snapshot manifest索引。

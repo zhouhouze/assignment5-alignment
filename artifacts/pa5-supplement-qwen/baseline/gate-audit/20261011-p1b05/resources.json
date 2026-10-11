@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-11T03:10:53.850178+00:00",
+  "commit": "14e2db96a34d8a60f69f17dce5c09563bfa81bf0",
+  "git_status": "",
+  "gpu": "name, memory.total [MiB], memory.used [MiB], utilization.gpu [%], driver_version\nNVIDIA GeForce RTX 5090, 32607 MiB, 15 MiB, 0 %, 595.84",
+  "compute_apps": "pid, process_name, used_gpu_memory [MiB]",
+  "software": {
+    "torch": "2.10.0+cu129",
+    "transformers": "5.7.0",
+    "vllm": "0.19.1",
+    "flash-attn": "2.8.3",
+    "tokenizers": "0.22.2"
+  },
+  "root_mount": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/\",\n         \"source\": \"/dev/vda1\",\n         \"fstype\": \"ext4\",\n         \"options\": \"rw,relatime\"\n      }\n   ]\n}",
+  "disk_available_bytes": 138252931072,
+  "inodes_available": 12645958,
+  "frozen_protocol_prompt_parser_config": "UNCHANGED",
+  "historical_baseline_checksums_verified": 239,
+  "backup_scripts_sha256": {
+    "qwen_artifact_backup.py": "3e318d3dcc214fb39e6c0510ff9bedbdf2ecf06377b71730c9410b0a1f7f8189",
+    "qwen_backup_guard.py": "675c2481b387ee00d5c56e6bfe9eb11bf595c0a00071cb527c8c02ba3a25d0b5"
+  },
+  "provider_account_retention_setting": "UNKNOWN",
+  "hourly_price_cny": 3.16,
+  "hourly_price_source": "user 2026-10-10; not re-read from billing console",
+  "approved_p1b1_runtime": null,
+  "approved_p1b1_budget": null,
+  "formal_generation_started": false,
+  "gpu_model_loaded": false,
+  "helper_hashes_checked_at": "2026-10-11T03:26:55.166061+00:00",
+  "helper_hashes_note": "Resource snapshot time remains original; helper hashes rechecked at gate close."
+}

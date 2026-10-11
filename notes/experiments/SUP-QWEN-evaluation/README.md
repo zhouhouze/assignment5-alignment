@@ -2,7 +2,9 @@
 
 日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P1A CPU 工程验收通过，P1B 资源/预算/执行授权待确认，真实 Full NOT RUN。**
 
-P1B-0最新状态：[现场预检](p1b-resource-preflight.md)——SSH恢复；源码/GPU/权重/容量及历史备份恢复通过，持久化保留规则/预算/执行批准待确认，真实Full未启动。
+P1B-0.5最新状态：[增量备份验收](p1b-incremental-backup-acceptance.md)——Mac/Linux各24项通过、真实SSH及既有16266条CPU Mock恢复通过；[费用检查单](p1b-resource-cost-checklist.md)。周期备份机制已验证，真实Full仍未启动，预算/时长/执行批准待定。
+
+P1B-0历史预检：[现场预检](p1b-resource-preflight.md)——SSH恢复；源码/GPU/权重/容量及历史备份恢复通过，持久化保留规则/预算/执行批准待确认，真实Full未启动。
 
 工程入口：[P1A readiness](p1a-readiness-report.md) → [实现](p1a-runner-implementation.md) → [可靠性测试](p1a-reliability-tests.md) → [P1B 命令](p1b-execution-commands.md)。下方 P0 记录为当时的历史状态。
 

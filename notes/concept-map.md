@@ -35,3 +35,5 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 固定协议/config/data/Prompt → CPU全量selection+tokenization → batch intent → fsync+exclusive atomic raw commit → 已提交ID集合 → 显式恢复缺失ID（未持久化推理可能重复）→ 两套磁盘复算 → 原子final bundle → SHA与独立持久副本。80项工程测试和16266条Mock通过≠真实Full完成，RAW_COMPLETE≠模型质量达标。学习确认pending。
 
 P1B-0：代码/协议一致 ≠ 当前GPU/权重可用 ≠ 数据可持久恢复 ≠ 预算与执行获批。SSH断开前已提交raw的可靠性和云实例释放后数据保留是不同的保证；两者均需明确证据。
+
+P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子snapshot/LATEST → 独立恢复验证 → ack续期。备份RPO不为零；guard只减少失联后继续产出的窗口，不保证释放实例后的未同步数据。quiescent事故pending与有效Raw是两个集合。

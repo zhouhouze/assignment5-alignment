@@ -83,3 +83,15 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining questions：根系统盘重启/释放后的保留规则、最终持久挂载、Full持续备份、用户已提供时价3.16元/小时；批准金额/时间与独立P1B-1授权仍待定。00:13预定关机窗口不足本次Full，建议下次预留2–3小时。
 - Learner explanation status：pending，不代签理解。
 - Next task：补齐持久化和预算，汇报后等待P1B-1批准；真实Full仍0/16266。
+
+## 2026-10-11 — P1B-0.5 Incremental Backup / Restore Gate
+
+- Component：Raw优先稳定快照、SHA对象增量传输、Mac原子发布、远端ack与自有进程组过期保护；不改模型/数学实现。
+- Concept learned：备份成功需要持久化且可恢复；周期副本有RPO；pending事故证据与有效Raw完成数分离；恢复prefix不等于Full完成。
+- Files changed：3个scripts、1个stdlib测试文件、验收报告/启动命令/检查单、索引/registry/manifest/checksums。
+- Tests run：Mac/Linux各24 tests PASS；真实周期/网络失败恢复/guard CPU退出PASS；既有16266条CPU Mock回传后Runner validate PASS；按项目要求GRPO suite原有19项NotImplemented失败，未修复/隐藏。
+- Bugs encountered：失效SSH master需重新认证；补充quiescent保留pending后旧验收把“Raw增量”和“传输对象增量”混同，已保留FAILED证据并分两步复验。
+- Final decision：仅稳定且已封存Raw计完成；SHA内容对象不可覆盖；本地验证后才回传ack；quiescent锁内保存最终包与未提交事故字节；失败不删除旧副本。
+- Remaining questions：账户保留磁盘设置/期限/费用、当前实际费率和开机窗口、批准金额/时长、独立P1B-1授权；GPU worker退出仍需真实运行现场观察。
+- Learner explanation status：pending，不代签理解；为什么文件传完不等于备份完成？为什么pending要留但不能计分？
+- Next task：停止于P1B-0.5；获批后按runbook绑定正式run，Full仍0/16266。

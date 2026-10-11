@@ -1,0 +1,29 @@
+test_changing_log_deferred_until_later_cycle (test_qwen_backup.BackupTests.test_changing_log_deferred_until_later_cycle) ... ok
+test_changing_raw_hard_stop (test_qwen_backup.BackupTests.test_changing_raw_hard_stop) ... ok
+test_excludes_credentials_and_unsafe_paths (test_qwen_backup.BackupTests.test_excludes_credentials_and_unsafe_paths) ... ok
+test_failure_event_directory_is_synced (test_qwen_backup.BackupTests.test_failure_event_directory_is_synced) ... ok
+test_finalize_only_in_quiescent_snapshot (test_qwen_backup.BackupTests.test_finalize_only_in_quiescent_snapshot) ... ok
+test_guard_normal_cpu_child (test_qwen_backup.BackupTests.test_guard_normal_cpu_child) ... ok
+test_guard_rejects_missing_ack_before_spawn (test_qwen_backup.BackupTests.test_guard_rejects_missing_ack_before_spawn) ... ok
+test_guard_stale_ack_stops_only_owned_cpu_process_group (test_qwen_backup.BackupTests.test_guard_stale_ack_stops_only_owned_cpu_process_group) ... ok
+test_immutable_source_rewrite_detected (test_qwen_backup.BackupTests.test_immutable_source_rewrite_detected) ... ok
+test_local_corruption_is_not_silently_repaired (test_qwen_backup.BackupTests.test_local_corruption_is_not_silently_repaired) ... ok
+test_mid_read_append_detected_by_stat (test_qwen_backup.BackupTests.test_mid_read_append_detected_by_stat) ... ok
+test_new_directory_entries_synced_before_file_publication (test_qwen_backup.BackupTests.test_new_directory_entries_synced_before_file_publication) ... ok
+test_object_write_failure_preserves_last_snapshot (test_qwen_backup.BackupTests.test_object_write_failure_preserves_last_snapshot) ... ok
+test_pending_partial_write_is_not_committed (test_qwen_backup.BackupTests.test_pending_partial_write_is_not_committed) ... ok
+test_published_half_line_hard_stop (test_qwen_backup.BackupTests.test_published_half_line_hard_stop) ... ok
+test_published_seal_corruption_hard_stop (test_qwen_backup.BackupTests.test_published_seal_corruption_hard_stop) ... ok
+test_quiescent_lock_conflict (test_qwen_backup.BackupTests.test_quiescent_lock_conflict) ... ok
+test_quiescent_retains_pending_and_failed_finalization_as_evidence (test_qwen_backup.BackupTests.test_quiescent_retains_pending_and_failed_finalization_as_evidence) ... ok
+test_restore_never_overwrites_existing_destination (test_qwen_backup.BackupTests.test_restore_never_overwrites_existing_destination) ... ok
+test_roundtrip_and_incremental_no_duplicate_payload (test_qwen_backup.BackupTests.test_roundtrip_and_incremental_no_duplicate_payload) ... ok
+test_source_deletion_does_not_delete_backup (test_qwen_backup.BackupTests.test_source_deletion_does_not_delete_backup) ... ok
+test_stale_and_corrupt_latest_detected (test_qwen_backup.BackupTests.test_stale_and_corrupt_latest_detected) ... ok
+test_symlink_rejected (test_qwen_backup.BackupTests.test_symlink_rejected) ... ok
+test_truncated_transfer_preserves_latest_then_resume (test_qwen_backup.BackupTests.test_truncated_transfer_preserves_latest_then_resume) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.640s
+
+OK
