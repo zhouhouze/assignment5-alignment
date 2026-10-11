@@ -1,5 +1,7 @@
 # P1B — 可执行命令与资源 Gate（尚未执行）
 
+> 历史Gate记录，保留当时状态。2026-10-11实际Full已16,266/16,266并验收；最新结果、授权/费用和精确启动命令见[p1b-full-baseline-report.md](p1b-full-baseline-report.md)及其session-evidence/launch-*.json，不能把下方旧NOT RUN视为当前状态。
+
 当前P1B-0.5备份验收通过；`P1B_EXECUTION_READY=NO`，真实Full **NOT RUN**。最新周期备份/保护命令见第6节。以下命令对应本轮已实现的 CLI，**只在用户另行批准 P1B、确认金额/时长上限和现场资源后执行**。本文件本身不是批准。
 
 ## 1. 环境与存储验收

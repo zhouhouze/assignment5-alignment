@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-11T05:01:47.084919+00:00",
+  "historical_baseline_checksum_count": 239,
+  "historical_baseline_checksums": "PASS",
+  "pilot_packet_original_bytes_unchanged": true,
+  "pilot_packet_count": 27,
+  "new_core_source_changes": false
+}

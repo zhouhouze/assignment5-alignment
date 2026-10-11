@@ -95,3 +95,16 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining questions：账户保留磁盘设置/期限/费用、当前实际费率和开机窗口、批准金额/时长、独立P1B-1授权；GPU worker退出仍需真实运行现场观察。
 - Learner explanation status：pending，不代签理解；为什么文件传完不等于备份完成？为什么pending要留但不能计分？
 - Next task：停止于P1B-0.5；获批后按runbook绑定正式run，Full仍0/16266。
+
+## 2026-10-11 — P1B-1 Real Full Base Baseline
+
+- Component：固定已有Runner在1×5090顺序执行四个独立REAL/FULL run；16,266条输出、冻结自动评分/独立复算、周期备份和独立恢复。没有实现新训练或推理核心。
+- Concept learned：parse success不等于语义答案对齐；冻结正式分数与AI初析/参考争议分开；完整raw/可恢复性与Judge/人工确认是独立完成状态。
+- Files changed：Full报告、行为画像、runtime/cost、四任务小型manifest/metrics/checks/SHA、44条review、UNKNOWN友好的routing、registry/计分板/索引与进度。外部helper源码随证据归档，不伪称其在47ae79f clean inference tree中。
+- Checks run：四任务原Runner完整性/独立复算PASS；Mac四次quiescent/deferred=[]恢复SHA PASS；24,472个portable tar成员SHA PASS；10冻结文件、60数据、8tokenizer、239历史checksum PASS；Pilot27条包原字节不变。没有核心编辑，无新增核心unit-test要求；既有P1A80/P1B0.5各平台24项仅引用原证据。
+- Bugs encountered：外部分析用Unicode splitlines误切JSON字符串内分隔符，改物理LF迭代后全部14,042条可读；未修改raw、Parser或重采样。GPU infra failure=0。
+- Archival checks：通用*.log ignore导致8份日志初次未入index，最终无损gzip且确认全部checksum路径已入Git；外部校验helper初次对stage后artifact编辑范围假设过窄，限定notes/本轮archive并联合检查staged+unstaged后重验。原始run未改。
+- Final decision：MMLU9813/14042=69.8832%、GSM929/1319=70.4321%保留；GSM5条抽样的语义/最后数字不一致及virology参考争议另待人审；Alpaca/Safety只候选，不报告Judge分数。4,619条wrong全部路由，12条AI初归因、4,607条UNKNOWN；原holdout训练准入0。
+- Remaining questions：44条human PENDING、Judge NOT RUN/LC NOT VALIDATED、未来Evaluator提案、人审SFT准入和来源/安全/去重；到期后磁盘费用/期限及释放恢复UNKNOWN。
+- Learner explanation status：PENDING，不代签理解。后续解释为何parse0失败仍不能保证正确评分，及为何length和语义截断不同。
+- Next task：仅建议P2 SFT Dataset Acceptance/P3 SFT CPU Pipeline Implementation；Git同步完成后停止，未执行下一Gate。

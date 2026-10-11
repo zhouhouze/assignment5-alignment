@@ -1,0 +1,7 @@
+{
+  "subject_n": 57,
+  "micro_accuracy": 0.6988320752029625,
+  "macro_accuracy": 0.7213219081098656,
+  "micro_is_primary": true,
+  "macro_is_diagnostic": true
+}

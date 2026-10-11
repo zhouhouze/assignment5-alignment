@@ -1,0 +1,44 @@
+{
+  "experiment_id": "SUP-QWEN-P1B-1",
+  "experiment_type": "PA5 Supplement Adapted Reproduction",
+  "directly_comparable_to_official": false,
+  "stage": "FULL",
+  "mode": "REAL",
+  "scope": "Union of four independently manifested task-subset runs; each task full heldout coverage",
+  "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "archive_commit": "Resolve from Git history of this collection; exact synchronization receipt stored separately to avoid self-reference",
+  "branch": "learning/pa5-supplement",
+  "protocol": "SUP-QWEN-EVAL-v1",
+  "protocol_sha256": "879764bf6f0286439cdf9527a7c9bdda93d064d4a157676851d79cf69145bcd3",
+  "policy_model": "Qwen/Qwen2.5-7B",
+  "model_tokenizer_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "expected_count": 16266,
+  "actual_count": 16266,
+  "tasks": {
+    "mmlu": {
+      "run_id": "qwen-full-20261011T034800Z-mmlu",
+      "count": 14042
+    },
+    "gsm8k": {
+      "run_id": "qwen-full-20261011T034800Z-gsm8k",
+      "count": 1319
+    },
+    "alpaca_eval": {
+      "run_id": "qwen-full-20261011T034800Z-alpaca_eval",
+      "count": 805
+    },
+    "simple_safety_tests": {
+      "run_id": "qwen-full-20261011T034800Z-simple_safety_tests",
+      "count": 100
+    }
+  },
+  "generation_scoring_restore": "COMPLETE",
+  "archive_sync": "PENDING_AT_ASSEMBLY; see later immutable synchronization receipt",
+  "human_review_completed": 0,
+  "human_review_packet_count": 44,
+  "human_review_status": "PENDING",
+  "judge_status": "NOT RUN",
+  "lc_status": "NOT VALIDATED",
+  "training_status": "NOT RUN",
+  "created_at": "2026-10-11T05:17:03.785758+00:00"
+}

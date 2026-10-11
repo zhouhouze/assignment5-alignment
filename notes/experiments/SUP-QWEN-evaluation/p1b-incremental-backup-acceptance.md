@@ -1,5 +1,7 @@
 # P1B-0.5 — Full 增量备份与恢复验收
 
+> 历史Gate记录，保留当时状态。2026-10-11实际Full已16,266/16,266并验收；最新结果、授权/费用和精确启动命令见[p1b-full-baseline-report.md](p1b-full-baseline-report.md)及其session-evidence/launch-*.json，不能把下方旧NOT RUN视为当前状态。
+
 日期：2026-10-11。`experiment_type=PA5 Supplement Adapted Reproduction`；`evaluation_protocol=SUP-QWEN-EVAL-v1`；`directly_comparable_to_official=false`。
 
 本轮只授权备份与恢复工程验收。正式GPU Full仍为**0/16266 / NOT RUN**；没有prepare正式run、模型加载、重新生成Smoke/Pilot、SFT/DPO/Judge。测试复用昨天的CPU Mock文件，新增内容仅为明确标记的CPU备份fixture。人审状态保持pending。

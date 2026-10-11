@@ -1,0 +1,16 @@
+{
+  "record_type": "AI INITIAL ANALYSIS",
+  "human_review_status": "PENDING",
+  "task": "mmlu",
+  "example_id": "college_mathematics:50",
+  "frozen_ground_truth": "A",
+  "model_parsed_answer": "B",
+  "formal_correct": false,
+  "provisional_error_labels": [
+    "Capability Error"
+  ],
+  "unknown_reason": "Only final choice and option text; no derivation provided, so internal failure mechanism cannot be assigned.",
+  "observation": "For positive x,y, log(x^(log y))=(log x)(log y)=log(y^(log x)); equality holds throughout the open first quadrant. Model selected a closed curve.",
+  "primary_route": "Independent-source mathematical SFT candidate plus regression; keep original holdout evaluation only",
+  "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+}

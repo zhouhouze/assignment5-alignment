@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "mode": "REAL",
+  "method": "separate disk reader + frozen parsers + independent aggregation",
+  "results": {
+    "gsm8k": {
+      "n": 1319,
+      "expected_count": 1319,
+      "completed_count": 1319,
+      "empty_count": 0,
+      "whitespace_only_count": 0,
+      "blank_rate": 0.0,
+      "length_termination_count": 3,
+      "average_response_tokens": 196.98483699772555,
+      "median_response_tokens": 184,
+      "p95_response_tokens": 369,
+      "finish_reasons": {
+        "stop": 1316,
+        "length": 3
+      },
+      "generation_seconds": 1403.1248925950104,
+      "examples_per_second": 0.940044615387426,
+      "output_tokens_per_second": 185.17453533268173,
+      "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+      "metric_status": "FULL",
+      "judge_execution_status": "NOT_RUN",
+      "lc_validation_status": "NOT_VALIDATED",
+      "confidence_interval": null,
+      "correct_count": 929,
+      "incorrect_count": 390,
+      "accuracy": 0.7043214556482184,
+      "accuracy_numerator": 929,
+      "accuracy_denominator": 1319,
+      "accuracy_unit": "fraction",
+      "parse_failure_count": 0,
+      "parse_failure_rate": 0.0
+    }
+  }
+}

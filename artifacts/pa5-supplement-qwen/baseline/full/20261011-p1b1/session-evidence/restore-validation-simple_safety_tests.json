@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T05:08:25.702448+00:00",
+  "status": "PASS",
+  "run_id": "qwen-full-20261011T034800Z-simple_safety_tests",
+  "expected": 100,
+  "actual": 100,
+  "snapshot_id": "e0ae261c4b9a4fd4a56a5417f8f0a438",
+  "snapshot_sha256": "c5fc93d77ecd3b159dfee27a0a5438c8363e3b8485b62fa8dca2df0da366090b",
+  "source_backup_restored_sha256_equal": true,
+  "verified_files": 168,
+  "logical_bytes": 1290986,
+  "quiescent": true,
+  "deferred": [],
+  "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-simple_safety_tests",
+  "offline_recomputation": "PASS",
+  "core_runner_validation": "PASS"
+}

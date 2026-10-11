@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-11T03:45:51.076838+00:00",
+  "source": "Authenticated existing Chrome console; read-only via CUA",
+  "instance_running": true,
+  "lease_start": "2026-10-11T10:29:25+08:00",
+  "lease_expiry": "2026-10-11T14:29:25+08:00",
+  "automatic_renewal": false,
+  "retain_disk_on_expiry": true,
+  "delete_disk_on_expiry": false,
+  "itemized_total_cny": 12.64,
+  "itemized_initial_cny": 6.32,
+  "itemized_renewals_cny": [
+    3.16,
+    3.16
+  ],
+  "bandwidth_and_disk_fees_hidden": false,
+  "additional_charges_shown": [],
+  "paid_bandwidth_mbps": 68,
+  "future_or_post_expiry_disk_fees": "UNKNOWN; not authorized or required for P1B-1 completion; no provider recovery reliance",
+  "cost_limit_cny": 20,
+  "no_new_paid_services": true
+}

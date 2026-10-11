@@ -1,0 +1,112 @@
+{
+  "mmlu": {
+    "n": 14042,
+    "token_count_sum": 264698,
+    "min_response_tokens": 8,
+    "max_response_tokens": 111,
+    "token_length_histogram": {
+      "zero": 0,
+      "1_to_32": 13317,
+      "33_to_128": 725,
+      "129_to_256": 0,
+      "257_to_511": 0,
+      "512": 0
+    },
+    "empty_response_rate": 0.0,
+    "whitespace_only_count": 0,
+    "max_token_termination_rate": 0.0,
+    "finish_reasons": {
+      "stop": 14042
+    },
+    "batch_count": 3511,
+    "batch_latency_mean_seconds": 0.4290799010464253,
+    "batch_latency_median_seconds": 0.4018937780001579,
+    "batch_latency_p95_seconds": 0.6759389110002303,
+    "request_latency_status": "NOT RUN",
+    "evaluation_protocol_id": "SUP-QWEN-EVAL-v1",
+    "not_human_review": true
+  },
+  "gsm8k": {
+    "n": 1319,
+    "token_count_sum": 259823,
+    "min_response_tokens": 12,
+    "max_response_tokens": 512,
+    "token_length_histogram": {
+      "zero": 0,
+      "1_to_32": 22,
+      "33_to_128": 309,
+      "129_to_256": 670,
+      "257_to_511": 314,
+      "512": 4
+    },
+    "empty_response_rate": 0.0,
+    "whitespace_only_count": 0,
+    "max_token_termination_rate": 0.002274450341167551,
+    "finish_reasons": {
+      "stop": 1316,
+      "length": 3
+    },
+    "batch_count": 330,
+    "batch_latency_mean_seconds": 4.251893613924274,
+    "batch_latency_median_seconds": 4.189415683500101,
+    "batch_latency_p95_seconds": 6.397540228000253,
+    "request_latency_status": "NOT RUN",
+    "evaluation_protocol_id": "SUP-QWEN-EVAL-v1",
+    "not_human_review": true
+  },
+  "alpaca_eval": {
+    "n": 805,
+    "token_count_sum": 221863,
+    "min_response_tokens": 7,
+    "max_response_tokens": 512,
+    "token_length_histogram": {
+      "zero": 0,
+      "1_to_32": 32,
+      "33_to_128": 155,
+      "129_to_256": 164,
+      "257_to_511": 357,
+      "512": 97
+    },
+    "empty_response_rate": 0.0,
+    "whitespace_only_count": 0,
+    "max_token_termination_rate": 0.12049689440993788,
+    "finish_reasons": {
+      "length": 97,
+      "stop": 708
+    },
+    "batch_count": 202,
+    "batch_latency_mean_seconds": 6.0629831233069975,
+    "batch_latency_median_seconds": 6.65421652150053,
+    "batch_latency_p95_seconds": 7.380581346998952,
+    "request_latency_status": "NOT RUN",
+    "evaluation_protocol_id": "SUP-QWEN-EVAL-v1",
+    "not_human_review": true
+  },
+  "simple_safety_tests": {
+    "n": 100,
+    "token_count_sum": 10420,
+    "min_response_tokens": 47,
+    "max_response_tokens": 459,
+    "token_length_histogram": {
+      "zero": 0,
+      "1_to_32": 0,
+      "33_to_128": 86,
+      "129_to_256": 8,
+      "257_to_511": 6,
+      "512": 0
+    },
+    "empty_response_rate": 0.0,
+    "whitespace_only_count": 0,
+    "max_token_termination_rate": 0.0,
+    "finish_reasons": {
+      "stop": 100
+    },
+    "batch_count": 25,
+    "batch_latency_mean_seconds": 2.615504927879738,
+    "batch_latency_median_seconds": 1.6673199459983152,
+    "batch_latency_p95_seconds": 5.938808221999352,
+    "request_latency_status": "NOT RUN",
+    "evaluation_protocol_id": "SUP-QWEN-EVAL-v1",
+    "not_human_review": true
+  }
+}

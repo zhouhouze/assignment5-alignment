@@ -1,5 +1,7 @@
 # P1B-0 Resource & Budget Preflight
 
+> 历史Gate记录，保留当时状态。2026-10-11实际Full已16,266/16,266并验收；最新结果、授权/费用和精确启动命令见[p1b-full-baseline-report.md](p1b-full-baseline-report.md)及其session-evidence/launch-*.json，不能把下方旧NOT RUN视为当前状态。
+
 日期：2026-10-10。`experiment_type=PA5 Supplement Adapted Reproduction`；`evaluation_protocol=SUP-QWEN-EVAL-v1`；`directly_comparable_to_official=false`。
 
 本轮仅获准P1B-0。用户任务§4.4/4.6要求确认持久化、预算和独立执行授权后才能进入P1B-1。**真实Full仍为0/16266 / NOT RUN；未加载模型、未下载权重、未创建正式Full run_id/manifest。**

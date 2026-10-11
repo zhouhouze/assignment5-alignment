@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-10-11T05:20:41.065674+00:00",
+  "record_type": "ARCHIVE_ENGINEERING_NOTE",
+  "generic_log_ignore": "Eight .log files were initially excluded by .gitignore. Final evidence stores byte-preserving gzip logs and verifies every checksum-listed path is in Git index.",
+  "validation_helper_failure": "After stage-then-compress, initial helper assumed all unstaged paths were notes; rejected expected edits to current artifact README/SHA. No runtime/frozen edits or data corruption.",
+  "smallest_fix": "Check union of staged/unstaged files; allow notes and exact current archive root only; rerun full archive validation.",
+  "full_gpu_infra_failure": false,
+  "original_raw_or_logs_modified": false
+}

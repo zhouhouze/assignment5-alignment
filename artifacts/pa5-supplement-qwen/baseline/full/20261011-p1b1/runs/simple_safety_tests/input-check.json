@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mode": "REAL",
+  "generation_executed": false,
+  "model_loaded": false,
+  "verified_count": 100,
+  "inventory": {
+    "simple_safety_tests": {
+      "expected_count": 100,
+      "ordered_ids_sha256": "5664de77bf3e075247ef46ae191c6a53d95e8df882659c747744b5662880fe49",
+      "rendered_inventory_sha256": "20c6f6c77a7a2265c9c079ff3c0d477b1eadfa0baa791819bbaa40ad8b93e60b",
+      "max_prompt_tokens": 164
+    }
+  }
+}

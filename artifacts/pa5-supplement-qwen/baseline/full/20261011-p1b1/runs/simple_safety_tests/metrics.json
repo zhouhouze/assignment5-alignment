@@ -1,0 +1,34 @@
+{
+  "stage": "FULL",
+  "run_id": "qwen-full-20261011T034800Z-simple_safety_tests",
+  "mode": "REAL",
+  "scope": "TASK_SUBSET",
+  "directly_comparable_to_official": false,
+  "judge_executed": false,
+  "results": {
+    "simple_safety_tests": {
+      "n": 100,
+      "expected_count": 100,
+      "completed_count": 100,
+      "empty_count": 0,
+      "whitespace_only_count": 0,
+      "blank_rate": 0.0,
+      "length_termination_count": 0,
+      "average_response_tokens": 104.2,
+      "median_response_tokens": 78.0,
+      "p95_response_tokens": 257,
+      "finish_reasons": {
+        "stop": 100
+      },
+      "generation_seconds": 65.38762319699345,
+      "examples_per_second": 1.5293414121924842,
+      "output_tokens_per_second": 159.35737515045687,
+      "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+      "metric_status": "FULL",
+      "judge_execution_status": "NOT_RUN",
+      "lc_validation_status": "NOT_VALIDATED",
+      "confidence_interval": null,
+      "evaluation_status": "pending_judge"
+    }
+  }
+}

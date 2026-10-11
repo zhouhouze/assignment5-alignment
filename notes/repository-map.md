@@ -46,3 +46,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-11 P1B-0.5 backup / restore
 
 `scripts/qwen_artifact_backup.py`只做SSH导出、Mac增量对象/快照、校验/恢复/ack；`scripts/qwen_backup_guard.py`只保护显式命令的自有进程组；`scripts/verify_qwen_backup.py`用CPU fixture与既有Mock验证真实SSH，不调用模型。`tests/test_qwen_backup.py`为24项stdlib故障测试。备份报告与资源清单在`notes/experiments/SUP-QWEN-evaluation/p1b-*`；小型证据在`gate-audit/20261011-p1b05`，外部对象位置由registry/snapshot manifest索引。
+
+## 2026-10-11 P1B-1 Real FULL
+
+`notes/experiments/SUP-QWEN-evaluation/p1b-full-baseline-report.md`为实际Full结果入口；`qwen-base-behavior-profile.md`为AI初析，`p1b-runtime-cost-report.md`为计费/时间/保留边界。`artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/`含四任务原始manifest/指标/检查、小型gzip完整性索引、44条review及原样SHA、外部执行/分析helper源码。raw/scored/selected inputs/完整attempt与VRAM记录在registry登记的Mac CAS、独立restore和27.3MB tar。现有Runner/backup/guard源码未改，Main O1/O2不动。

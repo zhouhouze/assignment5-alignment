@@ -1,0 +1,9 @@
+{
+  "status": "RESOLVED",
+  "issue": "str.splitlines splits Unicode line separators inside valid JSON strings; not corrupt JSONL",
+  "fix": "iterate file by LF physical lines",
+  "formal_raw_and_runner_unchanged": true,
+  "rows": 14042,
+  "correct": 9813,
+  "recomputed_counts_match": true
+}

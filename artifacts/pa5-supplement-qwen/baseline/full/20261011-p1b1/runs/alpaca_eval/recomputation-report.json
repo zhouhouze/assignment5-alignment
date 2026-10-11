@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "mode": "REAL",
+  "method": "separate disk reader + frozen parsers + independent aggregation",
+  "results": {
+    "alpaca_eval": {
+      "n": 805,
+      "expected_count": 805,
+      "completed_count": 805,
+      "empty_count": 0,
+      "whitespace_only_count": 0,
+      "blank_rate": 0.0,
+      "length_termination_count": 97,
+      "average_response_tokens": 275.6062111801242,
+      "median_response_tokens": 282,
+      "p95_response_tokens": 512,
+      "finish_reasons": {
+        "length": 97,
+        "stop": 708
+      },
+      "generation_seconds": 1224.7225909080134,
+      "examples_per_second": 0.6572917050572001,
+      "output_tokens_per_second": 181.15367647093865,
+      "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+      "metric_status": "FULL",
+      "judge_execution_status": "NOT_RUN",
+      "lc_validation_status": "NOT_VALIDATED",
+      "confidence_interval": null,
+      "evaluation_status": "pending_judge"
+    }
+  }
+}

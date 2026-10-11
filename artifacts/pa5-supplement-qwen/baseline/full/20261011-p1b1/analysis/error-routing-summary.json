@@ -1,0 +1,22 @@
+{
+  "record_type": "AI INITIAL ANALYSIS",
+  "automatic_incorrect_records": 4619,
+  "mmlu_incorrect": 4229,
+  "gsm8k_incorrect": 390,
+  "cause_reviewed_ai_records": 12,
+  "unknown_cause_records": 4607,
+  "provisional_label_counts_nonexclusive": {
+    "Capability Error": 1,
+    "Evaluation Ambiguity": 6,
+    "Reasoning Error": 5,
+    "Arithmetic Error": 1
+  },
+  "not_population_error_rates": true,
+  "human_review_completed": 0,
+  "human_review_status": "PENDING",
+  "holdout_training_admitted": 0,
+  "ledger_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/p1b1-20261011-session/derived/error-routing-ledger.jsonl",
+  "ledger_bytes": 5754524,
+  "ledger_sha256": "dc0835bbd9389a1f87eef2627c5d40e80e601924015538b055ac583279e839f8",
+  "coverage": "Every formal incorrect record has a routing entry, including unknown cause; no automatic wrong-score-to-capability assignment."
+}

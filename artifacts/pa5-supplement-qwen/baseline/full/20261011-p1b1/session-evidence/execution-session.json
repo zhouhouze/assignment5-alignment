@@ -1,0 +1,42 @@
+{
+  "authorization_sha256": "5c6e1eaf4feb340f651c01c4359fd57f9789e27c5f48902bf6cb257f2ffd3643",
+  "authorization_received_at": "2026-10-11T11:37:00+08:00",
+  "max_total_runtime_seconds": 14400,
+  "max_total_budget_cny": 20,
+  "observed_instance_start": "2026-10-11T10:29:25+08:00",
+  "observed_instance_expiry": "2026-10-11T14:29:25+08:00",
+  "observed_instance_fee_cny": 12.64,
+  "hourly_rate_cny": 3.16,
+  "rate_basis": "User previous rate; console four-hour lease fee 12.64 matches.",
+  "console_paid_bandwidth_mbps": 68,
+  "other_fee_total": "UNKNOWN; no additional services will be purchased",
+  "billing_actual_final_total": "Final invoice UNKNOWN; authenticated console observed prepaid itemized lease total CNY12.64, no additional charges shown, no new services purchased.",
+  "generation_hard_deadline": "2026-10-11T13:59:25+08:00",
+  "reserve_finalization_seconds": 1800,
+  "created_at": "2026-10-11T03:43:13.883388+00:00",
+  "cloud_repo": "/root/cs336/pa5-supplement",
+  "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "mac_free_bytes": 244553834496,
+  "tasks": {
+    "mmlu": 14042,
+    "gsm8k": 1319,
+    "alpaca_eval": 805,
+    "simple_safety_tests": 100
+  },
+  "scope": "P1B-1 only; no Main/SFT/DPO/Judge",
+  "status": "FULL_GENERATION_SCORING_BACKUP_RESTORE_COMPLETE_ARCHIVE_PENDING",
+  "resource_preflight": "PASS",
+  "initial_backup_preflight": "PASS",
+  "console_itemized_total_cny": 12.64,
+  "additional_charges_shown": [],
+  "disk_and_bandwidth_charges_hidden": false,
+  "future_or_post_expiry_fees": "UNKNOWN; no renewal or new services authorized/executed",
+  "task_run_ids": {
+    "mmlu": "qwen-full-20261011T034800Z-mmlu",
+    "gsm8k": "qwen-full-20261011T034800Z-gsm8k",
+    "alpaca_eval": "qwen-full-20261011T034800Z-alpaca_eval",
+    "simple_safety_tests": "qwen-full-20261011T034800Z-simple_safety_tests"
+  },
+  "all_tasks_share_absolute_generation_deadline": true,
+  "generation_restore_completed_at": "2026-10-11T05:08:25.703255+00:00"
+}

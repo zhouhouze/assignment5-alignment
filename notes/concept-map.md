@@ -37,3 +37,7 @@ Adapted reproduction → 固定policy/judge/tokenizer/data revision → CPU验�
 P1B-0：代码/协议一致 ≠ 当前GPU/权重可用 ≠ 数据可持久恢复 ≠ 预算与执行获批。SSH断开前已提交raw的可靠性和云实例释放后数据保留是不同的保证；两者均需明确证据。
 
 P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子snapshot/LATEST → 独立恢复验证 → ack续期。备份RPO不为零；guard只减少失联后继续产出的窗口，不保证释放实例后的未同步数据。quiescent事故pending与有效Raw是两个集合。
+
+## 2026-10-11 P1B-1 full evidence
+
+冻结协议 → REAL16,266条不可变raw → v1评分 → 独立磁盘复算 → quiescent/SHA/独立恢复 → Git证据索引。parse成功≠语义答案一致；length终止≠语义截断；错分≠已知能力归因；AI初析≠人审。holdout错误只指导独立来源候选，不复制或改写进入训练。Judge/人审/训练仍独立未完成。学习确认PENDING。

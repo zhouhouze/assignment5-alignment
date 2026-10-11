@@ -1,0 +1,180 @@
+{
+  "seed": 0,
+  "algorithm": "Python random.Random(0); TASK order and successive fixed strata; sorted example_id pools; without replacement within each task",
+  "strata": [
+    {
+      "task": "mmlu",
+      "stratum": "random_incorrect_seed0",
+      "eligible_after_previous_strata": 4229,
+      "requested": 10,
+      "selected_ids": [
+        "professional_law:1215",
+        "professional_law:41",
+        "college_mathematics:50",
+        "moral_scenarios:184",
+        "virology:81",
+        "professional_psychology:63",
+        "professional_law:1523",
+        "moral_scenarios:641",
+        "professional_psychology:32",
+        "professional_accounting:147"
+      ]
+    },
+    {
+      "task": "mmlu",
+      "stratum": "correct_control_seed0",
+      "eligible_after_previous_strata": 9813,
+      "requested": 2,
+      "selected_ids": [
+        "us_foreign_policy:66",
+        "high_school_psychology:168"
+      ]
+    },
+    {
+      "task": "mmlu",
+      "stratum": "parse_failure_diagnostic_seed0",
+      "eligible_after_previous_strata": 0,
+      "requested": 2,
+      "selected_ids": []
+    },
+    {
+      "task": "mmlu",
+      "stratum": "length_diagnostic_seed0",
+      "eligible_after_previous_strata": 0,
+      "requested": 2,
+      "selected_ids": []
+    },
+    {
+      "task": "gsm8k",
+      "stratum": "random_incorrect_seed0",
+      "eligible_after_previous_strata": 390,
+      "requested": 10,
+      "selected_ids": [
+        "605",
+        "1215",
+        "267",
+        "989",
+        "1145",
+        "788",
+        "19",
+        "656",
+        "923",
+        "776"
+      ]
+    },
+    {
+      "task": "gsm8k",
+      "stratum": "correct_control_seed0",
+      "eligible_after_previous_strata": 929,
+      "requested": 2,
+      "selected_ids": [
+        "992",
+        "1194"
+      ]
+    },
+    {
+      "task": "gsm8k",
+      "stratum": "parse_failure_diagnostic_seed0",
+      "eligible_after_previous_strata": 0,
+      "requested": 2,
+      "selected_ids": []
+    },
+    {
+      "task": "gsm8k",
+      "stratum": "length_diagnostic_seed0",
+      "eligible_after_previous_strata": 3,
+      "requested": 2,
+      "selected_ids": [
+        "1310",
+        "1012"
+      ]
+    },
+    {
+      "task": "alpaca_eval",
+      "stratum": "random_open_task_seed0",
+      "eligible_after_previous_strata": 805,
+      "requested": 5,
+      "selected_ids": [
+        "771",
+        "166",
+        "729",
+        "402",
+        "533"
+      ]
+    },
+    {
+      "task": "alpaca_eval",
+      "stratum": "length_diagnostic_seed0",
+      "eligible_after_previous_strata": 95,
+      "requested": 2,
+      "selected_ids": [
+        "603",
+        "162"
+      ]
+    },
+    {
+      "task": "alpaca_eval",
+      "stratum": "targeted_factual_reference_diagnostic_not_random",
+      "eligible_after_previous_strata": 1,
+      "requested": 1,
+      "selected_ids": [
+        "0"
+      ]
+    },
+    {
+      "task": "simple_safety_tests",
+      "stratum": "harm_area_Child safety_seed0",
+      "eligible_after_previous_strata": 20,
+      "requested": 2,
+      "selected_ids": [
+        "sst_094",
+        "sst_091"
+      ]
+    },
+    {
+      "task": "simple_safety_tests",
+      "stratum": "harm_area_Illegal and Highly Regulated items_seed0",
+      "eligible_after_previous_strata": 20,
+      "requested": 2,
+      "selected_ids": [
+        "sst_060",
+        "sst_047"
+      ]
+    },
+    {
+      "task": "simple_safety_tests",
+      "stratum": "harm_area_Physical harm and Violence_seed0",
+      "eligible_after_previous_strata": 20,
+      "requested": 2,
+      "selected_ids": [
+        "sst_038",
+        "sst_036"
+      ]
+    },
+    {
+      "task": "simple_safety_tests",
+      "stratum": "harm_area_Scams and fraud_seed0",
+      "eligible_after_previous_strata": 20,
+      "requested": 2,
+      "selected_ids": [
+        "sst_075",
+        "sst_077"
+      ]
+    },
+    {
+      "task": "simple_safety_tests",
+      "stratum": "harm_area_Suicide, Self-Harm, and Eating Disorders_seed0",
+      "eligible_after_previous_strata": 20,
+      "requested": 2,
+      "selected_ids": [
+        "sst_009",
+        "sst_002"
+      ]
+    }
+  ],
+  "count": 44,
+  "human_review_status": "PENDING",
+  "human_review_completed": 0,
+  "not_population_error_rate": true,
+  "original_pilot_packet_unchanged": true
+}

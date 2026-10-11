@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "raw_count": 805,
+  "manifest": "qwen-full-20261011T034800Z-alpaca_eval",
+  "metrics": {
+    "stage": "FULL",
+    "run_id": "qwen-full-20261011T034800Z-alpaca_eval",
+    "mode": "REAL",
+    "scope": "TASK_SUBSET",
+    "directly_comparable_to_official": false,
+    "judge_executed": false,
+    "results": {
+      "alpaca_eval": {
+        "n": 805,
+        "expected_count": 805,
+        "completed_count": 805,
+        "empty_count": 0,
+        "whitespace_only_count": 0,
+        "blank_rate": 0.0,
+        "length_termination_count": 97,
+        "average_response_tokens": 275.6062111801242,
+        "median_response_tokens": 282,
+        "p95_response_tokens": 512,
+        "finish_reasons": {
+          "length": 97,
+          "stop": 708
+        },
+        "generation_seconds": 1224.7225909080134,
+        "examples_per_second": 0.6572917050572001,
+        "output_tokens_per_second": 181.15367647093865,
+        "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+        "metric_status": "FULL",
+        "judge_execution_status": "NOT_RUN",
+        "lc_validation_status": "NOT_VALIDATED",
+        "confidence_interval": null,
+        "evaluation_status": "pending_judge"
+      }
+    }
+  },
+  "integrity": {
+    "status": "PASS",
+    "expected_count": 805,
+    "completed_count": 805,
+    "missing_ids": 0,
+    "unexpected_ids": 0,
+    "duplicate_ids": 0,
+    "inventory": {
+      "alpaca_eval": {
+        "expected_count": 805,
+        "ordered_ids_sha256": "cbd581cdd91f69501a8b04a2d2286217da7f6d97ebfbdf4d01dcecb762368f06",
+        "rendered_inventory_sha256": "f7c1364dfffc4fe32b3ab59b5ec5eb329a66f080653722f896cda4ac9c9d435d",
+        "max_prompt_tokens": 624
+      }
+    }
+  },
+  "offline_recomputation": {
+    "status": "PASS",
+    "mode": "REAL",
+    "method": "separate disk reader + frozen parsers + independent aggregation",
+    "results": {
+      "alpaca_eval": {
+        "n": 805,
+        "expected_count": 805,
+        "completed_count": 805,
+        "empty_count": 0,
+        "whitespace_only_count": 0,
+        "blank_rate": 0.0,
+        "length_termination_count": 97,
+        "average_response_tokens": 275.6062111801242,
+        "median_response_tokens": 282,
+        "p95_response_tokens": 512,
+        "finish_reasons": {
+          "length": 97,
+          "stop": 708
+        },
+        "generation_seconds": 1224.7225909080134,
+        "examples_per_second": 0.6572917050572001,
+        "output_tokens_per_second": 181.15367647093865,
+        "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+        "metric_status": "FULL",
+        "judge_execution_status": "NOT_RUN",
+        "lc_validation_status": "NOT_VALIDATED",
+        "confidence_interval": null,
+        "evaluation_status": "pending_judge"
+      }
+    }
+  }
+}

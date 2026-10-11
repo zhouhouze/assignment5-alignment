@@ -1,0 +1,41 @@
+{
+  "stage": "FULL",
+  "run_id": "qwen-full-20261011T034800Z-mmlu",
+  "mode": "REAL",
+  "scope": "TASK_SUBSET",
+  "directly_comparable_to_official": false,
+  "judge_executed": false,
+  "results": {
+    "mmlu": {
+      "n": 14042,
+      "expected_count": 14042,
+      "completed_count": 14042,
+      "empty_count": 0,
+      "whitespace_only_count": 0,
+      "blank_rate": 0.0,
+      "length_termination_count": 0,
+      "average_response_tokens": 18.850448654037887,
+      "median_response_tokens": 16.0,
+      "p95_response_tokens": 33,
+      "finish_reasons": {
+        "stop": 14042
+      },
+      "generation_seconds": 1506.4995325739992,
+      "examples_per_second": 9.320945474180064,
+      "output_tokens_per_second": 175.7040040681181,
+      "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+      "metric_status": "FULL",
+      "judge_execution_status": "NOT_RUN",
+      "lc_validation_status": "NOT_VALIDATED",
+      "confidence_interval": null,
+      "correct_count": 9813,
+      "incorrect_count": 4229,
+      "accuracy": 0.6988320752029625,
+      "accuracy_numerator": 9813,
+      "accuracy_denominator": 14042,
+      "accuracy_unit": "fraction",
+      "parse_failure_count": 0,
+      "parse_failure_rate": 0.0
+    }
+  }
+}

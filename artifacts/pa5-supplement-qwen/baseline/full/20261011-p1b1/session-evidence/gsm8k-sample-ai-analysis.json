@@ -1,0 +1,128 @@
+{
+  "selection": "same seed0 random incorrect stratum as final packet; ten cases",
+  "not_population_estimate": true,
+  "human_review_completed": 0,
+  "records": [
+    {
+      "task": "gsm8k",
+      "example_id": "605",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Evaluation Ambiguity"
+      ],
+      "observation": "清晰计算30+12=42，但末句又出现6小时，last-number parser取6。实现符合冻结规范；属于语义答案/提取规则不一致候选，不应标作已确认 Parser Error。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "989",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Evaluation Ambiguity"
+      ],
+      "observation": "正确得到剥虾15分钟、烹饪30分钟、总计45分钟，末句90 shrimp使last-number提取90；不直接归为推理错误。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "1145",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Evaluation Ambiguity"
+      ],
+      "observation": "正确得到252+39=291，末句3 days使last-number提取3；保持正式score不变。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "19",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Evaluation Ambiguity"
+      ],
+      "observation": "正确得到剩余6英里/1小时=6 mph，末句12-mile trail使last-number提取12；保持正式score不变。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "776",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Evaluation Ambiguity"
+      ],
+      "observation": "正确得到1000−200=800，末句20% discount使last-number提取20；不是实现偏离规范。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "1215",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Reasoning Error",
+        "Arithmetic Error"
+      ],
+      "observation": "先得到864红豆与偏差36，随后混用总豆数3000与红豆数864，且把3000−864错误写作100。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "267",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Reasoning Error"
+      ],
+      "observation": "计算烹饪时间时仅用后段升温28分钟而非总升温20+28=48；应为烹饪43、总计91，输出71。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "788",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Reasoning Error"
+      ],
+      "observation": "学校承担300的一半150；已有50，尚缺100。输出先说200又转为125，错误地把学校的一半作用于扣除已有钱后的250。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "656",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Reasoning Error"
+      ],
+      "observation": "200/10=20是完成阅读所需天数，遗漏30−20=10这一步，把完成时长误作提前天数。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    },
+    {
+      "task": "gsm8k",
+      "example_id": "923",
+      "record_type": "AI INITIAL ANALYSIS",
+      "human_review_status": "PENDING",
+      "provisional_error_labels": [
+        "Reasoning Error"
+      ],
+      "observation": "遗漏15杯肉桂茶约束，并将4.5无依据向上取整；应先(27−15)/2/3=2。",
+      "formal_score_unchanged": true,
+      "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+    }
+  ]
+}

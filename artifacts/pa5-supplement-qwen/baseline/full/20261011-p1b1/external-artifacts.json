@@ -1,0 +1,70 @@
+[
+  {
+    "artifact_name": "qwen-full-20261011T034800Z-mmlu quiescent snapshot manifest",
+    "storage_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/qwen-full-20261011T034800Z-mmlu/snapshots/327c92e711bd46288c9637dede910792.json",
+    "bytes": 2807626,
+    "sha256": "197ae8d5c08cb0daeb6c8de2fafa532edc3291598634bc859705a78d37b0b100",
+    "created_at": "2026-10-11T04:18:02.383388+00:00",
+    "run_id": "qwen-full-20261011T034800Z-mmlu",
+    "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "storage": "Mac CAS snapshot + all referenced objects",
+    "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-mmlu",
+    "logical_artifact_bytes": 197176755,
+    "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
+    "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+  },
+  {
+    "artifact_name": "qwen-full-20261011T034800Z-gsm8k quiescent snapshot manifest",
+    "storage_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/qwen-full-20261011T034800Z-gsm8k/snapshots/22a9ac4678474a5e805acaf415eb6203.json",
+    "bytes": 268094,
+    "sha256": "fc8c0890be8a5c458d831f2115498dc8e92282d8b61d258e26e6f9e289c510c5",
+    "created_at": "2026-10-11T04:43:07.432034+00:00",
+    "run_id": "qwen-full-20261011T034800Z-gsm8k",
+    "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "storage": "Mac CAS snapshot + all referenced objects",
+    "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-gsm8k",
+    "logical_artifact_bytes": 19665799,
+    "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
+    "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+  },
+  {
+    "artifact_name": "qwen-full-20261011T034800Z-alpaca_eval quiescent snapshot manifest",
+    "storage_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/qwen-full-20261011T034800Z-alpaca_eval/snapshots/5d42fa8483ed400486ea78b781cf23fc.json",
+    "bytes": 172367,
+    "sha256": "39a468b1688ff07a7e1b5d986dc5ebe6131488ac070b310d1346fb2fa6d34404",
+    "created_at": "2026-10-11T05:05:26.613999+00:00",
+    "run_id": "qwen-full-20261011T034800Z-alpaca_eval",
+    "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "storage": "Mac CAS snapshot + all referenced objects",
+    "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-alpaca_eval",
+    "logical_artifact_bytes": 19037160,
+    "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
+    "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+  },
+  {
+    "artifact_name": "qwen-full-20261011T034800Z-simple_safety_tests quiescent snapshot manifest",
+    "storage_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/qwen-full-20261011T034800Z-simple_safety_tests/snapshots/e0ae261c4b9a4fd4a56a5417f8f0a438.json",
+    "bytes": 24957,
+    "sha256": "c5fc93d77ecd3b159dfee27a0a5438c8363e3b8485b62fa8dca2df0da366090b",
+    "created_at": "2026-10-11T05:08:25.702448+00:00",
+    "run_id": "qwen-full-20261011T034800Z-simple_safety_tests",
+    "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "storage": "Mac CAS snapshot + all referenced objects",
+    "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-simple_safety_tests",
+    "logical_artifact_bytes": 1290986,
+    "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
+    "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+  },
+  {
+    "artifact_name": "Four verified Qwen FULL runs portable archive",
+    "storage_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/p1b1-20261011-session/qwen-full-20261011T034800Z-verified-runs.tar.gz",
+    "bytes": 27342802,
+    "sha256": "c9167497a800d803f2510f55201654465e376b905154e796f9c587150777b6a9",
+    "created_at": "2026-10-11T05:09:10.637796+00:00",
+    "run_id": "qwen-full-20261011T034800Z",
+    "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "storage": "local_archive_outside_repository",
+    "restore": "Verify archive SHA256, extract to a NEW empty directory; use original runner at recorded commit with pinned config/benchmark/tokenizer assets to validate each run. Existing CAS stores and independently restored copies remain preserved.",
+    "durability": "Mac archive independently member-hash verified; no cloud-release recovery guarantee"
+  }
+]

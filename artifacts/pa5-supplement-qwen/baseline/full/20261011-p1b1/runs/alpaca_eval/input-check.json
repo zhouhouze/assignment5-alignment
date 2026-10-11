@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mode": "REAL",
+  "generation_executed": false,
+  "model_loaded": false,
+  "verified_count": 805,
+  "inventory": {
+    "alpaca_eval": {
+      "expected_count": 805,
+      "ordered_ids_sha256": "cbd581cdd91f69501a8b04a2d2286217da7f6d97ebfbdf4d01dcecb762368f06",
+      "rendered_inventory_sha256": "f7c1364dfffc4fe32b3ab59b5ec5eb329a66f080653722f896cda4ac9c9d435d",
+      "max_prompt_tokens": 624
+    }
+  }
+}

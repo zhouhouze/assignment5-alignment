@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。 [Full报告](SUP-QWEN-evaluation/p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
+
 本索引是Main与Supplement的证据入口。长期规则见[archive-policy.md](archive-policy.md)。Main内容通过固定提交链接引用，未移动历史文件或混入Supplement实现。
 
 | Experiment | Status | Report | Artifacts | Commit |
@@ -24,12 +26,12 @@
 | Phase | Status | Evidence |
 | --- | --- | --- |
 | SUP-QWEN-00 | Config/tokenizer CPU验收完成；实际GPU结果见SUP-QWEN-01 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
-| SUP-QWEN-01 | 权重PASS；SMOKE 4/4；PILOT 80/80；offline PASS；27条人审pending；2026-10-10云端同步/校验通过 | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
+| SUP-QWEN-01 | Base FULL 16,266/16,266；自动评分/复算/恢复PASS；Judge NOT RUN；新44条人审pending；Smoke/Pilot历史保留 | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
 | SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
 | SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
-| SUP-QWEN-final | Base PILOT已归档；尚无FULL/SFT/DPO最终比较 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
+| SUP-QWEN-final | Base FULL已验收；SFT/DPO/Judge及模型间最终比较未执行 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
 
-Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。当前Baseline Gate已完成CPU→4条SMOKE→80条PILOT→复算/review packet/archive。27条human review仍pending；已停止，FULL/SFT/DPO/Judge需后续独立Gate。Qwen四任务结果均为PILOT，不是FULL benchmark成绩。
+Qwen证据：[preflight manifest/checksum/原文复核包](../../artifacts/pa5-supplement-qwen/preflight/20261002/)。历史2026-10-03 Baseline Gate完成CPU→4条SMOKE→80条PILOT→复算/review/archive，27条human review仍pending。2026-10-11独立P1B-1 Full结果见最新记录；历史20例PILOT分数不替换为Full。SFT/DPO/Judge仍需后续独立Gate。
 
 本轮GPU Gate的本地/GitHub/云端归档同步已恢复，2026-10-10云端239项checksum和84条原始输出一致性验收通过；见[归档同步记录](SUP-QWEN-01-baseline/archive-sync-status.md)。
 
@@ -80,3 +82,11 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 - 公共文档区分保留磁盘与释放；账户级保留设置/费用UNKNOWN，用户关机保留说明与本轮文件仍在不构成释放后恢复承诺。最近费率3.16元/小时，2–3小时约6.32–9.48元另计准备/空闲等；最长运行时间、费用上限及P1B-1批准待定。
 
 本轮测试watcher已停止。归档commit通过Git history定位；源码执行起点14e2db9+dirty新增工具，精确hash见验收manifest。Next task：取得独立P1B-1与预算/时长批准后，才绑定正式run启动60秒周期worker及guard。
+
+## 2026-10-11：P1B-1 Real Full Base Baseline
+
+2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。
+
+- [Full结果与完整性](SUP-QWEN-evaluation/p1b-full-baseline-report.md)、[Base行为画像](SUP-QWEN-evaluation/qwen-base-behavior-profile.md)、[资源/费用/保留边界](SUP-QWEN-evaluation/p1b-runtime-cost-report.md)。
+- [Full小型证据与44条人审包](../../artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/README.md)、[正式Base计分板](SUP-QWEN-final/model-evaluation-scorecard.md)。完整raw/scored/attempts/logs在Mac verified CAS/restore/tar，registry记录位置、SHA及恢复方法。
+- run_code_commit=`47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726`；归档commit独立，以实际Git History及同步回执定位。协议/Parser/Prompt/模型版本与旧Smoke/Pilot不改。仅建议P2 SFT Dataset Acceptance→P3 SFT CPU Pipeline Implementation，未执行。

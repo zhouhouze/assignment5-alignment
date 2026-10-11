@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mode": "REAL",
+  "generation_executed": false,
+  "model_loaded": false,
+  "verified_count": 14042,
+  "inventory": {
+    "mmlu": {
+      "expected_count": 14042,
+      "ordered_ids_sha256": "80a50c01f339362887feb3c853f6f7558e187bf1ae6b75005a918ac39ec0926e",
+      "rendered_inventory_sha256": "983d4e908fc07803a332f42cee9ed22be2517840268b3dfc1324985fda3503ac",
+      "max_prompt_tokens": 1186
+    }
+  }
+}

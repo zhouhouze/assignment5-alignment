@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "expected_count": 1319,
+  "completed_count": 1319,
+  "missing_ids": 0,
+  "unexpected_ids": 0,
+  "duplicate_ids": 0,
+  "inventory": {
+    "gsm8k": {
+      "expected_count": 1319,
+      "ordered_ids_sha256": "57695ad86447a1794056b2e3e90739995477110e7c648781821347f712ad990e",
+      "rendered_inventory_sha256": "df4dd6af87967bd1a3918efd3ac5b9c275e701b7d82d8b94214d03399e13cca1",
+      "max_prompt_tokens": 330
+    }
+  }
+}

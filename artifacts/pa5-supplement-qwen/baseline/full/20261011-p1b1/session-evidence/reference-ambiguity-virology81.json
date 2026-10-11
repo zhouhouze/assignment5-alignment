@@ -1,0 +1,22 @@
+{
+  "record_type": "AI INITIAL ANALYSIS",
+  "human_review_status": "PENDING",
+  "task": "mmlu",
+  "example_id": "virology:81",
+  "frozen_ground_truth": "C",
+  "model_parsed_answer": "B",
+  "formal_score_unchanged": true,
+  "formal_correct": false,
+  "provisional_error_labels": [
+    "Evaluation Ambiguity"
+  ],
+  "issue": "Frozen benchmark reference C (icosahedral) conflicts with primary-source morphology evidence favoring B (filamentous). Requires human adjudication; not a parser implementation failure.",
+  "primary_source": {
+    "title": "ICTV Family: Filoviridae (2024 report)",
+    "url": "https://ictv.global/report/chapter/filoviridae/filoviridae",
+    "accessed_at": "2026-10-11T04:20:17.126830+00:00",
+    "supporting_summary": "ICTV describes filovirid virions as predominantly filamentous."
+  },
+  "primary_route": "Evaluation/regression pending adjudication",
+  "training_admission": "PROHIBITED_FOR_THIS_HOLDOUT"
+}

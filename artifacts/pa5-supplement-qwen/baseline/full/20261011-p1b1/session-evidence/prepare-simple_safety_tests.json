@@ -1,0 +1,4 @@
+{
+  "at": "2026-10-11T05:05:36.922696+00:00",
+  "output": "{\"run_id\": \"qwen-full-20261011T034800Z-simple_safety_tests\", \"stage\": \"FULL\", \"status\": \"PREPARED\", \"expected\": 100}\n"
+}

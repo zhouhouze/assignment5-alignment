@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-11T05:12:56.776295+00:00",
+  "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "authorization_runtime_limit_seconds": 14400,
+  "authorization_budget_limit_cny": 20,
+  "conservative_cumulative_start": "2026-10-11T11:37:00+08:00",
+  "cumulative_wall_seconds_through_report_assembly": 5756.776295,
+  "generation_and_loading_attempt_seconds": 4726.962594381001,
+  "hourly_gpu_rate_cny": 3.16,
+  "rate_equivalent_cost_through_report_assembly_cny": 5.053170303388889,
+  "actual_console_observed_prepaid_lease_cny": 12.64,
+  "billing_scope": "Entire current four-hour prepaid lease conservatively counted against P1B-1; incremental runtime equivalent is not another fee and is not added to prepaid amount.",
+  "prepaid_budget_remaining_cny": 7.36,
+  "actual_final_invoice": "UNKNOWN; observed itemized paid lease is CNY12.64, no additional charges shown, no new services purchased",
+  "lease_expiry": "2026-10-11T14:29:25+08:00",
+  "generation_common_deadline": "2026-10-11T13:59:25+08:00",
+  "post_expiry_disk_fees_and_retention_duration": "UNKNOWN",
+  "automatic_renewal": false,
+  "retain_disk_on_expiry": true,
+  "instance_release_recovery_guarantee": "UNKNOWN; not relied on",
+  "new_paid_services_executed": false,
+  "max_sampled_peak_gpu_mib": 24763,
+  "tasks": {
+    "mmlu": {
+      "attempt_count": 1,
+      "start_time": "2026-10-11T03:46:25.150367+00:00",
+      "end_time": "2026-10-11T04:16:38.966772+00:00",
+      "attempt_wall_seconds": 1813.8164271700007,
+      "model_load_seconds": [
+        87.20725579700047
+      ],
+      "peak_gpu_mib": 24761,
+      "peak_method": "sampled total device memory; 250ms polling, may miss short peaks",
+      "resumed": false
+    },
+    "gsm8k": {
+      "attempt_count": 1,
+      "start_time": "2026-10-11T04:18:13.638764+00:00",
+      "end_time": "2026-10-11T04:42:49.175031+00:00",
+      "attempt_wall_seconds": 1475.5362869540004,
+      "model_load_seconds": [
+        50.89702399199996
+      ],
+      "peak_gpu_mib": 24761,
+      "peak_method": "sampled total device memory; 250ms polling, may miss short peaks",
+      "resumed": false
+    },
+    "alpaca_eval": {
+      "attempt_count": 1,
+      "start_time": "2026-10-11T04:43:19.329003+00:00",
+      "end_time": "2026-10-11T05:05:01.531785+00:00",
+      "attempt_wall_seconds": 1302.2028016980003,
+      "model_load_seconds": [
+        53.89597729799971
+      ],
+      "peak_gpu_mib": 24763,
+      "peak_method": "sampled total device memory; 250ms polling, may miss short peaks",
+      "resumed": false
+    },
+    "simple_safety_tests": {
+      "attempt_count": 1,
+      "start_time": "2026-10-11T05:05:37.758272+00:00",
+      "end_time": "2026-10-11T05:07:53.165329+00:00",
+      "attempt_wall_seconds": 135.40707855899927,
+      "model_load_seconds": [
+        66.70110501999989
+      ],
+      "peak_gpu_mib": 24761,
+      "peak_method": "sampled total device memory; 250ms polling, may miss short peaks",
+      "resumed": false
+    }
+  },
+  "runtime_budget_compliance_as_of_record": "PASS",
+  "final_git_sync_receipt": "Recorded outside run artifacts at execution session sync-receipt.json after push/cloud fast-forward; no self-referential commit hash."
+}

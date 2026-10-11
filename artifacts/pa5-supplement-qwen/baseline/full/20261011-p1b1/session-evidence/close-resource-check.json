@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-11T05:09:05.769950+00:00",
+  "status": "PASS",
+  "gpu": "NVIDIA GeForce RTX 5090, 15 MiB, 32607 MiB, 0 %",
+  "compute_processes": "",
+  "owned_active_generation_processes": [],
+  "cloud_git_head": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "cloud_git_clean": true,
+  "protocol_pins_status": "PASS",
+  "frozen_file_count": 10,
+  "dataset_file_count": 60,
+  "tokenizer_asset_count": 8,
+  "historical_checksums": 239,
+  "cloud_disk_free_bytes": 136936398848,
+  "cloud_free_inodes": 12547951,
+  "score_log_transfer": {
+    "mmlu": {
+      "path": "/root/pa5-supplement-setup/qwen-full-20261011T034800Z-mmlu-score-v1.log",
+      "sha256": "53df32ccfc5d1982f5e3dbdbe0147a4b97927ae5ec21d9febaf1016d9c856a1c",
+      "bytes": 1316
+    },
+    "gsm8k": {
+      "path": "/root/pa5-supplement-setup/qwen-full-20261011T034800Z-gsm8k-score-v1.log",
+      "sha256": "68a949903cea8bfdc03466176c070efab9fa18644b9ebbe698ea5664acd93147",
+      "bytes": 1332
+    },
+    "alpaca_eval": {
+      "path": "/root/pa5-supplement-setup/qwen-full-20261011T034800Z-alpaca_eval-score-v1.log",
+      "sha256": "2d573e964c8a9e11679a67cf4ff910e0015d2ed9c925423452052700aefe9437",
+      "bytes": 1121
+    },
+    "simple_safety_tests": {
+      "path": "/root/pa5-supplement-setup/qwen-full-20261011T034800Z-simple_safety_tests-score-v1.log",
+      "sha256": "b9e52dc92670ff5dced4d77262f6037ae6ed79b2704b32340ceec7561caf7981",
+      "bytes": 1102
+    }
+  }
+}

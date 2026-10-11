@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-11T05:18:31.853959+00:00",
+  "status": "PASS",
+  "evidence_sha_files": 123,
+  "parsed_json_jsonl_artifacts": 98,
+  "review_original_response_prompt_input_sha_matches": 44,
+  "human_review_completed": 0,
+  "error_routing_unique_records": 4619,
+  "holdout_training_admitted": 0,
+  "broken_local_links": [],
+  "secret_pattern_findings": [],
+  "frozen_or_runtime_source_edits": false,
+  "checks": "Small archive checksum/JSON/physical-LF review provenance/holdout routing/links/secret patterns; real full Runner+recomputation/restore checks are separate evidence."
+}

@@ -1,0 +1,33 @@
+{
+  "pid": 67712,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "scripts/qwen_artifact_backup.py",
+    "pull",
+    "--host",
+    "root@180.127.11.177",
+    "--port",
+    "32124",
+    "--control-path",
+    "/tmp/pa5-ssh-backup-live",
+    "--remote-python",
+    "/root/cs336/pa5-supplement/.venv/bin/python",
+    "--remote-script",
+    "/root/cs336/pa5-supplement/scripts/qwen_artifact_backup.py",
+    "--run-dir",
+    "/root/pa5-supplement-setup/full/qwen-full-20261011T034800Z-mmlu",
+    "--store",
+    "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/qwen-full-20261011T034800Z-mmlu",
+    "--ack-path",
+    "/root/pa5-supplement-setup/backup-health/qwen-full-20261011T034800Z-mmlu.json",
+    "--cycles",
+    "0",
+    "--interval",
+    "60",
+    "--timeout",
+    "180"
+  ],
+  "run_id": "qwen-full-20261011T034800Z-mmlu"
+}

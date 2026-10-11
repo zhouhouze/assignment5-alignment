@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T04:43:07.432034+00:00",
+  "status": "PASS",
+  "run_id": "qwen-full-20261011T034800Z-gsm8k",
+  "expected": 1319,
+  "actual": 1319,
+  "snapshot_id": "22a9ac4678474a5e805acaf415eb6203",
+  "snapshot_sha256": "fc8c0890be8a5c458d831f2115498dc8e92282d8b61d258e26e6f9e289c510c5",
+  "source_backup_restored_sha256_equal": true,
+  "verified_files": 1996,
+  "logical_bytes": 19665799,
+  "quiescent": true,
+  "deferred": [],
+  "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-gsm8k",
+  "offline_recomputation": "PASS",
+  "core_runner_validation": "PASS"
+}

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "raw_count": 100,
+  "manifest": "qwen-full-20261011T034800Z-simple_safety_tests",
+  "metrics": {
+    "stage": "FULL",
+    "run_id": "qwen-full-20261011T034800Z-simple_safety_tests",
+    "mode": "REAL",
+    "scope": "TASK_SUBSET",
+    "directly_comparable_to_official": false,
+    "judge_executed": false,
+    "results": {
+      "simple_safety_tests": {
+        "n": 100,
+        "expected_count": 100,
+        "completed_count": 100,
+        "empty_count": 0,
+        "whitespace_only_count": 0,
+        "blank_rate": 0.0,
+        "length_termination_count": 0,
+        "average_response_tokens": 104.2,
+        "median_response_tokens": 78.0,
+        "p95_response_tokens": 257,
+        "finish_reasons": {
+          "stop": 100
+        },
+        "generation_seconds": 65.38762319699345,
+        "examples_per_second": 1.5293414121924842,
+        "output_tokens_per_second": 159.35737515045687,
+        "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+        "metric_status": "FULL",
+        "judge_execution_status": "NOT_RUN",
+        "lc_validation_status": "NOT_VALIDATED",
+        "confidence_interval": null,
+        "evaluation_status": "pending_judge"
+      }
+    }
+  },
+  "integrity": {
+    "status": "PASS",
+    "expected_count": 100,
+    "completed_count": 100,
+    "missing_ids": 0,
+    "unexpected_ids": 0,
+    "duplicate_ids": 0,
+    "inventory": {
+      "simple_safety_tests": {
+        "expected_count": 100,
+        "ordered_ids_sha256": "5664de77bf3e075247ef46ae191c6a53d95e8df882659c747744b5662880fe49",
+        "rendered_inventory_sha256": "20c6f6c77a7a2265c9c079ff3c0d477b1eadfa0baa791819bbaa40ad8b93e60b",
+        "max_prompt_tokens": 164
+      }
+    }
+  },
+  "offline_recomputation": {
+    "status": "PASS",
+    "mode": "REAL",
+    "method": "separate disk reader + frozen parsers + independent aggregation",
+    "results": {
+      "simple_safety_tests": {
+        "n": 100,
+        "expected_count": 100,
+        "completed_count": 100,
+        "empty_count": 0,
+        "whitespace_only_count": 0,
+        "blank_rate": 0.0,
+        "length_termination_count": 0,
+        "average_response_tokens": 104.2,
+        "median_response_tokens": 78.0,
+        "p95_response_tokens": 257,
+        "finish_reasons": {
+          "stop": 100
+        },
+        "generation_seconds": 65.38762319699345,
+        "examples_per_second": 1.5293414121924842,
+        "output_tokens_per_second": 159.35737515045687,
+        "timing_scope": "sum unique recorded batch wall times; excludes load/write and lost unpersisted batches; not per-request latency",
+        "metric_status": "FULL",
+        "judge_execution_status": "NOT_RUN",
+        "lc_validation_status": "NOT_VALIDATED",
+        "confidence_interval": null,
+        "evaluation_status": "pending_judge"
+      }
+    }
+  }
+}

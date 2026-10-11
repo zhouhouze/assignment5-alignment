@@ -1,5 +1,7 @@
 # Qwen 模型评估与数据飞轮计划
 
+> 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。 [Full报告](p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
+
 日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P1A CPU 工程验收通过，P1B 资源/预算/执行授权待确认，真实 Full NOT RUN。**
 
 P1B-0.5最新状态：[增量备份验收](p1b-incremental-backup-acceptance.md)——Mac/Linux各24项通过、真实SSH及既有16266条CPU Mock恢复通过；[费用检查单](p1b-resource-cost-checklist.md)。周期备份机制已验证，真实Full仍未启动，预算/时长/执行批准待定。
@@ -45,3 +47,9 @@ P1B-0历史预检：[现场预检](p1b-resource-preflight.md)——SSH恢复；�
 没有复制/重建22份规划。本轮新增唯一协议、决策日志、P1 readiness三份必需文档，更新已有规则/索引。60个benchmark文件与历史manifest一致，全部16266条Base prompt在CPU渲染/分词，零超长；7B tokenizer/config 8项SHA通过；Baseline239项SHA通过；原27条review仍pending。
 
 实际CPU parser测试20 passed，未运行模型generation、训练或Judge。纠正文档P95和empty定义与既有runner的差异，不改历史指标。P1阻塞：Full路径未实现，恢复与大规模IO未验收，现场设备/存储/预算/执行授权待落实。当前协议、code hash、ID/prompt inventory与decision log可由本轮归档commit追溯。
+
+## P1B-1实际执行证据
+
+2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。
+
+先读[Full报告](p1b-full-baseline-report.md)，再读[行为画像](qwen-base-behavior-profile.md)和[Runtime/Cost](p1b-runtime-cost-report.md)。下方旧Gate状态保留历史含义；最新结果不能由旧Pilot、Mock或模板推断。下一Gate仅建议P2/P3，完成归档后停止。

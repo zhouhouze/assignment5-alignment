@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-11T05:09:10.637796+00:00",
+  "path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/p1b1-20261011-session/qwen-full-20261011T034800Z-verified-runs.tar.gz",
+  "bytes": 27342802,
+  "sha256": "c9167497a800d803f2510f55201654465e376b905154e796f9c587150777b6a9",
+  "logical_bytes": 237170700,
+  "member_count": 24472,
+  "tar_member_sha256_verification": "PASS",
+  "includes": "All four complete quiescent run artifacts, raw/scored/metrics/manifests/logs/attempts/checksums; no model weights, caches or credentials",
+  "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "restore": "Verify archive SHA256, extract to a NEW empty directory; use original runner at recorded commit with pinned config/benchmark/tokenizer assets to validate each run. Existing CAS stores and independently restored copies remain preserved."
+}

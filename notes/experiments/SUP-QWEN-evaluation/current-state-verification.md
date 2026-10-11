@@ -1,5 +1,7 @@
 # 当前实验状态核验
 
+> 历史Gate记录，保留当时状态。2026-10-11实际Full已16,266/16,266并验收；最新结果、授权/费用和精确启动命令见[p1b-full-baseline-report.md](p1b-full-baseline-report.md)及其session-evidence/launch-*.json，不能把下方旧NOT RUN视为当前状态。
+
 核验日期：2026-10-10；核验起点 local HEAD / GitHub branch HEAD 均为 `185364dbfe1fafef325b1d6fa0a4694399881d94`，Supplement 工作树干净。Main 工作树有既有未提交内容，本轮未触碰。此次核验只使用本地文件与 GitHub 分支引用；没有进行新的云端/GPU 检查。
 
 ## 已完成与未完成
