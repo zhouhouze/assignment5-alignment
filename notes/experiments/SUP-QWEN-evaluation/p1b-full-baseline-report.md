@@ -2,7 +2,7 @@
 
 日期：2026-10-11。实验身份：PA5 Supplement Adapted Reproduction；`directly_comparable_to_official=false`。这是 Spring 2026 Supplement 路线，不是 Main O1/O2，也不替代官方 Llama 结果。
 
-状态：`GENERATION_SCORING_RESTORE=COMPLETE`；GitHub归档等待实际push/远端核对，本轮收尾回执将分别记录run_code_commit与archive_commit。
+状态：**P1B_FULL_GENERATION_COMPLETE=YES；P1B_STATUS=COMPLETED**。主要归档提交`7516dd321ca765644e297e7ccffe164ba17b540e`已push并核对GitHub/云端；[不可变同步回执](../../../artifacts/pa5-supplement-qwen/archive-sync/20261011-p1b1/verification.json)记录证据。回执自身提交由Git History定位。collection/session内PENDING_AT_ASSEMBLY保留当时事实，最新状态以本回执为准。
 
 ## Objective
 

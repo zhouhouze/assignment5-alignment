@@ -1,6 +1,6 @@
 # CS336 PA5统一实验索引
 
-> 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。 [Full报告](SUP-QWEN-evaluation/p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
+> 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。 [Full报告](SUP-QWEN-evaluation/p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
 
 本索引是Main与Supplement的证据入口。长期规则见[archive-policy.md](archive-policy.md)。Main内容通过固定提交链接引用，未移动历史文件或混入Supplement实现。
 
@@ -85,7 +85,7 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 
 ## 2026-10-11：P1B-1 Real Full Base Baseline
 
-2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档等待本轮实际push核对。
+2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。
 
 - [Full结果与完整性](SUP-QWEN-evaluation/p1b-full-baseline-report.md)、[Base行为画像](SUP-QWEN-evaluation/qwen-base-behavior-profile.md)、[资源/费用/保留边界](SUP-QWEN-evaluation/p1b-runtime-cost-report.md)。
 - [Full小型证据与44条人审包](../../artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/README.md)、[正式Base计分板](SUP-QWEN-final/model-evaluation-scorecard.md)。完整raw/scored/attempts/logs在Mac verified CAS/restore/tar，registry记录位置、SHA及恢复方法。

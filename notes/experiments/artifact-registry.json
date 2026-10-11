@@ -1412,7 +1412,8 @@
       "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-mmlu",
       "logical_artifact_bytes": 197176755,
       "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
-      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation.",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
     },
     {
       "artifact_name": "qwen-full-20261011T034800Z-gsm8k quiescent snapshot manifest",
@@ -1426,7 +1427,8 @@
       "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-gsm8k",
       "logical_artifact_bytes": 19665799,
       "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
-      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation.",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
     },
     {
       "artifact_name": "qwen-full-20261011T034800Z-alpaca_eval quiescent snapshot manifest",
@@ -1440,7 +1442,8 @@
       "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-alpaca_eval",
       "logical_artifact_bytes": 19037160,
       "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
-      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation.",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
     },
     {
       "artifact_name": "qwen-full-20261011T034800Z-simple_safety_tests quiescent snapshot manifest",
@@ -1454,7 +1457,8 @@
       "restored_path": "/Users/hr/Documents/Lesson/pa5-experiment-backups/restored/qwen-full-20261011T034800Z-simple_safety_tests",
       "logical_artifact_bytes": 1290986,
       "durability": "VERIFIED_MAC_COPY_AND_INDEPENDENT_RESTORE; same Mac disk is not offsite redundancy",
-      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation."
+      "restore": "Preserve entire sibling store including objects/snapshots/LATEST; original scripts/qwen_artifact_backup.py restore --store STORE --destination NEW_DIR. Validate from source commit with pinned assets. Portable tar is another verified representation.",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
     },
     {
       "artifact_name": "Four verified Qwen FULL runs portable archive",
@@ -1466,7 +1470,8 @@
       "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
       "storage": "local_archive_outside_repository",
       "restore": "Verify archive SHA256, extract to a NEW empty directory; use original runner at recorded commit with pinned config/benchmark/tokenizer assets to validate each run. Existing CAS stores and independently restored copies remain preserved.",
-      "durability": "Mac archive independently member-hash verified; no cloud-release recovery guarantee"
+      "durability": "Mac archive independently member-hash verified; no cloud-release recovery guarantee",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
     },
     {
       "artifact_name": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/SHA256SUMS",
@@ -1478,7 +1483,21 @@
       "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
       "storage": "ordinary_git",
       "restore": "Fetch the archival commit from learning/pa5-supplement; from repo root verify listed files with sha256sum -c. External raw/scored/attempt/log locations and full per-file SHA indices are included.",
-      "durability": "Git synchronization must be independently confirmed by final receipt; execution/restore verification already PASS"
+      "durability": "GitHub pushed and local/cloud commit match verified; checksum-listed evidence present in Git index and cloud, 2026-10-11.",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e"
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/archive-sync/20261011-p1b1/SHA256SUMS",
+      "storage_location": "artifacts/pa5-supplement-qwen/archive-sync/20261011-p1b1/SHA256SUMS",
+      "bytes": 141,
+      "sha256": "886c36fa51efd9196b761a5b68f71a13797a88642f909ea9efbedf77f0709ecf",
+      "created_at": "2026-10-11T05:23:45.509121+00:00",
+      "run_id": "qwen-full-20261011T034800Z",
+      "source_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "archive_commit": "7516dd321ca765644e297e7ccffe164ba17b540e",
+      "storage": "ordinary_git_sync_receipt",
+      "restore": "Fetch this receipt commit from file Git history; verify checksum, then use exact main archive_commit for all Full artifacts. Later receipt-only HEAD is not inference source.",
+      "durability": "Main archival commit already verified on GitHub/cloud; receipt publication verified by final external sync-receipt."
     }
   ],
   "excluded_downloadable_content": [

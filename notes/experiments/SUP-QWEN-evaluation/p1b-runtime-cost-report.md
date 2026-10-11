@@ -33,3 +33,7 @@
 ## Scope / Stop
 
 四真实Full任务完成；Judge NOT RUN、LC NOT VALIDATED、人审PENDING、SFT/DPO NOT RUN。Git同步完成后停止，下一Gate仅建议P2/P3，不自动执行。
+
+## Final archive checkpoint
+
+主要归档7516dd3已push并核对GitHub/云端；截至2026-10-11T05:23:45.509121+00:00，累计106.76分钟，含准备、生成、评分、备份、恢复、分析、主要归档与同步。收尾回执提交仍计入同一窗口；最终秒数在Mac session/sync-receipt.json及最终回复核对，不重置授权。已付租期口径仍¥12.64，总预算¥20。GPU已空闲，未启动下一Gate。
