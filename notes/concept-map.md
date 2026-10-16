@@ -45,3 +45,7 @@ P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子s
 ## 2026-10-16 Human Evaluation Round01
 
 不可变44条source packet → (task,id,run,raw SHA) join → 用户裁决append-only sidecar → human COMPLETED与adjudication UNCERTAIN/PENDING正交 → confirmed/candidate/auxiliary分别计数 → Safety父子标签单事件 → 样本内PM复盘，holdout禁止训练。reviewed_at UNKNOWN≠recorded_at；Codex记录身份≠用户人工审核身份。
+
+## 2026-10-16 PM-04 preregistration
+
+不可变Full/人审证据（含UNKNOWN）→ H1约束/完成、H2助手、H3安全+帮助、H4能力、H5训练×Prompt → 固定指标/完整分母/配对人审 → paired CI与unknown界限 → 条件式PM调查/继续/暂停建议 → P2未来审计需求。Design Complete≠PM Review Approved≠P2 execution；threshold/预算/新样本仍待批。

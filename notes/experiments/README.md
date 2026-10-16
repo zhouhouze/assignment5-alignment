@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-10-16 PM-04：SFT Hypothesis & Evaluation Plan v1已形成，H1–H5、Evaluation/Control Matrix、PM Decision Matrix及P2审计交接均为设计；PM评审PENDING，P2_EXECUTION=NOT AUTHORIZED。设计归档验收尚未完成，未执行数据准入、训练或Judge。 [PM-04主稿](SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)。
+
 > 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](SUP-QWEN-evaluation/human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。
 
 > 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。 [Full报告](SUP-QWEN-evaluation/p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
@@ -98,3 +100,7 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。
 
 [审核汇总](SUP-QWEN-evaluation/human-evaluation-round01-report.md)、[PM复盘](SUP-QWEN-evaluation/pm-human-evaluation-review-round01.md)、[append-only sidecar / schema / 校验](../../artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/README.md)。原44条包SHA、Raw/Scored/Metrics/Manifest、旧Pilot与冻结协议不变；历史reviewed_at全部未知/null，recorded_at为本轮实际归档时间。仅持久化用户裁决，已授权Git归档后停止，无新实验。
+
+## 2026-10-16：PM-04 SFT Hypothesis & Evaluation Design
+
+[主稿](SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)以Full Base和12条已确认人审建立证据矩阵，定义H1指令遵循、H2助手质量、H3安全与帮助性、H4能力保持、H5训练/Prompt归因，区分方向性证据与产品接受。新诊断样本、人审预算与产品阈值待批；[来源/CPU文档检查](../../artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/README.md)。PM04_PM_REVIEW=PENDING，P2_EXECUTION=NOT AUTHORIZED；完整设计状态以主稿与最终归档验收为准。本轮未进入P2，不创建数据/样本，不改冻结协议或原结果。

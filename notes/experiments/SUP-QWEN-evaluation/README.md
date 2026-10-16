@@ -1,5 +1,7 @@
 # Qwen 模型评估与数据飞轮计划
 
+> 2026-10-16 PM-04：SFT Hypothesis & Evaluation Plan v1已形成，H1–H5、Evaluation/Control Matrix、PM Decision Matrix及P2审计交接均为设计；PM评审PENDING，P2_EXECUTION=NOT AUTHORIZED。设计归档验收尚未完成，未执行数据准入、训练或Judge。 [PM-04主稿](sft-hypothesis-evaluation-plan-v1.md)。
+
 > 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。
 
 > 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。 [Full报告](p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
@@ -55,3 +57,7 @@ P1B-0历史预检：[现场预检](p1b-resource-preflight.md)——SSH恢复；�
 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。
 
 先读[Full报告](p1b-full-baseline-report.md)，再读[行为画像](qwen-base-behavior-profile.md)和[Runtime/Cost](p1b-runtime-cost-report.md)。下方旧Gate状态保留历史含义；最新结果不能由旧Pilot、Mock或模板推断。下一Gate仅建议P2/P3，完成归档后停止。
+
+## PM-04训练前假设设计
+
+先读[SFT Hypothesis & Evaluation Plan v1](sft-hypothesis-evaluation-plan-v1.md)。H1–H5与PM决策建议待用户评审；Judge/LC/SFT缺失指标仍NOT RUN/NOT VALIDATED，075/729/060原未决状态保留。P2交接只定义需要审计什么，未授权或执行数据处理。Next task：设计归档后停止，等待PM-04评审。

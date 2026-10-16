@@ -1550,6 +1550,34 @@
       "storage": "ordinary_git",
       "restore": "Fetch archival commit identified by file Git History; verify round SHA256SUMS from repository root. Join sidecar to unchanged source packet by task/example_id/run_id/raw_sha256. Do not overwrite old packet or infer reviewed_at.",
       "durability": "Local bytes/SHA verified; GitHub publication confirmed by final actual push/remote receipt. Human decisions COMPLETE, specialist uncertainty independent."
+    },
+    {
+      "artifact_name": "notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md",
+      "storage_location": "notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md",
+      "bytes": 40827,
+      "sha256": "0467a1675018a95382741b311cf7fe646a05da7800a87b3c0971bfc543a55e25",
+      "created_at": "2026-10-16T16:58:34.766645+08:00",
+      "run_id": "PM04-design-v1",
+      "stage": "DESIGN_ONLY",
+      "source_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
+      "baseline_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch exact archival commit from file Git history. Verify PM04 SHA256SUMS from repository root; all 12 original sources remain at pinned bytes/SHA. No P2 dataset or model outputs generated.",
+      "durability": "Local document audit verified; final GitHub publication/acceptance is recorded after actual push. PM review PENDING; P2 NOT AUTHORIZED."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/SHA256SUMS",
+      "storage_location": "artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/SHA256SUMS",
+      "bytes": 869,
+      "sha256": "21cbffbe07fc29bc30a8d87e25433326c864388e1b5dc008ec4bedfdb60952d2",
+      "created_at": "2026-10-16T16:58:34.766833+08:00",
+      "run_id": "PM04-design-v1",
+      "stage": "DESIGN_ONLY",
+      "source_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
+      "baseline_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch exact archival commit from file Git history. Verify PM04 SHA256SUMS from repository root; all 12 original sources remain at pinned bytes/SHA. No P2 dataset or model outputs generated.",
+      "durability": "Local document audit verified; final GitHub publication/acceptance is recorded after actual push. PM review PENDING; P2 NOT AUTHORIZED."
     }
   ],
   "excluded_downloadable_content": [

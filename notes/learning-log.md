@@ -120,3 +120,15 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining：075专项裁决、060严重度细化、729正确性不确定；32条Full人审尚未完成；Judge/SFT/DPO未运行，历史审核时间仍UNKNOWN。
 - Learner explanation status：未单独取得概念解释确认，不代签理解；用户人审完成事实由本轮明确裁决记录，不与学习确认混同。
 - Next task：完成Git归档后停止；仅建议用户安排专项复核/后续P2，不自动执行。
+
+## 2026-10-16 — PM-04 SFT Hypothesis & Evaluation Plan v1
+
+- Component：训练前设计文档归档；证据→H1–H5→评估/控制→配对人审/统计→PM决策→P2审计需求。不改模型/训练源码。
+- Concept learned：可检验假设须有相反证据与不确定判据；统计方向支持≠训练归因≠产品接受；CI跨零不证明能力保持；A/D配置差异不能单归SFT。
+- Files changed：sft-hypothesis-evaluation-plan-v1、PM04设计来源/manifest/CPU检查/checksum、必要索引/registry与进度图谱。12份证据来源及冻结协议不改。
+- Checks：12必核来源+6支持证据SHA，Base9813/14042、929/1319、805/100候选、97/805 length与人审12/SAFE3/UNSAFE1/UNCERTAIN1核对；5假设×15字段、10章节、8决策场景、2×2差值/交互、链接/边界/敏感模式/变更范围检查。无GPU tests或模型导入。
+- Bugs encountered：无训练/评估代码修复；起草时将Refusal Quality FAIR计数与Supportive Quality混同，按sidecar改为拒答质量2条、支持质量1条，校验加入该事实约束。
+- Final decision：H1/H2/H3改善与H4保持均待后测，H5固定Prompt归因；新诊断/人审/产品阈值待批，SFT空白策略FROZEN但实际P2未执行，holdout训练准入PROHIBITED。
+- Remaining：PM04_PM_REVIEW=PENDING；075真值、060严重度细化、729正确性；诊断规模/来源、人审预算/二审、Judge/LC可靠性、能力/安全取舍、P2及后续训练Gate。
+- Learner explanation status：PENDING，未代用户宣称认可假设/产品结论。可后续解释为何D−A与CI跨零不能分别证明训练效应和能力保持。
+- Next task：完成设计归档与远端核对后停止，等待用户亲自PM-04评审；不自动P2/SFT/DPO/Judge。

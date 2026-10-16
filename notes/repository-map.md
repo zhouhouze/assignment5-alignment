@@ -54,3 +54,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-16 Human Evaluation Round01
 
 `artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/`新增12条独立human-review.jsonl、source决策正文、非破坏性schema v1.1、manifest/summary/integrity/CPU验证及checksum。`notes/experiments/SUP-QWEN-evaluation/{human-evaluation-round01-report,pm-human-evaluation-review-round01}.md`为用户裁决汇总/PM复盘；原Full/Pilot/协议不改，44条旧human字段不回填。读取当前人审状态需按复合身份关联sidecar，不能用旧snapshot字段覆盖新裁决。Next task：Git归档后停止。
+
+## 2026-10-16 PM-04 SFT hypothesis plan
+
+`notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md`为唯一主稿（10章节、H1–H5、评估/控制、人审/统计、8情形PM决策、P2审计交接）。`artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/`是设计来源SHA、状态manifest、CPU文档校验和归档验收，不是模型run或P2派生训练数据。现有protocol/metrics/Prompt/Parser/人审sidecar/训练源码不改。Next task：归档后停止等PM评审。

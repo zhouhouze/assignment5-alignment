@@ -1,0 +1,113 @@
+{
+  "checked_at": "2026-10-16T16:54:57.306725+08:00",
+  "base_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
+  "mandatory_sources": [
+    {
+      "name": "p1b-full-baseline-report",
+      "path": "notes/experiments/SUP-QWEN-evaluation/p1b-full-baseline-report.md",
+      "bytes": 10602,
+      "sha256": "b619812efcc5adf29564a323335e37e4a18eda3f9fa0ad24ad626d93428453bb"
+    },
+    {
+      "name": "qwen-base-behavior-profile",
+      "path": "notes/experiments/SUP-QWEN-evaluation/qwen-base-behavior-profile.md",
+      "bytes": 8348,
+      "sha256": "963a3fc809a80daa488fd7391643988261bec2478af707b6f335eca9e968fa34"
+    },
+    {
+      "name": "human-evaluation-round01-report",
+      "path": "notes/experiments/SUP-QWEN-evaluation/human-evaluation-round01-report.md",
+      "bytes": 13096,
+      "sha256": "14119b2e600426a2bd790ee7497db7c4d6a3a4a9364ae2845af5fee6c21b03f5"
+    },
+    {
+      "name": "pm-human-evaluation-review-round01",
+      "path": "notes/experiments/SUP-QWEN-evaluation/pm-human-evaluation-review-round01.md",
+      "bytes": 4842,
+      "sha256": "1b13a0e8864989fed2ffdfa6af7ea1e5ed737d23c0919f93d8c57fc73b030f75"
+    },
+    {
+      "name": "human-review-sidecar",
+      "path": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/human-review.jsonl",
+      "bytes": 40792,
+      "sha256": "d199b832945c7bf5600a1f45cbefed998145fec99b2e5d13317c6307a5d041e4"
+    },
+    {
+      "name": "evaluation-protocol-v1",
+      "path": "notes/experiments/SUP-QWEN-evaluation/evaluation-protocol-v1.md",
+      "bytes": 22434,
+      "sha256": "879764bf6f0286439cdf9527a7c9bdda93d064d4a157676851d79cf69145bcd3"
+    },
+    {
+      "name": "evaluation-metrics-spec",
+      "path": "notes/experiments/SUP-QWEN-evaluation/evaluation-metrics-spec.md",
+      "bytes": 13574,
+      "sha256": "51668c1d12a7300f6b87f36cba7a3ebd15f60c949471732514bd7b79c0ce36cb"
+    },
+    {
+      "name": "paired-comparison-spec",
+      "path": "notes/experiments/SUP-QWEN-evaluation/paired-comparison-spec.md",
+      "bytes": 5010,
+      "sha256": "2de20cf39bcd13f312c154f806aaf4a5d06c2d2d28d14af1cab759b241dce420"
+    },
+    {
+      "name": "prompt-control-experiment",
+      "path": "notes/experiments/SUP-QWEN-evaluation/prompt-control-experiment.md",
+      "bytes": 2331,
+      "sha256": "08c4187f3f20af26359e221b2bf8752694aac0f06a51a38e968abfad3f80daa4"
+    },
+    {
+      "name": "sft-data-quality-plan",
+      "path": "notes/experiments/SUP-QWEN-data-flywheel/sft-data-quality-plan.md",
+      "bytes": 4853,
+      "sha256": "d841242f8f770c6b6e87988107885cf7402531cce193efe7f2d3295e8aed3389"
+    },
+    {
+      "name": "sft-training-experiment",
+      "path": "notes/experiments/SUP-QWEN-02-sft/sft-training-experiment.md",
+      "bytes": 5064,
+      "sha256": "a06bee361dfe73e454f98957dd1a07d67f1b6e0ba390e76fc03464cc363c540e"
+    },
+    {
+      "name": "evaluation-decision-log",
+      "path": "notes/experiments/SUP-QWEN-evaluation/evaluation-decision-log.md",
+      "bytes": 7914,
+      "sha256": "446d0829166d5d1e5e5946046ff6a762040ce545af450ec04a55494c3a95572b"
+    }
+  ],
+  "supporting_sources": [
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/runs/mmlu/metrics.json",
+      "bytes": 1316,
+      "sha256": "53df32ccfc5d1982f5e3dbdbe0147a4b97927ae5ec21d9febaf1016d9c856a1c"
+    },
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/runs/gsm8k/metrics.json",
+      "bytes": 1332,
+      "sha256": "68a949903cea8bfdc03466176c070efab9fa18644b9ebbe698ea5664acd93147"
+    },
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/runs/alpaca_eval/metrics.json",
+      "bytes": 1121,
+      "sha256": "2d573e964c8a9e11679a67cf4ff910e0015d2ed9c925423452052700aefe9437"
+    },
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/runs/simple_safety_tests/metrics.json",
+      "bytes": 1102,
+      "sha256": "b9e52dc92670ff5dced4d77262f6037ae6ed79b2704b32340ceec7561caf7981"
+    },
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/analysis/review_packet.jsonl",
+      "bytes": 183158,
+      "sha256": "259ffa110fab398632f299d1ab509bf869a371fdc3e1a58379a6281ffb55070a"
+    },
+    {
+      "path": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/summary.json",
+      "bytes": 2105,
+      "sha256": "e8f7560b728e91d6e02efb0681f5f79a156984fdac7ab4a393931a29147ade45"
+    }
+  ],
+  "roles": "Normative frozen documents remain unchanged; P0 historical NOT RUN statements are not treated as current Full/human execution status. AI profile is not human truth.",
+  "baseline_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "human_archive_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32"
+}

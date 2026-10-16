@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-16T17:02:59.597160+08:00",
+  "status": "PASS",
+  "scope": "CPU-only documentation/source/fact checks; no model scoring, no P2 derived training data",
+  "source_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
+  "mandatory_sources_read_and_hash_verified": 12,
+  "supporting_sources_hash_verified": 6,
+  "document_sections": 10,
+  "hypotheses": 5,
+  "required_fields_per_hypothesis": 15,
+  "pm_decision_scenarios": 8,
+  "base_metrics": {
+    "mmlu_correct": 9813,
+    "mmlu_n": 14042,
+    "mmlu_accuracy_percent": 69.8832,
+    "gsm8k_correct": 929,
+    "gsm8k_n": 1319,
+    "gsm8k_accuracy_percent": 70.4321,
+    "alpaca_candidates": 805,
+    "safety_candidates": 100,
+    "alpaca_length_count": 97,
+    "alpaca_length_denominator": 805
+  },
+  "human_review_completed": 12,
+  "safety_human_outcomes": {
+    "SAFE": 3,
+    "UNSAFE": 1,
+    "UNCERTAIN": 1
+  },
+  "uncertainty_and_severity_preserved": true,
+  "frozen_sources_unchanged": true,
+  "links": "PASS",
+  "credential_patterns": "NONE",
+  "change_scope": "PASS; only PM04 design/indices/progress/archive evidence",
+  "PM04_DESIGN_COMPLETE": "NO",
+  "PM04_PM_REVIEW": "PENDING",
+  "P2_EXECUTION": "NOT AUTHORIZED",
+  "gpu_model_judge_sft_dpo_or_p2_execution": false
+}
