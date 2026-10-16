@@ -1,0 +1,397 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cs336:SUP-QWEN-HUMAN-SIDECAR-v1.1",
+  "title": "Round01 non-destructive Human Review sidecar extension",
+  "description": "Frozen SUP-QWEN-EVAL-v1 §10 preserved. PM diagnostics, candidate labels, reviewer/time provenance and unresolved adjudication are explicit sidecar extensions. False maps to JSON false; UNCERTAIN/not applicable map to protocol strings uncertain/not_applicable; exact user tokens also preserved in human_decision_verbatim.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "review_version",
+    "round_id",
+    "task",
+    "example_id",
+    "run_id",
+    "raw_sha256",
+    "reviewer_id",
+    "reviewed_at",
+    "reviewed_at_status",
+    "recorded_at",
+    "recorded_by",
+    "review_source",
+    "rubric_version",
+    "human_review_status",
+    "human_correctness",
+    "primary_error",
+    "primary_error_status",
+    "secondary_error_labels",
+    "error_labels",
+    "candidate_error_labels",
+    "human_notes",
+    "disagreement",
+    "disagreement_status",
+    "adjudication_status",
+    "pm_diagnostic",
+    "human_decision_verbatim",
+    "user_decision_sources",
+    "source_packet",
+    "ai_initial_analysis",
+    "automated_score",
+    "training_admission"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "SUP-QWEN-HUMAN-SIDECAR-v1.1"
+    },
+    "review_version": {
+      "type": "string"
+    },
+    "round_id": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "example_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "raw_sha256": {
+      "type": "string"
+    },
+    "reviewer_id": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "reviewed_at_status": {
+      "enum": [
+        "UNKNOWN",
+        "KNOWN"
+      ]
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_by": {
+      "type": "string"
+    },
+    "review_source": {
+      "type": "string"
+    },
+    "rubric_version": {
+      "type": "string"
+    },
+    "human_review_status": {
+      "const": "COMPLETED"
+    },
+    "human_correctness": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "enum": [
+            "uncertain",
+            "not_applicable"
+          ]
+        }
+      ]
+    },
+    "primary_error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "primary_error_status": {
+      "type": "string"
+    },
+    "secondary_error_labels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Arithmetic Error",
+          "Capability Error",
+          "Evaluation Ambiguity",
+          "False Refusal",
+          "Format Error",
+          "Hallucination",
+          "Incomplete Response",
+          "Instruction Following Error",
+          "Judge Error",
+          "Knowledge Error",
+          "Over-verbosity",
+          "Parser Error",
+          "Reasoning Error",
+          "Repetition",
+          "Safety Error",
+          "Truncation",
+          "Unsafe Compliance"
+        ]
+      }
+    },
+    "error_labels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Arithmetic Error",
+          "Capability Error",
+          "Evaluation Ambiguity",
+          "False Refusal",
+          "Format Error",
+          "Hallucination",
+          "Incomplete Response",
+          "Instruction Following Error",
+          "Judge Error",
+          "Knowledge Error",
+          "Over-verbosity",
+          "Parser Error",
+          "Reasoning Error",
+          "Repetition",
+          "Safety Error",
+          "Truncation",
+          "Unsafe Compliance"
+        ]
+      }
+    },
+    "candidate_error_labels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Arithmetic Error",
+          "Capability Error",
+          "Evaluation Ambiguity",
+          "False Refusal",
+          "Format Error",
+          "Hallucination",
+          "Incomplete Response",
+          "Instruction Following Error",
+          "Judge Error",
+          "Knowledge Error",
+          "Over-verbosity",
+          "Parser Error",
+          "Reasoning Error",
+          "Repetition",
+          "Safety Error",
+          "Truncation",
+          "Unsafe Compliance"
+        ]
+      }
+    },
+    "human_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "disagreement": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "disagreement_status": {
+      "type": "string"
+    },
+    "adjudication_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pm_diagnostic": {
+      "type": "object",
+      "required": [
+        "instruction_following",
+        "assistant_quality",
+        "task_completion",
+        "request_risk",
+        "refusal_behavior",
+        "overall_safety",
+        "unsafe_compliance",
+        "refusal_quality",
+        "supportive_quality",
+        "root_cause",
+        "semantic_truncation",
+        "false_refusal",
+        "severity",
+        "specialist_review",
+        "auxiliary_observations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "instruction_following": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assistant_quality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "task_completion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request_risk": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refusal_behavior": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "overall_safety": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unsafe_compliance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refusal_quality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supportive_quality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "root_cause": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "semantic_truncation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "false_refusal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "specialist_review": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "auxiliary_observations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human_decision_verbatim": {
+      "type": "object",
+      "required": [
+        "fields",
+        "human_notes"
+      ]
+    },
+    "user_decision_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_packet": {
+      "type": "object"
+    },
+    "ai_initial_analysis": {
+      "type": "string"
+    },
+    "automated_score": {
+      "type": "string"
+    },
+    "training_admission": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "reviewed_at_status": {
+            "const": "UNKNOWN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reviewed_at": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "primary_error_status": {
+            "const": "CANDIDATE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "error_labels": {
+            "maxItems": 0
+          },
+          "candidate_error_labels": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "x-identity-key": [
+    "task",
+    "example_id",
+    "run_id",
+    "raw_sha256",
+    "review_version"
+  ],
+  "x-non-null-reviewed-at-not-required": true,
+  "x-implementation-validation": "CPU stdlib literal user/source contract and invariant checks in verify_human_evaluation.py; no third-party JSON Schema engine installed or claimed."
+}

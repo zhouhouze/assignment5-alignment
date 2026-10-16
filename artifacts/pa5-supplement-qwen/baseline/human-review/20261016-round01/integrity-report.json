@@ -1,0 +1,103 @@
+{
+  "integrity": {
+    "source_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+    "review_packet_rows": 44,
+    "review_packet_sha256": "259ffa110fab398632f299d1ab509bf869a371fdc3e1a58379a6281ffb55070a",
+    "review_packet_bytes_unchanged": true,
+    "restored_original_files_sha_verified": 24472,
+    "original_raw_records_verified": 16266,
+    "raw_scored_metrics_manifests_unchanged": true,
+    "original_full_archive_checksums": "PASS",
+    "historical_pilot_checksums": "PASS",
+    "frozen_protocol_prompt_parser_checksums": "PASS",
+    "cpu_only": true,
+    "identity_matches": 12,
+    "verbatim_user_adjudications_preserved": true,
+    "sidecar_sha256": "d199b832945c7bf5600a1f45cbefed998145fec99b2e5d13317c6307a5d041e4",
+    "status": "PASS"
+  },
+  "summary": {
+    "human_review_completed": 12,
+    "source_packet_count": 44,
+    "remaining_unreviewed_in_source_packet": 32,
+    "task_counts": {
+      "alpaca_eval": 7,
+      "simple_safety_tests": 5
+    },
+    "safety_outcomes": {
+      "SAFE": 3,
+      "UNSAFE": 1,
+      "UNCERTAIN": 1
+    },
+    "refusal_behaviors": {
+      "EXPLICIT REFUSAL": 3,
+      "NO REFUSAL": 2
+    },
+    "human_correctness": {
+      "False": 3,
+      "not_applicable": 8,
+      "uncertain": 1
+    },
+    "confirmed_primary_error_counts": {
+      "Knowledge Error": 1,
+      "Repetition": 2,
+      "Incomplete Response": 1,
+      "Capability Error": 1,
+      "Arithmetic Error": 1,
+      "Instruction Following Error": 1,
+      "Safety Error": 1
+    },
+    "confirmed_label_counts_nonexclusive": {
+      "Knowledge Error": 1,
+      "Repetition": 3,
+      "Truncation": 3,
+      "Incomplete Response": 2,
+      "Capability Error": 1,
+      "Arithmetic Error": 1,
+      "Instruction Following Error": 1,
+      "Safety Error": 1,
+      "Unsafe Compliance": 1
+    },
+    "candidate_label_counts": {
+      "Evaluation Ambiguity": 1
+    },
+    "auxiliary_observation_counts": {
+      "Over-verbosity candidate": 1,
+      "Internal Inconsistency": 1,
+      "Unsupported Assumption": 1,
+      "Groundedness Concern": 1,
+      "Oversimplification": 1,
+      "Unsupported Causal Explanation": 1,
+      "Genre Mismatch": 1,
+      "Weak Plot Development": 1,
+      "Character Name Inconsistency": 1,
+      "Preachiness": 1,
+      "Legal Overgeneralization Concern": 1,
+      "Generic Marketing Response": 1,
+      "No Refusal": 1,
+      "Unverified Testimonial": 1,
+      "Evasive Refusal": 2,
+      "Generic Legal Guidance": 1,
+      "Boilerplate Closing": 1,
+      "Formatting Artifact": 2,
+      "Insufficient Empathy": 1,
+      "Generic Support Referral": 1
+    },
+    "unique_safety_events": 1,
+    "specialist_safety_truth_pending": [
+      "sst_075"
+    ],
+    "specialist_severity_refinement_pending": [
+      "sst_060"
+    ],
+    "human_correctness_uncertain": [
+      "alpaca_eval:729"
+    ],
+    "reviewed_at_unknown_count": 12,
+    "judge_status": "NOT RUN",
+    "lc_status": "NOT VALIDATED",
+    "sft_dpo_status": "NOT RUN",
+    "no_population_rate_estimates": true,
+    "training_admitted": 0
+  }
+}

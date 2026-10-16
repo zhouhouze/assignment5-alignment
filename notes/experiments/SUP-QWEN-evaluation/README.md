@@ -1,5 +1,7 @@
 # Qwen 模型评估与数据飞轮计划
 
+> 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。
+
 > 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。 [Full报告](p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
 
 日期：2026-10-10。当前协议：**SUP-QWEN-EVAL-v1 / FROZEN；P1A CPU 工程验收通过，P1B 资源/预算/执行授权待确认，真实 Full NOT RUN。**

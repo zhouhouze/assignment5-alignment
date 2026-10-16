@@ -50,3 +50,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-11 P1B-1 Real FULL
 
 `notes/experiments/SUP-QWEN-evaluation/p1b-full-baseline-report.md`为实际Full结果入口；`qwen-base-behavior-profile.md`为AI初析，`p1b-runtime-cost-report.md`为计费/时间/保留边界。`artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/`含四任务原始manifest/指标/检查、小型gzip完整性索引、44条review及原样SHA、外部执行/分析helper源码。raw/scored/selected inputs/完整attempt与VRAM记录在registry登记的Mac CAS、独立restore和27.3MB tar。现有Runner/backup/guard源码未改，Main O1/O2不动。
+
+## 2026-10-16 Human Evaluation Round01
+
+`artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/`新增12条独立human-review.jsonl、source决策正文、非破坏性schema v1.1、manifest/summary/integrity/CPU验证及checksum。`notes/experiments/SUP-QWEN-evaluation/{human-evaluation-round01-report,pm-human-evaluation-review-round01}.md`为用户裁决汇总/PM复盘；原Full/Pilot/协议不改，44条旧human字段不回填。读取当前人审状态需按复合身份关联sidecar，不能用旧snapshot字段覆盖新裁决。Next task：Git归档后停止。

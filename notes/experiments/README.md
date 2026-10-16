@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](SUP-QWEN-evaluation/human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。
+
 > 2026-10-11 最新：P1B-1真实Full **16,266/16,266**；生成、评分、独立复算、quiescent备份/恢复PASS。MMLU69.8832%，GSM8K70.4321%；Alpaca/Safety候选齐全，Judge NOT RUN、LC NOT VALIDATED；新44条人审PENDING。Git归档7516dd3已push，GitHub/云端核对通过；P1B_STATUS=COMPLETED。 [Full报告](SUP-QWEN-evaluation/p1b-full-baseline-report.md)。下方各历史Gate的NOT RUN仅描述当时状态。
 
 本索引是Main与Supplement的证据入口。长期规则见[archive-policy.md](archive-policy.md)。Main内容通过固定提交链接引用，未移动历史文件或混入Supplement实现。
@@ -26,7 +28,7 @@
 | Phase | Status | Evidence |
 | --- | --- | --- |
 | SUP-QWEN-00 | Config/tokenizer CPU验收完成；实际GPU结果见SUP-QWEN-01 | [兼容审计](SUP-QWEN-00-config/compatibility-audit.md)、[报告](SUP-QWEN-00-config/preflight-report.md)、[Judge方案](SUP-QWEN-00-config/judge-compatibility.md) |
-| SUP-QWEN-01 | Base FULL 16,266/16,266；自动评分/复算/恢复PASS；Judge NOT RUN；新44条人审pending；Smoke/Pilot历史保留 | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
+| SUP-QWEN-01 | Base FULL 16,266/16,266；自动评分/复算/恢复PASS；Judge NOT RUN；Full人审12/44，32待审，075专项待定；Smoke/Pilot历史保留 | [权重验收](SUP-QWEN-01-baseline/weight-acceptance.md)、[smoke](SUP-QWEN-01-baseline/smoke-report.md)、[pilot](SUP-QWEN-01-baseline/pilot-report.md) |
 | SUP-QWEN-02 | 三文件验收已做；train/test共24条空字段；人审pending | [验收](SUP-QWEN-02-sft/data-acceptance.md)、[逐条审读](SUP-QWEN-02-sft/data-audit.md)、[训练计划](SUP-QWEN-02-sft/training-plan.md) |
 | SUP-QWEN-03 | NOT STARTED | [DPO计划](SUP-QWEN-03-dpo/dpo-plan.md) |
 | SUP-QWEN-final | Base FULL已验收；SFT/DPO/Judge及模型间最终比较未执行 | [对照框架](SUP-QWEN-final/comparison-framework.md) |
@@ -90,3 +92,9 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 - [Full结果与完整性](SUP-QWEN-evaluation/p1b-full-baseline-report.md)、[Base行为画像](SUP-QWEN-evaluation/qwen-base-behavior-profile.md)、[资源/费用/保留边界](SUP-QWEN-evaluation/p1b-runtime-cost-report.md)。
 - [Full小型证据与44条人审包](../../artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/README.md)、[正式Base计分板](SUP-QWEN-final/model-evaluation-scorecard.md)。完整raw/scored/attempts/logs在Mac verified CAS/restore/tar，registry记录位置、SHA及恢复方法。
 - run_code_commit=`47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726`；归档commit独立，以实际Git History及同步回执定位。协议/Parser/Prompt/模型版本与旧Smoke/Pilot不改。仅建议P2 SFT Dataset Acceptance→P3 SFT CPU Pipeline Implementation，未执行。
+
+## 2026-10-16：Human Evaluation Round01
+
+2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。
+
+[审核汇总](SUP-QWEN-evaluation/human-evaluation-round01-report.md)、[PM复盘](SUP-QWEN-evaluation/pm-human-evaluation-review-round01.md)、[append-only sidecar / schema / 校验](../../artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/README.md)。原44条包SHA、Raw/Scored/Metrics/Manifest、旧Pilot与冻结协议不变；历史reviewed_at全部未知/null，recorded_at为本轮实际归档时间。仅持久化用户裁决，已授权Git归档后停止，无新实验。

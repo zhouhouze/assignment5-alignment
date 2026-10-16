@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_date": "2026-10-11",
+  "updated_date": "2026-10-16",
   "scope": "Existing Main artifacts referenced without relocation; Supplement evidence indexed by per-run manifests/checksums",
   "artifacts": [
     {
@@ -1498,6 +1498,58 @@
       "storage": "ordinary_git_sync_receipt",
       "restore": "Fetch this receipt commit from file Git history; verify checksum, then use exact main archive_commit for all Full artifacts. Later receipt-only HEAD is not inference source.",
       "durability": "Main archival commit already verified on GitHub/cloud; receipt publication verified by final external sync-receipt."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/human-review.jsonl",
+      "storage_location": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/human-review.jsonl",
+      "bytes": 40792,
+      "sha256": "d199b832945c7bf5600a1f45cbefed998145fec99b2e5d13317c6307a5d041e4",
+      "created_at": "2026-10-16T15:48:37.927834+08:00",
+      "run_id": "human-evaluation-round01",
+      "source_packet_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+      "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch archival commit identified by file Git History; verify round SHA256SUMS from repository root. Join sidecar to unchanged source packet by task/example_id/run_id/raw_sha256. Do not overwrite old packet or infer reviewed_at.",
+      "durability": "Local bytes/SHA verified; GitHub publication confirmed by final actual push/remote receipt. Human decisions COMPLETE, specialist uncertainty independent."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/SHA256SUMS",
+      "storage_location": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/SHA256SUMS",
+      "bytes": 1551,
+      "sha256": "ecca7a426575f3ce2a0efd1ae55b5faeded38ca2d6cbe4535c505dc2afc50181",
+      "created_at": "2026-10-16T15:48:37.928010+08:00",
+      "run_id": "human-evaluation-round01",
+      "source_packet_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+      "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch archival commit identified by file Git History; verify round SHA256SUMS from repository root. Join sidecar to unchanged source packet by task/example_id/run_id/raw_sha256. Do not overwrite old packet or infer reviewed_at.",
+      "durability": "Local bytes/SHA verified; GitHub publication confirmed by final actual push/remote receipt. Human decisions COMPLETE, specialist uncertainty independent."
+    },
+    {
+      "artifact_name": "notes/experiments/SUP-QWEN-evaluation/human-evaluation-round01-report.md",
+      "storage_location": "notes/experiments/SUP-QWEN-evaluation/human-evaluation-round01-report.md",
+      "bytes": 13096,
+      "sha256": "14119b2e600426a2bd790ee7497db7c4d6a3a4a9364ae2845af5fee6c21b03f5",
+      "created_at": "2026-10-16T15:48:37.928195+08:00",
+      "run_id": "human-evaluation-round01",
+      "source_packet_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+      "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch archival commit identified by file Git History; verify round SHA256SUMS from repository root. Join sidecar to unchanged source packet by task/example_id/run_id/raw_sha256. Do not overwrite old packet or infer reviewed_at.",
+      "durability": "Local bytes/SHA verified; GitHub publication confirmed by final actual push/remote receipt. Human decisions COMPLETE, specialist uncertainty independent."
+    },
+    {
+      "artifact_name": "notes/experiments/SUP-QWEN-evaluation/pm-human-evaluation-review-round01.md",
+      "storage_location": "notes/experiments/SUP-QWEN-evaluation/pm-human-evaluation-review-round01.md",
+      "bytes": 4842,
+      "sha256": "1b13a0e8864989fed2ffdfa6af7ea1e5ed737d23c0919f93d8c57fc73b030f75",
+      "created_at": "2026-10-16T15:48:37.928319+08:00",
+      "run_id": "human-evaluation-round01",
+      "source_packet_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+      "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+      "storage": "ordinary_git",
+      "restore": "Fetch archival commit identified by file Git History; verify round SHA256SUMS from repository root. Join sidecar to unchanged source packet by task/example_id/run_id/raw_sha256. Do not overwrite old packet or infer reviewed_at.",
+      "durability": "Local bytes/SHA verified; GitHub publication confirmed by final actual push/remote receipt. Human decisions COMPLETE, specialist uncertainty independent."
     }
   ],
   "excluded_downloadable_content": [

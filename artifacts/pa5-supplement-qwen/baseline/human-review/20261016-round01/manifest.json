@@ -1,0 +1,69 @@
+{
+  "experiment_id": "SUP-QWEN-P1B-1-HUMAN-EVALUATION-ROUND01",
+  "stage": "POST_FULL_HUMAN_REVIEW_ARCHIVAL",
+  "status": "HUMAN_REVIEW_ARCHIVAL_VALIDATED",
+  "protocol": "SUP-QWEN-EVAL-v1",
+  "protocol_modified": false,
+  "directly_comparable_to_official": false,
+  "run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+  "source_packet_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+  "archive_base_commit": "ad04ade61bf08a36b796b6be203a90e383147948",
+  "archive_commit": "Resolve from Git history of this round; final push receipt is recorded separately",
+  "recorded_at": "2026-10-16T15:41:47.167515+08:00",
+  "reviewer_id": "human_reviewer_01",
+  "reviewer_alias_provenance": "Alias supplied by user in current ChatGPT reply for these 12 records; anonymous, no legal name inferred",
+  "reviewed_at": null,
+  "reviewed_at_status": "UNKNOWN",
+  "review_source": "User-confirmed ChatGPT human review",
+  "scope": "Persist user adjudications only; no rescoring, generation, GPU, Judge, SFT, DPO, Main O1/O2 changes",
+  "source_packet": {
+    "path": "artifacts/pa5-supplement-qwen/baseline/full/20261011-p1b1/analysis/review_packet.jsonl",
+    "sha256": "259ffa110fab398632f299d1ab509bf869a371fdc3e1a58379a6281ffb55070a",
+    "rows": 44
+  },
+  "sidecar": {
+    "path": "artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/human-review.jsonl",
+    "records": 12,
+    "bytes": 40792,
+    "sha256": "d199b832945c7bf5600a1f45cbefed998145fec99b2e5d13317c6307a5d041e4",
+    "schema": "sidecar-schema-v1.1.json",
+    "review_version": "round01-user-confirmed-v1"
+  },
+  "source_documents": [
+    {
+      "path": "user-authorization-part1.txt",
+      "sha256": "7a425adb551bdb8411899cc2c1f7a7c4fd9bd4332759606f0cd408fd3c3cf264",
+      "meaning": "Exact byte copy of user attachment; visibly truncated at sst_075; provides identity table and nine complete adjudications"
+    },
+    {
+      "path": "user-decisions-addendum.txt",
+      "sha256": "b344d0592a2a76aa28c0e1ef49f4ecfc41df3cae16641a310cdc42029b68943f",
+      "meaning": "Verbatim three adjudication blocks transcribed from current user reply; not represented as a byte copy of the entire reply"
+    }
+  ],
+  "source_constraints": "Sections4–10 and reviewer/time guidance supplied by current user replies; implemented as report/contract checks. No historical reviewed_at fabricated.",
+  "formal_labels_vs_auxiliary": "Confirmed error_labels / candidate_error_labels / PM auxiliary_observations / immutable original AI annotations / verbatim human decision are separate",
+  "human_review_completed": 12,
+  "remaining_source_packet_unreviewed": 32,
+  "adjudication_safety_truth_pending": [
+    "sst_075"
+  ],
+  "severity_refinement_pending": [
+    "sst_060"
+  ],
+  "judge_status": "NOT RUN",
+  "sft_dpo_status": "NOT RUN",
+  "missing_information": [
+    "All 12 historical reviewed_at timestamps unknown; explicitly nullable",
+    "Disagreement not assessed; no independent second-human/Judge adjudication provided",
+    "Unprovided task_completion/root_cause/adjudication diagnostics remain null"
+  ],
+  "training_admission": "PROHIBITED",
+  "idempotence": "Composite identity + review_version; equivalent repeat (ignoring recorded_at bookkeeping) is no-op; conflicting payload hard stop; initial sidecar exclusive-create/fsync, never overwrite earlier sidecar.",
+  "integrity_status": "PASS",
+  "cpu_contract_tests": {
+    "passed": 16,
+    "command": "python3 artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/verify_human_evaluation.py --test",
+    "log": "cpu-tests.txt"
+  }
+}

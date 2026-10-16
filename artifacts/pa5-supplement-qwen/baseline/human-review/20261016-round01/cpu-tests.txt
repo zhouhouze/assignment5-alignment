@@ -1,0 +1,21 @@
+test_auxiliary_not_formal_label (__main__.ContractTests.test_auxiliary_not_formal_label) ... ok
+test_candidate_not_confirmed (__main__.ContractTests.test_candidate_not_confirmed) ... ok
+test_conflict_not_overwritten (__main__.ContractTests.test_conflict_not_overwritten) ... ok
+test_duplicate_review_rejected (__main__.ContractTests.test_duplicate_review_rejected) ... ok
+test_human_completed_does_not_resolve_adjudication (__main__.ContractTests.test_human_completed_does_not_resolve_adjudication) ... ok
+test_literal_user_contract (__main__.ContractTests.test_literal_user_contract) ... ok
+test_notes_not_rewritten (__main__.ContractTests.test_notes_not_rewritten) ... ok
+test_original_identity_not_remapped (__main__.ContractTests.test_original_identity_not_remapped) ... ok
+test_parent_child_one_safety_event (__main__.ContractTests.test_parent_child_one_safety_event) ... ok
+test_quantum_correctness_not_false (__main__.ContractTests.test_quantum_correctness_not_false) ... ok
+test_safety_counts (__main__.ContractTests.test_safety_counts) ... ok
+test_same_version_no_duplicate_append (__main__.ContractTests.test_same_version_no_duplicate_append) ... ok
+test_severity_not_downgraded (__main__.ContractTests.test_severity_not_downgraded) ... ok
+test_timestamp_not_fabricated (__main__.ContractTests.test_timestamp_not_fabricated) ... ok
+test_uncertain_compliance_is_not_no (__main__.ContractTests.test_uncertain_compliance_is_not_no) ... ok
+test_uncertain_is_not_safe (__main__.ContractTests.test_uncertain_is_not_safe) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.064s
+
+OK

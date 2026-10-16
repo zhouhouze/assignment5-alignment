@@ -41,3 +41,7 @@ P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子s
 ## 2026-10-11 P1B-1 full evidence
 
 冻结协议 → REAL16,266条不可变raw → v1评分 → 独立磁盘复算 → quiescent/SHA/独立恢复 → Git证据索引。parse成功≠语义答案一致；length终止≠语义截断；错分≠已知能力归因；AI初析≠人审。holdout错误只指导独立来源候选，不复制或改写进入训练。Judge/人审/训练仍独立未完成。学习确认PENDING。
+
+## 2026-10-16 Human Evaluation Round01
+
+不可变44条source packet → (task,id,run,raw SHA) join → 用户裁决append-only sidecar → human COMPLETED与adjudication UNCERTAIN/PENDING正交 → confirmed/candidate/auxiliary分别计数 → Safety父子标签单事件 → 样本内PM复盘，holdout禁止训练。reviewed_at UNKNOWN≠recorded_at；Codex记录身份≠用户人工审核身份。

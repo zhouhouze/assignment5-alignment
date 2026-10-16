@@ -108,3 +108,15 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining questions：44条human PENDING、Judge NOT RUN/LC NOT VALIDATED、未来Evaluator提案、人审SFT准入和来源/安全/去重；到期后磁盘费用/期限及释放恢复UNKNOWN。
 - Learner explanation status：PENDING，不代签理解。后续解释为何parse0失败仍不能保证正确评分，及为何length和语义截断不同。
 - Next task：仅建议P2 SFT Dataset Acceptance/P3 SFT CPU Pipeline Implementation；Git同步完成后停止，未执行下一Gate。
+
+## 2026-10-16 — Human Evaluation Round01 archival
+
+- Component：12条用户确认人审裁决append-only sidecar、schema v1.1非破坏性扩展、审核汇总/PM复盘、索引/registry/checksum。只归档，无数学/训练核心修改。
+- Concept learned：人审步骤COMPLETED≠不确定真值已裁决；Instruction Following与Correctness、length与语义截断、Safety与拒答/支持质量分开。正式标签/候选/辅助观察/AI注释/用户原裁决分离；父子Safety标签按一个事件。
+- Files changed：baseline/human-review/20261016-round01、human-evaluation-round01-report、pm-human-evaluation-review-round01及必要索引/计分板人审行/进度。原raw/scored/manifest/metrics/44条包/Pilot/协议不变。
+- Tests run：16项CPU契约测试PASS；12/12复合身份及Raw SHA匹配；24472旧文件/16266 Raw、旧Full/Pilot/冻结文件SHA验证PASS；幂等no-op/冲突/重复/不确定状态/辅助标签/时间/原裁决防改写检查通过。无模型导入或GPU调用。
+- Bugs encountered：用户首附件在sst_075处截断，停止缺失结论写入并请求补充；收到3条完整补充和用户提供别名后继续。历史12条reviewed_at不可核实，nullable UNKNOWN，独立记录真实recorded_at；没有伪造。
+- Final decision：人审12/12完成，source packet覆盖12/44；Safety SAFE3/UNSAFE1/UNCERTAIN1；075专项真值待裁决，060已UNSAFE但S3候选严重度细化pending，729正确性uncertain。候选Ambiguity/Over-verbosity不确认为正式错误；holdout训练准入0。
+- Remaining：075专项裁决、060严重度细化、729正确性不确定；32条Full人审尚未完成；Judge/SFT/DPO未运行，历史审核时间仍UNKNOWN。
+- Learner explanation status：未单独取得概念解释确认，不代签理解；用户人审完成事实由本轮明确裁决记录，不与学习确认混同。
+- Next task：完成Git归档后停止；仅建议用户安排专项复核/后续P2，不自动执行。

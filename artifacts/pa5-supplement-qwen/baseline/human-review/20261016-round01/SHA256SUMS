@@ -1,0 +1,10 @@
+b014ae45d26c1426da8dbceb5b3917c1d2183ba33155fb8a173c94ec60f1d047  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/README.md
+4411391560e1ea949c26246c41a2a934eed73194cc52522eaf753f7697249158  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/cpu-tests.txt
+d199b832945c7bf5600a1f45cbefed998145fec99b2e5d13317c6307a5d041e4  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/human-review.jsonl
+8d94b70420739a94774580082bfadcd60463e69bf2b9bd95505a7d687585215c  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/integrity-report.json
+e4188f207b3d4f5d4f130bc1c94c3781d4914d0cb64e6cc15e5f932d796f24b8  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/manifest.json
+60d86dd7824f60d189226d6a102867491ef6e784e1d141638bd5dfe91ecfeee9  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/sidecar-schema-v1.1.json
+e8f7560b728e91d6e02efb0681f5f79a156984fdac7ab4a393931a29147ade45  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/summary.json
+7a425adb551bdb8411899cc2c1f7a7c4fd9bd4332759606f0cd408fd3c3cf264  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/user-authorization-part1.txt
+b344d0592a2a76aa28c0e1ef49f4ecfc41df3cae16641a310cdc42029b68943f  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/user-decisions-addendum.txt
+bdc533565af6dec98ab63a3dfe512352f9f149a2ca880ccd7767ac54dcedcbcf  artifacts/pa5-supplement-qwen/baseline/human-review/20261016-round01/verify_human_evaluation.py

@@ -1,0 +1,84 @@
+{
+  "human_review_completed": 12,
+  "source_packet_count": 44,
+  "remaining_unreviewed_in_source_packet": 32,
+  "task_counts": {
+    "alpaca_eval": 7,
+    "simple_safety_tests": 5
+  },
+  "safety_outcomes": {
+    "SAFE": 3,
+    "UNSAFE": 1,
+    "UNCERTAIN": 1
+  },
+  "refusal_behaviors": {
+    "EXPLICIT REFUSAL": 3,
+    "NO REFUSAL": 2
+  },
+  "human_correctness": {
+    "False": 3,
+    "not_applicable": 8,
+    "uncertain": 1
+  },
+  "confirmed_primary_error_counts": {
+    "Knowledge Error": 1,
+    "Repetition": 2,
+    "Incomplete Response": 1,
+    "Capability Error": 1,
+    "Arithmetic Error": 1,
+    "Instruction Following Error": 1,
+    "Safety Error": 1
+  },
+  "confirmed_label_counts_nonexclusive": {
+    "Knowledge Error": 1,
+    "Repetition": 3,
+    "Truncation": 3,
+    "Incomplete Response": 2,
+    "Capability Error": 1,
+    "Arithmetic Error": 1,
+    "Instruction Following Error": 1,
+    "Safety Error": 1,
+    "Unsafe Compliance": 1
+  },
+  "candidate_label_counts": {
+    "Evaluation Ambiguity": 1
+  },
+  "auxiliary_observation_counts": {
+    "Over-verbosity candidate": 1,
+    "Internal Inconsistency": 1,
+    "Unsupported Assumption": 1,
+    "Groundedness Concern": 1,
+    "Oversimplification": 1,
+    "Unsupported Causal Explanation": 1,
+    "Genre Mismatch": 1,
+    "Weak Plot Development": 1,
+    "Character Name Inconsistency": 1,
+    "Preachiness": 1,
+    "Legal Overgeneralization Concern": 1,
+    "Generic Marketing Response": 1,
+    "No Refusal": 1,
+    "Unverified Testimonial": 1,
+    "Evasive Refusal": 2,
+    "Generic Legal Guidance": 1,
+    "Boilerplate Closing": 1,
+    "Formatting Artifact": 2,
+    "Insufficient Empathy": 1,
+    "Generic Support Referral": 1
+  },
+  "unique_safety_events": 1,
+  "specialist_safety_truth_pending": [
+    "sst_075"
+  ],
+  "specialist_severity_refinement_pending": [
+    "sst_060"
+  ],
+  "human_correctness_uncertain": [
+    "alpaca_eval:729"
+  ],
+  "reviewed_at_unknown_count": 12,
+  "judge_status": "NOT RUN",
+  "lc_status": "NOT VALIDATED",
+  "sft_dpo_status": "NOT RUN",
+  "no_population_rate_estimates": true,
+  "training_admitted": 0
+}
