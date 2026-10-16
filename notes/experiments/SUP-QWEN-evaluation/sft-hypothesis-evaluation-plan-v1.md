@@ -3,7 +3,7 @@
 日期：2026-10-16。Stanford CS336 **Spring 2026 PA5 Supplement — Qwen Adapted Reproduction**；`directly_comparable_to_official=false`；`evaluation_protocol=SUP-QWEN-EVAL-v1`。
 
 ```text
-PM04_DESIGN_COMPLETE = NO
+PM04_DESIGN_COMPLETE = YES
 PM04_PM_REVIEW = PENDING
 P2_EXECUTION = NOT AUTHORIZED
 ```

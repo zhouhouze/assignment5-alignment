@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T17:02:59.597160+08:00",
+  "checked_at": "2026-10-16T17:04:07.658202+08:00",
   "status": "PASS",
   "scope": "CPU-only documentation/source/fact checks; no model scoring, no P2 derived training data",
   "source_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
@@ -32,7 +32,7 @@
   "links": "PASS",
   "credential_patterns": "NONE",
   "change_scope": "PASS; only PM04 design/indices/progress/archive evidence",
-  "PM04_DESIGN_COMPLETE": "NO",
+  "PM04_DESIGN_COMPLETE": "YES",
   "PM04_PM_REVIEW": "PENDING",
   "P2_EXECUTION": "NOT AUTHORIZED",
   "gpu_model_judge_sft_dpo_or_p2_execution": false

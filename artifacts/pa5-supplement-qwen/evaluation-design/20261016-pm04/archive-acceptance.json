@@ -1,0 +1,16 @@
+{
+  "document_id": "PM-04-SFT-Hypothesis-Evaluation-Plan-v1",
+  "status": "ARCHIVE_ACCEPTED",
+  "verified_at": "2026-10-16T17:03:50.212497+08:00",
+  "branch": "learning/pa5-supplement",
+  "github_remote": "git@github.com:zhouhouze/assignment5-alignment.git",
+  "github_pushed": true,
+  "archive_commit": "3248953c2001a9b0f7aa4d57fb3f56a87de25ce7",
+  "verified_github_head": "3248953c2001a9b0f7aa4d57fb3f56a87de25ce7",
+  "verification": "git push succeeded; subsequent fetch resolved origin/learning/pa5-supplement to the same commit; plan artifact and checksums were present in that commit",
+  "source_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
+  "PM04_DESIGN_COMPLETE": "YES",
+  "PM04_PM_REVIEW": "PENDING",
+  "P2_EXECUTION": "NOT AUTHORIZED",
+  "model_or_gpu_or_judge_or_sft_or_dpo_or_p2_execution": false
+}

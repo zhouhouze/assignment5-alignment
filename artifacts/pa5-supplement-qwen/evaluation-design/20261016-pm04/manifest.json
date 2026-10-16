@@ -7,7 +7,7 @@
   "base_commit": "919e75b3a874aa9c65b363062c2fbcabc33f8a32",
   "baseline_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
   "main_document": "notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md",
-  "PM04_DESIGN_COMPLETE": "NO",
+  "PM04_DESIGN_COMPLETE": "YES",
   "PM04_PM_REVIEW": "PENDING",
   "P2_EXECUTION": "NOT AUTHORIZED",
   "product_thresholds": "PENDING USER APPROVAL; no values assigned",
