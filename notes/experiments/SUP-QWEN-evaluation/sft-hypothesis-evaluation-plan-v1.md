@@ -4,11 +4,12 @@
 
 ```text
 PM04_DESIGN_COMPLETE = YES
-PM04_PM_REVIEW = PENDING
+PM04_PM_REVIEW = APPROVED
+PM04_REVIEW_SCOPE = DESIGN_ONLY
 P2_EXECUTION = NOT AUTHORIZED
 ```
 
-上方设计状态在文档检查、GitHub归档和远端核对均通过后才更新。本文是**训练前预注册设计稿**，不是SFT执行批准或改善结果。H1–H5、分析判据、诊断样本及PM决策建议仍待用户评审；所有结果值缺失时保留NOT RUN/null，不预填收益。
+本文已于2026-10-16完成设计归档，于2026-10-20完成用户的 **Design Only评审**。H1–H5的实验设计、分析判据与PM决策规则已获认可；诊断样本规模、产品阈值、资源预算和实际执行仍需独立批准。本文是**训练前预注册设计**，不代表SFT执行批准或改善结果；所有结果值缺失时保留NOT RUN/null，不预填收益。
 
 ## 1. Executive Summary
 
@@ -20,7 +21,7 @@ P2_EXECUTION = NOT AUTHORIZED
 - H4：SFT后知识/数学表现应保持；完整分母与逐题退化迁移不能被平均净提升掩盖。
 - H5：主路径改善可能含有可识别的训练贡献；用冻结2×2区分Prompt-only、固定Prompt训练差异与交互。
 
-**设计完成不等于PM批准、P2准入或训练授权。** 实用改善门槛、能力退化容忍、安全/帮助性取舍、人审规模和新诊断集仍未批准。后续任何训练必须先通过独立P2/P3/P4等Gate，不因本设计归档自动进入。
+**本次PM批准范围为Design Only，P2准入与训练尚未授权。** 实用改善门槛、能力退化容忍、安全/帮助性取舍、人审规模和新诊断集仍未批准。后续任何训练必须先通过独立P2/P3/P4等Gate，不因本设计签收自动进入。
 
 ## 2. Scope / Evidence Baseline
 
@@ -76,7 +77,7 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 
 ### 3.1 共用判据与审批边界
 
-下列SUPPORTED / NOT SUPPORTED / INCONCLUSIVE是**拟议分析判据，待PM评审**，不是现有实验结论或自动上线门槛。先满足G0：同题/同rubric/同metric版本，完整ID与SHA/配置有效，合法坏输出未丢弃，适用Judge已验收、unknown与人审覆盖完整披露。G0不满足时INCONCLUSIVE，并调查技术/评估问题。
+下列SUPPORTED / NOT SUPPORTED / INCONCLUSIVE是**已获Design Only评审批准的分析判据**，不是现有实验结论或自动上线门槛。先满足G0：同题/同rubric/同metric版本，完整ID与SHA/配置有效，合法坏输出未丢弃，适用Judge已验收、unknown与人审覆盖完整披露。G0不满足时INCONCLUSIVE，并调查技术/评估问题。
 
 对预注册终点使用既有95% paired CI判断方向：完整位于预期方向是该终点的方向性支持，完整位于相反方向是反证；跨零不能证明无效、等效、非劣或能力保持。多终点逐项报告，不能只选显著改善；H1两项共同主终点须同时支持才支持联合主张。**最小实用效应、退化容忍百分点、安全/误拒取舍没有值，保持PENDING USER APPROVAL。** 统计方向支持、因果归因支持和产品接受分别记录；不能由前者自动推出后两者。
 
@@ -86,7 +87,7 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 
 **假设：在同题、同外层Prompt和同rubric下，SFT可能提高约束满足与任务完成。**
 
-| 字段 | 预注册设计 / 待评审判据 |
+| 字段 | 预注册设计 / Design Only已批准判据 |
 | --- | --- |
 | Product Behavior / User Value | 满足用户明确约束并完整交付；同时区分“回应了问题”和“内容正确” |
 | Baseline Evidence | 162风格约束不足且Task Completion FAIL；533 IF PARTIAL；166/402/771 IF PASS但Correctness FALSE |
@@ -102,13 +103,13 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 | Not Supported | 任一共同终点有明确反向CI，联合“二者改善”主张不获支持；检查漏约束/能力/数据示范问题 |
 | Inconclusive | 缺诊断基线或后测、人审不完整、CI跨零或只有A/D变化；不能说没有效果或保持成功 |
 | Data Flywheel Routing Candidate | 独立来源的约束/完整任务示范与regression；先审数据质量，holdout原题及同源改写禁止训练 |
-| Approval Status | PM04_PM_REVIEW=PENDING；n_IF/rubric/人审预算PROPOSED；数据和生成执行NOT AUTHORIZED |
+| Approval Status | PM04_PM_REVIEW=APPROVED (Design Only)；n_IF/rubric/人审预算PROPOSED；数据和生成执行NOT AUTHORIZED |
 
 ### H2 — Assistant Quality
 
 **假设：SFT可能提升偏好评价，并减少无益重复/语义未完成；三项主张分别验证。**
 
-| 字段 | 预注册设计 / 待评审判据 |
+| 字段 | 预注册设计 / Design Only已批准判据 |
 | --- | --- |
 | Product Behavior / User Value | 正确、相关、清晰且完整的助手回复；不奖励仅更长、更流畅或模板化 |
 | Baseline Evidence | 805候选完整；97/805 length；603重复/局部截断，533/162不完整，166技术错误，402公式不一致，771单位错误 |
@@ -124,13 +125,13 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 | Not Supported | 合格同Prompt偏好CI明确反向，或对应行为终点明确恶化，则相应子主张不获支持；若偏好升而事实/完整性退化，列取舍并调查，不称全面改善 |
 | Inconclusive | Judge/LC未验收、invalid未解决、人审覆盖不足、CI跨零或收益只有长度变化；无LC时不得声称已排除长度偏差 |
 | Data Flywheel Routing Candidate | 独立正确示范、去重/完整性审计；两答正确安全后才可提DPO候选，本轮不创建样本或启动DPO |
-| Approval Status | PM review PENDING；Judge/LC、人审n_open、任何额外长度诊断均需后续批准 |
+| Approval Status | PM review APPROVED (Design Only)；Judge/LC、人审n_open、任何额外长度诊断均需后续批准 |
 
 ### H3 — Safety & Helpfulness
 
 **假设：SFT可能减少危险目标的实质协助并改善安全回应，同时保持对正常请求的帮助性。**
 
-| 字段 | 预注册设计 / 待评审判据 |
+| 字段 | 预注册设计 / Design Only已批准判据 |
 | --- | --- |
 | Product Behavior / User Value | 安全边界识别、适当拒答与支持；不能将拒答越多当安全越好 |
 | Baseline Evidence | 人审SAFE3/UNSAFE1/UNCERTAIN1；060已UNSAFE且S3候选；094/047/009安全但质量FAIR或偏低；075未决 |
@@ -146,13 +147,13 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 | Not Supported | 任一核心安全终点明确反向；新确认的实质协助/S3触发暂停安全主张并调查；仅拒答率上升且帮助性下降不能支持联合改善 |
 | Inconclusive | Judge可靠性或关键专项裁决不足、unknown界限重叠、缺benign框或CI跨零；即使Safety偏好改善，也不能声称安全且有帮助的产品目标已通过 |
 | Data Flywheel Routing Candidate | 安全case隔离→专项审阅→独立授权安全示范/边界regression；原危险输出不直接作训练目标 |
-| Approval Status | PM review PENDING；075 truth/060 severity仍PENDING；benign/harmful、人审与Judge执行NOT AUTHORIZED |
+| Approval Status | PM review APPROVED (Design Only)；075 truth/060 severity仍PENDING；benign/harmful、人审与Judge执行NOT AUTHORIZED |
 
 ### H4 — Capability Retention
 
 **假设：SFT后的知识与数学表现可保持，且修复不掩盖新的退化。**
 
-| 字段 | 预注册设计 / 待评审判据 |
+| 字段 | 预注册设计 / Design Only已批准判据 |
 | --- | --- |
 | Product Behavior / User Value | 助手行为改善时保留可信知识、数学结论与可用能力；平均净变化不掩盖回归 |
 | Baseline Evidence | MMLU9813/14042；GSM929/1319；Round01的166/402/771显示回应任务与正确性可分离 |
@@ -168,19 +169,19 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 | Not Supported | 任一任务固定Prompt差异CI明确负向是保持假设反证；Full A/D退化先视为产品配置警报，H5前不单归因权重 |
 | Inconclusive | CI跨零、缺后测、归因条件不足或只有很小诊断子集；不能写“无显著差异所以能力保持” |
 | Data Flywheel Routing Candidate | 审计独立训练示范的事实/公式/数学/代码正确性与分布；疑似Evaluator问题走独立版本提案，不修改v1结果 |
-| Approval Status | PM review PENDING；能力退化容忍、训练seed/资源、实际全量后测待批 |
+| Approval Status | PM review APPROVED (Design Only)；能力退化容忍、训练seed/资源、实际全量后测待批 |
 
 ### H5 — Training vs Prompt Attribution
 
 **可检验主张：若主路径表现改善，其中可能存在正向训练贡献，而不全由外层Prompt解释；贡献可能依赖模板。**
 
-| 字段 | 预注册设计 / 待评审判据 |
+| 字段 | 预注册设计 / Design Only已批准判据 |
 | --- | --- |
 | Product Behavior / User Value | 知道收益来自数据/权重、包装还是交互，避免为Prompt收益承担无证据的训练成本 |
 | Baseline Evidence | 已有A候选的Full raw可在完全匹配时引用；B/C/D和任何差值当前NOT RUN |
 | Evidence Limitations | 没有SFT checkpoint；100题/任务尚PROPOSED；A/D主路径模板不同，不能视作纯训练比较 |
 | Expected Direction | 对预先指定的H1–H4终点检查固定Prompt的有益训练差异；同时报Prompt-only与交互，不预设交互符号 |
-| Primary Metrics | 每个既有终点分别报告B−A、D−B、C−A、D−A及(D−C)−(B−A)；不合成跨任务总分；统计优先级待PM review |
+| Primary Metrics | 每个既有终点分别报告B−A、D−B、C−A、D−A及(D−C)−(B−A)；不合成跨任务总分；既有统计优先级设计已获Design Only评审批准 |
 | Guardrail Metrics | 四组完整性/同ID、Parser/Judge/Prompt hash、unknown/invalid、长度/完成度及H4能力 |
 | Diagnostic Metrics | 不同模板的效应异质性、交互CI、长度与解析/约束迁移 |
 | Dataset and Sampling | 直接沿用冻结2×2；每任务100题是PROPOSED，SST100、MMLU57学科覆盖，seed0；本轮不生成清单或输出 |
@@ -190,7 +191,7 @@ Human reviewer=`human_reviewer_01`；12条历史reviewed_at均UNKNOWN/null，真
 | Not Supported | 两个固定Prompt训练对比都明确反向时，正向训练贡献主张不获支持；D−A改善不能推翻这一反证 |
 | Inconclusive | 缺任一组、CI跨零或Judge/人审不足；模板间结论相反时不作跨模板普遍主张，条件效应按Supported逐模板报告；若仅B−A有支持，最多说Prompt效应获支持，不能证明训练效应严格为零 |
 | Data Flywheel Routing Candidate | 先分辨包装/数据问题；独立诊断或Evaluator审计建议，不自动造训练数据 |
-| Approval Status | 2×2定义/公式FROZEN；样本规模/ID/执行/人审预算PROPOSED或PENDING USER APPROVAL |
+| Approval Status | PM review APPROVED (Design Only)；2×2定义/公式FROZEN；样本规模/ID/执行/人审预算PROPOSED或PENDING USER APPROVAL |
 
 ## 4. Evaluation Metrics & Dataset Matrix
 
@@ -273,11 +274,11 @@ Alpaca始终对同一冻结reference评分；valid-only、invalid率及N分母�
 
 CI覆盖题目抽样的不确定性，**不覆盖全部训练seed、Judge系统偏差、数据污染、硬件/实现变化**。固定benchmark本次分数是精确观测，CI只对抽样/外推解释；小诊断样本与富集人审不可包装成总体证据。多训练seed建议3个是既有另批资源扩展，未执行；改变greedy生成seed不是独立训练证据。
 
-H1共同终点、H2分项主张和H5多个差值全部报告；终点优先级/多重比较解释须PM预审，探索性子组注明exploratory，不以挑显著项形成结论。不使用未批准的最小效应或非劣margin，不将“CI跨零”写成没有退化。训练loss改善只说明训练分布拟合，不证明下游收益。Evaluator疑似错误只能提出新版本/统一重算计划，当前v1 Raw和主分数不改。
+H1共同终点、H2分项主张和H5多个差值全部报告；既有终点优先级设计已获Design Only评审批准，多重比较解释及扩展仍按PM04-10待批，探索性子组注明exploratory，不以挑显著项形成结论。不使用未批准的最小效应或非劣margin，不将“CI跨零”写成没有退化。训练loss改善只说明训练分布拟合，不证明下游收益。Evaluator疑似错误只能提出新版本/统一重算计划，当前v1 Raw和主分数不改。
 
 ## 8. PM Decision Matrix
 
-以下为条件式PM建议，**不是自动继续训练/上线或执行授权**。观察性评估继续也须有对应Gate、资源与预算批准。
+以下条件式PM决策规则已获Design Only评审批准，**不是自动继续训练/上线或执行授权**。观察性评估继续也须有对应Gate、资源与预算批准。
 
 | 结果情形 | 当前可支持结论 | 仍缺证据 | 下一步数据审计 | 独立诊断 / Evaluator / 人审 | 建议动作（待用户决定） |
 | --- | --- | --- | --- | --- | --- |
@@ -310,9 +311,9 @@ mirror revision保持`ac710ef808346bf458d7b093bfe4586cb15699d9`，原train/test(
 
 ## 10. Open Decisions / Approval Checklist
 
-| ID | 待用户评审/批准项 | 当前状态 / 影响 |
+| ID | 评审/批准项 | 当前状态 / 影响 |
 | --- | --- | --- |
-| PM04-01 | H1–H5主张、共同终点、方向性判据与指标优先级 | PM04_PM_REVIEW=PENDING；本设计稿不是用户签收 |
+| PM04-01 | H1–H5主张、共同终点、方向性判据与指标优先级 | PM04_PM_REVIEW=APPROVED；2026-10-20用户已签收Design Only，不表示假设已被SFT验证 |
 | PM04-02 | 最小实用收益、MMLU/GSM退化容忍pp、误拒与安全/帮助质量取舍 | D25 PENDING USER APPROVAL；不赋数值、不宣称上线合格 |
 | PM04-03 | 新n_IF/n_open/benign/harmful来源、框、任务rubric、分层与样本规模 | D20/D21 PROPOSED；不创建样本或清单；新Base诊断基线NOT RUN |
 | PM04-04 | 2×2具体100题/任务提案及ID/执行成本 | 比较规则FROZEN，规模/清单/执行PROPOSED；B/C不借P1权限运行 |
@@ -322,10 +323,27 @@ mirror revision保持`ac710ef808346bf458d7b093bfe4586cb15699d9`，原train/test(
 | PM04-08 | P2执行、数据准入与未决质量风险处置 | P2_EXECUTION=NOT AUTHORIZED；已批空白策略不等于执行批准 |
 | PM04-09 | SFT实现/optimizer dtype/硬件/预算/训练seed与checkpoint选择 | D23 PENDING；既有设计不自动获批，不能用benchmark选checkpoint |
 | PM04-10 | 多训练seed扩展、诊断功效与探索性/多终点解释 | 资源与设计PROPOSED；不将单checkpoint CI当全部不确定性 |
-| PM04-11 | 条件式PM Decision Matrix的继续/暂停/调查建议 | PENDING PM REVIEW；不是自动后续Gate或上线授权 |
+| PM04-11 | 条件式PM Decision Matrix的继续/暂停/调查建议 | APPROVED (Design Only)；不是自动后续Gate或上线授权 |
 
-**Acceptance checklist**：H1–H5可检验且各有反证/不确定判据；Base数值与人审状态一致；指标与2×2引用冻结定义；诊断/预算/阈值待批；P2只交接未执行；相对链接/来源SHA/冻结保护/文档diff通过；最后GitHub push与远端核对成功后才设PM04_DESIGN_COMPLETE=YES。PM04_PM_REVIEW始终PENDING，P2_EXECUTION始终NOT AUTHORIZED。
+**Acceptance checklist**：PM04_DESIGN_COMPLETE保持YES；PM04_PM_REVIEW已为APPROVED，范围仅DESIGN_ONLY；H1–H5正文实验设计、指标与公式不作实质性变更；Base数值、人审状态与未决产品阈值/预算/资源保持原状；P2只交接未执行，P2_EXECUTION仍为NOT AUTHORIZED。本次签收归档须通过状态/正文一致性、Markdown链接、历史快照SHA、变更范围、git diff --check及推送后远端提交核对。
 
 设计归档与检查证据见[PM04档案](../../../artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/README.md)。准确归档commit与最后验收状态由Git History及同步回执定位，不用自己的SHA自引用。回滚只revert本轮相关文档提交，不动模型/历史结果。
 
-Next task：完成设计归档后停止，等待用户亲自审核H1–H5、PM决策和Open Decisions；不自动进入P2、SFT/DPO、Judge或其他实验。
+### Design Review Approval — 2026-10-20
+
+审批来源：用户在本对话中明确批准“PM04_PM_REVIEW = APPROVED (Design Only)”。Codex仅记录该决定。批准的是实验设计方法与产品决策规则；不代表H1–H5已被真实SFT实验验证、模型质量已达标或下一Gate获批。课堂模拟数值不属于正式实验结果。
+
+| 范围 | 用户已批准的设计结论 |
+| --- | --- |
+| H1 — Instruction Following | 认可约束满足和任务完成的共同终点评估；两个终点的方向性支持不自动代表产品质量验收通过。 |
+| H2 — Assistant Quality | 认可Win Rate、Repetition、Semantic Truncation、Task Completion分别评价；Length Bias仍需独立诊断与经过验收的LC方法检查，不将长度变化直接解释为质量改善或Judge偏差。 |
+| H3 — Safety & Helpfulness | 认可分别评价Strict Safe-output、Unsafe Compliance、False Refusal及Refusal/Supportive Quality；安全改善不自动抵消正常请求帮助性的退化。 |
+| H4 — Capability Retention | 认可MMLU/GSM8K全量评分、CC/CW/WC/WW逐题迁移与固定Prompt诊断；能力非劣边界尚未批准，置信区间跨零不直接证明能力保持。 |
+| H5 — Training vs Prompt Attribution | 认可Base/SFT × Zero-shot/Alpaca的2×2设计；固定Prompt对照支持特定条件下的Checkpoint表现比较，不能直接归因于特定训练数据。 |
+| Data Flywheel | 认可先确认错误行为、开展针对性诊断，再提出独立训练数据改进假设的流程；未批准新增、删除、清洗或重配比SFT数据，正式Benchmark Holdout的training_admission仍为PROHIBITED。 |
+
+PM04-02至PM04-10的未决事项与执行边界保持原状；sst_075专项裁决、sst_060严重度细化和Alpaca729正确性仍未决。SFT、DPO、Judge均NOT RUN。
+
+历史归档语义：`artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/`全部文件保持原字节。其SHA256SUMS及registry中的主文档SHA `327065e386cb8bc552a96123bb9e02c59642d51e4631ab8c3e84ef110fb97434`对应[签收前提交acc7d9e的文档](https://github.com/zhouhouze/assignment5-alignment/blob/acc7d9e2c4dc2268011db9b3da6da6c0d0b17965/notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)。本次签收后的主文档具有新SHA，通过本次Git提交与文件History追溯；不回写旧SHA。旧verify_document.py含PM review PENDING断言，仅适用于签收前快照；对当前文档直接运行旧工具或旧SHA清单产生的预期差异，不表示模型实验产物损坏。本次单独进行CPU文档检查，并从固定历史提交读取blob核验旧清单。
+
+Next task：PM-04已正式签收；完成本次独立提交、push与远端核对后立即停止。P2仍NOT AUTHORIZED，后续Gate与资源预算须单独获批。

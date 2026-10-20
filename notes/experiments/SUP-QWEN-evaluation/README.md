@@ -1,6 +1,6 @@
 # Qwen 模型评估与数据飞轮计划
 
-> 2026-10-16 PM-04：SFT Hypothesis & Evaluation Plan v1设计与归档验收完成；H1–H5、Evaluation/Control Matrix、PM Decision Matrix及P2审计交接均为设计；PM评审PENDING，P2_EXECUTION=NOT AUTHORIZED。未执行数据准入、训练或Judge。 [PM-04主稿](sft-hypothesis-evaluation-plan-v1.md)。
+> 2026-10-20 PM-04：设计已于10月16日归档，本次用户正式签收 **PM Review APPROVED (Design Only)**；PM04_DESIGN_COMPLETE=YES，P2_EXECUTION=NOT AUTHORIZED。H1–H5仍待真实SFT实验检验，产品阈值/预算/资源与后续Gate未获批准。 [PM-04主文档与签收记录](sft-hypothesis-evaluation-plan-v1.md)。
 
 > 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。
 
@@ -60,4 +60,4 @@ P1B-0历史预检：[现场预检](p1b-resource-preflight.md)——SSH恢复；�
 
 ## PM-04训练前假设设计
 
-先读[SFT Hypothesis & Evaluation Plan v1](sft-hypothesis-evaluation-plan-v1.md)。H1–H5与PM决策建议待用户评审；Judge/LC/SFT缺失指标仍NOT RUN/NOT VALIDATED，075/729/060原未决状态保留。P2交接只定义需要审计什么，未授权或执行数据处理。Next task：设计归档后停止，等待PM-04评审。
+先读[SFT Hypothesis & Evaluation Plan v1](sft-hypothesis-evaluation-plan-v1.md)。H1–H5与PM决策规则已于2026-10-20获用户Design Only评审批准；Judge/LC/SFT缺失指标仍NOT RUN/NOT VALIDATED，075/729/060原未决状态保留。P2交接只定义需要审计什么，P2_EXECUTION=NOT AUTHORIZED；诊断集规模、人审预算与产品阈值仍待批准。10月16日档案保留签收前快照语义，当前评审状态由主文档与本次Git提交追溯。Next task：签收归档后停止，后续Gate待独立授权。
