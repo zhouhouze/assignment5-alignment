@@ -77,3 +77,7 @@ P2-A.2 derivation, exclusions as applied filtering, full source-row mapping, Der
 ## Next Gate
 
 Stop after small-evidence Git archival and remote verification. No automatic P2-A.2. Archive commit is identified by Git history rather than self-referential SHA.
+
+## Archive packaging correction
+
+Initial archive 876ae6c omitted execution.log because of the existing ignore rule; raw pytest output also triggered trailing-whitespace checks. Follow-up archive explicitly includes execution.log and stores the exact GRPO output as grpo.txt.gz (lossless decompression verified; original bytes remain in initial archive history). No test result or Raw evidence changed. Final checksums/registry use the compressed path.

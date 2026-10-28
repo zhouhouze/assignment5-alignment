@@ -1596,8 +1596,8 @@
     {
       "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/SHA256SUMS",
       "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/SHA256SUMS",
-      "bytes": 1683,
-      "sha256": "431161ba948cb33f2cdae887b095d1b192c032c53299c5d93b578682bb6db7e3",
+      "bytes": 1686,
+      "sha256": "f4011f9eb2dad6814e39f594893a6a0bb52243b577ed1518832edff4ad52206b",
       "created_date": "2026-10-28",
       "run_id": "20261028-p2a1-raw",
       "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
@@ -1678,10 +1678,10 @@
       "durability": "Local Git archival; remote verification recorded separately at Gate close."
     },
     {
-      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt",
-      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt",
-      "bytes": 105622,
-      "sha256": "06b615c7ddae3afb20a8ea5aa8d8601d048c9357340132efd77216240819168b",
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt.gz",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt.gz",
+      "bytes": 7223,
+      "sha256": "b28272e0f15cb4d3e6022d85266d8981f0cbe6d3b465762ce2236b083f262d37",
       "created_date": "2026-10-28",
       "run_id": "20261028-p2a1-raw",
       "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
