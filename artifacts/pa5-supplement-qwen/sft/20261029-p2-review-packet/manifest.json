@@ -1,0 +1,59 @@
+{
+  "status": "PREPARED_HUMAN_PENDING",
+  "branch": "learning/pa5-supplement",
+  "train_sampling": "Historical random.Random(0) sample of 20 from 210348 Raw rows; preserved IDs",
+  "validation_sampling": "sorted(random.Random(0).sample(range(1, 23109), 20))",
+  "validation_derived_lines": [
+    1327,
+    3108,
+    4564,
+    4580,
+    7158,
+    8209,
+    8485,
+    9236,
+    9939,
+    11733,
+    12624,
+    13269,
+    13782,
+    15618,
+    15923,
+    16538,
+    16754,
+    17452,
+    19117,
+    20263
+  ],
+  "validation_selection_probability": "20/23108",
+  "diagnostic_sampling": "Historical 3 refusal-prefix candidates; separate from random samples",
+  "raw_and_derived_sha256": {
+    "/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement/data/qwen-sft-mirror/sft-instruct/train.jsonl": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913",
+    "/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement/data/qwen-sft-mirror/sft-instruct/test.jsonl": "ce84dd834a7bbfc622cb3b50dc6c233e7dd91e002fd84f7cf86f70762a2c9ed9",
+    "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1/train.jsonl": "f83a631d5072b714d111bdedd54a849d40f0c386806039b4f9571c4249bc990f",
+    "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1/validation.jsonl": "ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc"
+  },
+  "source_packet_sha256": {
+    "review-packet.jsonl": "cc74d40b150d2366b49849d4798a99815694032eb9937b2443781efc261da609",
+    "refusal-targeted-review.jsonl": "da3a762d772ee660ce54d7bb7b15a2677a1d31fa46db3c78e5a02cca38ffcc11",
+    "codex-review-annotations.jsonl": "4ab6a0de25ba9daae89c1d94d535010b977ab4c3cd9c9d25286c8d8ceabcc6be"
+  },
+  "files": {
+    "after-independent-review/ai-initial-analysis-train-20.jsonl": {
+      "bytes": 8006,
+      "sha256": "bc8dac523e7b77b48863218e765e64e6c3b18b9845b43a13521ad4fd2ecddaa8"
+    },
+    "diagnostic-refusal-3.jsonl": {
+      "bytes": 7842,
+      "sha256": "61bf5232b71c2aceed50a95a3bb35fadab1a1b4f38ebd5704f563fafe0a6eaf6"
+    },
+    "train-20.jsonl": {
+      "bytes": 57169,
+      "sha256": "be9d97441b08d078d0725b01d03b22c74dd84e27dd9df9f3e8300f1a307f61b6"
+    },
+    "validation-20.jsonl": {
+      "bytes": 60129,
+      "sha256": "be45eee130a55ac58a898bd044abed346ad42505916d9c7239ddedd6003a7135"
+    }
+  }
+}

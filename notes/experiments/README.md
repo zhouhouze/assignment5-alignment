@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-10-29 P2 精简人审包已准备：历史 Train 随机20、固定 seed Derived-v1 Validation 随机20、定向拒答诊断3；血缘与原文核对 PASS，人工审核和 Data Admission 仍 PENDING。[准备记录](SUP-QWEN-data-flywheel/p2-compact-review-packet.md)。
+
 > 2026-10-20 PM-04：设计已于10月16日归档，本次用户正式签收 **PM Review APPROVED (Design Only)**；PM04_DESIGN_COMPLETE=YES，P2_EXECUTION=NOT AUTHORIZED。H1–H5仍待真实SFT实验检验，产品阈值/预算/资源与后续Gate未获批准。 [PM-04主文档与签收记录](SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)。
 
 > 2026-10-16 Human Evaluation Round01：用户裁决已独立归档 **12/12（Alpaca7、Safety5）**；Full复核包当前12/44已审、32条待审。Safety SAFE3/UNSAFE1/UNCERTAIN1；sst_075人审完成但专项裁决待定，sst_060 S3候选严重度细化PENDING，Alpaca729正确性UNCERTAIN。Judge/SFT/DPO未运行。 [本轮报告](SUP-QWEN-evaluation/human-evaluation-round01-report.md)。下方原日期记录保留历史含义，旧44条包不回填。

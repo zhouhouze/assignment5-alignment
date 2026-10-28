@@ -1,0 +1,7 @@
+d024052e6e19492e53af65b412db3cef37f04079931e23e8f3db5dbc42e77eee  scripts/prepare_qwen_sft_review_packet.py
+09054367827f8f851472ed20a35e6bdd9c33d843404722ba8d6c7d7f6afe1038  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/README.md
+9ef058eca194e2a198837081459991459d68f9124a397804009c53bfe4b4f900  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/manifest.json
+be9d97441b08d078d0725b01d03b22c74dd84e27dd9df9f3e8300f1a307f61b6  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/train-20.jsonl
+be45eee130a55ac58a898bd044abed346ad42505916d9c7239ddedd6003a7135  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/validation-20.jsonl
+61bf5232b71c2aceed50a95a3bb35fadab1a1b4f38ebd5704f563fafe0a6eaf6  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/diagnostic-refusal-3.jsonl
+bc8dac523e7b77b48863218e765e64e6c3b18b9845b43a13521ad4fd2ecddaa8  artifacts/pa5-supplement-qwen/sft/20261029-p2-review-packet/after-independent-review/ai-initial-analysis-train-20.jsonl
