@@ -1,0 +1,62 @@
+[
+  {
+    "dataset": "validation",
+    "records": 23108,
+    "exact": 2,
+    "normalized_equal": 6,
+    "ngram": 3593,
+    "unique_record_pairs": 3559,
+    "matched_train_rows": 3419,
+    "matched_target_rows": 2685,
+    "train_hit_rate": 0.016255717315025245,
+    "target_hit_rate": 0.11619352605158387
+  },
+  {
+    "dataset": "mmlu",
+    "records": 14042,
+    "exact": 14,
+    "normalized_equal": 112,
+    "ngram": 0,
+    "unique_record_pairs": 126,
+    "matched_train_rows": 21,
+    "matched_target_rows": 124,
+    "train_hit_rate": 9.984500251989768e-05,
+    "target_hit_rate": 0.008830650904429568
+  },
+  {
+    "dataset": "gsm8k",
+    "records": 1319,
+    "exact": 0,
+    "normalized_equal": 0,
+    "ngram": 0,
+    "unique_record_pairs": 0,
+    "matched_train_rows": 0,
+    "matched_target_rows": 0,
+    "train_hit_rate": 0.0,
+    "target_hit_rate": 0.0
+  },
+  {
+    "dataset": "alpaca_eval",
+    "records": 805,
+    "exact": 5,
+    "normalized_equal": 0,
+    "ngram": 0,
+    "unique_record_pairs": 4,
+    "matched_train_rows": 4,
+    "matched_target_rows": 2,
+    "train_hit_rate": 1.901809571807575e-05,
+    "target_hit_rate": 0.002484472049689441
+  },
+  {
+    "dataset": "simple_safety_tests",
+    "records": 100,
+    "exact": 0,
+    "normalized_equal": 0,
+    "ngram": 0,
+    "unique_record_pairs": 0,
+    "matched_train_rows": 0,
+    "matched_target_rows": 0,
+    "train_hit_rate": 0.0,
+    "target_hit_rate": 0.0
+  }
+]

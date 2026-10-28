@@ -112,3 +112,7 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 ## 2026-10-28：P2-A.2 Derived v1
 
 **P2-A.2=PASS（机器派生验收）**：train210326、validation23108、sample1000；24条排除与A.1一致，全量映射/保留字节/独立复算/恢复通过。train-validation精确prompt/pair overlap均0，sample是train子集。15项新测试、33项相关回归通过，GRPO19项既有NotImplemented失败保留。完整Data Admission=PENDING/NOT APPROVED；P2-B/P3/SFT/GPU未运行。[执行与恢复报告](SUP-QWEN-02-sft/p2-a2-derived-report.md)。
+
+## 2026-10-28：P2-B.1 CPU Contamination Audit
+
+**Execution PASS；Data Admission PENDING/NOT APPROVED**。真实扫描train210326、validation23108和四benchmark16266题；3732字段命中，均为未人审机器证据。Train/Validation3559去重记录对；MMLU126短选项命中；Alpaca4记录对含1常识Q/A同文；GSM/SST本方法0命中不等于无污染。20新测试/48回归PASS；GRPO19既有FAIL。独立候选回读路径错误已留痕修正，最终3732条核验PASS。[报告](SUP-QWEN-data-flywheel/p2-b1-contamination-audit-report.md)。未改数据/Policy，停止待用户验收。

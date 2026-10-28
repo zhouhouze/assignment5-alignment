@@ -1,0 +1,45 @@
+PASS identities: Derived + mapping + manifest + 60 benchmark files
+INDEX ready: 115798 fields; peak_RSS=1780531200
+SCAN 5000/210326 candidates=71 comparisons=15043 elapsed=11.0s RSS=1781235712
+SCAN 10000/210326 candidates=147 comparisons=30936 elapsed=12.9s RSS=1781399552
+SCAN 15000/210326 candidates=241 comparisons=45860 elapsed=14.9s RSS=1781399552
+SCAN 20000/210326 candidates=318 comparisons=62943 elapsed=16.9s RSS=1781399552
+SCAN 25000/210326 candidates=416 comparisons=78648 elapsed=18.8s RSS=1781399552
+SCAN 30000/210326 candidates=563 comparisons=95189 elapsed=20.8s RSS=1781399552
+SCAN 35000/210326 candidates=705 comparisons=109558 elapsed=22.7s RSS=1781399552
+SCAN 40000/210326 candidates=786 comparisons=124630 elapsed=24.7s RSS=1781399552
+SCAN 45000/210326 candidates=878 comparisons=139680 elapsed=26.6s RSS=1781399552
+SCAN 50000/210326 candidates=957 comparisons=153337 elapsed=28.6s RSS=1781399552
+SCAN 55000/210326 candidates=1037 comparisons=168722 elapsed=30.6s RSS=1781399552
+SCAN 60000/210326 candidates=1108 comparisons=184687 elapsed=32.6s RSS=1781399552
+SCAN 65000/210326 candidates=1202 comparisons=199809 elapsed=34.6s RSS=1781399552
+SCAN 70000/210326 candidates=1291 comparisons=215715 elapsed=36.6s RSS=1781399552
+SCAN 75000/210326 candidates=1358 comparisons=231148 elapsed=38.6s RSS=1781399552
+SCAN 80000/210326 candidates=1460 comparisons=245773 elapsed=40.6s RSS=1781399552
+SCAN 85000/210326 candidates=1556 comparisons=262569 elapsed=42.6s RSS=1781399552
+SCAN 90000/210326 candidates=1643 comparisons=278527 elapsed=44.5s RSS=1781399552
+SCAN 95000/210326 candidates=1720 comparisons=292929 elapsed=46.5s RSS=1781399552
+SCAN 100000/210326 candidates=1808 comparisons=309207 elapsed=48.5s RSS=1781399552
+SCAN 105000/210326 candidates=1925 comparisons=325773 elapsed=50.5s RSS=1781399552
+SCAN 110000/210326 candidates=2029 comparisons=340479 elapsed=52.5s RSS=1781399552
+SCAN 115000/210326 candidates=2112 comparisons=355159 elapsed=54.5s RSS=1781399552
+SCAN 120000/210326 candidates=2201 comparisons=370604 elapsed=56.5s RSS=1781399552
+SCAN 125000/210326 candidates=2274 comparisons=385585 elapsed=58.4s RSS=1781399552
+SCAN 130000/210326 candidates=2358 comparisons=401492 elapsed=60.4s RSS=1781399552
+SCAN 135000/210326 candidates=2454 comparisons=417407 elapsed=62.4s RSS=1781399552
+SCAN 140000/210326 candidates=2531 comparisons=431160 elapsed=64.4s RSS=1781399552
+SCAN 145000/210326 candidates=2626 comparisons=446287 elapsed=66.3s RSS=1781399552
+SCAN 150000/210326 candidates=2710 comparisons=460982 elapsed=68.4s RSS=1781399552
+SCAN 155000/210326 candidates=2793 comparisons=475834 elapsed=70.4s RSS=1781399552
+SCAN 160000/210326 candidates=2878 comparisons=491568 elapsed=72.5s RSS=1781399552
+SCAN 165000/210326 candidates=2973 comparisons=505269 elapsed=74.6s RSS=1781399552
+SCAN 170000/210326 candidates=3072 comparisons=520711 elapsed=76.7s RSS=1781399552
+SCAN 175000/210326 candidates=3157 comparisons=536599 elapsed=78.8s RSS=1781399552
+SCAN 180000/210326 candidates=3246 comparisons=551758 elapsed=80.9s RSS=1781399552
+SCAN 185000/210326 candidates=3320 comparisons=568035 elapsed=82.9s RSS=1781399552
+SCAN 190000/210326 candidates=3405 comparisons=581617 elapsed=84.9s RSS=1781399552
+SCAN 195000/210326 candidates=3491 comparisons=596090 elapsed=86.9s RSS=1781399552
+SCAN 200000/210326 candidates=3565 comparisons=611359 elapsed=89.0s RSS=1781399552
+SCAN 205000/210326 candidates=3655 comparisons=627353 elapsed=91.3s RSS=1781399552
+SCAN 210000/210326 candidates=3727 comparisons=641982 elapsed=93.8s RSS=1781399552
+PASS full scan + post-run input integrity (not admission approval)

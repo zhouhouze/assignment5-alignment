@@ -1,0 +1,21 @@
+{
+  "base_commit": "e301cbb90316e6109b0d415946fd68c9e6ef8681",
+  "source_sha256": {
+    "scripts/audit_qwen_contamination.py": "574616220b5cf4e5165bb8922dc314aa5313769f613720079e25590a04651987",
+    "tests/test_qwen_contamination.py": "7843e14290fde87c17bbac42179ca76b94a30daca3e88eacfb58bcfb701dff6b",
+    "scripts/derive_qwen_sft.py": "1bf2d6e287491cbd5651a05e0b4031e3855a89c3acb8fec334c8d14aa9864200",
+    "scripts/verify_qwen_sft_derived.py": "dd5ba3432dde50da0daaedac43474bc65c43905173c96993fb4e62478080b44d",
+    "tests/adapters.py": "00a2130004071e57d646559258f2f11eeb57b07fa0e297345053fe6a8c87939b"
+  },
+  "python": "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+  "commands": [
+    "python -m pytest tests/test_qwen_contamination.py -q",
+    "python -m pytest tests/test_qwen_sft_derived.py tests/test_qwen_sft_raw.py tests/test_qwen_preflight.py -q",
+    "python -m pytest tests/test_grpo.py -q"
+  ],
+  "results": {
+    "new": "20 PASS",
+    "related": "48 PASS",
+    "grpo": "19 FAIL, pre-existing NotImplementedError; unchanged"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "verified_candidates": 3732,
+  "checks": [
+    "all references read back from original input",
+    "all text SHA/excerpts",
+    "independent un-hashed word-gram scores",
+    "no duplicate field-pair candidates",
+    "summary counts/unique pairs",
+    "benchmark ID order vs frozen protocol"
+  ],
+  "scope_limit": "Checks emitted candidates, not recall or absent pairs; no human review",
+  "short_hits": {
+    "mmlu:normalized_equal": 112,
+    "validation:exact": 1,
+    "mmlu:exact": 14,
+    "alpaca_eval:exact": 5,
+    "validation:normalized_equal": 3
+  },
+  "script_sha256": "9f4ab17af78247c63450c2727fe9c070bc8eaa31730a393dc7b9bb9f563e2735"
+}

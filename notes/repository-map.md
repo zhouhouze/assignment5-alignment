@@ -66,3 +66,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-28 P2-A.2
 
 `scripts/derive_qwen_sft.py` generates external derived-v1; `scripts/verify_qwen_sft_derived.py` independently reads disk lineage/content/checksums. `tests/test_qwen_sft_derived.py` covers synthetic and corruption cases. Evidence: `artifacts/pa5-supplement-qwen/sft/20261028-p2a2`; report: `notes/experiments/SUP-QWEN-02-sft/p2-a2-derived-report.md`. Complete data/backup/restore live outside worktree under `/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/`; registry provides SHA and restore guidance. Stop pending next Gate.
+
+## 2026-10-28 P2-B.1
+
+`scripts/audit_qwen_contamination.py` / `tests/test_qwen_contamination.py`: bounded read-only lexical scan. Evidence in `artifacts/pa5-supplement-qwen/sft/20261028-p2b1` and `20261028-p2b1-tests`; report `SUP-QWEN-data-flywheel/p2-b1-contamination-audit-report.md`. Complete small candidate gzip archived; original run under external persistent `pa5-experiment-backups/sft/20261028-p2b1-audit`. No data filtering.

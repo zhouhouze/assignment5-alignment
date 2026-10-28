@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "stage": "auxiliary candidate readback",
+  "script_sha256": "5d58ebef7be53fc0663d8ad3ca7cc5b04241969cce5d44abd57eea007b010ec6",
+  "error": "FileNotFoundError: /Users/hr/Documents/Lesson/assignment5-alignment/tmp/data/mmlu/test/high_school_biology_test.csv",
+  "cause": "parents[5] selected tmp instead of repository root; audited dataset itself exists and its SHA already passed",
+  "repair_scope": "parents[4] only; no data, frozen policy, detection thresholds or candidates changed"
+}

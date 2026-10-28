@@ -1,0 +1,75 @@
+"""Recheck emitted candidates from original files; no auditor imports or writes to inputs."""
+from pathlib import Path
+import csv,gzip,hashlib,json,re,unicodedata
+from collections import Counter,defaultdict
+root=Path(__file__).resolve().parents[5]
+run=Path('/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2b1-audit')
+derived=Path('/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1')
+def sha(p):
+ with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def norm(s):return re.findall(r'[^\W_]+',unicodedata.normalize('NFKC',s).casefold())
+def grams(tokens):return {tuple(tokens[i:i+5]) for i in range(len(tokens)-4)}
+audit=json.loads((run/'audit.json').read_text())
+assert audit['status']=='PASS' and sha(run/'candidates.jsonl.gz')==audit['candidates_sha256']
+with gzip.open(run/'candidates.jsonl.gz','rt') as f:rows=[json.loads(x) for x in f]
+needed=defaultdict(set)
+for r in rows:
+ for side in ['train','target']:
+  ref=r[side]
+  if ref['dataset'] in ['train','validation']:needed[ref['dataset']].add(ref['derived_line'])
+sft={}; maps={}
+for split,indices in needed.items():
+ with (derived/(split+'.jsonl')).open() as f:
+  for i,line in enumerate(f,1):
+   if i in indices:sft[(split,i)]=json.loads(line)
+ with (derived/(split+'.mapping.tsv')).open() as f:
+  next(f)
+  for line in f:
+   source,dest=map(int,line.split())
+   if dest in indices:maps[(split,dest)]=source
+files={}
+for r in rows:
+ ref=r['target'];name=ref['file']
+ if ref['dataset'] in ['train','validation'] or name in files:continue
+ p=root/name
+ if name.endswith('.csv'):
+  with p.open() as f:files[name]=list(csv.reader(f)) if ref['dataset']=='mmlu' else list(csv.DictReader(f))
+ elif name.endswith('.json'):files[name]=json.loads(p.read_text())
+ else:files[name]=[json.loads(x) for x in p.read_text().splitlines()]
+def extract(ref):
+ ds=ref['dataset'];field=ref['field']
+ if ds in ['train','validation']:
+  row=sft[(ds,ref['derived_line'])]
+  assert int(ref['source_row_id'].rsplit(':',1)[1])==maps[(ds,ref['derived_line'])]
+  return json.dumps([row['prompt'],row['response']],ensure_ascii=False) if field=='pair' else row[field]
+ row=files[ref['file']][ref['record_index_0based']]
+ if ds=='mmlu':
+  return row[0] if field=='question' else '\n'.join(row[:5]) if field=='question_with_options' else row[1+'ABCD'.index(row[5])]
+ return row[{'gpt4_reference_output':'output','answer_rationale_and_gold':'answer'}.get(field,field)]
+counts=Counter();keys=set();record_pairs=defaultdict(set);short=Counter()
+for number,r in enumerate(rows,1):
+ assert r['candidate_id']==number and r['human_review_status']=='pending' and r['confirmed_contamination'] is None
+ key=(r['train']['source_row_id'],r['train']['field'],r['target']['dataset'],r['target']['example_id'],r['target']['field'])
+ assert key not in keys;keys.add(key)
+ a,b=extract(r['train']),extract(r['target'])
+ for side,text in [('train',a),('target',b)]:
+  assert hashlib.sha256(text.encode()).hexdigest()==r[side]['text_sha256']
+  assert text[:200]==r['evidence'][side+'_excerpt']
+ wa,wb=norm(a),norm(b)
+ ga=grams(wa) if len(wa)>=12 else set();gb=grams(wb) if len(wb)>=12 else set()
+ common=len(ga&gb);j=common/len(ga|gb) if common else 0.;c=common/min(len(ga),len(gb)) if common else 0.
+ assert abs(j-r['jaccard'])<1e-12 and abs(c-r['containment'])<1e-12
+ if r['method']=='exact':assert a==b
+ elif r['method']=='normalized_equal':assert a!=b and wa==wb
+ else:assert common>=8 and (j>=.8 or c>=.9)
+ k=(r['target']['dataset'],r['method']);counts[k]+=1
+ record_pairs[k].add((r['train']['example_id'],r['target']['example_id']))
+ if r['short_text']:short[k]+=1
+assert len(rows)==audit['candidate_field_pairs']
+for s in audit['summary']:
+ k=(s['dataset'],s['method']);assert counts[k]==s['field_pairs'] and len(record_pairs[k])==s['unique_record_pairs']
+expected_ids={'mmlu':'80a50c01f339362887feb3c853f6f7558e187bf1ae6b75005a918ac39ec0926e','gsm8k':'57695ad86447a1794056b2e3e90739995477110e7c648781821347f712ad990e','alpaca_eval':'cbd581cdd91f69501a8b04a2d2286217da7f6d97ebfbdf4d01dcecb762368f06','simple_safety_tests':'5664de77bf3e075247ef46ae191c6a53d95e8df882659c747744b5662880fe49'}
+assert audit['benchmark_ordered_id_sha256']==expected_ids
+result={'status':'PASS','verified_candidates':len(rows),'checks':['all references read back from original input','all text SHA/excerpts','independent un-hashed word-gram scores','no duplicate field-pair candidates','summary counts/unique pairs','benchmark ID order vs frozen protocol'],'scope_limit':'Checks emitted candidates, not recall or absent pairs; no human review','short_hits':{ds+':'+method:n for (ds,method),n in short.items()},'script_sha256':sha(Path(__file__))}
+with (Path(__file__).parent/'candidate-recheck.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps(result,indent=2))

@@ -154,3 +154,14 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining questions: semantic contamination, human quality/risk review, complete admission and off-device durability.
 - Learner explanation status: PENDING.
 - Next task: stop after archive; suggest separately authorized P2-B.
+
+## 2026-10-28 — P2-B.1 contamination audit
+
+- Component/concept: exact vs normalized/ngram candidates; deterministic anchor recall limitations; short answers/templates are not causal contamination evidence.
+- Files: independent audit tool/tests, P2-B.1 evidence/report/registry/progress.
+- Tests: 20 new PASS, 48 related PASS, 19 unchanged GRPO NotImplemented FAIL.
+- Actual run: 210326 train, 23108 validation, 16266 benchmark; 3732 field hits; 94.197s, peak1.659GiB; input identities unchanged.
+- Bugs: auxiliary candidate reader selected parent directory; stopped, retained original source/failure, fixed root only; all3732 emitted candidates rechecked. Primary run no failures.
+- Decision: execution PASS, admission PENDING; no automatic cleaning or adjudication.
+- Remaining: long-material/question-cluster risk, short benchmark overlap provenance, semantic recall and human decisions.
+- Learner explanation: PENDING. Next task: stop; request separately scoped review Gate only after user acceptance.

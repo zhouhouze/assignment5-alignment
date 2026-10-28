@@ -57,3 +57,7 @@ Pinned Raw SHA → schema hard stop → exclusive reasons per field → unique r
 ## 2026-10-28 P2-A.2
 
 Raw fingerprint → approved empty-field decision → retained bytes + excluded source IDs + complete mapping → independent count/content/SHA verification → exact split overlap → machine acceptance. Sample/train inclusion is expected; exact overlap0 does not exclude semantic contamination. Data Admission and learner explanation remain PENDING.
+
+## 2026-10-28 P2-B.1
+
+Frozen identity → transient normalized/5-gram index → exact/normalized/anchor-retrieved candidates → independent emitted-hit validation → pending human/context disposition. Field hits ≠ unique record pairs ≠ contamination prevalence; shared quotation containment1 can coexist with low Jaccard. Zero lexical hits ≠ semantic clearance.
