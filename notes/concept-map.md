@@ -49,3 +49,7 @@ P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子s
 ## 2026-10-16 PM-04 preregistration
 
 不可变Full/人审证据（含UNKNOWN）→ H1约束/完成、H2助手、H3安全+帮助、H4能力、H5训练×Prompt → 固定指标/完整分母/配对人审 → paired CI与unknown界限 → 条件式PM调查/继续/暂停建议 → P2未来审计需求。Design Complete≠PM Review Approved≠P2 execution；threshold/预算/新样本仍待批。
+
+## 2026-10-28 P2-A.1
+
+Pinned Raw SHA → schema hard stop → exclusive reasons per field → unique row identity → measured counts/report. Raw PASS ≠ Derived acceptance ≠ training quality. Learner explanation PENDING.

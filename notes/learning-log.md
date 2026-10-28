@@ -132,3 +132,14 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining：PM04_PM_REVIEW=PENDING；075真值、060严重度细化、729正确性；诊断规模/来源、人审预算/二审、Judge/LC可靠性、能力/安全取舍、P2及后续训练Gate。
 - Learner explanation status：PENDING，未代用户宣称认可假设/产品结论。可后续解释为何D−A与CI跨零不能分别证明训练效应和能力保持。
 - Next task：完成设计归档与远端核对后停止，等待用户亲自PM-04评审；不自动P2/SFT/DPO/Judge。
+
+## 2026-10-28 — P2-A.1 Raw Validator
+
+- Component / concept: read-only identity/schema validation; per-field reasons vs unique physical rows.
+- Files changed: new validator/test, P2-A.1 evidence/report/index/registry and progress notes.
+- Tests: 23 new PASS, 10 preflight PASS; 19 pre-existing GRPO NotImplemented FAIL (unchanged).
+- Bugs encountered: no new test or Raw verification failures; legacy GRPO failures retained.
+- Decision: real Raw verification PASS; 22/2/0 anomalies, all strict empty. No Derived or training.
+- Remaining: P2-A.2 and complete admission pending.
+- Learner explanation status: PENDING, not claimed on learner behalf.
+- Next task: stop after archive; await next explicit Gate.

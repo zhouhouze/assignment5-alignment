@@ -1,0 +1,4 @@
+  210348 532421064 data/qwen-sft-mirror/sft-instruct/train.jsonl
+   23110 58872258 data/qwen-sft-mirror/sft-instruct/test.jsonl
+    1000 2492043 data/qwen-sft-mirror/sft-instruct/sample_train.jsonl
+  234458 593785365 total

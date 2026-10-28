@@ -1,0 +1,24 @@
+{
+  "gate": "P2-A.1",
+  "status": "PASS",
+  "execution_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+  "report": "notes/experiments/SUP-QWEN-02-sft/p2-a1-raw-verification-report.md",
+  "authorization": "User explicitly authorized P2-A.1 CPU tool, synthetic tests, real Raw verification and archival in this conversation on 2026-10-28; no derivation.",
+  "source_sha256": {
+    "scripts/validate_qwen_sft_raw.py": "862f413f8bd492d90b506e0e1dc98d1ff0c5e080bea5f2e1661f5ae31d1a9ff8",
+    "tests/test_qwen_sft_raw.py": "6a711078182e423ee63ecbc0bd6adc3bcc425caa12f7babe7098940acca6d3f9",
+    "scripts/qwen_preflight.py": "8aa4832a87d2df1e8230e7a6b118c422815abd00c9f2d87527e7866ef06fbf3f",
+    "tests/test_qwen_preflight.py": "294203d420eb966e680578fd586c2bf2c26520b338730d28aa9227b8beedcf78",
+    "tests/adapters.py": "00a2130004071e57d646559258f2f11eeb57b07fa0e297345053fe6a8c87939b",
+    "tests/test_grpo.py": "e5efd6aa7ce26397e78ae88dfc4ed0f29cb6eabde1432e2d2fae188fa630813d"
+  },
+  "tests": {
+    "narrow": "23 PASS",
+    "preflight": "10 PASS",
+    "grpo": "19 FAIL: pre-existing NotImplementedError; not fixed"
+  },
+  "data_admission": "PENDING",
+  "gpu_used": false,
+  "derived_created": false,
+  "directly_comparable_to_official": false
+}

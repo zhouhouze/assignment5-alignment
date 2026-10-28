@@ -58,3 +58,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-16 PM-04 SFT hypothesis plan
 
 `notes/experiments/SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md`为唯一主稿（10章节、H1–H5、评估/控制、人审/统计、8情形PM决策、P2审计交接）。`artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/`是设计来源SHA、状态manifest、CPU文档校验和归档验收，不是模型run或P2派生训练数据。现有protocol/metrics/Prompt/Parser/人审sidecar/训练源码不改。Next task：归档后停止等PM评审。
+
+## 2026-10-28 P2-A.1
+
+`scripts/validate_qwen_sft_raw.py`: standalone stdlib CPU Raw verifier; `tests/test_qwen_sft_raw.py`: synthetic contracts. `artifacts/pa5-supplement-qwen/sft/20261028-p2a1-{raw,tests}`: actual evidence, not filtered datasets. `notes/experiments/SUP-QWEN-02-sft/p2-a1-raw-verification-report.md`: execution/limits. Next task: stop pending next Gate.

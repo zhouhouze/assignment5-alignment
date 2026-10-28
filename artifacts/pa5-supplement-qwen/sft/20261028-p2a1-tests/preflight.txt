@@ -1,0 +1,13 @@
+
+tests/test_qwen_preflight.py::test_sft_schema[value0-errors0] PASSED     [ 10%]
+tests/test_qwen_preflight.py::test_sft_schema[value1-errors1] PASSED     [ 20%]
+tests/test_qwen_preflight.py::test_sft_schema[value2-errors2] PASSED     [ 30%]
+tests/test_qwen_preflight.py::test_sft_schema[value3-errors3] PASSED     [ 40%]
+tests/test_qwen_preflight.py::test_sft_schema[value4-errors4] PASSED     [ 50%]
+tests/test_qwen_preflight.py::test_jsonl_audit_keeps_malformed_and_duplicates PASSED [ 60%]
+tests/test_qwen_preflight.py::test_native_qwen_eos_and_no_invented_bos PASSED [ 70%]
+tests/test_qwen_preflight.py::test_document_roundtrip_and_explicit_eos PASSED [ 80%]
+tests/test_qwen_preflight.py::test_judge_native_chat_preserves_semantics PASSED [ 90%]
+tests/test_qwen_preflight.py::test_persisted_judge_prompt_and_pinned_configuration PASSED [100%]
+
+============================== 10 passed in 0.43s ==============================

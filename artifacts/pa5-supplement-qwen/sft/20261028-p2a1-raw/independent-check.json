@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checks": [
+    "independent shasum vs run and historical SHA",
+    "independent wc bytes/lines vs run (these files have final newlines)",
+    "all 24 anomaly line numbers/reasons vs historical records",
+    "unique source_row_id and count conservation"
+  ],
+  "limits": "No new train/validation overlap or contamination audit; no derived output. Four-way classification comes from new validator; historical agreement is not an independent four-way implementation."
+}

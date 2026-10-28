@@ -104,3 +104,7 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 ## 2026-10-16：PM-04 SFT Hypothesis & Evaluation Design
 
 [主稿](SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)以Full Base和12条已确认人审建立证据矩阵，定义H1指令遵循、H2助手质量、H3安全与帮助性、H4能力保持、H5训练/Prompt归因，区分方向性证据与产品接受。新诊断样本、人审预算与产品阈值待批；[来源/CPU文档检查（10月16日历史快照）](../../artifacts/pa5-supplement-qwen/evaluation-design/20261016-pm04/README.md)。10月16日归档时PM04_PM_REVIEW=PENDING；10月20日已更新为APPROVED (Design Only)，P2_EXECUTION仍NOT AUTHORIZED。本次仅归档用户签收，旧档案与旧SHA保持不变；后续Gate待独立授权。
+
+## 2026-10-28：P2-A.1 Raw Verification
+
+**P2-A.1=PASS**：真实CPU校验三份Raw共234458行，SHA/Bytes/Schema通过；train22、validation2条严格空字段，纯空白0。23项新测试、10项旧preflight通过；GRPO19项既有NotImplemented失败原样保留。未过滤、未生成Derived；完整Data Admission=PENDING。[执行报告](SUP-QWEN-02-sft/p2-a1-raw-verification-report.md)。本轮用户授权仅P2-A.1；上方旧授权状态保留历史含义。停止等待下一Gate。

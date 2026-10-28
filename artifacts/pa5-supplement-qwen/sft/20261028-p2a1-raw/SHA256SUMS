@@ -1,0 +1,13 @@
+ea13db3d7cb228193ec83cc299e8ba1f17677449a61c822ff6dbe32e4d384087  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/execution.log
+e0cf450f79c1728be1ca00213d9021000e233ece5987c40793db9cfa0b87dbf3  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-check.json
+ceffab52d0b76371588a019b6451c8696c25b76c9430281a6a7d82ad142bda7d  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-sha256.txt
+72fb64aac9c5ce0c5d476e14b82fd24978dbb81c15b855b855e7bc5d85d999eb  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-wc.txt
+0613744e05a986fa6439a927c75343e78a086ad771d51c693defd014f283521b  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/manifest.json
+c81445523482acc5f1894c1ceab394850b8836720c98fd1b972a3653c9f559fc  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/raw-verification.json
+06b615c7ddae3afb20a8ea5aa8d8601d048c9357340132efd77216240819168b  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt
+c861df0ac415144edcb672cdde20d5e3aea8b2a0f9be30fabf674c6d8b611afb  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/narrow.txt
+5093b88e186561146fef88b82bc5274e748b4bfc0f7d61d4d11771462459e05f  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/preflight.txt
+eb71f6dc56ad6797c7c7b19e4da586e78196a453002722ad4237eb1303f75db5  artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/test-provenance.json
+7e6d1da615cdb0041473aaee0685701772a68a7c2eee2678b8f5e40e691c8356  notes/experiments/SUP-QWEN-02-sft/p2-a1-raw-verification-report.md
+862f413f8bd492d90b506e0e1dc98d1ff0c5e080bea5f2e1661f5ae31d1a9ff8  scripts/validate_qwen_sft_raw.py
+6a711078182e423ee63ecbc0bd6adc3bcc425caa12f7babe7098940acca6d3f9  tests/test_qwen_sft_raw.py

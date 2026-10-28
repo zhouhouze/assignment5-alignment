@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_date": "2026-10-16",
+  "updated_date": "2026-10-28",
   "scope": "Existing Main artifacts referenced without relocation; Supplement evidence indexed by per-run manifests/checksums",
   "artifacts": [
     {
@@ -1592,6 +1592,138 @@
       "durability": "GitHub branch learning/pa5-supplement verified; PM review remains pending and P2 is not authorized.",
       "bytes": 820,
       "sha256": "f9c8fb489c6d0076c452e2d8e3d481e61d9a53c356bd5aa2d35be67fab147c91"
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/SHA256SUMS",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/SHA256SUMS",
+      "bytes": 1683,
+      "sha256": "431161ba948cb33f2cdae887b095d1b192c032c53299c5d93b578682bb6db7e3",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/execution.log",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/execution.log",
+      "bytes": 542,
+      "sha256": "ea13db3d7cb228193ec83cc299e8ba1f17677449a61c822ff6dbe32e4d384087",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-check.json",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-check.json",
+      "bytes": 492,
+      "sha256": "e0cf450f79c1728be1ca00213d9021000e233ece5987c40793db9cfa0b87dbf3",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-sha256.txt",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-sha256.txt",
+      "bytes": 342,
+      "sha256": "ceffab52d0b76371588a019b6451c8696c25b76c9430281a6a7d82ad142bda7d",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-wc.txt",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/independent-wc.txt",
+      "bytes": 223,
+      "sha256": "72fb64aac9c5ce0c5d476e14b82fd24978dbb81c15b855b855e7bc5d85d999eb",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/manifest.json",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/manifest.json",
+      "bytes": 1249,
+      "sha256": "0613744e05a986fa6439a927c75343e78a086ad771d51c693defd014f283521b",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/raw-verification.json",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/raw-verification.json",
+      "bytes": 12957,
+      "sha256": "c81445523482acc5f1894c1ceab394850b8836720c98fd1b972a3653c9f559fc",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/grpo.txt",
+      "bytes": 105622,
+      "sha256": "06b615c7ddae3afb20a8ea5aa8d8601d048c9357340132efd77216240819168b",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/narrow.txt",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/narrow.txt",
+      "bytes": 2083,
+      "sha256": "c861df0ac415144edcb672cdde20d5e3aea8b2a0f9be30fabf674c6d8b611afb",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/preflight.txt",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/preflight.txt",
+      "bytes": 929,
+      "sha256": "5093b88e186561146fef88b82bc5274e748b4bfc0f7d61d4d11771462459e05f",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
+    },
+    {
+      "artifact_name": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/test-provenance.json",
+      "storage_location": "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-tests/test-provenance.json",
+      "bytes": 1175,
+      "sha256": "eb71f6dc56ad6797c7c7b19e4da586e78196a453002722ad4237eb1303f75db5",
+      "created_date": "2026-10-28",
+      "run_id": "20261028-p2a1-raw",
+      "source_commit": "c66bebc87666b5c1d3658b72cdd13ae30cbd9acf",
+      "storage": "ordinary_git",
+      "restore": "Fetch learning/pa5-supplement archive commit; verify root-relative SHA256SUMS. Raw restore uses existing pinned inventory.",
+      "durability": "Local Git archival; remote verification recorded separately at Gate close."
     }
   ],
   "excluded_downloadable_content": [
