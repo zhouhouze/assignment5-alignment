@@ -1,0 +1,11 @@
+{
+  "gate": "P2-A.2",
+  "status": "PASS",
+  "data_admission": "PENDING_NOT_APPROVED",
+  "execution_commit": "399448ee2a4e964706aebb38fe220a6c27c11dd5",
+  "manifest_sha256": "c9eaf0e154f073500c237d6242a3d4188cdaf15e715a183e23d164813d3c352f",
+  "independent_verification_sha256": "1a1ee396b92643b4d4bb80930e00e4e27c31111ef2a7473a09f14a176443dd18",
+  "restored_verification_sha256": "3646956f55c8168048af0ef462b7e2a60d666edc07762fca3187981e31979a54",
+  "next_gate": "STOP; P2-B requires separate authorization",
+  "learner_explanation": "PENDING"
+}

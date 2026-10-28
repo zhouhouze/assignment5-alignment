@@ -108,3 +108,7 @@ P0时的阻塞为Full CLI/恢复/规模IO及现场资源/执行授权；其中�
 ## 2026-10-28：P2-A.1 Raw Verification
 
 **P2-A.1=PASS**：真实CPU校验三份Raw共234458行，SHA/Bytes/Schema通过；train22、validation2条严格空字段，纯空白0。23项新测试、10项旧preflight通过；GRPO19项既有NotImplemented失败原样保留。未过滤、未生成Derived；完整Data Admission=PENDING。[执行报告](SUP-QWEN-02-sft/p2-a1-raw-verification-report.md)。本轮用户授权仅P2-A.1；上方旧授权状态保留历史含义。停止等待下一Gate。
+
+## 2026-10-28：P2-A.2 Derived v1
+
+**P2-A.2=PASS（机器派生验收）**：train210326、validation23108、sample1000；24条排除与A.1一致，全量映射/保留字节/独立复算/恢复通过。train-validation精确prompt/pair overlap均0，sample是train子集。15项新测试、33项相关回归通过，GRPO19项既有NotImplemented失败保留。完整Data Admission=PENDING/NOT APPROVED；P2-B/P3/SFT/GPU未运行。[执行与恢复报告](SUP-QWEN-02-sft/p2-a2-derived-report.md)。

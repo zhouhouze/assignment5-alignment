@@ -62,3 +62,7 @@ notes/experiments/SUP-QWEN-01-baseline/{weight-acceptance,smoke-report,pilot-rep
 ## 2026-10-28 P2-A.1
 
 `scripts/validate_qwen_sft_raw.py`: standalone stdlib CPU Raw verifier; `tests/test_qwen_sft_raw.py`: synthetic contracts. `artifacts/pa5-supplement-qwen/sft/20261028-p2a1-{raw,tests}`: actual evidence, not filtered datasets. `notes/experiments/SUP-QWEN-02-sft/p2-a1-raw-verification-report.md`: execution/limits. Next task: stop pending next Gate.
+
+## 2026-10-28 P2-A.2
+
+`scripts/derive_qwen_sft.py` generates external derived-v1; `scripts/verify_qwen_sft_derived.py` independently reads disk lineage/content/checksums. `tests/test_qwen_sft_derived.py` covers synthetic and corruption cases. Evidence: `artifacts/pa5-supplement-qwen/sft/20261028-p2a2`; report: `notes/experiments/SUP-QWEN-02-sft/p2-a2-derived-report.md`. Complete data/backup/restore live outside worktree under `/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/`; registry provides SHA and restore guidance. Stop pending next Gate.

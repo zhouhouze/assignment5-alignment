@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "storage_root": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1",
+  "archive": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1.tar.gz",
+  "archive_bytes": 242051745,
+  "archive_sha256": "8c2d70c0ba412841920a9cfcc220d607542050bbe826b83be733244ac0f75b77",
+  "restore_location": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-restore-check",
+  "files": [
+    {
+      "file": "DATA_SHA256SUMS",
+      "bytes": 246,
+      "sha256": "25767eca9417ef936f265bd8be9af38c59e70f1c4a441eccdd900c7c24be3c18"
+    },
+    {
+      "file": "METADATA_SHA256SUMS",
+      "bytes": 430,
+      "sha256": "7c6819f7ee4020b1c1f4bf5e427a312cc548c63678fce75ef279239e9d849dc5"
+    },
+    {
+      "file": "excluded_rows.jsonl",
+      "bytes": 6970,
+      "sha256": "eaf372e2a165af91f036a162d64865b2bfb583108d618c74b5c5951248f5ec02"
+    },
+    {
+      "file": "execution.txt",
+      "bytes": 568,
+      "sha256": "5769226836e2eae1007c5f7c934cd12eb6781e3f53db83313ce5cb6cc37de75e"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 3439,
+      "sha256": "c9eaf0e154f073500c237d6242a3d4188cdaf15e715a183e23d164813d3c352f"
+    },
+    {
+      "file": "sample_train.jsonl",
+      "bytes": 2492043,
+      "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df"
+    },
+    {
+      "file": "sample_train.mapping.tsv",
+      "bytes": 7811,
+      "sha256": "24fadd9259fddc7e2d13256a38016a127f699882de089425f46a026dbfa9cd04"
+    },
+    {
+      "file": "train.jsonl",
+      "bytes": 532395833,
+      "sha256": "f83a631d5072b714d111bdedd54a849d40f0c386806039b4f9571c4249bc990f"
+    },
+    {
+      "file": "train.mapping.tsv",
+      "bytes": 2722577,
+      "sha256": "964033464088416469d4a7b206dd3064f4c11fbc051f769adcd2fe55aeaa9c96"
+    },
+    {
+      "file": "validation.jsonl",
+      "bytes": 58869509,
+      "sha256": "ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc"
+    },
+    {
+      "file": "validation.mapping.tsv",
+      "bytes": 255125,
+      "sha256": "04cac6b3abbece77afa40b44703290e0db1a3bd6bde666c3589aeab3278a91d5"
+    }
+  ],
+  "durability": "Persistent local Mac filesystem outside worktree. Archive and restore copy on same disk; no independent off-device backup claim. Raw reproducible from pinned mirror, derivation from committed code."
+}

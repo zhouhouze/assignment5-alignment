@@ -1,0 +1,22 @@
+{
+  "base_commit": "5d91c3b5bc664b898cf16ccc5ac56cc361bf5407",
+  "source_sha256": {
+    "scripts/derive_qwen_sft.py": "1bf2d6e287491cbd5651a05e0b4031e3855a89c3acb8fec334c8d14aa9864200",
+    "scripts/verify_qwen_sft_derived.py": "dd5ba3432dde50da0daaedac43474bc65c43905173c96993fb4e62478080b44d",
+    "tests/test_qwen_sft_derived.py": "a074ea9d68ed4b646191d844910e4264b38615b157e369b5e5f1128fc7157247",
+    "scripts/validate_qwen_sft_raw.py": "862f413f8bd492d90b506e0e1dc98d1ff0c5e080bea5f2e1661f5ae31d1a9ff8",
+    "scripts/qwen_preflight.py": "8aa4832a87d2df1e8230e7a6b118c422815abd00c9f2d87527e7866ef06fbf3f",
+    "tests/adapters.py": "00a2130004071e57d646559258f2f11eeb57b07fa0e297345053fe6a8c87939b"
+  },
+  "tests": {
+    "narrow": "15 PASS",
+    "raw_preflight_regression": "33 PASS",
+    "grpo": "19 FAIL, unchanged NotImplementedError"
+  },
+  "python": "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+  "commands": [
+    "python -m pytest tests/test_qwen_sft_derived.py -q",
+    "python -m pytest tests/test_qwen_sft_raw.py tests/test_qwen_preflight.py -q",
+    "python -m pytest tests/test_grpo.py -q"
+  ]
+}

@@ -53,3 +53,7 @@ P1B-0.5：生成提交边界 → Raw稳定捕获 → SHA内容对象 → 原子s
 ## 2026-10-28 P2-A.1
 
 Pinned Raw SHA → schema hard stop → exclusive reasons per field → unique row identity → measured counts/report. Raw PASS ≠ Derived acceptance ≠ training quality. Learner explanation PENDING.
+
+## 2026-10-28 P2-A.2
+
+Raw fingerprint → approved empty-field decision → retained bytes + excluded source IDs + complete mapping → independent count/content/SHA verification → exact split overlap → machine acceptance. Sample/train inclusion is expected; exact overlap0 does not exclude semantic contamination. Data Admission and learner explanation remain PENDING.

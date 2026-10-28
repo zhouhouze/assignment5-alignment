@@ -143,3 +143,14 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Remaining: P2-A.2 and complete admission pending.
 - Learner explanation status: PENDING, not claimed on learner behalf.
 - Next task: stop after archive; await next explicit Gate.
+
+## 2026-10-28 — P2-A.2 Derived Dataset
+
+- Component/concept: immutable byte-preserving derivation, complete lineage, independent disk verification; machine acceptance is not content admission.
+- Files changed: derive/verify scripts, dedicated tests, P2-A.2 evidence/report/registry and progress notes.
+- Tests: 15 new PASS; 33 Raw/preflight PASS; 19 pre-existing GRPO NotImplemented FAIL, unchanged.
+- Bugs encountered: no new test/real-run failures.
+- Decision: train210326 / validation23108 / sample1000; exclusions24 match A.1, all retained bytes and mappings verified; exact train/validation overlap0; restored bundle verified.
+- Remaining questions: semantic contamination, human quality/risk review, complete admission and off-device durability.
+- Learner explanation status: PENDING.
+- Next task: stop after archive; suggest separately authorized P2-B.

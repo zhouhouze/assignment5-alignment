@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "c9eaf0e154f073500c237d6242a3d4188cdaf15e715a183e23d164813d3c352f",
+  "files": {
+    "train": {
+      "raw_rows": 210348,
+      "derived_rows": 210326,
+      "excluded_rows": 22,
+      "byte_identity": "PASS"
+    },
+    "validation": {
+      "raw_rows": 23110,
+      "derived_rows": 23108,
+      "excluded_rows": 2,
+      "byte_identity": "PASS"
+    },
+    "sample_train": {
+      "raw_rows": 1000,
+      "derived_rows": 1000,
+      "excluded_rows": 0,
+      "byte_identity": "PASS"
+    }
+  },
+  "overlaps": {
+    "train__validation": {
+      "exact_prompt": 0,
+      "exact_pair": 0
+    },
+    "sample_train__train": {
+      "exact_prompt": 1000,
+      "exact_pair": 1000
+    },
+    "sample_train__validation": {
+      "exact_prompt": 0,
+      "exact_pair": 0
+    }
+  },
+  "sample_pair_subset_of_train": true,
+  "limits": "Exact equality only; near-duplicate/semantic benchmark contamination and human admission PENDING.",
+  "finished_at": "2026-10-28T09:08:38.273342+00:00",
+  "command": [
+    "/Users/hr/Documents/Lesson/assignment5-alignment/.venv/bin/python",
+    "scripts/verify_qwen_sft_derived.py",
+    "--dataset",
+    "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1",
+    "--raw-dir",
+    "data/qwen-sft-mirror/sft-instruct",
+    "--a1",
+    "artifacts/pa5-supplement-qwen/sft/20261028-p2a1-raw/raw-verification.json",
+    "--report",
+    "artifacts/pa5-supplement-qwen/sft/20261028-p2a2/independent-verification.json"
+  ],
+  "verifier_sha256": "dd5ba3432dde50da0daaedac43474bc65c43905173c96993fb4e62478080b44d"
+}

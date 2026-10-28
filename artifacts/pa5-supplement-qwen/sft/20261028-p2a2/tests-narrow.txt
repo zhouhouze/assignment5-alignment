@@ -1,0 +1,18 @@
+
+tests/test_qwen_sft_derived.py::test_roundtrip_counts_all_fields_and_containment PASSED [  6%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[content] PASSED [ 13%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[missing] PASSED [ 20%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[duplicate] PASSED [ 26%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[order] PASSED [ 33%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[mapping] PASSED [ 40%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[exclusion] PASSED [ 46%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[manifest] PASSED [ 53%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[checksum] PASSED [ 60%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[raw] PASSED [ 66%]
+tests/test_qwen_sft_derived.py::test_independent_verifier_detects_damage[a1] PASSED [ 73%]
+tests/test_qwen_sft_derived.py::test_no_overwrite_and_no_raw_destination PASSED [ 80%]
+tests/test_qwen_sft_derived.py::test_a1_disagreement_before_writing PASSED [ 86%]
+tests/test_qwen_sft_derived.py::test_raw_hard_stop_before_output[sha] PASSED [ 93%]
+tests/test_qwen_sft_derived.py::test_raw_hard_stop_before_output[schema] PASSED [100%]
+
+============================== 15 passed in 0.06s ==============================
