@@ -1,0 +1,12 @@
+{
+  "source_row_id": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913:train:181453",
+  "raw_line": 181453,
+  "v1_line": 181433,
+  "v1_line_sha256": "4d8f5087debc6ad75a4c4412ace377a4135823033e29db45630a3888d1c8159f",
+  "reason": "exact_alpaca_eval_370_instruction_and_reference_output",
+  "candidate_ids": [
+    3273,
+    3274
+  ],
+  "benchmark_record_index_0based": 370
+}

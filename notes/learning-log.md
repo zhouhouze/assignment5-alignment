@@ -165,3 +165,12 @@ Component：SUP-QWEN-EVAL-v1协议冻结，未实现新训练/推理功能。概
 - Decision: execution PASS, admission PENDING; no automatic cleaning or adjudication.
 - Remaining: long-material/question-cluster risk, short benchmark overlap provenance, semantic recall and human decisions.
 - Learner explanation: PENDING. Next task: stop; request separately scoped review Gate only after user acceptance.
+
+## 2026-10-31 — P2-C Derived-v2
+- Component: scoped versioned exclusion of one exact AlpacaEval 370 Q/A from SFT Train; learner explanation status PENDING.
+- Concept: source-row identity and complete mapping let one removal be independently audited without changing other bytes or claiming full Data Admission.
+- Files changed: scripts/derive_qwen_sft_v2.py, scripts/verify_qwen_sft_v2.py, tests/test_qwen_sft_v2.py, P2-C report/manifest/checksums/registry/index.
+- Tests: 4 narrow PASS; 58 related PASS; 19 unchanged GRPO NotImplementedError FAIL. Independent full-file verifier and restored archive PASS.
+- Bugs encountered: a precheck helper initially passed a byte string to a path-hash function; corrected the helper and reran identity checks before any v2 output. No source data anomaly.
+- Decision: only Raw train line181453 / v1 line181433 excluded; retain all other candidates and human admission as PENDING.
+- Remaining questions: disposition of other candidate risks and learner's explanation of mapping/version semantics.

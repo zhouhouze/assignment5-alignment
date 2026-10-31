@@ -1,0 +1,115 @@
+{
+  "gate": "P2-C",
+  "status": "GENERATED_PENDING_INDEPENDENT_VERIFICATION",
+  "created_at": "2026-10-31T08:55:54.749450+00:00",
+  "source_version": "derived-v1",
+  "source_manifest_sha256": "c9eaf0e154f073500c237d6242a3d4188cdaf15e715a183e23d164813d3c352f",
+  "source_files": [
+    {
+      "split": "train",
+      "source_file": "train.jsonl",
+      "source_sha256": "3b72228a7976079a5c5a30249fd3289179ad01006cbb67d15c7c366d4fd25913",
+      "source_rows": 210348,
+      "source_bytes": 532421064,
+      "excluded_rows": 22,
+      "derived": {
+        "file": "train.jsonl",
+        "sha256": "f83a631d5072b714d111bdedd54a849d40f0c386806039b4f9571c4249bc990f",
+        "bytes": 532395833,
+        "rows": 210326
+      },
+      "mapping": {
+        "file": "train.mapping.tsv",
+        "sha256": "964033464088416469d4a7b206dd3064f4c11fbc051f769adcd2fe55aeaa9c96",
+        "bytes": 2722577,
+        "rows": 210348
+      }
+    },
+    {
+      "split": "validation",
+      "source_file": "test.jsonl",
+      "source_sha256": "ce84dd834a7bbfc622cb3b50dc6c233e7dd91e002fd84f7cf86f70762a2c9ed9",
+      "source_rows": 23110,
+      "source_bytes": 58872258,
+      "excluded_rows": 2,
+      "derived": {
+        "file": "validation.jsonl",
+        "sha256": "ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc",
+        "bytes": 58869509,
+        "rows": 23108
+      },
+      "mapping": {
+        "file": "validation.mapping.tsv",
+        "sha256": "04cac6b3abbece77afa40b44703290e0db1a3bd6bde666c3589aeab3278a91d5",
+        "bytes": 255125,
+        "rows": 23110
+      }
+    },
+    {
+      "split": "sample_train",
+      "source_file": "sample_train.jsonl",
+      "source_sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df",
+      "source_rows": 1000,
+      "source_bytes": 2492043,
+      "excluded_rows": 0,
+      "derived": {
+        "file": "sample_train.jsonl",
+        "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df",
+        "bytes": 2492043,
+        "rows": 1000
+      },
+      "mapping": {
+        "file": "sample_train.mapping.tsv",
+        "sha256": "24fadd9259fddc7e2d13256a38016a127f699882de089425f46a026dbfa9cd04",
+        "bytes": 7811,
+        "rows": 1000
+      }
+    }
+  ],
+  "source_exclusions_sha256": "eaf372e2a165af91f036a162d64865b2bfb583108d618c74b5c5951248f5ec02",
+  "derived_version": "derived-v2",
+  "rule": "Remove only train raw line 181453 / v1 line 181433 per user P2-C authorization",
+  "authorization": "User authorized P2-C CPU derivation and archival in this conversation",
+  "execution_commit": "4dd8cbe8371aa2a2bc6d2e08a64fe5d9f4d65b18",
+  "output_rows": {
+    "train": 210325,
+    "validation": 23108,
+    "sample_train": 1000
+  },
+  "data_admission": "PENDING",
+  "directly_comparable_to_official": false,
+  "files": {
+    "delta-exclusion.json": {
+      "bytes": 389,
+      "sha256": "4b02a51a71f1bf3d7277332d3888e75d3ea21cf1ef0d385dc1827823810da4ea"
+    },
+    "excluded_rows.jsonl": {
+      "bytes": 6970,
+      "sha256": "eaf372e2a165af91f036a162d64865b2bfb583108d618c74b5c5951248f5ec02"
+    },
+    "sample_train.jsonl": {
+      "bytes": 2492043,
+      "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df"
+    },
+    "sample_train.mapping.tsv": {
+      "bytes": 7811,
+      "sha256": "24fadd9259fddc7e2d13256a38016a127f699882de089425f46a026dbfa9cd04"
+    },
+    "train.jsonl": {
+      "bytes": 532395732,
+      "sha256": "0678b25fcfd387df125012efbf054d2379c5eff2205400c932b37414e9db21e8"
+    },
+    "train.mapping.tsv": {
+      "bytes": 2722572,
+      "sha256": "36c85474bc72c5c6a6217b6476594c1cb27a4678ad88a21546a56f8f8c404473"
+    },
+    "validation.jsonl": {
+      "bytes": 58869509,
+      "sha256": "ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc"
+    },
+    "validation.mapping.tsv": {
+      "bytes": 255125,
+      "sha256": "04cac6b3abbece77afa40b44703290e0db1a3bd6bde666c3589aeab3278a91d5"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-10-31 P2-C Derived-v2 仅排除已指定的 Train Raw 181453：Train210325、Validation23108、Sample1000；独立复算和恢复PASS。机器处理完成，Data Admission仍PENDING。[执行报告](SUP-QWEN-02-sft/p2-c-derived-v2-report.md)。
+
 > 2026-10-29 P2 精简人审包已准备：历史 Train 随机20、固定 seed Derived-v1 Validation 随机20、定向拒答诊断3；血缘与原文核对 PASS，人工审核和 Data Admission 仍 PENDING。[准备记录](SUP-QWEN-data-flywheel/p2-compact-review-packet.md)。
 
 > 2026-10-20 PM-04：设计已于10月16日归档，本次用户正式签收 **PM Review APPROVED (Design Only)**；PM04_DESIGN_COMPLETE=YES，P2_EXECUTION=NOT AUTHORIZED。H1–H5仍待真实SFT实验检验，产品阈值/预算/资源与后续Gate未获批准。 [PM-04主文档与签收记录](SUP-QWEN-evaluation/sft-hypothesis-evaluation-plan-v1.md)。

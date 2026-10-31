@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "rows": {
+    "train": 210325,
+    "validation": 23108,
+    "sample_train": 1000
+  },
+  "removed_raw_line": 181453,
+  "removed_v1_line": 181433,
+  "train_mapping_excluded": 23,
+  "sample_pair_subset_of_train": true,
+  "alpaca_eval_370_exact_pair_remaining": 0,
+  "manifest_sha256": "a3fc513614bd98deb524306b0a607bad25095a0aacbbcda7ebccee0254b11bff"
+}

@@ -1,0 +1,10 @@
+P2-C CPU execution; 2026-10-31 Asia/Shanghai; branch learning/pa5-supplement
+Execution code commit: 4dd8cbe8371aa2a2bc6d2e08a64fe5d9f4d65b18
+Narrow tests: python -m pytest tests/test_qwen_sft_v2.py -q => 4 PASS
+Related regressions: python -m pytest tests/test_qwen_sft_derived.py tests/test_qwen_sft_raw.py tests/test_qwen_contamination.py -q => 58 PASS
+GRPO classification: python -m pytest tests/test_grpo.py -q => 19 pre-existing NotImplementedError FAIL; unchanged component
+Generation: python scripts/derive_qwen_sft_v2.py --output /Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2 => GENERATED train210325 validation23108 sample1000
+Verification: python scripts/verify_qwen_sft_v2.py --v1 /Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1 --v2 /Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2 --report /Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2/independent-verification.json => PASS
+Restore archive: tar -C /Users/hr/Documents/Lesson/pa5-experiment-backups/sft -czf /Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2.tar.gz 20261031-p2c-derived-v2
+Restore: extract to new 20261031-p2c-restore-check; DATA/METADATA SHA and independent verifier => PASS
+No GPU, training, human adjudication or extra data filtering.
