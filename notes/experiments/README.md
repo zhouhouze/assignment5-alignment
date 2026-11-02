@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-11-02 P2-D 用户决定 **HOLD / NOT APPROVED**：P2-C Derived-v2 机器校验 PASS；AI-first校准反馈4条认可、Java严重度S2/S3有争议；近重复/人工签收需有限收尾。未授权正式SFT训练或GPU。[P2-D HOLD决策及最小收尾](SUP-QWEN-data-flywheel/p2-d-admission-hold-decision.md)。
+
 > 2026-10-31 P2-C Derived-v2 仅排除已指定的 Train Raw 181453：Train210325、Validation23108、Sample1000；独立复算和恢复PASS。机器处理完成，Data Admission仍PENDING。[执行报告](SUP-QWEN-02-sft/p2-c-derived-v2-report.md)。
 
 > 2026-10-29 P2 精简人审包已准备：历史 Train 随机20、固定 seed Derived-v1 Validation 随机20、定向拒答诊断3；血缘与原文核对 PASS，人工审核和 Data Admission 仍 PENDING。[准备记录](SUP-QWEN-data-flywheel/p2-compact-review-packet.md)。
