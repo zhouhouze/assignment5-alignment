@@ -1,5 +1,7 @@
 # CS336 PA5统一实验索引
 
+> 2026-11-07 Supplement GPU环境恢复：新增[环境Runbook](SUP-QWEN-00-config/gpu-environment-recovery-runbook-20261107.md)与[用户现场环境快照](../../artifacts/pa5-supplement-qwen/environment/20261107-cloud-restore/onsite-environment-snapshot.json)。锁定依赖/模型SHA及分支同步顺序；本轮SSH未能连通、未重新验证云端；不包含凭据、不授权训练。P2-D仍HOLD。
+
 > 2026-11-02 P2-D 用户决定 **HOLD / NOT APPROVED**：P2-C Derived-v2 机器校验 PASS；AI-first校准反馈4条认可、Java严重度S2/S3有争议；近重复/人工签收需有限收尾。未授权正式SFT训练或GPU。[P2-D HOLD决策及最小收尾](SUP-QWEN-data-flywheel/p2-d-admission-hold-decision.md)。
 
 > 2026-10-31 P2-C Derived-v2 仅排除已指定的 Train Raw 181453：Train210325、Validation23108、Sample1000；独立复算和恢复PASS。机器处理完成，Data Admission仍PENDING。[执行报告](SUP-QWEN-02-sft/p2-c-derived-v2-report.md)。

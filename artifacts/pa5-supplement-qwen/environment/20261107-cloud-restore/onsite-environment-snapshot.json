@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "record_date": "2026-11-07",
+  "experiment": "CS336 Spring 2026 PA5 Supplement / Qwen adapted reproduction",
+  "branch": "learning/pa5-supplement",
+  "snapshot_authority": "USER_REPORTED_ONSITE_AND_REPO_CROSSCHECK; NOT REMOTELY_RECHECKED_IN_THIS_TURN",
+  "runtime": {
+    "host_os": "Ubuntu 24.04.3 LTS",
+    "architecture": "linux_x86_64",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_count": 1,
+    "driver_version": "595.84",
+    "python_venv_version": "3.12.13",
+    "packages": {
+      "torch": "2.10.0+cu129",
+      "transformers": "5.7.0",
+      "vllm": "0.19.1",
+      "flash-attn": "2.8.3"
+    },
+    "historical_other_versions": {
+      "uv": "0.12.13",
+      "tokenizers": "0.22.2"
+    },
+    "cuda_runtime_expected": "12.9",
+    "remote_checks_in_this_turn": "NOT RUN - BOTH SSH ENDPOINTS REFUSED CONNECTION",
+    "identity_validation_in_this_turn": false
+  },
+  "code": {
+    "cloud_checkout_short_sha_user_reported": "ad04ade",
+    "cloud_checkout_sha_resolved": false,
+    "github_branch_head_before_commit": "c9ac135918704d2425133e303a715928eaf575ae",
+    "p1_full_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
+    "lockfile": "uv.lock",
+    "pyproject": "pyproject.toml",
+    "setup_script": "scripts/setup_supplement_environment.sh"
+  },
+  "model": {
+    "name": "Qwen/Qwen2.5-7B",
+    "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+    "weights_total_bytes": 15231300464,
+    "weight_file_count": 7,
+    "weight_hashes_authority": "USER_REPORTED_7_OF_7_RECHECK_PASS; HISTORICAL_MANIFEST_AVAILABLE",
+    "historical_manifest": "artifacts/pa5-supplement-qwen/baseline/weight-acceptance.json",
+    "tokenizer_preflight_file_count": 8,
+    "tokenizer_sha_recheck_in_this_turn": "NOT RUN",
+    "judge_name": "Qwen/Qwen2.5-72B-Instruct",
+    "judge_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "judge_status": "NOT RUN"
+  },
+  "data": {
+    "sft_mirror": "garg-aayush/sft-cs336-assign5-datasets",
+    "mirror_revision": "ac710ef808346bf458d7b093bfe4586cb15699d9",
+    "current_derived_version": "v2",
+    "derived_v2_train": {
+      "rows": 210325,
+      "sha256": "0678b25fcfd387df125012efbf054d2379c5eff2205400c932b37414e9db21e8"
+    },
+    "derived_v2_validation": {
+      "rows": 23108,
+      "sha256": "ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc"
+    },
+    "derived_v2_sample_train": {
+      "rows": 1000,
+      "sha256": "b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df"
+    },
+    "data_admission": "HOLD_NOT_APPROVED"
+  },
+  "historical_baseline": {
+    "stage": "P1_FULL_COMPLETE",
+    "tasks": {
+      "mmlu": 14042,
+      "gsm8k": 1319,
+      "alpaca_eval": 805,
+      "simple_safety_tests": 100
+    },
+    "total_records": 16266,
+    "judge_status": "NOT RUN",
+    "source": "notes/experiments/SUP-QWEN-evaluation/p1b-full-baseline-report.md"
+  },
+  "sensitive": {
+    "ssh_endpoints_stored": false,
+    "ssh_accounts_stored": false,
+    "ssh_passwords_stored": false,
+    "tokens_stored": false,
+    "host_key_fingerprint_stored": false,
+    "credential_rotation_recommended": true,
+    "credential_rotation_confirmed": false
+  },
+  "gates": {
+    "connect": "UNVERIFIED_FROM_CHAT_RUNTIME",
+    "code_sync": "NOT RUN",
+    "package_restore": "NOT RUN",
+    "weights_sha_user_recheck": "PASS_REPORTED",
+    "tokenizer_sha": "NOT RUN",
+    "full_runtime_recovery": "NOT RUN",
+    "train_authorization": "NOT GRANTED",
+    "gpu_training_authorization": "NOT GRANTED"
+  },
+  "runbook": "notes/experiments/SUP-QWEN-00-config/gpu-environment-recovery-runbook-20261107.md"
+}
