@@ -1,13 +1,14 @@
 # CS336 PA5 Supplement — 保留原有 Qwen 模型与路径的全流程恢复 Runbook（2026-11-07）
 
-**目标：沿用原有 Qwen 模型及其固定版本、保留实际文件路径，让 P0–P10 实验按既定 Gate 逐步跑通；不要求或承诺计算结果 100% 一致。状态：DOCUMENTED / REMOTE RE-CHECK BLOCKED；本次不授权训练。**
+**目标：沿用原有 Qwen 模型及其固定版本、保留实际文件路径，让 P0–P10 实验按既定 Gate 逐步跑通；不要求或承诺计算结果 100% 一致。状态：DOCUMENTED / SSH READ-ONLY RE-CHECK PASS / RUNTIME RECOVERY NOT RUN；本次不授权训练。**
 实验身份：`PA5 Supplement Adapted Reproduction`（Qwen 路线，`directly_comparable_to_official=false`）。分支：`learning/pa5-supplement`。本 Runbook 与 [现场快照](../../../artifacts/pa5-supplement-qwen/environment/20261107-cloud-restore/onsite-environment-snapshot.json)一起作为 GitHub 入口。
 
 ## 0. 证据等级、限制与安全边界
 
 - **用户现场核对（2026-11-07，非本轮重新登录验证）**：Ubuntu 24.04.3、1× RTX 5090、驱动 595.84；项目 `.venv` Python 3.12.13；Torch 2.10.0+cu129、Transformers 5.7.0、vLLM 0.19.1、FlashAttention 2.8.3；Qwen7B Base 的7个已登记模型文件 SHA 全部通过。服务器代码停在历史短 SHA `ad04ade`。短 SHA 所在 branch/完整 SHA **未现场复核**。
 - **仓库既有不可变证据**：2026-10-11 Qwen Base FULL、GPU/environment/weights acceptance、P2-C Derived-v2 等报告；以各 run manifest 和归档 commit 为准，不能将历史报告误写成本轮现场生成的新结果。
-- **本次会话工具侧**：尝试连通两个用户提供的 SSH 入口，TCP 29824 均报 `Connection refused`；这只说明本次运行环境无法直接登录，**不能据此认定云实例已停机**。没有再次执行 `nvidia-smi`、重新哈希远端权重、核验 OS/uv/驱动或启动 GPU 程序。
+- **先前一次会话工具侧**：尝试连通两个用户提供的 SSH 入口，均报 `Connection refused`；这只说明当次无法直接登录，不能据此认定云实例已停机。
+- **后续同日只读 SSH 实测**：电信入口已成功登录；host key 与本机已有其他端口记录一致，未在仓库保存指纹或凭据。`/root/cs336/pa5-supplement` 位于 `learning/pa5-supplement`，工作树干净，完整 HEAD=`ad04ade61bf08a36b796b6be203a90e383147948`（历史归档提交，未同步到当时最新 GitHub）。实测 Ubuntu 24.04.3、RTX 5090 32607 MiB、driver 595.84、`.venv` Python 3.12.13、Torch 2.10.0+cu129、Transformers 5.7.0、vLLM 0.19.1、FlashAttention 2.8.3；以现场 `weights-manifest.json` 重新计算7个Base文件 bytes/SHA，全部 PASS。`uv` 在当时登录 shell 的 PATH 未找到；8个Tokenizer文件未重算SHA。未同步云端代码、安装依赖、运行CUDA算子或训练。
 - **安全**：不把服务器公网 IP、端口、登录账户密码、密钥、HF/GitHub token、host fingerprint、云平台 ID 上传到 GitHub。通过云平台控制台/个人私密运维笔记取得最新 SSH 入口；首次连接核对控制台独立提供的 host key 指纹。此次在对话中出现过的密码应更换，优先使用 SSH 密钥和非 root 账户。禁止 `StrictHostKeyChecking=no`、密码出现在命令行/脚本/env文件/Git提交里。
 - **可复现性**：同一 `Git SHA + uv.lock + 权重/Tokenizer SHA + 数据 SHA + Prompt/生成参数` 有助于复现实验**配置和输入身份**；无法保证云 IP、第三方轮子/模型源一直可访问，或 GPU 非确定性运算做到逐 bit 复现。每次恢复必须重新执行下列 Gate。
 - **费用**：连接/核验前通过平台确认实例是否运行、磁盘是否保留、计费和实际硬件；不要假设当前机器/数据在停止或释放后仍存在。
@@ -25,7 +26,7 @@
 | SFT来源 | `garg-aayush/sft-cs336-assign5-datasets` revision `ac710ef808346bf458d7b093bfe4586cb15699d9` | 第三方镜像，不保证与 2026 官方 Modal 数据字节相同 |
 | 当前 SFT 派生数据 | Derived-v2: Train 210325，SHA `0678b25fcfd387df125012efbf054d2379c5eff2205400c932b37414e9db21e8`；Validation 23108，SHA `ae6af19e5198f058ff08e8f36ffb028f3cf26fd2d45f90f99f4d99e5fb039ffc`；Sample1000，SHA `b26bbe382793889ccb397e7c8afdf64ad3e52f0109d191e66c424587fba596df` | [P2-C报告](../SUP-QWEN-02-sft/p2-c-derived-v2-report.md)；完整数据仍在用户 Mac 外部备份，非 Git repo |
 | 历史 P1 FULL 代码 | `47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726` | 复现旧 RUN 时应使用对应固定 commit；不要以最新 branch HEAD 伪称旧跑法 |
-| 2026-11-07 云端当前代码 | 用户报告短 SHA `ad04ade` | 远端未在本轮重连，**需先查看 `git status` 与完整 `git rev-parse HEAD`** |
+| 2026-11-07 云端当前代码 | 只读 SSH 实测完整 SHA `ad04ade61bf08a36b796b6be203a90e383147948`，branch `learning/pa5-supplement`，工作树干净 | 这是历史提交；下次仍需重查状态，不能假定已同步 GitHub 最新分支 |
 | 本 Runbook 编写前 GitHub branch HEAD | `c9ac135918704d2425133e303a715928eaf575ae` | 编写时快照；本 Runbook 的归档 commit 可由文件 Git History 获得，今后以实际执行的完整 SHA 为准 |
 
 **注意：** `nvidia-smi` 显示的 CUDA 上限来自驱动，与 PyTorch 的 `torch.version.cuda`（12.9）不是同一个概念。不要单凭驱动 CUDA 字段判断包版本错误。
@@ -144,7 +145,7 @@ print("MODEL 7/7 + TOKENIZER 8/8 SHA PASS")
 PY
 ```
 
-任何路径、大小、SHA 不匹配立即 STOP。**7权重文件已通过用户现场复核，不代表此处8个 Tokenizer/配置文件也已在新连接中通过；必须分别检查。** 只有确实缺失、获得下载/费用授权、来源访问可用且完成CPU Gate之后，才按现有 `scripts/download_qwen_baseline_weights.py` 的固定 revision 恢复权重。禁止替换为 Instruct 版本、混合 revision 或忽略哈希。
+任何路径、大小、SHA 不匹配立即 STOP。**7权重文件已在后续只读 SSH 会话重算通过，不代表8个 Tokenizer/配置文件通过；必须分别检查。** 只有确实缺失、获得下载/费用授权、来源访问可用且完成CPU Gate之后，才按现有 `scripts/download_qwen_baseline_weights.py` 的固定 revision 恢复权重。禁止替换为 Instruct 版本、混合 revision 或忽略哈希。
 
 ## 6. 数据 / Benchmark / 实验状态隔离
 
@@ -184,9 +185,9 @@ mkdir -p "$HOME/pa5-recovery/audits"
 ## 8. 环境恢复及全流程进展
 
 - `REBUILD_SPEC_READY`：Runbook、commit/lock/源身份和哈希锚点齐全，**本次可达成**。
-- `REMOTE_CONNECTED`：本次无法从聊天运行环境连接SSH；**NOT VERIFIED**。
+- `REMOTE_CONNECTED`：后续同日只读 SSH 登录 **PASS**；下次新实例仍需独立重验。
 - `RUNTIME_RECOVERED`：需要新SSH现场恢复+包导入+CUDA验收；**NOT RUN**。
-- `MODEL_ASSETS_VERIFIED_ON_2026-11-07`：**USER-REPORTED（7权重文件）**；不是本次聊天工具直接实测。
+- `MODEL_ASSETS_VERIFIED_ON_2026-11-07`：**7权重文件现场 bytes/SHA PASS**；8个Tokenizer文件仍未重算。
 - `WORKFLOW_RESUMABLE_SPEC_READY`：原有模型、版本、路径、恢复步骤和后续Gate已记录；部分接口与资源尚未就绪，因此目前不能宣称已经端到端跑通。
 - `EXPERIMENT_REPRODUCED`：不承诺逐bit复现；实际执行每个阶段后用新run_id记录结果、输入身份和完整证据。当前仅历史P1 Base Full完成，后续阶段尚未完成。
 
@@ -199,7 +200,7 @@ mkdir -p "$HOME/pa5-recovery/audits"
 
 | 资产 | 历史/现有位置 | 操作规则 |
 |---|---|---|
-| 云端旧 Supplement checkout | `/root/cs336/pa5-supplement` | **原路径原文件不覆盖**，先记录旧Git完整HEAD及dirty状态；2026-11-07用户报告短SHA `ad04ade`，仍需现场复查 |
+| 云端旧 Supplement checkout | `/root/cs336/pa5-supplement` | **原路径原文件不覆盖**；2026-11-07只读 SSH 见完整HEAD `ad04ade61bf08a36b796b6be203a90e383147948`、工作树干净；下次仍需复查 |
 | 新的隔离 checkout（建议，不是历史源路径） | `$HOME/pa5-recovery/supplement` | 从 `learning/pa5-supplement` 新clone；不用reset/clean覆盖旧项目；新实验记录实际checkout路径 |
 | 云端原有Qwen2.5-7B Base模型 | `/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796` | 7个权重/config文件按 [weight-acceptance.json](../../../artifacts/pa5-supplement-qwen/baseline/weight-acceptance.json) 逐项 bytes/SHA 校验；可从新checkout用原路径只读加载，不必移动 |
 | 云端Tokenizer/Preflight | `/root/cs336/pa5-supplement/models/qwen-preflight/Qwen2.5-7B` | 另外8个文件独立核验，不能只查7个权重文件 |

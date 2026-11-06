@@ -3,7 +3,7 @@
   "record_date": "2026-11-07",
   "experiment": "CS336 Spring 2026 PA5 Supplement / Qwen adapted reproduction",
   "branch": "learning/pa5-supplement",
-  "snapshot_authority": "USER_REPORTED_ONSITE_AND_REPO_CROSSCHECK; NOT REMOTELY_RECHECKED_IN_THIS_TURN",
+  "snapshot_authority": "INITIAL_USER_REPORTED_SNAPSHOT; SUBSEQUENT_SAME_DAY_READ_ONLY_SSH_RECHECK_RECORDED_BELOW",
   "runtime": {
     "host_os": "Ubuntu 24.04.3 LTS",
     "architecture": "linux_x86_64",
@@ -22,12 +22,17 @@
       "tokenizers": "0.22.2"
     },
     "cuda_runtime_expected": "12.9",
-    "remote_checks_in_this_turn": "NOT RUN - BOTH SSH ENDPOINTS REFUSED CONNECTION",
-    "identity_validation_in_this_turn": false
+    "initial_remote_attempt": "BOTH SSH ENDPOINTS REFUSED CONNECTION",
+    "subsequent_read_only_ssh": "PASS - Ubuntu 24.04.3, RTX 5090 32607 MiB, driver 595.84, Python 3.12.13, Torch 2.10.0+cu129, Transformers 5.7.0, vLLM 0.19.1, FlashAttention 2.8.3",
+    "uv_in_login_path": false,
+    "cuda_kernel_test": "NOT RUN"
   },
   "code": {
     "cloud_checkout_short_sha_user_reported": "ad04ade",
-    "cloud_checkout_sha_resolved": false,
+    "cloud_checkout_full_sha_read_only_ssh": "ad04ade61bf08a36b796b6be203a90e383147948",
+    "cloud_checkout_branch": "learning/pa5-supplement",
+    "cloud_checkout_clean": true,
+    "cloud_checkout_sha_resolved": true,
     "github_branch_head_before_commit": "c9ac135918704d2425133e303a715928eaf575ae",
     "p1_full_run_code_commit": "47ae79f3f1c5fdf390ef23bfc9f8bd41b23d2726",
     "lockfile": "uv.lock",
@@ -39,7 +44,7 @@
     "revision": "d149729398750b98c0af14eb82c78cfe92750796",
     "weights_total_bytes": 15231300464,
     "weight_file_count": 7,
-    "weight_hashes_authority": "USER_REPORTED_7_OF_7_RECHECK_PASS; HISTORICAL_MANIFEST_AVAILABLE",
+    "weight_hashes_authority": "SUBSEQUENT_READ_ONLY_SSH_7_OF_7_BYTES_SHA_PASS_AGAINST_ONSITE_WEIGHTS_MANIFEST",
     "historical_manifest": "artifacts/pa5-supplement-qwen/baseline/weight-acceptance.json",
     "tokenizer_preflight_file_count": 8,
     "tokenizer_sha_recheck_in_this_turn": "NOT RUN",
@@ -87,10 +92,10 @@
     "credential_rotation_confirmed": false
   },
   "gates": {
-    "connect": "UNVERIFIED_FROM_CHAT_RUNTIME",
+    "connect": "SUBSEQUENT_READ_ONLY_SSH_PASS; NEXT_INSTANCE_RECHECK_REQUIRED",
     "code_sync": "NOT RUN",
     "package_restore": "NOT RUN",
-    "weights_sha_user_recheck": "PASS_REPORTED",
+    "weights_sha_user_recheck": "PASS_DIRECT_SSH_7_OF_7",
     "tokenizer_sha": "NOT RUN",
     "full_runtime_recovery": "NOT RUN",
     "train_authorization": "NOT GRANTED",
