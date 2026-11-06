@@ -1,6 +1,6 @@
-# CS336 PA5 Supplement — 云 GPU 环境恢复与复现实验 Runbook（2026-11-07）
+# CS336 PA5 Supplement — 保留原有 Qwen 模型与路径的全流程恢复 Runbook（2026-11-07）
 
-**状态：DOCUMENTED / REMOTE RE-CHECK BLOCKED；仅用于恢复环境与验收，不授权启动训练。**
+**目标：沿用原有 Qwen 模型及其固定版本、保留实际文件路径，让 P0–P10 实验按既定 Gate 逐步跑通；不要求或承诺计算结果 100% 一致。状态：DOCUMENTED / REMOTE RE-CHECK BLOCKED；本次不授权训练。**
 实验身份：`PA5 Supplement Adapted Reproduction`（Qwen 路线，`directly_comparable_to_official=false`）。分支：`learning/pa5-supplement`。本 Runbook 与 [现场快照](../../../artifacts/pa5-supplement-qwen/environment/20261107-cloud-restore/onsite-environment-snapshot.json)一起作为 GitHub 入口。
 
 ## 0. 证据等级、限制与安全边界
@@ -181,10 +181,53 @@ mkdir -p "$HOME/pa5-recovery/audits"
 
 不要上传 shell history、SSH配置、`env` 全量输出、私有地址、密码、API token、个人数据和大量原始模型权重到GitHub。小型**脱敏**的审计报告、测试状态、运行commit和源SHA可提交新run目录；新run必须有独立run_id，不覆盖旧run。
 
-## 8. 复现级别结论
+## 8. 环境恢复及全流程进展
 
 - `REBUILD_SPEC_READY`：Runbook、commit/lock/源身份和哈希锚点齐全，**本次可达成**。
 - `REMOTE_CONNECTED`：本次无法从聊天运行环境连接SSH；**NOT VERIFIED**。
 - `RUNTIME_RECOVERED`：需要新SSH现场恢复+包导入+CUDA验收；**NOT RUN**。
 - `MODEL_ASSETS_VERIFIED_ON_2026-11-07`：**USER-REPORTED（7权重文件）**；不是本次聊天工具直接实测。
-- `EXPERIMENT_REPRODUCED`：需要严格同码/同数据/同模型/同参数重新实验并复核实际输出，且取得独立Gate授权；**NOT RUN**。
+- `WORKFLOW_RESUMABLE_SPEC_READY`：原有模型、版本、路径、恢复步骤和后续Gate已记录；部分接口与资源尚未就绪，因此目前不能宣称已经端到端跑通。
+- `EXPERIMENT_REPRODUCED`：不承诺逐bit复现；实际执行每个阶段后用新run_id记录结果、输入身份和完整证据。当前仅历史P1 Base Full完成，后续阶段尚未完成。
+
+
+## 9. 保留原路径，按原有模型完成 P0–P10：下次实验接续台账
+
+**目标定义：不追求与旧实验逐字节100%一致；追求同一Qwen实验路线下的模型身份不变、输入/代码/依赖可核验、路径可追溯，并按Gate逐阶段完成。** 恢复环境本身只是先决条件，不代表训练或Judge已经执行。
+
+### 9.1 必须保留的历史绝对路径
+
+| 资产 | 历史/现有位置 | 操作规则 |
+|---|---|---|
+| 云端旧 Supplement checkout | `/root/cs336/pa5-supplement` | **原路径原文件不覆盖**，先记录旧Git完整HEAD及dirty状态；2026-11-07用户报告短SHA `ad04ade`，仍需现场复查 |
+| 新的隔离 checkout（建议，不是历史源路径） | `$HOME/pa5-recovery/supplement` | 从 `learning/pa5-supplement` 新clone；不用reset/clean覆盖旧项目；新实验记录实际checkout路径 |
+| 云端原有Qwen2.5-7B Base模型 | `/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796` | 7个权重/config文件按 [weight-acceptance.json](../../../artifacts/pa5-supplement-qwen/baseline/weight-acceptance.json) 逐项 bytes/SHA 校验；可从新checkout用原路径只读加载，不必移动 |
+| 云端Tokenizer/Preflight | `/root/cs336/pa5-supplement/models/qwen-preflight/Qwen2.5-7B` | 另外8个文件独立核验，不能只查7个权重文件 |
+| 云端原P1 Full outputs | `/root/pa5-supplement-setup/full/<run_id>` | 历史路径；可能随实例释放而丢失，不覆盖、不视作唯一备份 |
+| Mac持久Supplement worktree | `/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement` | 保留此真实worktree，不删除为临时目录 |
+| Mac原始SFT镜像 | `/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement/data/qwen-sft-mirror/sft-instruct` | 三个原始JSONL以登记的SHA为准，不改Raw |
+| Mac历史Derived-v1 | `/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1` | 保留旧版本，可作为v2独立校验输入 |
+| Mac当前Derived-v2 | `/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2` | 数据已生成并独立校验，**正式训练准入仍HOLD** |
+| Mac Derived-v2 tar备份 | `/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2.tar.gz` | SHA `f49a0e731637d1ab4ba5682a2a005dd57d7a2eb022e3c28827416216cc50e17c`；只恢复到新目录 |
+| Mac P1 Full CAS备份 | `/Users/hr/Documents/Lesson/pa5-experiment-backups/full/<run_id>` | 保留objects/snapshots/LATEST整套，非仅单个manifest |
+| Mac P1 Full打包存档 | `/Users/hr/Documents/Lesson/pa5-experiment-backups/full/p1b1-20261011-session/qwen-full-20261011T034800Z-verified-runs.tar.gz` | SHA `c9167497a800d803f2510f55201654465e376b905154e796f9c587150777b6a9` |
+| 未来云端Derived数据及SFT/DPO checkpoints、72B权重 | **尚无正式生成并验收的绝对路径** | 第一次实际执行时绑定真实绝对路径和run_id、登记SHA、存到持久存储，不能编造或覆盖原路径 |
+
+**注意**：“保留路径”指代码、权重、数据及产物的文件系统位置；不意味着把公网SSH入口/密码写入GitHub。SSH连接信息继续保存在云控制台或个人私密凭据管理器。
+
+### 9.2 同一模型路线的后续全流程执行表
+
+| 阶段 | 固定模型/输入 | 执行与结束条件 |
+|---|---|---|
+| P0 | 固定[Qwen Adapted配置](../../../configs/pa5_supplement_qwen.json)和评估协议 | 已冻结，恢复时核对版本及记录 |
+| P1 Base | **Qwen/Qwen2.5-7B Base** `d149729398750b98c0af14eb82c78cfe92750796`；MMLU/GSM8K/AlpacaEval/Safety四任务 | 历史16,266/16,266 Full已完成；非必要不重做，用各run manifest和旧code SHA归档 |
+| P2 | SFT Mirror Raw → Derived-v2（Train210325、Validation23108、Sample1000） | P2-C机器校验通过，**P2-D Data Admission HOLD**，当前禁止正式训练 |
+| P3 | 同一Qwen Tokenizer、官方Alpaca模板、Dataset/Batching/训练loop | 先CPU实现和测试；尚未完成 |
+| P4/P5 SFT | **以该Qwen2.5-7B Base为初始权重**、BF16全参数SFT，不换成Instruct/LoRA/量化；[训练设计](../SUP-QWEN-02-sft/sft-training-experiment.md) | 在P2/P3通过、批准硬件及费用后才Smoke→Pilot→Full。RTX5090 32GB不足以默认执行传统全参AdamW |
+| P6 Post-SFT评测 | Base与实际SFT checkpoint，冻结相同Benchmark/Prompt | 保存新run_id与逐题raw/metrics，检查训练收益与alignment tax |
+| P7/P8 DPO | 同一个已验收 SFT checkpoint 初始化policy+frozen reference；Anthropic HH偏好数据，[DPO计划](../SUP-QWEN-03-dpo/dpo-training-and-evaluation-plan.md) | CPU实现/测试后才Smoke→Full；**不能拿Base当reference** |
+| P9 Judge + DPO后评测 | 固定Qwen2.5-72B-Instruct `495f39366efef23836d0cfae4fbe635880d2be31`；[Judge可靠性计划](../SUP-QWEN-evaluation/judge-reliability-plan.md) | 72B模型/真实Judge仍NOT RUN，需另外批准合适大显存硬件、先校验Judge可靠性 |
+| P10 Data Flywheel | 使用Base/SFT/DPO实际指标及失败样本 | 训练效果分析→错误归因→下一轮数据建议；Benchmark仍只用于评估 |
+
+**验收口径**：任何一步缺模型/数据/硬件/批准即记录BLOCKED并停止，不能为了“走完整个流程”静默换模型或绕过测试。真正完成P0–P10必须具备每个阶段的真实运行证据、所需checkpoint、输出SHA、验证和归档位置。**路径不变与版本一致有助于持续接续，但不承诺GPU输出逐bit一致，更不表示目前一张5090足以运行全部阶段。** 新实验产物使用唯一run_id，不写回旧Full和Derived目录。
+

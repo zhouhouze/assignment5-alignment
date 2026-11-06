@@ -96,5 +96,44 @@
     "train_authorization": "NOT GRANTED",
     "gpu_training_authorization": "NOT GRANTED"
   },
-  "runbook": "notes/experiments/SUP-QWEN-00-config/gpu-environment-recovery-runbook-20261107.md"
+  "runbook": "notes/experiments/SUP-QWEN-00-config/gpu-environment-recovery-runbook-20261107.md",
+  "operational_goal": {
+    "goal": "FOLLOW_EXISTING_QWEN_MODELS_AND_PATHS_THROUGH_P0_TO_P10",
+    "byte_identical_reproduction_guaranteed": false,
+    "model_substitution_without_approval": false,
+    "original_paths_preserved": true,
+    "end_to_end_experiment_completed": false,
+    "note": "Recorded workflow and immutable asset checks; actual progression requires gates, hardware, inputs and authorization."
+  },
+  "original_paths": {
+    "cloud_checkout_legacy": "/root/cs336/pa5-supplement",
+    "cloud_checkout_isolated_proposed": "$HOME/pa5-recovery/supplement",
+    "cloud_qwen7b_weights": "/root/cs336/pa5-supplement/models/qwen-baseline-7b/d149729398750b98c0af14eb82c78cfe92750796",
+    "cloud_qwen7b_tokenizer": "/root/cs336/pa5-supplement/models/qwen-preflight/Qwen2.5-7B",
+    "cloud_full_outputs_legacy": "/root/pa5-supplement-setup/full/<run_id>",
+    "mac_worktree": "/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement",
+    "mac_raw_sft_mirror": "/Users/hr/Documents/Lesson/assignment5-alignment/tmp/pa5-supplement/data/qwen-sft-mirror/sft-instruct",
+    "mac_derived_v1": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261028-p2a2-derived-v1",
+    "mac_derived_v2": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2",
+    "mac_derived_v2_tar": "/Users/hr/Documents/Lesson/pa5-experiment-backups/sft/20261031-p2c-derived-v2.tar.gz",
+    "mac_baseline_cas": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/<run_id>",
+    "mac_baseline_tar": "/Users/hr/Documents/Lesson/pa5-experiment-backups/full/p1b1-20261011-session/qwen-full-20261011T034800Z-verified-runs.tar.gz",
+    "future_cloud_sft_data": "UNSET_MUST_RECORD_WITH_RUN",
+    "future_sft_checkpoint": "NOT_CREATED",
+    "future_dpo_checkpoint": "NOT_CREATED",
+    "future_qwen72b_weights": "NOT_DOWNLOADED"
+  },
+  "workflow_progress": {
+    "P0": "DESIGN_FROZEN",
+    "P1": "BASE_FULL_COMPLETE",
+    "P2": "DATA_ADMISSION_HOLD",
+    "P3": "CPU_IMPL_NOT_COMPLETED",
+    "P4": "SFT_SMOKE_PILOT_NOT_RUN",
+    "P5": "FULL_SFT_NOT_RUN",
+    "P6": "POST_SFT_EVAL_NOT_RUN",
+    "P7": "DPO_NOT_RUN",
+    "P8": "DPO_FULL_NOT_RUN",
+    "P9": "JUDGE_AND_POST_DPO_EVAL_NOT_RUN",
+    "P10": "FLYWHEEL_REVIEW_NOT_RUN"
+  }
 }
